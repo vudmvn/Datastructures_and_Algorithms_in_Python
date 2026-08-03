@@ -88,10 +88,10 @@ The course covers both theoretical concepts and practical implementations from s
 
 | Book Cover | Reference | Author | Publisher | ISBN | Link |
 |:---:|:---|:---|:---|:---:|:---:|
-| <img src="assets/images/data-structures-algorithms-necaise-cover.jpg" alt="Data Structures and Algorithms Using Python" width="90" /> | **Data Structures and Algorithms Using Python** | Rance D. Necaise | Wiley, 2011 | 9780470618295 | [Book Details](https://www.wiley.com/en-us/Data+Structures+and+Algorithms+Using+Python-p-9780470618295) |
-| <img src="assets/images/data-structures-algorithms-goodrich-cover.jpg" alt="Data Structures and Algorithms in Python" width="90" /> | **Data Structures and Algorithms in Python** | Michael T. Goodrich, Roberto Tamassia, Michael H. Goldwasser | Wiley, 2013 | 9781118290279 | [Book Details](https://www.wiley.com/en-us/Data+Structures+and+Algorithms+in+Python-p-9781118290279) |
-| <img src="assets/images/fundamentals-python-data-structures-lambert-cover.jpg" alt="Fundamentals of Python: Data Structures" width="90" /> | **Fundamentals of Python: Data Structures**, 2nd Edition | Kenneth A. Lambert | Cengage Learning, 2019 | 9780357122754 | [Book Details](https://www.cengage.com/c/fundamentals-of-python-data-structures-2e-lambert/9780357122754) |
 | <img src="assets/images/data-structure-algorithmic-thinking-karumanchi-cover.jpg" alt="Data Structure and Algorithmic Thinking with Python" width="90" /> | **Data Structure and Algorithmic Thinking with Python** | Narasimha Karumanchi | CareerMonk Publications, 2020 | 9788194254003 | [Book Details](https://careermonk.com/) |
+| <img src="assets/images/fundamentals-python-data-structures-lambert-cover.jpg" alt="Fundamentals of Python: Data Structures" width="90" /> | **Fundamentals of Python: Data Structures**, 2nd Edition | Kenneth A. Lambert | Cengage Learning, 2019 | 9780357122754 | [Book Details](https://www.cengage.com/c/fundamentals-of-python-data-structures-2e-lambert/9780357122754) |
+| <img src="assets/images/data-structures-algorithms-goodrich-cover.jpg" alt="Data Structures and Algorithms in Python" width="90" /> | **Data Structures and Algorithms in Python** | Michael T. Goodrich, Roberto Tamassia, Michael H. Goldwasser | Wiley, 2013 | 9781118290279 | [Book Details](https://www.wiley.com/en-us/Data+Structures+and+Algorithms+in+Python-p-9781118290279) |
+| <img src="assets/images/data-structures-algorithms-necaise-cover.jpg" alt="Data Structures and Algorithms Using Python" width="90" /> | **Data Structures and Algorithms Using Python** | Rance D. Necaise | Wiley, 2011 | 9780470618295 | [Book Details](https://www.wiley.com/en-us/Data+Structures+and+Algorithms+Using+Python-p-9780470618295) |
 
 ---
 
