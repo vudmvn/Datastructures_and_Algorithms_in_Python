@@ -35,11 +35,9 @@
 >
 > Address: Suite 1105, Building A1, NEU
 >
-> Instructors:
+> Instructor:
 
 - Dr. Vu Duc Minh, email: <minhvd@neu.edu.vn>
-
-- M.Sc. NguyenThanh Hoang, email: <hoangnt@neu.edu.vn>
 
 **3. COURSE DESCRIPTION**
 

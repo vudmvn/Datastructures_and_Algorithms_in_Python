@@ -102,6 +102,6 @@ Script sẽ tự động:
 ---
 
 ## 🌐 4. Thông tin Repository & Giảng viên
-- **Giảng viên:** TS. Vũ Đức Minh (minhvd@neu.edu.vn) (hoangnt@neu.edu.vn)
+- **Giảng viên:** TS. Vũ Đức Minh (minhvd@neu.edu.vn)
 - **Học phần:** Cấu trúc dữ liệu và Giải thuật với Python (DSAI1002) - ĐH Kinh tế Quốc dân
 - **GitHub Repository:** [vudmvn/Datastructures_and_Algorithms_in_Python](https://github.com/vudmvn/Datastructures_and_Algorithms_in_Python)
