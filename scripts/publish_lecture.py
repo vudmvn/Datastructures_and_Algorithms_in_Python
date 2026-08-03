@@ -263,7 +263,7 @@ Bảng dưới đây tổng hợp chi tiết tài liệu học tập, bài giả
         w = item["week"]
         topic_vn = item["topic_vn"]
         
-        if w in lecture_map:
+        if w in lecture_map and w != "03":
             info = lecture_map[w]
             theory_parts = []
             if info["notebook"] != "-":
@@ -339,7 +339,7 @@ The table below summarizes lecture notebooks, reading materials, slides, lab ass
         w = item["week"]
         topic_en = item["topic_en"]
         
-        if w in lecture_map:
+        if w in lecture_map and w != "03":
             info = lecture_map[w]
             theory_parts = []
             if info["notebook"] != "-":
