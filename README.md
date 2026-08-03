@@ -28,23 +28,23 @@ Sinh viên được hướng dẫn tự cài đặt (implement from scratch) cá
 
 Bảng dưới đây tổng hợp chi tiết tài liệu học tập, bài giảng Notebook, slide, bài tập thực hành, tệp dữ liệu và đáp án cho **15 tuần học**:
 
-| Tuần | Chủ đề chính (Tiếng Việt) | Bài giảng & Bài đọc (.md / .ipynb) | Slide | Bài tập Lab | Đáp án | Tài nguyên (Data / Images) | Trạng thái |
-|:---:|:---|:---|:---:|:---:|:---:|:---:|:---:|
-| **Tuần 01** | **Giới thiệu học phần & ADT** | • [Bài giảng: Giới thiệu Thuật toán và Phân tích Độ phức tạp](lectures/week-01-gioi-thieu-hoc-phan-adt/introduction-1-vn.md)<br>• [Bài giảng: Thuật toán là gì? Nhập môn Phân tích Thuật toán](lectures/week-01-gioi-thieu-hoc-phan-adt/introduction-to-algorithm-1-vn.md) | - | - | - | [🖼️ Images](lectures/week-01-gioi-thieu-hoc-phan-adt/images/) | ✅ *Đã sẵn sàng* |
-| **Tuần 02** | **Độ phức tạp tiệm cận & Big-O** | • [Bài giảng: Độ phức tạp thuật toán và Ký hiệu tiệm cận](lectures/week-02-do-phuc-tap-tiem-can-big-o/complexity-analysis-2-vn.md)<br>• [Bài giảng: Master Theorem, Phương trình truy hồi và Phân tích khấu hao](lectures/week-02-do-phuc-tap-tiem-can-big-o/master-theorem-vn.md) | - | - | - | [🖼️ Images](lectures/week-02-do-phuc-tap-tiem-can-big-o/images/) | ✅ *Đã sẵn sàng* |
-| **Tuần 03** | **Tìm kiếm & Sắp xếp cơ bản** | • [Part I — Foundations of Algorithms and Data Structures](lectures/week-03-tim-kiem-sap-xep-co-ban/part-1-vn.md)<br>• [Part II — Algorithmic Approaches](lectures/week-03-tim-kiem-sap-xep-co-ban/part-2-vn.md)<br>• [Part III — Algorithm Analysis](lectures/week-03-tim-kiem-sap-xep-co-ban/part-3-vn.md)<br>• [Part IV — Analysis of Recursive Algorithms](lectures/week-03-tim-kiem-sap-xep-co-ban/part-4-vn.md)<br>• [Bài giảng: Phân tích thuật toán — Bài tập và lời giải](lectures/week-03-tim-kiem-sap-xep-co-ban/problem-set-1-vn.md) | - | - | - | - | ✅ *Đã sẵn sàng* |
-| **Tuần 04** | Sắp xếp nâng cao & Phân tích | - | - | - | - | - | ⏳ *Đang biên soạn* |
-| **Tuần 05** | Mảng & Danh sách liên kết (Phần 1) | - | - | - | - | - | ⏳ *Đang biên soạn* |
-| **Tuần 06** | Danh sách liên kết (Phần 2) | - | - | - | - | - | ⏳ *Đang biên soạn* |
-| **Tuần 07** | Ngăn xếp (Stack) & Hàng đợi (Queue) | - | - | - | - | - | ⏳ *Đang biên soạn* |
-| **Tuần 08** | Ứng dụng Stack/Queue & Ôn tập giữa kỳ | - | - | - | - | - | ⏳ *Đang biên soạn* |
-| **Tuần 09** | Thi giữa kỳ | - | - | - | - | - | ⏳ *Đang biên soạn* |
-| **Tuần 10** | Cây tổng quát & Cây nhị phân | - | - | - | - | - | ⏳ *Đang biên soạn* |
-| **Tuần 11** | Cây tìm kiếm nhị phân (BST) | - | - | - | - | - | ⏳ *Đang biên soạn* |
-| **Tuần 12** | Cây cân bằng AVL | - | - | - | - | - | ⏳ *Đang biên soạn* |
-| **Tuần 13** | Hàng đợi ưu tiên & Cấu trúc Heap | - | - | - | - | - | ⏳ *Đang biên soạn* |
-| **Tuần 14** | Bảng băm & Hàm băm | - | - | - | - | - | ⏳ *Đang biên soạn* |
-| **Tuần 15** | Tổng kết & Ôn tập cuối kỳ | - | - | - | - | - | ⏳ *Đang biên soạn* |
+| Tuần | Chủ đề chính (Tiếng Việt) | Bài giảng & Bài đọc (.md / .ipynb) | Slide | Bài tập Lab | Đáp án | Trạng thái |
+|:---:|:---|:---|:---:|:---:|:---:|:---:|
+| **Tuần 01** | **Giới thiệu học phần & ADT** | • [Bài giảng: Giới thiệu Thuật toán và Phân tích Độ phức tạp](lectures/week-01-gioi-thieu-hoc-phan-adt/introduction-1-vn.md)<br>• [Bài giảng: Thuật toán là gì? Nhập môn Phân tích Thuật toán](lectures/week-01-gioi-thieu-hoc-phan-adt/introduction-to-algorithm-1-vn.md) | - | - | - | ✅ *Đã sẵn sàng* |
+| **Tuần 02** | **Độ phức tạp tiệm cận & Big-O** | • [Bài giảng: Độ phức tạp thuật toán và Ký hiệu tiệm cận](lectures/week-02-do-phuc-tap-tiem-can-big-o/complexity-analysis-2-vn.md)<br>• [Bài giảng: Master Theorem, Phương trình truy hồi và Phân tích khấu hao](lectures/week-02-do-phuc-tap-tiem-can-big-o/master-theorem-vn.md) | - | - | - | ✅ *Đã sẵn sàng* |
+| **Tuần 03** | **Tìm kiếm & Sắp xếp cơ bản** | • [Part I — Foundations of Algorithms and Data Structures](lectures/week-03-tim-kiem-sap-xep-co-ban/part-1-vn.md)<br>• [Part II — Algorithmic Approaches](lectures/week-03-tim-kiem-sap-xep-co-ban/part-2-vn.md)<br>• [Part III — Algorithm Analysis](lectures/week-03-tim-kiem-sap-xep-co-ban/part-3-vn.md)<br>• [Part IV — Analysis of Recursive Algorithms](lectures/week-03-tim-kiem-sap-xep-co-ban/part-4-vn.md)<br>• [Bài giảng: Phân tích thuật toán — Bài tập và lời giải](lectures/week-03-tim-kiem-sap-xep-co-ban/problem-set-1-vn.md) | - | - | - | ✅ *Đã sẵn sàng* |
+| **Tuần 04** | Sắp xếp nâng cao & Phân tích | - | - | - | - | ⏳ *Đang biên soạn* |
+| **Tuần 05** | Mảng & Danh sách liên kết (Phần 1) | - | - | - | - | ⏳ *Đang biên soạn* |
+| **Tuần 06** | Danh sách liên kết (Phần 2) | - | - | - | - | ⏳ *Đang biên soạn* |
+| **Tuần 07** | Ngăn xếp (Stack) & Hàng đợi (Queue) | - | - | - | - | ⏳ *Đang biên soạn* |
+| **Tuần 08** | Ứng dụng Stack/Queue & Ôn tập giữa kỳ | - | - | - | - | ⏳ *Đang biên soạn* |
+| **Tuần 09** | Thi giữa kỳ | - | - | - | - | ⏳ *Đang biên soạn* |
+| **Tuần 10** | Cây tổng quát & Cây nhị phân | - | - | - | - | ⏳ *Đang biên soạn* |
+| **Tuần 11** | Cây tìm kiếm nhị phân (BST) | - | - | - | - | ⏳ *Đang biên soạn* |
+| **Tuần 12** | Cây cân bằng AVL | - | - | - | - | ⏳ *Đang biên soạn* |
+| **Tuần 13** | Hàng đợi ưu tiên & Cấu trúc Heap | - | - | - | - | ⏳ *Đang biên soạn* |
+| **Tuần 14** | Bảng băm & Hàm băm | - | - | - | - | ⏳ *Đang biên soạn* |
+| **Tuần 15** | Tổng kết & Ôn tập cuối kỳ | - | - | - | - | ⏳ *Đang biên soạn* |
 
 ---
 

@@ -247,8 +247,8 @@ Sinh viên được hướng dẫn tự cài đặt (implement from scratch) cá
 
 Bảng dưới đây tổng hợp chi tiết tài liệu học tập, bài giảng Notebook, slide, bài tập thực hành, tệp dữ liệu và đáp án cho **15 tuần học**:
 
-| Tuần | Chủ đề chính (Tiếng Việt) | Bài giảng & Bài đọc (.md / .ipynb) | Slide | Bài tập Lab | Đáp án | Tài nguyên (Data / Images) | Trạng thái |
-|:---:|:---|:---|:---:|:---:|:---:|:---:|:---:|
+| Tuần | Chủ đề chính (Tiếng Việt) | Bài giảng & Bài đọc (.md / .ipynb) | Slide | Bài tập Lab | Đáp án | Trạng thái |
+|:---:|:---|:---|:---:|:---:|:---:|:---:|
 """
 
     for item in SYLLABUS_WEEKS:
@@ -264,16 +264,10 @@ Bảng dưới đây tổng hợp chi tiết tài liệu học tập, bài giả
                 theory_parts.append(info["extra_docs_vn"])
             
             theory_str = "<br>".join(theory_parts) if theory_parts else "-"
-            resources_parts = []
-            if info["data"] != "-":
-                resources_parts.append(info["data"])
-            if info["images"] != "-":
-                resources_parts.append(info["images"])
-            res_str = " | ".join(resources_parts) if resources_parts else "-"
 
-            vn_content += f"| **Tuần {w}** | **{topic_vn}** | {theory_str} | {info['slides']} | {info['lab']} | {info['solution']} | {res_str} | ✅ *Đã sẵn sàng* |\n"
+            vn_content += f"| **Tuần {w}** | **{topic_vn}** | {theory_str} | {info['slides']} | {info['lab']} | {info['solution']} | ✅ *Đã sẵn sàng* |\n"
         else:
-            vn_content += f"| **Tuần {w}** | {topic_vn} | - | - | - | - | - | ⏳ *Đang biên soạn* |\n"
+            vn_content += f"| **Tuần {w}** | {topic_vn} | - | - | - | - | ⏳ *Đang biên soạn* |\n"
 
 
     vn_content += """
@@ -330,8 +324,8 @@ Students are guided to implement data structures and algorithms from scratch in 
 
 The table below summarizes lecture notebooks, reading materials, slides, lab assignments, sample datasets, and solutions for all **15 weeks**:
 
-| Week | Main Topic (English) | Lecture & Reading Materials (.md / .ipynb) | Slides | Lab Exercise | Solutions | Resources (Data / Images) | Status |
-|:---:|:---|:---|:---:|:---:|:---:|:---:|:---:|
+| Week | Main Topic (English) | Lecture & Reading Materials (.md / .ipynb) | Slides | Lab Exercise | Solutions | Status |
+|:---:|:---|:---|:---:|:---:|:---:|:---:|
 """
 
     for item in SYLLABUS_WEEKS:
@@ -347,16 +341,10 @@ The table below summarizes lecture notebooks, reading materials, slides, lab ass
                 theory_parts.append(info["extra_docs_en"])
             
             theory_str = "<br>".join(theory_parts) if theory_parts else "-"
-            resources_parts = []
-            if info["data"] != "-":
-                resources_parts.append(info["data"])
-            if info["images"] != "-":
-                resources_parts.append(info["images"])
-            res_str = " | ".join(resources_parts) if resources_parts else "-"
 
-            en_content += f"| **Week {w}** | **{topic_en}** | {theory_str} | {info['slides']} | {info['lab']} | {info['solution']} | {res_str} | ✅ *Ready* |\n"
+            en_content += f"| **Week {w}** | **{topic_en}** | {theory_str} | {info['slides']} | {info['lab']} | {info['solution']} | ✅ *Ready* |\n"
         else:
-            en_content += f"| **Week {w}** | {topic_en} | - | - | - | - | - | ⏳ *In Progress* |\n"
+            en_content += f"| **Week {w}** | {topic_en} | - | - | - | - | ⏳ *In Progress* |\n"
 
     en_content += """
 ---
