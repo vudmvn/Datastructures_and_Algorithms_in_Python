@@ -4,8 +4,7 @@
 
 > **Lecturer:** Dr. Minh Duc Vu (`minhvd@neu.edu.vn`)  
 > **Department:** School of Data Science and Artificial Intelligence – National Economics University (NEU)  
-> **Academic Program:** Data Science in Finance and E-commerce (DSFE / EP15)  
-> **Credits:** 3 Credits (30h Lectures, 15h Labs, 90h Self-study)  
+> **Credits:** 3 Credits (45h Lectures, 22.5h Labs, 90h Self-study)  
 > **Detailed Syllabus:** View [syllabus-en.md](syllabus-en.md)
 
 ---
