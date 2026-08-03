@@ -48,4 +48,4 @@ The table below summarizes lecture notebooks, reading materials, slides, lab ass
 
 ---
 
-> © 2026 Dr. Minh Duc Vu - School of Data Science & Artificial Intelligence (NEU). All rights reserved.
+> © 2026 Dr. Minh Duc Vu & M.Sc. Thanh Hoang Nguyen - School of Data Science & Artificial Intelligence (NEU). All rights reserved.

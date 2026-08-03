@@ -9,7 +9,7 @@ Tài liệu này hướng dẫn chi tiết quy trình chuẩn bị bài giảng,
 Mỗi tuần học sẽ nằm trong một thư mục riêng biệt tại đường dẫn `lectures/week-XX-<ten-chu-de>`:
 
 ```text
-DSAL/
+Datastructures_and_Algorithms_in_Python/
 ├── skills/                         # THƯ MỤC QUẢN LÝ TẤT CẢ CUSTOM SKILLS
 │   ├── python-lecture-prep/        # Skill chuẩn bị bài giảng, lab & quản lý ảnh
 │   │   └── SKILL.md
@@ -104,4 +104,4 @@ Script sẽ tự động:
 ## 🌐 4. Thông tin Repository & Giảng viên
 - **Giảng viên:** TS. Vũ Đức Minh (minhvd@neu.edu.vn) & ThS. Nguyễn Thành Hoàng (hoangnt@neu.edu.vn)
 - **Học phần:** Cấu trúc dữ liệu và Giải thuật với Python (DSAI1002) - ĐH Kinh tế Quốc dân
-- **GitHub Repository:** [vudmvn/DSAL](https://github.com/vudmvn/DSAL)
+- **GitHub Repository:** [vudmvn/Datastructures_and_Algorithms_in_Python](https://github.com/vudmvn/Datastructures_and_Algorithms_in_Python)
