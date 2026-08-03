@@ -43,10 +43,10 @@ Khi tạo, nhúng hoặc biên dịch tài liệu, Agent **BẮT BUỘC** thực
 ### 2. Định dạng & Đặt tên tệp hình ảnh
 - Đặt tên tệp ảnh bằng chữ cái thường, không dấu, nối bằng dấu gạch ngang `-` (VD: `linked-list-structure.png`, `binary-tree-traversal.png`).
 
-### 3. Quy tắc Không Ghi đè & Tự động Đổi tên Ảnh Trùng (No-Overwrite & Auto-Rename Rule)
+### 3. Quy tắc Bảo vệ Ảnh, Không Ghi đè & Tự động Đổi tên (Safe Image Preservation & Auto-Rename Rule)
 - **TUYỆT ĐỐI KHÔNG XÓA HOẶC GHI ĐÈ** lên các tệp hình ảnh đã tồn tại trong thư mục `images/`.
-- Khi chèn hoặc sinh một hình ảnh mới, Agent phải kiểm tra xem tên tệp đã tồn tại trong thư mục `images/` hay chưa.
-- **Tự động đổi tên ảnh trùng (Auto-rename on collision):** Nếu tên tệp dự định lưu đã tồn tại (ví dụ `tree.png`), Agent sẽ tự động bổ sung số thứ tự tăng dần thành `tree-1.png`, `tree-2.png`, ... hoặc gán nhãn mô tả phân biệt.
+- Áp dụng Skill chuyên dụng `skills/safe-image-insert/SKILL.md` và script helper `scripts/safe_insert_image.py` cho mọi thao tác thêm hình ảnh.
+- **Tự động đổi tên ảnh trùng (Auto-rename on collision):** Nếu tên tệp dự định lưu đã tồn tại (ví dụ `tree.png`), Agent sẽ tự động bổ sung số thứ tự tăng dần thành `tree-1.png`, `tree-2.png`, ... giữ nguyên 100% tệp ảnh cũ.
 
 ### 4. Quy chuẩn Căn giữa Hình ảnh (Image Centering Mandatory Rule)
 - **TẤT CẢ HÌNH ẢNH** xuất hiện trong các tệp Markdown (`README.md`, `slides.md`, các bài đọc `.md`) và cell Markdown của Jupyter Notebook (`.ipynb`) **PHẢI ĐƯỢC CĂN GIỮA (CENTERED)** để tạo giao diện bài giảng chuyên nghiệp.
