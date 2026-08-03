@@ -152,20 +152,31 @@ def scan_lectures_dir(lectures_dir):
                 week_key = parts[1] # e.g. "01", "02"
                 files = os.listdir(folder_path)
 
-                # Kiểm tra từng loại tài nguyên
-                lecture_file = os.path.join(folder_path, "lecture.ipynb")
-                slides_file = os.path.join(folder_path, "slides.md")
-                lab_file = os.path.join(folder_path, "lab_exercise.ipynb")
-                solution_file = os.path.join(folder_path, "lab_solution.ipynb")
-                data_dir_path = os.path.join(folder_path, "data")
-                images_dir_path = os.path.join(folder_path, "images")
-                
-                notebook_link = f"[📘 Notebook](lectures/{folder}/lecture.ipynb)" if is_valid_content_file(lecture_file, 2000) else "-"
-                slides_link = f"[📊 Slides](lectures/{folder}/slides.md)" if is_valid_content_file(slides_file, 1500) else "-"
-                lab_link = f"[💻 Lab](lectures/{folder}/lab_exercise.ipynb)" if is_valid_content_file(lab_file, 1500) else "-"
-                solution_link = f"[🔑 Đáp án / Solution](lectures/{folder}/lab_solution.ipynb)" if is_valid_content_file(solution_file, 1500) else "-"
-                data_link = f"[📁 Data](lectures/{folder}/data/)" if is_non_empty_dir(data_dir_path) else "-"
-                images_link = f"[🖼️ Images](lectures/{folder}/images/)" if is_non_empty_dir(images_dir_path) else "-"
+                # Dynamic scanning for real files (size >= 2000 bytes for notebooks)
+                notebook_links = []
+                lab_links = []
+                solution_links = []
+                slide_links = []
+
+                for f in sorted(files):
+                    if f.endswith(".ipynb"):
+                        full_p = os.path.join(folder_path, f)
+                        if is_valid_content_file(full_p, 2000):
+                            clean_name = f.replace(".ipynb", "")
+                            link_html = f'<a href="lectures/{folder}/{f}" target="_blank">{clean_name}</a>'
+                            if "solution" in f or "dap_an" in f:
+                                solution_links.append(f'🔑 {link_html}')
+                            elif "practice" in f or "exercise" in f or "lab" in f:
+                                lab_links.append(f'💻 {link_html}')
+                            else:
+                                notebook_links.append(f'📘 {link_html}')
+                    elif f.endswith(".pdf"):
+                        slide_links.append(f'<a href="lectures/{folder}/{f}" target="_blank">PDF ({f.replace(".pdf", "")})</a>')
+
+                notebook_link = "<br>".join(notebook_links) if notebook_links else "-"
+                slides_link = "<br>".join(slide_links) if slide_links else "-"
+                lab_link = "<br>".join(lab_links) if lab_links else "-"
+                solution_link = "<br>".join(solution_links) if solution_links else "-"
 
                 # Tìm các bài đọc bổ sung dạng .md (ngoại trừ README.md, README-en.md, slides.md, slides-en.md)
                 extra_mds_vn = []
@@ -199,8 +210,6 @@ def scan_lectures_dir(lectures_dir):
                     "slides": slides_link,
                     "lab": lab_link,
                     "solution": solution_link,
-                    "data": data_link,
-                    "images": images_link,
                     "extra_docs_vn": extra_docs_vn_str,
                     "extra_docs_en": extra_docs_en_str
                 }

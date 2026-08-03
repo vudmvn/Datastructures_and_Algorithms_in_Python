@@ -16,19 +16,19 @@ Mỗi bài giảng theo từng phần/tuần (hoặc chủ đề) trong reposito
 ```text
 lectures/
 └── week-XX-<ten-chu-de>/
-    ├── README.md                  # Tóm tắt lý thuyết, mục tiêu bài học & chỉ dẫn (dùng link images/ + căn giữa ảnh)
-    ├── slides.md                  # Slide bài giảng dạng Markdown (Marp presentation)
+    ├── introduction-1-vn.md       # Bài giảng chi tiết (.md tiếng Việt)
+    ├── introduction-1-en.md       # Bài giảng chi tiết (.md tiếng Anh)
     ├── weekXX_lecture_1.tex       # Tệp nguồn Slide LaTeX Beamer (hỗ trợ phông chữ Việt DejaVu)
     ├── weekXX_lecture_1.pdf       # Tệp Slide PDF đã biên dịch hoàn chỉnh
-    ├── lecture.ipynb              # Notebook giảng dạy chính (Lý thuyết + Cài đặt Code từ đầu)
-    ├── lab_exercise.ipynb         # Bài tập thực hành cho sinh viên (Skeleton Code)
-    ├── lab_solution.ipynb         # Lời giải chi tiết dành cho giảng viên
-    ├── data/                      # Dữ liệu mẫu phục vụ bài giảng & thực hành
+    ├── data/                      # Dữ liệu mẫu thực tế phục vụ bài giảng (nếu có)
     │   └── dataset.csv
     └── images/                    # THƯ MỤC CHỨA HÌNH ẢNH MINH HỌA CỦA BÀI GIẢNG
         ├── data_structure.png
         └── algorithm_flow.png
 ```
+
+> ⚠️ **Quy tắc Nghiêm ngặt về Notebook (`.ipynb`):**  
+> **TUYỆT ĐỐI KHÔNG TỰ ĐỘNG TẠO CÁC FILE NOTEBOOK RỖNG/TEMPLATE DUMMY (`lecture.ipynb`, `lab_exercise.ipynb`, `lab_solution.ipynb`).** Chỉ khởi tạo tệp Notebook khi có nội dung mã nguồn thực tế và được yêu cầu cụ thể.
 
 ---
 
