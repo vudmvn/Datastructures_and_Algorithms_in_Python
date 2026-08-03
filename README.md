@@ -2,7 +2,7 @@
 
 🌐 **Ngôn ngữ / Language:** 🇻🇳 **Tiếng Việt** | [🇬🇧 English Version (README-en.md)](README-en.md)
 
-> **Giảng viên:** TS. Vũ Đức Minh (`minhvd@neu.edu.vn`) & ThS. Nguyễn Thành Hoàng (`hoangnt@neu.edu.vn`)  
+> **Giảng viên:** TS. Vũ Đức Minh (`minhvd@neu.edu.vn`)  
 > **Đơn vị phụ trách:** Khoa Khoa học dữ liệu và Trí tuệ nhân tạo – Trường Đại học Kinh tế Quốc dân (NEU)  
 > **Chương trình đào tạo:** Data Science in Finance and E-commerce (DSFE / EP15)  
 > **Số tín chỉ:** 3 Tín chỉ (30h lý thuyết, 15h thực hành, 90h tự học)  
@@ -48,4 +48,4 @@ Bảng dưới đây tổng hợp chi tiết tài liệu học tập, bài giả
 
 ---
 
-> © 2026 TS. Vũ Đức Minh & ThS. Nguyễn Thành Hoàng - Khoa Khoa học dữ liệu & Trí tuệ nhân tạo (NEU). Bản quyền tài liệu thuộc về tác giả.
+> © 2026 TS. Vũ Đức Minh - Khoa Khoa học dữ liệu & Trí tuệ nhân tạo (NEU). Bản quyền tài liệu thuộc về tác giả.

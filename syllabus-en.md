@@ -18,7 +18,7 @@
 ## 2. Instructors
 
 - **Dr. Minh Duc Vu** – `minhvd@neu.edu.vn`
-- **M.Sc. Thanh Hoang Nguyen** – `hoangnt@neu.edu.vn`
+
 
 ## 3. Course Description
 

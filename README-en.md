@@ -2,7 +2,7 @@
 
 🌐 **Language:** [🇻🇳 Vietnamese Version (README.md)](README.md) | 🇬🇧 **English**
 
-> **Lecturers:** Dr. Minh Duc Vu (`minhvd@neu.edu.vn`) & M.Sc. Thanh Hoang Nguyen (`hoangnt@neu.edu.vn`)  
+> **Lecturer:** Dr. Minh Duc Vu (`minhvd@neu.edu.vn`)  
 > **Department:** School of Data Science and Artificial Intelligence – National Economics University (NEU)  
 > **Academic Program:** Data Science in Finance and E-commerce (DSFE / EP15)  
 > **Credits:** 3 Credits (30h Lectures, 15h Labs, 90h Self-study)  
@@ -48,4 +48,4 @@ The table below summarizes lecture notebooks, reading materials, slides, lab ass
 
 ---
 
-> © 2026 Dr. Minh Duc Vu & M.Sc. Thanh Hoang Nguyen - School of Data Science & Artificial Intelligence (NEU). All rights reserved.
+> © 2026 Dr. Minh Duc Vu - School of Data Science & Artificial Intelligence (NEU). All rights reserved.

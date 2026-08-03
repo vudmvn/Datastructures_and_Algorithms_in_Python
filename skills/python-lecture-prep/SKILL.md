@@ -5,7 +5,7 @@ description: Quy trình và công cụ hỗ trợ chuẩn bị bài giảng, tà
 
 # Skill: Hỗ trợ Soạn Bài giảng, Quản lý Slide TeX/PDF, Hình ảnh & Xuất bản GitHub - Cấu trúc dữ liệu và Giải thuật với Python (DSAI1002)
 
-Skill này được thiết kế riêng cho học phần **DSAI1002 – Cấu trúc dữ liệu và Giải thuật với Python** (Giảng viên: TS. Vũ Đức Minh & ThS. Nguyễn Thành Hoàng, ĐH Kinh tế Quốc dân).
+Skill này được thiết kế riêng cho học phần **DSAI1002 – Cấu trúc dữ liệu và Giải thuật với Python** (Giảng viên: TS. Vũ Đức Minh, ĐH Kinh tế Quốc dân).
 
 ---
 

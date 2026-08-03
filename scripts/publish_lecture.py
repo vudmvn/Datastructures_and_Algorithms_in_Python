@@ -221,7 +221,7 @@ def generate_portal_readmes():
 
 🌐 **Ngôn ngữ / Language:** 🇻🇳 **Tiếng Việt** | [🇬🇧 English Version (README-en.md)](README-en.md)
 
-> **Giảng viên:** TS. Vũ Đức Minh (`minhvd@neu.edu.vn`) & ThS. Nguyễn Thành Hoàng (`hoangnt@neu.edu.vn`)  
+> **Giảng viên:** TS. Vũ Đức Minh (`minhvd@neu.edu.vn`)  
 > **Đơn vị phụ trách:** Khoa Khoa học dữ liệu và Trí tuệ nhân tạo – Trường Đại học Kinh tế Quốc dân (NEU)  
 > **Chương trình đào tạo:** Data Science in Finance and E-commerce (DSFE / EP15)  
 > **Số tín chỉ:** 3 Tín chỉ (30h lý thuyết, 15h thực hành, 90h tự học)  
@@ -279,7 +279,7 @@ Bảng dưới đây tổng hợp chi tiết tài liệu học tập, bài giả
     vn_content += """
 ---
 
-> © 2026 TS. Vũ Đức Minh & ThS. Nguyễn Thành Hoàng - Khoa Khoa học dữ liệu & Trí tuệ nhân tạo (NEU). Bản quyền tài liệu thuộc về tác giả.
+> © 2026 TS. Vũ Đức Minh - Khoa Khoa học dữ liệu & Trí tuệ nhân tạo (NEU). Bản quyền tài liệu thuộc về tác giả.
 """
 
     with open(readme_vn_path, "w", encoding="utf-8") as f:
@@ -293,7 +293,7 @@ Bảng dưới đây tổng hợp chi tiết tài liệu học tập, bài giả
 
 🌐 **Language:** [🇻🇳 Vietnamese Version (README.md)](README.md) | 🇬🇧 **English**
 
-> **Lecturers:** Dr. Minh Duc Vu (`minhvd@neu.edu.vn`) & M.Sc. Thanh Hoang Nguyen (`hoangnt@neu.edu.vn`)  
+> **Lecturer:** Dr. Minh Duc Vu (`minhvd@neu.edu.vn`)  
 > **Department:** School of Data Science and Artificial Intelligence – National Economics University (NEU)  
 > **Academic Program:** Data Science in Finance and E-commerce (DSFE / EP15)  
 > **Credits:** 3 Credits (30h Lectures, 15h Labs, 90h Self-study)  
@@ -350,7 +350,7 @@ The table below summarizes lecture notebooks, reading materials, slides, lab ass
     en_content += """
 ---
 
-> © 2026 Dr. Minh Duc Vu & M.Sc. Thanh Hoang Nguyen - School of Data Science & Artificial Intelligence (NEU). All rights reserved.
+> © 2026 Dr. Minh Duc Vu - School of Data Science & Artificial Intelligence (NEU). All rights reserved.
 """
 
     with open(readme_en_path, "w", encoding="utf-8") as f:

@@ -85,7 +85,7 @@ footer: 'Tuần {week_str}: {title}'
 # Tuần {week_str}: {title}
 
 **Học phần:** DSAI1002 – Cấu trúc dữ liệu và Giải thuật với Python  
-**Giảng viên:** TS. Vũ Đức Minh & ThS. Nguyễn Thành Hoàng  
+**Giảng viên:** TS. Vũ Đức Minh  
 **Khoa:** Khoa học dữ liệu & Trí tuệ nhân tạo (NEU)
 
 ---
@@ -121,7 +121,7 @@ footer: 'Tuần {week_str}: {title}'
             "source": [
                 f"# Bài giảng Tuần {week_str}: {title}\n",
                 "**Học phần:** DSAI1002 - Cấu trúc dữ liệu và Giải thuật với Python  \n",
-                "**Giảng viên:** TS. Vũ Đức Minh & ThS. Nguyễn Thành Hoàng (NEU)"
+                "**Giảng viên:** TS. Vũ Đức Minh (NEU)"
             ]
         },
         {

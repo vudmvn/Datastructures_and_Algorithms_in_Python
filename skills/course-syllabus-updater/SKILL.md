@@ -5,7 +5,7 @@ description: Skill chuyên tự động tổng hợp, cập nhật và đồng b
 
 # Skill: Cập nhật File Markdown Giới thiệu Môn học & Cổng thông tin Song ngữ (Bilingual Course Portal Updater)
 
-Skill này hỗ trợ tự động duy trì và cập nhật tệp **`README.md`** (Trang chủ Tiếng Việt có dấu chuẩn) và **`README-en.md`** (Phiên bản Tiếng Anh Song ngữ) cho môn **Cấu trúc dữ liệu và Giải thuật với Python (DSAI1002)** - Giảng viên: TS. Vũ Đức Minh & ThS. Nguyễn Thành Hoàng (ĐH Kinh tế Quốc dân).
+Skill này hỗ trợ tự động duy trì và cập nhật tệp **`README.md`** (Trang chủ Tiếng Việt có dấu chuẩn) và **`README-en.md`** (Phiên bản Tiếng Anh Song ngữ) cho môn **Cấu trúc dữ liệu và Giải thuật với Python (DSAI1002)** - Giảng viên: TS. Vũ Đức Minh (ĐH Kinh tế Quốc dân).
 
 ---
 

@@ -18,7 +18,7 @@
 ## 2. Giảng viên
 
 - **TS. Vũ Đức Minh** – `minhvd@neu.edu.vn`
-- **ThS. Nguyễn Thành Hoàng** – `hoangnt@neu.edu.vn`
+
 
 ## 3. Mô tả học phần
 

@@ -11,7 +11,7 @@ footer: 'Tuần 03: Tìm kiếm & Sắp xếp cơ bản'
 **Cập nhật lần cuối:** 3 tháng 8 năm 2026
 
 **Học phần:** DSAI1002 – Cấu trúc dữ liệu và Giải thuật với Python  
-**Giảng viên:** TS. Vũ Đức Minh & ThS. Nguyễn Thành Hoàng  
+**Giảng viên:** TS. Vũ Đức Minh  
 **Khoa:** Khoa học dữ liệu & Trí tuệ nhân tạo (NEU)
 
 ---
