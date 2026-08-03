@@ -48,29 +48,4 @@ The table below summarizes lecture notebooks, reading materials, slides, lab ass
 
 ---
 
-## 🛠️ 3. Environment & Installation Setup Guide
-
-### 1. Python & Anaconda Installation
-We recommend installing [Anaconda Distribution](https://www.anaconda.com/download) (Python 3.10+).
-
-### 2. Dependency Package Installation
-Open **Anaconda Prompt** or **Terminal** and execute:
-```bash
-pip install numpy pandas matplotlib seaborn jupyterlab
-```
-
-### 3. Launching JupyterLab
-```bash
-jupyter lab
-```
-
----
-
-## 📖 4. Workflow & Course Guidelines
-
-- 📋 **Detailed Syllabus Document:** View [syllabus-en.md](syllabus-en.md)
-- ⚙️ **Lecture Preparation & Image Workflow:** View [QUY_TRINH_SOAN_BAI_GIANG.md](QUY_TRINH_SOAN_BAI_GIANG.md)
-
----
-
 > © 2026 Dr. Minh Duc Vu & M.Sc. Thanh Hoang Nguyen - School of Data Science & Artificial Intelligence (NEU). All rights reserved.

@@ -279,31 +279,6 @@ Bảng dưới đây tổng hợp chi tiết tài liệu học tập, bài giả
     vn_content += """
 ---
 
-## 🛠️ 3. Hướng dẫn Môi trường & Cài đặt (Setup Guide)
-
-### 1. Cài đặt Python & Anaconda
-Khuyến nghị cài đặt bản [Anaconda Distribution](https://www.anaconda.com/download) (Python 3.10+).
-
-### 2. Cài đặt các thư viện phụ thuộc
-Mở **Anaconda Prompt** hoặc **Terminal** và chạy lệnh:
-```bash
-pip install numpy pandas matplotlib seaborn jupyterlab
-```
-
-### 3. Mở JupyterLab làm việc
-```bash
-jupyter lab
-```
-
----
-
-## 📖 4. Tài liệu Quy trình & Quản lý Bài giảng
-
-- 📋 **Đề cương chi tiết học phần:** Xem tệp [syllabus-vn.md](syllabus-vn.md)
-- ⚙️ **Quy trình soạn bài giảng & Quản lý ảnh:** Xem tệp [QUY_TRINH_SOAN_BAI_GIANG.md](QUY_TRINH_SOAN_BAI_GIANG.md)
-
----
-
 > © 2026 TS. Vũ Đức Minh & ThS. Nguyễn Thành Hoàng - Khoa Khoa học dữ liệu & Trí tuệ nhân tạo (NEU). Bản quyền tài liệu thuộc về tác giả.
 """
 
@@ -373,31 +348,6 @@ The table below summarizes lecture notebooks, reading materials, slides, lab ass
             en_content += f"| **Week {w}** | {topic_en} | - | - | - | - | - | ⏳ *In Progress* |\n"
 
     en_content += """
----
-
-## 🛠️ 3. Environment & Installation Setup Guide
-
-### 1. Python & Anaconda Installation
-We recommend installing [Anaconda Distribution](https://www.anaconda.com/download) (Python 3.10+).
-
-### 2. Dependency Package Installation
-Open **Anaconda Prompt** or **Terminal** and execute:
-```bash
-pip install numpy pandas matplotlib seaborn jupyterlab
-```
-
-### 3. Launching JupyterLab
-```bash
-jupyter lab
-```
-
----
-
-## 📖 4. Workflow & Course Guidelines
-
-- 📋 **Detailed Syllabus Document:** View [syllabus-en.md](syllabus-en.md)
-- ⚙️ **Lecture Preparation & Image Workflow:** View [QUY_TRINH_SOAN_BAI_GIANG.md](QUY_TRINH_SOAN_BAI_GIANG.md)
-
 ---
 
 > © 2026 Dr. Minh Duc Vu & M.Sc. Thanh Hoang Nguyen - School of Data Science & Artificial Intelligence (NEU). All rights reserved.

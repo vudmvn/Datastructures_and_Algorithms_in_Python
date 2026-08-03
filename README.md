@@ -48,29 +48,4 @@ Bảng dưới đây tổng hợp chi tiết tài liệu học tập, bài giả
 
 ---
 
-## 🛠️ 3. Hướng dẫn Môi trường & Cài đặt (Setup Guide)
-
-### 1. Cài đặt Python & Anaconda
-Khuyến nghị cài đặt bản [Anaconda Distribution](https://www.anaconda.com/download) (Python 3.10+).
-
-### 2. Cài đặt các thư viện phụ thuộc
-Mở **Anaconda Prompt** hoặc **Terminal** và chạy lệnh:
-```bash
-pip install numpy pandas matplotlib seaborn jupyterlab
-```
-
-### 3. Mở JupyterLab làm việc
-```bash
-jupyter lab
-```
-
----
-
-## 📖 4. Tài liệu Quy trình & Quản lý Bài giảng
-
-- 📋 **Đề cương chi tiết học phần:** Xem tệp [syllabus-vn.md](syllabus-vn.md)
-- ⚙️ **Quy trình soạn bài giảng & Quản lý ảnh:** Xem tệp [QUY_TRINH_SOAN_BAI_GIANG.md](QUY_TRINH_SOAN_BAI_GIANG.md)
-
----
-
 > © 2026 TS. Vũ Đức Minh & ThS. Nguyễn Thành Hoàng - Khoa Khoa học dữ liệu & Trí tuệ nhân tạo (NEU). Bản quyền tài liệu thuộc về tác giả.
