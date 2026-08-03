@@ -284,6 +284,7 @@ def prefix_sums(arr):
 - Total Space Complexity: $O(n) + O(n) = O(n)$.
 - Auxiliary Space: $O(n)$.
 
+
 ---
 
 ## 11. References

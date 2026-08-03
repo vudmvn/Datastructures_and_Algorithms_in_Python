@@ -1,97 +1,117 @@
 ---
-title: "Lecture: Master Theorem, Recurrence Relations and Amortized Analysis"
+title: "Lecture: Master Theorem, Recurrence Relations, and Amortized Analysis"
 course: "Data Structures and Algorithmic Thinking with Python"
 language: "en"
 version: "1.0"
 ---
 
-# Lecture: Master Theorem, Recurrence Relations and Amortized Analysis
+# Lecture: Master Theorem, Recurrence Relations, and Amortized Analysis
 
 **Last updated:** August 03, 2026
 
 ## 1. Learning Objectives and Prerequisites
 
-Many recursive algorithms cannot be analyzed simply by counting loop iterations. Their running time is often expressed by a **recurrence relation**, where the cost of a problem of size `n` is expressed in terms of the cost of one or more smaller subproblems.
+Many recursive algorithms cannot be analyzed merely by directly counting loops. Their running times are often described by a **recurrence relation**, in which the cost of a problem of size `n` is expressed in terms of the cost of one or more smaller subproblems.
 
 After this lesson, learners will be able to:
 
-- Formulate recurrence relations for recursive and divide-and-conquer algorithms;
-- Apply the Master Theorem for recurrences of the form `T(n) = aT(n/b) + f(n)`;
-- Use the extended form when `f(n) = Θ(n^k log^p n)`;
-- Identify cases where the Master Theorem does not apply;
-- Analyze subtract-and-conquer recurrences;
-- Use the substitution method (guess and prove by mathematical induction);
-- Distinguish amortized analysis from worst-case and average-case analysis.
+- set up recurrence relations for recursive and divide-and-conquer algorithms;
+- apply the Master Theorem to recurrences of the form `T(n) = aT(n/b) + f(n)`;
+- use the extended form when `f(n) = Θ(n^k log^p n)`;
+- identify cases where the Master Theorem cannot be applied;
+- analyze subtract-and-conquer recurrences;
+- use the guess-and-prove method with mathematical induction;
+- distinguish amortized analysis from worst-case analysis and average-case analysis.
 
-Prerequisites include recursion, logarithms, asymptotic notation `O`, `Ω`, `Θ`, geometric series, recursion trees, and mathematical induction.
+Prerequisites include recursion, logarithms, asymptotic notations `O`, `Ω`, `Θ`, geometric series, recursion trees, and mathematical induction.
 
 ---
 
 ## 2. From Divide-and-Conquer Algorithms to Recurrence Relations
 
-A divide-and-conquer algorithm typically consists of three steps:
+Divide-and-conquer algorithms usually consist of three steps:
 
-1. **Divide:** Partition the original problem into smaller subproblems;
-2. **Conquer:** Solve the subproblems recursively;
-3. **Combine:** Merge the subproblem solutions to solve the original problem.
+1. **Divide:** divide the original problem into smaller subproblems;
+2. **Conquer:** solve the subproblems, typically recursively;
+3. **Combine:** combine the solutions of the subproblems to form a solution for the original problem.
 
-If a problem of size `n` is divided into `a` subproblems, each of size approximately `n/b`, and non-recursive work takes `f(n)`, the running time follows `T(n) = aT(n/b) + f(n)`.
+If a problem of size `n` is divided into `a` subproblems, each of size approximately `n/b`, and the cost outside of recursive calls is `f(n)`, then the running time generally takes the form `T(n) = aT(n/b) + f(n)`.
 
-Here, `a` is the number of subproblems, `n/b` is the size of each subproblem, and `f(n)` is the work done in dividing the problem and combining results.
+Here, `a` is the number of subproblems, `n/b` is the size of each subproblem, and `f(n)` is the cost of dividing the problem, combining results, and performing other non-recursive work.
 
 ### Example: Merge Sort
 
-Merge Sort divides an array of size `n` into two halves, recursively sorts each half, and merges the sorted halves in linear time: `T(n) = 2T(n/2) + Θ(n)`, yielding `T(n) = Θ(n log n)`.
+Merge Sort divides an array of size `n` into two halves, recursively sorts each half, and merges the two sorted sequences in linear time. Therefore, `T(n) = 2T(n/2) + Θ(n)`, resulting in `T(n) = Θ(n log n)`.
 
 ### Example: Binary Search
 
-Binary Search proceeds on only one half of the array with constant work per step: `T(n) = T(n/2) + Θ(1)`, yielding `T(n) = Θ(log n)`.
+Binary Search only continues on one half of the array and performs a constant amount of work at each step. Thus, `T(n) = T(n/2) + Θ(1)`, yielding `T(n) = Θ(log n)`.
+
+A recurrence relation only describes the self-similar structure of an algorithm. The goal of analysis is to determine the growth rate of `T(n)`. Common tools include recursion trees, substitution and proof by induction, Master Theorem, Akra–Bazzi theorem, and direct evaluation via summations.
 
 ---
 
-## 3. Master Theorem for Divide-and-Conquer Recurrences
+## 3. Master Theorem for divide-and-conquer recurrences
 
-For recurrences `T(n) = aT(n/b) + f(n)` with `a ≥ 1`, `b > 1`, and non-negative `f(n)`:
+Consider the recurrence `T(n) = aT(n/b) + f(n)`, where `a ≥ 1`, `b > 1`, and `f(n)` is a non-negative function for sufficiently large `n`.
 
-Compare `f(n)` against `n^(log_b a)` (the work created by recursive branching).
+The key quantity to compare is `n^(log_b a)`. This is the growth rate representing the total work generated by the recursive branching structure.
 
-### Case 1: Recursion Dominates
+### Case 1: Recursive work dominates
 
 If there exists `ε > 0` such that `f(n) = O(n^(log_b a - ε))`, then `T(n) = Θ(n^(log_b a))`.
 
-**Example:** For `T(n) = 8T(n/2) + n²`, we have `n^(log₂8) = n³`. Since `n²` is polynomially smaller than `n³`, `T(n) = Θ(n³)`.
+In this case, the work generated by recursive calls dominates the overall running time.
 
-### Case 2: Balanced Work
+**Example.** For `T(n) = 8T(n/2) + n²`, we have `n^(log₂8) = n³`. Since `n²` is polynomially smaller than `n³`, it follows that `T(n) = Θ(n³)`.
+
+### Case 2: The two components are balanced
 
 If `f(n) = Θ(n^(log_b a) log^k n)` for `k ≥ 0`, then `T(n) = Θ(n^(log_b a) log^(k+1) n)`.
 
-**Example:** For `T(n) = 2T(n/2) + n`, `n^(log₂2) = n`. The components are balanced, so `T(n) = Θ(n log n)`.
+**Example.** For `T(n) = 2T(n/2) + n`, we have `n^(log₂2) = n`. The two components have the same order, so `T(n) = Θ(n log n)`.
 
-### Case 3: Non-Recursive Work Dominates
+### Case 3: Non-recursive work dominates
 
-If there exists `ε > 0` such that `f(n) = Ω(n^(log_b a + ε))` and the regularity condition `a f(n/b) ≤ c f(n)` holds for constant `c < 1`, then `T(n) = Θ(f(n))`.
+If there exists `ε > 0` such that `f(n) = Ω(n^(log_b a + ε))` and the regularity condition `a f(n/b) ≤ c f(n)` holds for some constant `c < 1` and sufficiently large `n`, then `T(n) = Θ(f(n))`.
 
-**Example:** For `T(n) = 2T(n/2) + n²`, `n^(log₂2) = n`, while `f(n) = n²`. Regularity holds since `2(n/2)² = n²/2`. Thus `T(n) = Θ(n²)`.
+**Example.** For `T(n) = 2T(n/2) + n²`, we have `n^(log₂2) = n`, while `f(n) = n²`. The regularity condition is satisfied because `2(n/2)² = n²/2`. Therefore `T(n) = Θ(n²)`.
 
 ---
 
-## 4. Extended Master Theorem for `f(n) = Θ(n^k log^p n)`
+## 4. Extended form with `f(n) = Θ(n^k log^p n)`
 
-For `T(n) = aT(n/b) + Θ(n^k log^p n)` with `a > 1`, `b > 1`, `k ≥ 0`, and real `p`:
+A common form in exercises is `T(n) = aT(n/b) + Θ(n^k log^p n)`, where `a > 1`, `b > 1`, `k ≥ 0`, and `p` is a real number.
 
-Compare `a` with `b^k`:
+Instead of comparing `f(n)` directly with `n^(log_b a)`, one can compare `a` with `b^k`.
 
 ### When `a > b^k`
-Recursion dominates: `T(n) = Θ(n^(log_b a))`.
+
+The recursive part dominates and `T(n) = Θ(n^(log_b a))`.
+
+Example: for `T(n) = 3T(n/2) + n`, we have `a = 3`, `b^k = 2`, so `T(n) = Θ(n^(log₂3))`.
 
 ### When `a = b^k`
-Balanced case, depending on `p`:
-- If `p > -1`, `T(n) = Θ(n^k log^(p+1) n)`.
-- If `p = -1`, `T(n) = Θ(n^k log log n)`.
-- If `p < -1`, `T(n) = Θ(n^k)`.
+
+This is the balanced case. The result depends on `p`.
+
+- If `p > -1`, then `T(n) = Θ(n^k log^(p+1) n)`.
+- If `p = -1`, then `T(n) = Θ(n^k log log n)`.
+- If `p < -1`, then `T(n) = Θ(n^k)`.
+
+Representative examples:
+
+- `T(n) = 2T(n/2) + n log n` has solution `Θ(n log² n)`;
+- `T(n) = 2T(n/2) + n/log n` has solution `Θ(n log log n)`;
+- `T(n) = 2T(n/2) + n/log² n` has solution `Θ(n)`.
 
 ### When `a < b^k`
-If `p ≥ 0`, non-recursive work dominates: `T(n) = Θ(n^k log^p n)`.
+
+If `p ≥ 0`, the non-recursive work dominates and `T(n) = Θ(n^k log^p n)`.
+
+If `p < 0`, the upper bound is typically `O(n^k)`. Concluding `Θ` requires checking the specific conditions of the recurrence and theorem being applied.
+
+### Summary Table
 
 | Condition | Result |
 |---|---|
@@ -100,26 +120,90 @@ If `p ≥ 0`, non-recursive work dominates: `T(n) = Θ(n^k log^p n)`.
 | `a = b^k`, `p = -1` | `Θ(n^k log log n)` |
 | `a = b^k`, `p < -1` | `Θ(n^k)` |
 | `a < b^k`, `p ≥ 0` | `Θ(n^k log^p n)` |
+| `a < b^k`, `p < 0` | typically has upper bound `O(n^k)`; further verification required for tight bound |
 
 ---
 
-## 5. Master Theorem Recurrence Examples
+## 5. Procedure for Applying the Master Theorem
 
-| No. | Recurrence | Result | Note |
+When encountering a recurrence `T(n) = aT(n/b) + f(n)`, you can follow four steps.
+
+**Step 1. Identify `a`, `b`, and `f(n)`.** For example, for `T(n) = 4T(n/2) + n²`, we have `a = 4`, `b = 2`, and `f(n) = n²`.
+
+**Step 2. Compute `n^(log_b a)`.** In the example above, `n^(log₂4) = n²`.
+
+**Step 3. Compare `f(n)` with `n^(log_b a)`.** The two functions have the same order of growth, so it falls into the balanced case.
+
+**Step 4. Conclude.** Since `f(n) = Θ(n²)`, it follows that `T(n) = Θ(n² log n)`.
+
+A common mistake is looking only at the number of subproblems while ignoring `f(n)`. Another mistake is applying the Master Theorem when `a` is not a constant, subproblem sizes are non-uniform, or `f(n)` does not satisfy the required conditions.
+
+---
+
+## 6. Representative Master Theorem Examples
+
+The following table summarizes several typical recurrences.
+
+| No. | Recurrence | Result | Remarks |
 |---|---|---|---|
 | 1 | `T(n) = 3T(n/2) + n²` | `Θ(n²)` | Non-recursive work dominates |
 | 2 | `T(n) = 4T(n/2) + n²` | `Θ(n² log n)` | Balanced case |
 | 3 | `T(n) = T(n/2) + n²` | `Θ(n²)` | Non-recursive work dominates |
-| 4 | `T(n) = 16T(n/4) + n` | `Θ(n²)` | Recursion dominates |
-| 5 | `T(n) = 2T(n/2) + n log n` | `Θ(n log² n)` | Balanced with `p = 1` |
-| 6 | `T(n) = 2T(n/2) + n/log n` | `Θ(n log log n)` | Boundary case `p = -1` |
-| 7 | `T(n) = 3T(n/2) + n` | `Θ(n^(log₂3))` | Recursion dominates |
+| 4 | `T(n) = 2^n T(n/2) + n^n` | Cannot apply directly | `a` is not a constant |
+| 5 | `T(n) = 16T(n/4) + n` | `Θ(n²)` | Recursive work dominates |
+| 6 | `T(n) = 2T(n/2) + n log n` | `Θ(n log² n)` | Balanced with `p = 1` |
+| 7 | `T(n) = 2T(n/2) + n/log n` | `Θ(n log log n)` | Boundary case `p = -1` |
+| 8 | `T(n) = 2T(n/4) + n^0.51` | `Θ(n^0.51)` | Non-recursive work dominates |
+| 9 | `T(n) = 0.5T(n/2) + 1/n` | Cannot apply standard form | `a < 1` |
+| 10 | `T(n) = 6T(n/3) + n² log n` | `Θ(n² log n)` | Non-recursive work dominates |
+| 11 | `T(n) = 64T(n/8) - n² log n` | Cannot apply directly | `f(n)` is not positive |
+| 12 | `T(n) = 7T(n/3) + n²` | `Θ(n²)` | Non-recursive work dominates |
+| 13 | `T(n) = 4T(n/2) + log n` | `Θ(n²)` | Recursive work dominates |
+| 14 | `T(n) = 16T(n/4) + n!` | `Θ(n!)` under appropriate regularity condition | Not of polynomial-logarithmic form |
+| 15 | `T(n) = √2 T(n/2) + log n` | `Θ(√n)` | Recursive work dominates |
+| 16 | `T(n) = 3T(n/2) + n` | `Θ(n^(log₂3))` | Recursive work dominates |
+| 17 | `T(n) = 3T(n/3) + √n` | `Θ(n)` | Recursive work dominates |
+| 18 | `T(n) = 4T(n/2) + cn` | `Θ(n²)` | Recursive work dominates |
+| 19 | `T(n) = 3T(n/4) + n log n` | `Θ(n log n)` | Non-recursive work dominates |
+| 20 | `T(n) = 3T(n/3) + n/2` | `Θ(n log n)` | Balanced case |
+
+### Detailed Analysis of Selected Examples
+
+**Example 1.** For `T(n) = 3T(n/2) + n²`, we have `n^(log₂3) ≈ n^1.585`. Since `n²` is polynomially larger than `n^1.585`, non-recursive work dominates. The result is `Θ(n²)`.
+
+**Example 2.** For `T(n) = 4T(n/2) + n²`, we have `n^(log₂4) = n²`. The two components are balanced, so an additional factor of `log n` appears, yielding `Θ(n² log n)`.
+
+**Example 6.** For `T(n) = 2T(n/2) + n log n`, we have `a = 2`, `b = 2`, `k = 1`, and `p = 1`. Since `a = b^k`, the result is `Θ(n log² n)`.
+
+**Example 7.** For `T(n) = 2T(n/2) + n/log n`, we have `p = -1`. This is a special boundary case, leading to `Θ(n log log n)`.
+
+**Example 16.** For `T(n) = 3T(n/2) + n`, we have `a = 3 > 2 = b^k`; thus recursive work dominates and `T(n) = Θ(n^(log₂3))`.
 
 ---
 
-## 6. Subtract-and-Conquer Recurrences
+## 7. When Can the Master Theorem Not Be Applied?
 
-For `T(n) = aT(n-b) + f(n)` with `a > 0`, `b > 0`, and `f(n) = O(n^k)`:
+The Master Theorem is very useful, but it is not a universal tool for all recurrences. Cases where it cannot be applied directly include:
+
+- the number of subproblems depends on `n`, such as `2^n T(n/2)`;
+- subproblem sizes are non-uniform, such as `T(n/3) + T(2n/3) + n`;
+- subproblem sizes do not take the form `n/b`;
+- the coefficient before recursive calls is less than `1` in standard form;
+- `f(n)` is negative or fails the regularity condition;
+- the recurrence contains multiple different size-reduction patterns;
+- the recurrence has the form `T(n-1)`, `T(n-2)`, or a subtract-and-conquer form.
+
+In such cases, one can use recursion trees, variable transformation, substitution, Akra–Bazzi, or direct analysis.
+
+---
+
+## 8. Master Theorem for subtract-and-conquer recurrences
+
+Not all recursive algorithms divide problem sizes by a ratio. In subtract-and-conquer, the size often decreases by a fixed amount.
+
+Consider the recurrence `T(n) = aT(n-b) + f(n)`, where `a > 0`, `b > 0`, and suppose `f(n) = O(n^k)`.
+
+Common upper bounds include:
 
 | Condition | Upper Bound |
 |---|---|
@@ -127,32 +211,266 @@ For `T(n) = aT(n-b) + f(n)` with `a > 0`, `b > 0`, and `f(n) = O(n^k)`:
 | `a = 1` | `O(n^(k+1))` |
 | `a > 1` | `O(n^k a^(n/b))` |
 
-- `T(n) = T(n-1) + 1 \implies Θ(n)`
-- `T(n) = T(n-1) + n \implies Θ(n²)`
-- `T(n) = 2T(n-1) + 1 \implies Θ(2^n)`
+### Example 1
+
+For `T(n) = T(n-1) + 1`, each step decreases `n` by `1`, so there are roughly `n` recursion levels. The result is `T(n) = Θ(n)`.
+
+### Example 2
+
+For `T(n) = T(n-1) + n`, expanding yields `T(n) = n + (n-1) + ... + 1 = Θ(n²)`.
+
+### Example 3
+
+For `T(n) = 2T(n-1) + 1`, the number of recursive calls grows exponentially, leading to `T(n) = Θ(2^n)`.
+
+### Unequal Division Variant
+
+Consider `T(n) = T(αn) + T((1-α)n) + βn`, with `0 < α < 1` and `β > 0`. Under standard assumptions, this recurrence has order `Θ(n log n)`.
 
 ---
 
-## 7. Amortized Analysis
+## 9. Guess-and-Prove Method using Mathematical Induction
 
-Amortized analysis computes the **average cost per operation over a sequence of operations** in the worst case, without assuming any probability distribution over inputs.
+When a recurrence does not fit the Master Theorem, an important method is:
 
-### Dynamic Array Example
-For a dynamic array that doubles capacity when full:
-- Most `append` operations cost `O(1)`.
-- When full, copying elements costs `O(n)`.
-- Total cost for `n` appends is `1 + 2 + 4 + ... < 2n = O(n)`.
-- Amortized cost per operation is **$O(1)$**.
+> **Guess the form of the solution, then prove it by mathematical induction.**
+
+The procedure consists of four steps:
+
+1. observe the recurrence and predict the order of growth;
+2. assume the hypothesis holds for smaller subproblems;
+3. substitute the hypothesis into the recurrence;
+4. verify whether the inequality to be proved holds for sufficiently large `n`.
+
+If the proof fails, it does not necessarily mean the guessed solution is completely wrong; sometimes one needs to adjust constants, add lower-order correction terms, or choose a stronger hypothesis.
+
+### Example: `T(n) = √n T(√n) + n`
+
+This recurrence does not belong to the standard Master Theorem form because the number of subproblems is `√n`, which is not constant.
+
+A convenient analysis method is to divide both sides by `n`. Set `U(n) = T(n)/n`. Then `U(n) = U(√n) + 1`.
+
+Each application of the recurrence transforms the argument along `n → √n → n^(1/4) → n^(1/8) → ...`.
+
+After `k` steps, the size becomes `n^(1/2^k)`. The process stops when this value becomes constant, i.e., when `2^k = Θ(log n)`. Thus `k = Θ(log log n)`.
+
+Each level contributes `Θ(1)` to `U(n)`, so `U(n) = Θ(log log n)`. This implies `T(n) = Θ(n log log n)`.
+
+### Why Do Some Guesses Fail?
+
+If guessing `T(n) = Θ(n log n)`, this bound is too loose (large). If guessing `Θ(n)`, this bound is too tight (small). Intermediate forms like `Θ(n√log n)` are also unsuitable. The form `Θ(n log log n)` correctly reflects the number of square roots that can be taken before problem size becomes constant.
 
 ---
 
-## 8. Quiz Questions & Answers
+## 10. Amortized Analysis
 
-1. For `T(n) = 4T(n/2) + n²`, the result is:
-   - **Answer: B. $\Theta(n^2 \log n)$**
+Amortized analysis studies the **average cost per operation over a sequence of operations**, but without relying on probabilistic assumptions about inputs.
+
+Three concepts must be distinguished:
+
+- **Worst-case analysis:** considers the maximum cost of an individual operation;
+- **Average-case analysis:** considers expected cost based on a probability distribution over inputs;
+- **Amortized analysis:** considers total cost of a sequence of operations in the worst case and distributes that cost across operations in the sequence.
+
+Therefore, amortized analysis still provides a worst-case guarantee for the overall sequence of operations.
+
+### Motivation for Amortized Analysis
+
+Some data structures exhibit the property that most operations are very cheap, while a small number of operations can be very expensive, and expensive operations occur infrequently. In such cases, looking only at the worst-case of individual operations can yield an overly pessimistic bound.
+
+### Example: Dynamic Array
+
+Suppose a dynamic array doubles its capacity when full.
+
+Most `append` operations cost `O(1)`. However, when the array is full, allocating new memory and copying all existing elements is required, so a single operation can cost `O(n)`.
+
+Starting from capacity `1`, the total number of elements copied across all expansions is `1 + 2 + 4 + 8 + ... < 2n`.
+
+Thus, performing `n` `append` operations has total cost `O(n)`, and the amortized cost per operation is `O(1)`.
+
+This does not mean every `append` operation has worst-case `O(1)`; it means the total cost of a sequence of `n` append operations is `O(n)`.
+
+---
+
+## 11. Three Methods of Amortized Analysis
+
+### Aggregate Method
+
+The aggregate method directly computes the total cost of `m` operations and divides by `m`.
+
+If the total cost is `T(m)`, then the amortized cost per operation is `T(m)/m`.
+
+For example, if `m` operations on a dynamic array have total cost `O(m)`, then the amortized cost per operation is `O(1)`.
+
+### Accounting Method
+
+The accounting method assigns an **artificial cost** (*amortized cost*) to each operation. Some operations may be charged more than their actual cost; the difference is saved as credit to pay for expensive operations in the future.
+
+A crucial requirement is that cumulative stored credit must never be negative.
+
+### Potential Method
+
+The potential method assigns a potential function `Φ` to the data structure state.
+
+The amortized cost of the `i`-th operation is defined as `ĉ_i = c_i + Φ(D_i) - Φ(D_(i-1))`, where `c_i` is actual cost, `D_i` is state after `i`-th operation, and `Φ(D_i)` is potential of new state.
+
+If `Φ(D_0) = 0` and `Φ(D_i) ≥ 0`, then total actual cost does not exceed total amortized cost.
+
+---
+
+## 12. Examples of Amortized Analysis
+
+### Example 1: Sort Once, Query Many Times
+
+Suppose there are `n` elements and we need to answer `n` queries asking for the `k`-th smallest element.
+
+If pre-sorted with cost `O(n log n)`, each subsequent query can be answered in `O(1)`.
+
+Total cost for `n` queries is `O(n log n) + O(n) = O(n log n)`.
+
+Thus, average cost per query including preprocessing is `O(log n)`.
+
+This example illustrates the principle that an initial expensive operation can significantly lower the cost of subsequent operations.
+
+### Example 2: Stack with MultiPop
+
+Suppose a stack supports three operations: push an element, pop an element, and `MultiPop(k)` to remove up to `k` elements.
+
+An individual `MultiPop(k)` operation can cost `O(k)`, but each element can be popped at most once. In a sequence of `m` operations, the total number of pops cannot exceed the total number of pushes.
+
+Therefore, total cost of the entire sequence is `O(m)`, and the amortized cost per operation is `O(1)`.
+
+---
+
+## 13. Practice Exercises
+
+### Exercise 1
+
+Solve the recurrence `T(n) = 8T(n/2) + n²` using the Master Theorem.
+
+### Exercise 2
+
+Solve the recurrence `T(n) = 2T(n/2) + n log² n`.
+
+### Exercise 3
+
+Solve the recurrence `T(n) = 2T(n/2) + n/log n`.
+
+### Exercise 4
+
+Solve the recurrence `T(n) = 4T(n/2) + log n`.
+
+### Exercise 5
+
+Solve the recurrence `T(n) = T(n-1) + n`.
+
+### Exercise 6
+
+Analyze the recurrence `T(n) = √n T(√n) + n`.
+
+### Exercise 7
+
+Explain why standard Master Theorem cannot be applied directly to `T(n) = T(n/3) + T(2n/3) + n`.
+
+### Exercise 8
+
+A dynamic array doubles its capacity whenever full. Prove that `n` append operations have total cost `O(n)`.
+
+### Exercise 9
+
+A stack supports `Push`, `Pop`, and `MultiPop(k)`. Prove that amortized cost per operation is `O(1)`.
+
+### Exercise 10
+
+Distinguish worst-case complexity, average-case complexity, and amortized complexity using appropriate examples.
+
+---
+
+## 14. Self-Test Quiz
+
+1. For the recurrence `T(n) = 4T(n/2) + n²`, the result is:
+
+   A. `Θ(n²)`  
+   B. `Θ(n² log n)`  
+   C. `Θ(n³)`  
+   D. `Θ(n log n)`
 
 2. For `T(n) = 2T(n/2) + n/log n`, the result is:
-   - **Answer: C. $\Theta(n \log \log n)$**
 
-3. Amortized analysis:
-   - **Answer: B. Evaluates average cost over a sequence of operations in the worst case.**
+   A. `Θ(n)`  
+   B. `Θ(n log n)`  
+   C. `Θ(n log log n)`  
+   D. `Θ(n log² n)`
+
+3. Which of the following recurrences does NOT fit standard Master Theorem form?
+
+   A. `2T(n/2) + n`  
+   B. `4T(n/2) + n²`  
+   C. `T(n/3) + T(2n/3) + n`  
+   D. `8T(n/2) + n³`
+
+4. For `T(n) = T(n-1) + n`, the complexity is:
+
+   A. `Θ(n)`  
+   B. `Θ(n log n)`  
+   C. `Θ(n²)`  
+   D. `Θ(2^n)`
+
+5. Amortized analysis:
+
+   A. always relies on a probability distribution over inputs;  
+   B. considers average cost over a sequence of operations in the worst case;  
+   C. applies only to sorting;  
+   D. is identical to average-case analysis.
+
+6. An append operation on a dynamic array has worst-case `O(n)` but amortized cost `O(1)` because:
+
+   A. resizing never occurs;  
+   B. resizing occurs rarely and total elements copied across resizes is linear;  
+   C. every operation takes constant cost;  
+   D. dynamic array does not use extra memory.
+
+7. For `T(n) = √n T(√n) + n`, the result is:
+
+   A. `Θ(n)`  
+   B. `Θ(n log n)`  
+   C. `Θ(n log log n)`  
+   D. `Θ(n²)`
+
+8. The accounting method in amortized analysis:
+
+   A. assigns an artificial cost to each operation;  
+   B. requires all operations to have the same actual cost;  
+   C. always uses probability;  
+   D. is only used for graphs.
+
+<details>
+<summary><strong>Quiz Answers</strong></summary>
+
+| Question | Answer |
+|---:|:---:|
+| 1 | B |
+| 2 | C |
+| 3 | C |
+| 4 | C |
+| 5 | B |
+| 6 | B |
+| 7 | C |
+| 8 | A |
+
+</details>
+
+---
+
+## 15. Summary
+
+Key points of the lesson:
+
+- Divide-and-conquer algorithms often yield recurrences of form `T(n) = aT(n/b) + f(n)`.
+- Master Theorem determines complexity by comparing `f(n)` with `n^(log_b a)`.
+- Extended form `f(n) = Θ(n^k log^p n)` handles many recurrences containing logarithms.
+- Not all recurrences fit Master Theorem; recognize cases with non-constant coefficients, non-uniform subproblems, or subtract-and-conquer forms.
+- Guess-and-prove method using induction is key when no direct theorem applies.
+- Amortized analysis evaluates average cost over a sequence of operations without assuming input probability distributions.
+- Aggregate, accounting, and potential methods are the three standard amortized analysis techniques.
+- An individual operation can be very expensive, yet amortized cost remains small if expensive operations occur rarely and cost is distributed across the entire sequence.
