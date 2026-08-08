@@ -27,16 +27,16 @@ Students are guided to implement data structures and algorithms from scratch in 
 
 The table below summarizes lecture reading materials, slides, lab exercises, and solution sets organized by **Course Parts**:
 
-| Part | Main Topic (English) | Lecture & Reading Materials (.md) | Slides & Assignments | Status |
-|:---:|:---|:---|:---:|:---:|
-| **Part 1** | **Course Introduction** | • [Lecture: Course Overview & Introduction](lectures/part-01-gioi-thieu-mon-hoc/introduction-1-en.md) | - | ✅ *Ready* |
-| **Part 2** | **Abstract Data Types & OOP** | - | • [Slides: L2. OOP 1](lectures/part-02-adt-va-oop/L2.%20OOP%201.pdf)<br>• [Slides: L3. OOP 2](lectures/part-02-adt-va-oop/L3.%20OOP%202.pdf)<br>• [Assignment: Assignment 1](lectures/part-02-adt-va-oop/week_1_assignment.pdf) | ✅ *Ready* |
-| **Part 3** | **Algorithms & Asymptotic Complexity** | • [Lecture: What is an Algorithm? Intro to Algorithm Analysis](lectures/part-03-thuat-toan-va-do-phuc-tap/introduction-to-algorithm-1-en.md)<br>• [Lecture: Algorithm Complexity & Asymptotic Notation](lectures/part-03-thuat-toan-va-do-phuc-tap/complexity-analysis-2-en.md)<br>• [Lecture: Master Theorem & Amortized Analysis](lectures/part-03-thuat-toan-va-do-phuc-tap/master-theorem-en.md) | - | ✅ *Ready* |
-| **Part 4** | **Algorithmic Foundations & Approaches** | • [Part I: Foundations of Algorithms & Data Structures](lectures/part-04-nen-tang-thuat-toan-va-phuong-phap-tiep-can/part-1-en.md)<br>• [Part II: Algorithmic Approaches](lectures/part-04-nen-tang-thuat-toan-va-phuong-phap-tiep-can/part-2-en.md)<br>• [Part III: Algorithm Analysis](lectures/part-04-nen-tang-thuat-toan-va-phuong-phap-tiep-can/part-3-en.md)<br>• [Part IV: Analysis of Recursive Algorithms](lectures/part-04-nen-tang-thuat-toan-va-phuong-phap-tiep-can/part-4-en.md) | • [Assignment: Problem Set 1 & Solutions](lectures/part-04-nen-tang-thuat-toan-va-phuong-phap-tiep-can/problem-set-1-en.md) | ✅ *Ready* |
-| **Part 5** | **Searching & Sorting Algorithms** | Linear Search, Binary Search, Insertion/Bubble/Selection Sort, Merge Sort, Quick Sort | - | ⏳ *In Progress* |
-| **Part 6** | **Linear Data Structures** | Arrays, Singly/Doubly Linked Lists, Stacks, Queues | - | ⏳ *In Progress* |
-| **Part 7** | **Non-linear Data Structures** | General Trees, Binary Trees, Binary Search Trees (BST), AVL Trees, Heaps & Priority Queues | - | ⏳ *In Progress* |
-| **Part 8** | **Hash Tables & Advanced Topics** | Hash Tables, Hash Functions, Collision Resolution, Graph Algorithms & Course Summary | - | ⏳ *In Progress* |
+| Part | Main Topic (English) | Lecture & Reading Materials (.md) | Slides | Lab & Assignments | Status |
+|:---:|:---|:---|:---:|:---:|:---:|
+| **Part 1** | **Course Introduction** | • [Lecture: Course Overview & Introduction](lectures/part-01-gioi-thieu-mon-hoc/introduction-1-en.md) | • [Slide: Course Introduction](lectures/part-01-gioi-thieu-mon-hoc/part-01-slide-course-introduction.pdf) | • [Practice Set 1](lectures/part-01-gioi-thieu-mon-hoc/part-01-practice-set-1.pdf)<br>• [Assignment 1](lectures/part-01-gioi-thieu-mon-hoc/part-01-assignment-1.pdf) | ✅ *Ready* |
+| **Part 2** | **Abstract Data Types & OOP** | - | • [Slide: OOP 1](lectures/part-02-adt-va-oop/part-02-slide-oop-1.pdf)<br>• [Slide: OOP 2](lectures/part-02-adt-va-oop/part-02-slide-oop-2.pdf) | - | ✅ *Ready* |
+| **Part 3** | **Algorithms & Asymptotic Complexity** | • [Lecture: What is an Algorithm? Intro to Algorithm Analysis](lectures/part-03-thuat-toan-va-do-phuc-tap/introduction-to-algorithm-1-en.md)<br>• [Lecture: Algorithm Complexity & Asymptotic Notation](lectures/part-03-thuat-toan-va-do-phuc-tap/complexity-analysis-2-en.md)<br>• [Lecture: Master Theorem & Amortized Analysis](lectures/part-03-thuat-toan-va-do-phuc-tap/master-theorem-en.md) | • [Slide: Algorithm Analysis](lectures/part-03-thuat-toan-va-do-phuc-tap/slides.md) | - | ✅ *Ready* |
+| **Part 4** | **Algorithmic Foundations & Approaches** | • [Part I: Foundations of Algorithms & Data Structures](lectures/part-04-nen-tang-thuat-toan-va-phuong-phap-tiep-can/part-1-en.md)<br>• [Part II: Algorithmic Approaches](lectures/part-04-nen-tang-thuat-toan-va-phuong-phap-tiep-can/part-2-en.md)<br>• [Part III: Algorithm Analysis](lectures/part-04-nen-tang-thuat-toan-va-phuong-phap-tiep-can/part-3-en.md)<br>• [Part IV: Analysis of Recursive Algorithms](lectures/part-04-nen-tang-thuat-toan-va-phuong-phap-tiep-can/part-4-en.md) | • [Slide: Algorithmic Foundations](lectures/part-04-nen-tang-thuat-toan-va-phuong-phap-tiep-can/slides.md) | • [Problem Set 1 & Solutions](lectures/part-04-nen-tang-thuat-toan-va-phuong-phap-tiep-can/problem-set-1-en.md) | ✅ *Ready* |
+| **Part 5** | **Searching & Sorting Algorithms** | Linear Search, Binary Search, Insertion/Bubble/Selection Sort, Merge Sort, Quick Sort | - | - | ⏳ *In Progress* |
+| **Part 6** | **Linear Data Structures** | Arrays, Singly/Doubly Linked Lists, Stacks, Queues | - | - | ⏳ *In Progress* |
+| **Part 7** | **Non-linear Data Structures** | General Trees, Binary Trees, Binary Search Trees (BST), AVL Trees, Heaps & Priority Queues | - | - | ⏳ *In Progress* |
+| **Part 8** | **Hash Tables & Advanced Topics** | Hash Tables, Hash Functions, Collision Resolution, Graph Algorithms & Course Summary | - | - | ⏳ *In Progress* |
 
 ---
 
