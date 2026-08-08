@@ -1,10 +1,3 @@
----
-title: "Lecture: What is an Algorithm? Introduction to Algorithm Analysis"
-course: "Data Structures and Algorithms"
-language: "en"
-version: "1.0"
----
-
 # Lecture: What is an Algorithm? Introduction to Algorithm Analysis
 
 **Last updated:** August 03, 2026

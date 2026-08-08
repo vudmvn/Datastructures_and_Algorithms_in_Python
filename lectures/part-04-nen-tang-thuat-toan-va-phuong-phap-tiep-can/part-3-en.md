@@ -1,10 +1,3 @@
----
-title: "Part III — Algorithm Analysis"
-course: "Data Structures and Algorithmic Thinking with Python"
-language: "en"
-version: "2.1"
----
-
 # Part III — Algorithm Analysis
 
 **Last updated:** August 03, 2026

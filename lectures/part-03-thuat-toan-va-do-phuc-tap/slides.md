@@ -1,11 +1,3 @@
----
-marp: true
-theme: default
-paginate: true
-header: 'DSAI1002 - Cấu trúc dữ liệu & Giải thuật với Python | TS. Vũ Đức Minh'
-footer: 'Tuần 02: Độ phức tạp tiệm cận & Big-O'
----
-
 # Tuần 02: Độ phức tạp tiệm cận & Big-O
 
 **Cập nhật lần cuối:** 3 tháng 8 năm 2026

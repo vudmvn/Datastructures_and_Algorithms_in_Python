@@ -1,10 +1,3 @@
----
-title: "Part IV — Analysis of Recursive Algorithms"
-course: "Data Structures and Algorithmic Thinking with Python"
-language: "en"
-version: "2.1"
----
-
 # Part IV — Analysis of Recursive Algorithms
 
 **Last updated:** August 03, 2026

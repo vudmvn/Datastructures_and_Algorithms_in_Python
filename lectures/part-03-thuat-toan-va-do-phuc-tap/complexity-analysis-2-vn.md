@@ -1,10 +1,3 @@
----
-title: "Bài giảng: Độ phức tạp thuật toán và Ký hiệu tiệm cận"
-course: "Data Structures and Algorithms"
-language: "vi"
-version: "1.0"
----
-
 # Bài giảng: Độ phức tạp thuật toán và Ký hiệu tiệm cận
 
 **Cập nhật lần cuối:** 3 tháng 8 năm 2026

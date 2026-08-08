@@ -1,10 +1,3 @@
----
-title: "Part II — Algorithmic Approaches"
-course: "Data Structures and Algorithmic Thinking with Python"
-language: "en"
-version: "2.1"
----
-
 # Part II — Algorithmic Approaches
 
 **Last updated:** August 03, 2026

@@ -1,10 +1,3 @@
----
-title: "Bài giảng: Phân tích thuật toán — Bài tập và lời giải"
-course: "Data Structures and Algorithmic Thinking with Python"
-language: "vi"
-version: "1.2"
----
-
 # Bài giảng: Phân tích thuật toán — Bài tập và lời giải
 
 **Cập nhật lần cuối:** 3 tháng 8 năm 2026

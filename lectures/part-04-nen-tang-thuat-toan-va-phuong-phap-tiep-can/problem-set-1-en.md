@@ -1,10 +1,3 @@
----
-title: "Lecture: Algorithm Analysis — Exercises and Solutions"
-course: "Data Structures and Algorithmic Thinking with Python"
-language: "en"
-version: "1.2"
----
-
 # Lecture: Algorithm Analysis — Exercises and Solutions
 
 **Last updated:** August 03, 2026

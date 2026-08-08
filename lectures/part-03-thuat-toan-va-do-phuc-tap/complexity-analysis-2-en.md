@@ -1,10 +1,3 @@
----
-title: "Lecture: Algorithm Complexity and Asymptotic Notation"
-course: "Data Structures and Algorithms"
-language: "en"
-version: "1.0"
----
-
 # Lecture: Algorithm Complexity and Asymptotic Notation
 
 **Last updated:** August 03, 2026

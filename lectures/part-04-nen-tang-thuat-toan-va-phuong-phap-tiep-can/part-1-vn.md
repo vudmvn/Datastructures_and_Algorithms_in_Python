@@ -1,10 +1,3 @@
----
-title: "Part I — Foundations of Algorithms and Data Structures"
-course: "Data Structures and Algorithmic Thinking with Python"
-language: "vi"
-version: "2.1"
----
-
 # Part I — Foundations of Algorithms and Data Structures
 
 **Cập nhật lần cuối:** 3 tháng 8 năm 2026

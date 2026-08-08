@@ -1,10 +1,3 @@
----
-title: "Bài giảng: Thuật toán là gì? Nhập môn Phân tích Thuật toán"
-course: "Data Structures and Algorithms"
-language: "vi"
-version: "1.0"
----
-
 # Bài giảng: Thuật toán là gì? Nhập môn Phân tích Thuật toán
 
 **Cập nhật lần cuối:** 3 tháng 8 năm 2026

@@ -1,10 +1,3 @@
----
-title: "Lecture: Master Theorem, Recurrence Relations, and Amortized Analysis"
-course: "Data Structures and Algorithmic Thinking with Python"
-language: "en"
-version: "1.0"
----
-
 # Lecture: Master Theorem, Recurrence Relations, and Amortized Analysis
 
 **Last updated:** August 03, 2026

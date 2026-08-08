@@ -1,10 +1,3 @@
----
-title: "Bài giảng: Master Theorem, Phương trình truy hồi và Phân tích khấu hao"
-course: "Data Structures and Algorithmic Thinking with Python"
-language: "vi"
-version: "1.0"
----
-
 # Bài giảng: Master Theorem, Phương trình truy hồi và Phân tích khấu hao
 
 **Cập nhật lần cuối:** 3 tháng 8 năm 2026

@@ -1,11 +1,3 @@
----
-marp: true
-theme: default
-paginate: true
-header: 'DSAI1002 - Cấu trúc dữ liệu & Giải thuật với Python | TS. Vũ Đức Minh'
-footer: 'Tuần 03: Tìm kiếm & Sắp xếp cơ bản'
----
-
 # Tuần 03: Tìm kiếm & Sắp xếp cơ bản
 
 **Cập nhật lần cuối:** 3 tháng 8 năm 2026

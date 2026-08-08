@@ -1,10 +1,3 @@
----
-title: "Part III — Algorithm Analysis"
-course: "Data Structures and Algorithmic Thinking with Python"
-language: "vi"
-version: "2.1"
----
-
 # Part III — Algorithm Analysis
 
 **Cập nhật lần cuối:** 3 tháng 8 năm 2026

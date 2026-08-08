@@ -1,10 +1,3 @@
----
-title: "Part I — Foundations of Algorithms and Data Structures"
-course: "Data Structures and Algorithmic Thinking with Python"
-language: "en"
-version: "2.1"
----
-
 # Part I — Foundations of Algorithms and Data Structures
 
 **Last updated:** August 03, 2026

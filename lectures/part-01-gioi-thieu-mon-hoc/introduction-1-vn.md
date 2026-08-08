@@ -1,10 +1,3 @@
----
-title: "Bài giảng: Giới thiệu Thuật toán và Phân tích Độ phức tạp"
-course: "Data Structures and Algorithmic Thinking with Python"
-language: "vi"
-version: "1.3"
----
-
 # Bài giảng: Giới thiệu Thuật toán và Phân tích Độ phức tạp
 
 **Cập nhật lần cuối:** 3 tháng 8 năm 2026

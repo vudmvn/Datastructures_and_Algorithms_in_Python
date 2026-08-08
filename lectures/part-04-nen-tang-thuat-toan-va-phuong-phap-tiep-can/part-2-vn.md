@@ -1,10 +1,3 @@
----
-title: "Part II — Algorithmic Approaches"
-course: "Data Structures and Algorithmic Thinking with Python"
-language: "vi"
-version: "2.1"
----
-
 # Part II — Algorithmic Approaches
 
 **Cập nhật lần cuối:** 3 tháng 8 năm 2026

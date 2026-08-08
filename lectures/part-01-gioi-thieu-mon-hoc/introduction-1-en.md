@@ -1,10 +1,3 @@
----
-title: "Lecture: Introduction to Algorithms and Complexity Analysis"
-course: "Data Structures and Algorithmic Thinking with Python"
-language: "en"
-version: "1.3"
----
-
 # Lecture: Introduction to Algorithms and Complexity Analysis
 
 **Last updated:** August 03, 2026
