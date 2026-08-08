@@ -76,6 +76,13 @@
             var lastSlash = currentPath.lastIndexOf('/');
             var currentDir = lastSlash !== -1 ? currentPath.substring(0, lastSlash + 1) : '';
             
+            // Rewrite Markdown links to static files (.pdf, .ipynb, .zip, .csv) into raw HTML <a> tags with target="_blank"
+            html = html.replace(/\[([^\]]+)\]\(([^)]+\.(?:pdf|ipynb|zip|csv))\)/gi, function(match, text, p2) {
+              var cleanP2 = p2.replace(/^\.\//, '');
+              var fullPath = (currentDir && !cleanP2.startsWith(currentDir) && !cleanP2.startsWith('/')) ? (currentDir + cleanP2) : cleanP2;
+              return '<a href="' + fullPath + '" target="_blank" rel="noopener">' + text + '</a>';
+            });
+
             // Rewrite relative image paths in <img src="..."> and ![alt](...)
             html = html.replace(/(<img[^>]*src=["'])(?!\/|http|https)([^"']+)(["'])/gi, function(match, p1, p2, p3) {
               if (currentDir && !p2.startsWith(currentDir) && !p2.startsWith('/')) {
@@ -106,6 +113,9 @@
                 if (cleanHref.endsWith('.pdf') || cleanHref.endsWith('.ipynb') || cleanHref.endsWith('.zip') || cleanHref.endsWith('.csv')) {
                   link.setAttribute('target', '_blank');
                   link.setAttribute('rel', 'noopener');
+                  link.onclick = function(e) {
+                    e.stopPropagation();
+                  };
                 }
               }
             });
