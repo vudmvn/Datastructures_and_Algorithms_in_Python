@@ -30,7 +30,7 @@ The table below summarizes lecture reading materials, slides, lab exercises, and
 | Part | Main Topic (English) | Lecture & Reading Materials (.md) | Slides | Lab & Assignments | Status |
 |:---:|:---|:---|:---:|:---:|:---:|
 | **Part 1** | **Course Introduction** | • [Lecture: Course Overview & Introduction](lectures/part-01-gioi-thieu-mon-hoc/introduction-1-en.md) | • [Slide: Course Introduction](lectures/part-01-gioi-thieu-mon-hoc/part-01-slide-course-introduction.pdf) | • [Practice Set 1](lectures/part-01-gioi-thieu-mon-hoc/part-01-practice-set-1.pdf)<br>• [Assignment 1](lectures/part-01-gioi-thieu-mon-hoc/part-01-assignment-1.pdf) | ✅ *Ready* |
-| **Part 2** | **Abstract Data Types & OOP** | - | • [Slide: OOP 1](lectures/part-02-adt-va-oop/part-02-slide-oop-1.pdf)<br>• [Slide: OOP 2](lectures/part-02-adt-va-oop/part-02-slide-oop-2.pdf) | - | ✅ *Ready* |
+| **Part 2** | **Abstract Data Types & OOP** | • [Lecture: Object-Oriented Programming (OOP)](lectures/part-02-adt-va-oop/oop-vn.md) | • [Slide: OOP 1](lectures/part-02-adt-va-oop/part-02-slide-oop-1.pdf)<br>• [Slide: OOP 2](lectures/part-02-adt-va-oop/part-02-slide-oop-2.pdf) | - | ✅ *Ready* |
 
 ---
 

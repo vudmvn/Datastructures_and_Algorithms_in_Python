@@ -30,7 +30,7 @@ Bảng dưới đây tổng hợp chi tiết tài liệu học tập, bài giả
 | Phần | Chủ đề chính (Tiếng Việt) | Bài giảng & Bài đọc (.md) | Slide bài giảng | Bài tập & Thực hành | Trạng thái |
 |:---:|:---|:---|:---:|:---:|:---:|
 | **Part 1** | **Giới thiệu Môn học** | • [Bài giảng: Giới thiệu Học phần & Phân tích Tổng quan](lectures/part-01-gioi-thieu-mon-hoc/introduction-1-vn.md) | • [Slide: Giới thiệu Môn học](lectures/part-01-gioi-thieu-mon-hoc/part-01-slide-course-introduction.pdf) | • [Bài tập: Practice Set 1](lectures/part-01-gioi-thieu-mon-hoc/part-01-practice-set-1.pdf)<br>• [Bài tập: Assignment 1](lectures/part-01-gioi-thieu-mon-hoc/part-01-assignment-1.pdf) | ✅ *Đã sẵn sàng* |
-| **Part 2** | **ADT & Lập trình Hướng đối tượng (OOP)** | - | • [Slide: OOP 1](lectures/part-02-adt-va-oop/part-02-slide-oop-1.pdf)<br>• [Slide: OOP 2](lectures/part-02-adt-va-oop/part-02-slide-oop-2.pdf) | - | ✅ *Đã sẵn sàng* |
+| **Part 2** | **ADT & Lập trình Hướng đối tượng (OOP)** | • [Bài giảng: Lập trình Hướng đối tượng (OOP)](lectures/part-02-adt-va-oop/oop-vn.md) | • [Slide: OOP 1](lectures/part-02-adt-va-oop/part-02-slide-oop-1.pdf)<br>• [Slide: OOP 2](lectures/part-02-adt-va-oop/part-02-slide-oop-2.pdf) | - | ✅ *Đã sẵn sàng* |
 
 ---
 
