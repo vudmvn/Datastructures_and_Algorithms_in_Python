@@ -23,27 +23,20 @@ Students are guided to implement data structures and algorithms from scratch in 
 
 ---
 
-## 📚 2. Course Portal & Learning Matrix (15-Week Syllabus)
+## 📚 2. Course Portal & Learning Matrix (Organized by Parts)
 
-The table below summarizes lecture notebooks, reading materials, slides, lab assignments, sample datasets, and solutions for all **15 weeks**:
+The table below summarizes lecture reading materials, slides, lab exercises, and solution sets organized by **Course Parts**:
 
-| Week | Main Topic (English) | Lecture & Reading Materials (.md / .ipynb) | Slides | Lab Exercise | Solutions | Status |
-|:---:|:---|:---|:---:|:---:|:---:|:---:|
-| **Week 01** | **Course Intro & Abstract Data Types** | • [Lecture: Introduction to Algorithms and Complexity Analysis](lectures/week-01-gioi-thieu-hoc-phan-adt/introduction-1-en.md)<br>• [Lecture: What is an Algorithm? Introduction to Algorithm Analysis](lectures/week-01-gioi-thieu-hoc-phan-adt/introduction-to-algorithm-1-en.md) | - | - | - | ✅ *Ready* |
-| **Week 02** | **Asymptotic Complexity & Big-O Notation** | • [Lecture: Algorithm Complexity and Asymptotic Notation](lectures/week-02-do-phuc-tap-tiem-can-big-o/complexity-analysis-2-en.md)<br>• [Lecture: Master Theorem, Recurrence Relations, and Amortized Analysis](lectures/week-02-do-phuc-tap-tiem-can-big-o/master-theorem-en.md) | - | - | - | ✅ *Ready* |
-| **Week 03** | Searching & Simple Sorting Algorithms | - | - | - | - | ⏳ *In Progress* |
-| **Week 04** | Advanced Sorting & Complexity Analysis | - | - | - | - | ⏳ *In Progress* |
-| **Week 05** | Array & Linked Structures (Part 1) | - | - | - | - | ⏳ *In Progress* |
-| **Week 06** | Linked Structures (Part 2) | - | - | - | - | ⏳ *In Progress* |
-| **Week 07** | Stack & Queue Data Structures | - | - | - | - | ⏳ *In Progress* |
-| **Week 08** | Applications of Stack/Queue & Midterm Review | - | - | - | - | ⏳ *In Progress* |
-| **Week 09** | Midterm Examination | - | - | - | - | ⏳ *In Progress* |
-| **Week 10** | General Trees & Binary Trees | - | - | - | - | ⏳ *In Progress* |
-| **Week 11** | Binary Search Trees (BST) | - | - | - | - | ⏳ *In Progress* |
-| **Week 12** | AVL Balanced Search Trees | - | - | - | - | ⏳ *In Progress* |
-| **Week 13** | Priority Queues & Heap Structure | - | - | - | - | ⏳ *In Progress* |
-| **Week 14** | Hash Functions & Hash Tables | - | - | - | - | ⏳ *In Progress* |
-| **Week 15** | Course Summary & Final Review | - | - | - | - | ⏳ *In Progress* |
+| Part | Main Topic (English) | Lecture & Reading Materials (.md) | Slides & Assignments | Status |
+|:---:|:---|:---|:---:|:---:|
+| **Part 1** | **Introduction to Algorithms** | • [Lecture: Introduction to Algorithms & Complexity Analysis](lectures/part-01-nhap-mon-thuat-toan/introduction-1-en.md)<br>• [Lecture: What is an Algorithm? Intro to Algorithm Analysis](lectures/part-01-nhap-mon-thuat-toan/introduction-to-algorithm-1-en.md) | - | ✅ *Ready* |
+| **Part 2** | **Abstract Data Types & OOP** | - | • [Slides: L2. OOP 1](lectures/part-02-adt-va-oop/L2.%20OOP%201.pdf)<br>• [Slides: L3. OOP 2](lectures/part-02-adt-va-oop/L3.%20OOP%202.pdf)<br>• [Assignment: Assignment 1](lectures/part-02-adt-va-oop/week_1_assignment.pdf) | ✅ *Ready* |
+| **Part 3** | **Asymptotic Complexity & Algorithm Analysis** | • [Lecture: Algorithm Complexity & Asymptotic Notation](lectures/part-03-do-phuc-tap-tiem-can/complexity-analysis-2-en.md)<br>• [Lecture: Master Theorem & Amortized Analysis](lectures/part-03-do-phuc-tap-tiem-can/master-theorem-en.md) | - | ✅ *Ready* |
+| **Part 4** | **Algorithmic Foundations & Approaches** | • [Part I: Foundations of Algorithms & Data Structures](lectures/part-04-nen-tang-thuat-toan-va-phuong-phap-tiep-can/part-1-en.md)<br>• [Part II: Algorithmic Approaches](lectures/part-04-nen-tang-thuat-toan-va-phuong-phap-tiep-can/part-2-en.md)<br>• [Part III: Algorithm Analysis](lectures/part-04-nen-tang-thuat-toan-va-phuong-phap-tiep-can/part-3-en.md)<br>• [Part IV: Analysis of Recursive Algorithms](lectures/part-04-nen-tang-thuat-toan-va-phuong-phap-tiep-can/part-4-en.md) | • [Assignment: Problem Set 1 & Solutions](lectures/part-04-nen-tang-thuat-toan-va-phuong-phap-tiep-can/problem-set-1-en.md) | ✅ *Ready* |
+| **Part 5** | **Searching & Sorting Algorithms** | Linear Search, Binary Search, Insertion/Bubble/Selection Sort, Merge Sort, Quick Sort | - | ⏳ *In Progress* |
+| **Part 6** | **Linear Data Structures** | Arrays, Singly/Doubly Linked Lists, Stacks, Queues | - | ⏳ *In Progress* |
+| **Part 7** | **Non-linear Data Structures** | General Trees, Binary Trees, Binary Search Trees (BST), AVL Trees, Heaps & Priority Queues | - | ⏳ *In Progress* |
+| **Part 8** | **Hash Tables & Advanced Topics** | Hash Tables, Hash Functions, Collision Resolution, Graph Algorithms & Course Summary | - | ⏳ *In Progress* |
 
 ---
 

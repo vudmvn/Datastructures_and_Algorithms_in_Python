@@ -23,27 +23,20 @@ Sinh viên được hướng dẫn tự cài đặt (implement from scratch) cá
 
 ---
 
-## 📚 2. Ma trận Bài giảng, Tài liệu & Bài tập Thực hành (Course Matrix)
+## 📚 2. Ma trận Bài giảng, Tài liệu & Bài tập Thực hành (Course Matrix by Parts)
 
-Bảng dưới đây tổng hợp chi tiết tài liệu học tập, bài giảng Notebook, slide, bài tập thực hành, tệp dữ liệu và đáp án cho **15 tuần học**:
+Bảng dưới đây tổng hợp chi tiết tài liệu học tập, bài giảng Markdown, slide, bài tập thực hành và lời giải được tổ chức theo các **Phần học (Part)**:
 
-| Tuần | Chủ đề chính (Tiếng Việt) | Bài giảng & Bài đọc (.md / .ipynb) | Slide | Bài tập Lab | Đáp án | Trạng thái |
-|:---:|:---|:---|:---:|:---:|:---:|:---:|
-| **Tuần 01** | **Giới thiệu học phần & ADT** | • [Bài giảng: Giới thiệu Thuật toán và Phân tích Độ phức tạp](lectures/week-01-gioi-thieu-hoc-phan-adt/introduction-1-vn.md)<br>• [Bài giảng: Thuật toán là gì? Nhập môn Phân tích Thuật toán](lectures/week-01-gioi-thieu-hoc-phan-adt/introduction-to-algorithm-1-vn.md) | - | - | - | ✅ *Đã sẵn sàng* |
-| **Tuần 02** | **Độ phức tạp tiệm cận & Big-O** | • [Bài giảng: Độ phức tạp thuật toán và Ký hiệu tiệm cận](lectures/week-02-do-phuc-tap-tiem-can-big-o/complexity-analysis-2-vn.md)<br>• [Bài giảng: Master Theorem, Phương trình truy hồi và Phân tích khấu hao](lectures/week-02-do-phuc-tap-tiem-can-big-o/master-theorem-vn.md) | - | - | - | ✅ *Đã sẵn sàng* |
-| **Tuần 03** | Tìm kiếm & Sắp xếp cơ bản | - | - | - | - | ⏳ *Đang biên soạn* |
-| **Tuần 04** | Sắp xếp nâng cao & Phân tích | - | - | - | - | ⏳ *Đang biên soạn* |
-| **Tuần 05** | Mảng & Danh sách liên kết (Phần 1) | - | - | - | - | ⏳ *Đang biên soạn* |
-| **Tuần 06** | Danh sách liên kết (Phần 2) | - | - | - | - | ⏳ *Đang biên soạn* |
-| **Tuần 07** | Ngăn xếp (Stack) & Hàng đợi (Queue) | - | - | - | - | ⏳ *Đang biên soạn* |
-| **Tuần 08** | Ứng dụng Stack/Queue & Ôn tập giữa kỳ | - | - | - | - | ⏳ *Đang biên soạn* |
-| **Tuần 09** | Thi giữa kỳ | - | - | - | - | ⏳ *Đang biên soạn* |
-| **Tuần 10** | Cây tổng quát & Cây nhị phân | - | - | - | - | ⏳ *Đang biên soạn* |
-| **Tuần 11** | Cây tìm kiếm nhị phân (BST) | - | - | - | - | ⏳ *Đang biên soạn* |
-| **Tuần 12** | Cây cân bằng AVL | - | - | - | - | ⏳ *Đang biên soạn* |
-| **Tuần 13** | Hàng đợi ưu tiên & Cấu trúc Heap | - | - | - | - | ⏳ *Đang biên soạn* |
-| **Tuần 14** | Bảng băm & Hàm băm | - | - | - | - | ⏳ *Đang biên soạn* |
-| **Tuần 15** | Tổng kết & Ôn tập cuối kỳ | - | - | - | - | ⏳ *Đang biên soạn* |
+| Phần | Chủ đề chính (Tiếng Việt) | Bài giảng & Bài đọc (.md) | Slide & Bài tập | Trạng thái |
+|:---:|:---|:---|:---:|:---:|
+| **Part 1** | **Nhập môn Thuật toán** | • [Bài giảng: Giới thiệu Thuật toán & Phân tích Độ phức tạp](lectures/part-01-nhap-mon-thuat-toan/introduction-1-vn.md)<br>• [Bài giảng: Thuật toán là gì? Nhập môn Phân tích Thuật toán](lectures/part-01-nhap-mon-thuat-toan/introduction-to-algorithm-1-vn.md) | - | ✅ *Đã sẵn sàng* |
+| **Part 2** | **ADT & Lập trình Hướng đối tượng (OOP)** | - | • [Slide: L2. OOP 1](lectures/part-02-adt-va-oop/L2.%20OOP%201.pdf)<br>• [Slide: L3. OOP 2](lectures/part-02-adt-va-oop/L3.%20OOP%202.pdf)<br>• [Bài tập: Assignment 1](lectures/part-02-adt-va-oop/week_1_assignment.pdf) | ✅ *Đã sẵn sàng* |
+| **Part 3** | **Độ phức tạp tiệm cận & Phân tích Thuật toán** | • [Bài giảng: Độ phức tạp Thuật toán & Ký hiệu tiệm cận](lectures/part-03-do-phuc-tap-tiem-can/complexity-analysis-2-vn.md)<br>• [Bài giảng: Master Theorem, Phương trình truy hồi & Phân tích Khấu hao](lectures/part-03-do-phuc-tap-tiem-can/master-theorem-vn.md) | - | ✅ *Đã sẵn sàng* |
+| **Part 4** | **Nền tảng Thuật toán & Phương pháp tiếp cận** | • [Part I: Nền tảng Thuật toán và Cấu trúc Dữ liệu](lectures/part-04-nen-tang-thuat-toan-va-phuong-phap-tiep-can/part-1-vn.md)<br>• [Part II: Các phương pháp Tiếp cận Giải thuật](lectures/part-04-nen-tang-thuat-toan-va-phuong-phap-tiep-can/part-2-vn.md)<br>• [Part III: Phân tích Thuật toán](lectures/part-04-nen-tang-thuat-toan-va-phuong-phap-tiep-can/part-3-vn.md)<br>• [Part IV: Phân tích Thuật toán Đệ quy](lectures/part-04-nen-tang-thuat-toan-va-phuong-phap-tiep-can/part-4-vn.md) | • [Bài tập: Problem Set 1 & Lời giải](lectures/part-04-nen-tang-thuat-toan-va-phuong-phap-tiep-can/problem-set-1-vn.md) | ✅ *Đã sẵn sàng* |
+| **Part 5** | **Thuật toán Tìm kiếm & Sắp xếp** | Linear Search, Binary Search, Insertion Sort, Bubble Sort, Selection Sort, Merge Sort, Quick Sort | - | ⏳ *Đang biên soạn* |
+| **Part 6** | **Cấu trúc Dữ liệu Tuyến tính** | Mảng (Array), Danh sách liên kết (Singly/Doubly Linked List), Ngăn xếp (Stack), Hàng đợi (Queue) | - | ⏳ *Đang biên soạn* |
+| **Part 7** | **Cấu trúc Dữ liệu Phi tuyến tính** | Cây tổng quát, Cây nhị phân, Cây tìm kiếm nhị phân (BST), Cây AVL, Heap & Priority Queue | - | ⏳ *Đang biên soạn* |
+| **Part 8** | **Bảng băm & Giải thuật Nâng cao** | Bảng băm (Hash Table), Hàm băm, Xử lý đụng độ, Giải thuật đồ thị & Tổng kết môn học | - | ⏳ *Đang biên soạn* |
 
 ---
 
