@@ -307,7 +307,7 @@ Bảng dưới đây tổng hợp chi tiết tài liệu học tập, bài giả
 🌐 **Language:** [🇻🇳 Vietnamese Version (README.md)](README.md) | 🇬🇧 **English**
 
 > **Lecturer:** Dr. Minh Duc Vu (`minhvd@neu.edu.vn`)  
-> **Department:** School of Data Science and Artificial Intelligence – National Economics University (NEU)  
+> **Department:** Faculty of Data Science and Artificial Intelligence – National Economics University (NEU)  
 > **Credits:** 3 Credits (45h Lectures, 22.5h Labs, 90h Self-study)  
 > **Detailed Syllabus:** View [syllabus-en.md](syllabus-en.md)
 
@@ -367,7 +367,7 @@ The table below summarizes lecture notebooks, reading materials, slides, lab ass
 
 ---
 
-> © 2026 Dr. Minh Duc Vu - School of Data Science & Artificial Intelligence (NEU). All rights reserved.
+> © 2026 Dr. Minh Duc Vu - Faculty of Data Science & Artificial Intelligence (NEU). All rights reserved.
 """
 
     with open(readme_en_path, "w", encoding="utf-8") as f:
