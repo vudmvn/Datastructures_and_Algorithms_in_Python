@@ -51,4 +51,4 @@ The table below summarizes lecture reading materials, slides, lab exercises, and
 
 ---
 
-> © 2026 Dr. Minh Duc Vu - Faculty of Data Science & Artificial Intelligence (NEU). All rights reserved.
+> © 2026 Dr. Minh Duc Vu - Faculty of Data Science & Artificial Intelligence (NEU).

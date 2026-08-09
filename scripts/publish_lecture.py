@@ -292,7 +292,7 @@ Bảng dưới đây tổng hợp chi tiết tài liệu học tập, bài giả
 
 ---
 
-> © 2026 TS. Vũ Đức Minh - Khoa Khoa học dữ liệu & Trí tuệ nhân tạo (NEU). Bản quyền tài liệu thuộc về tác giả.
+> © 2026 TS. Vũ Đức Minh - Khoa Khoa học dữ liệu & Trí tuệ nhân tạo (NEU).
 """
 
     with open(readme_vn_path, "w", encoding="utf-8") as f:
@@ -367,7 +367,7 @@ The table below summarizes lecture notebooks, reading materials, slides, lab ass
 
 ---
 
-> © 2026 Dr. Minh Duc Vu - Faculty of Data Science & Artificial Intelligence (NEU). All rights reserved.
+> © 2026 Dr. Minh Duc Vu - Faculty of Data Science & Artificial Intelligence (NEU).
 """
 
     with open(readme_en_path, "w", encoding="utf-8") as f:
