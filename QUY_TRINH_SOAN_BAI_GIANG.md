@@ -28,11 +28,11 @@ Datastructures_and_Algorithms_in_Python/
 │   │       └── diagram.png
 │   ├── part-02-adt-va-oop/
 │   ├── part-03-thuat-toan-va-do-phuc-tap/
-│   ├── part-04-nen-tang-thuat-toan-va-phuong-phap-tiep-can/
-│   ├── part-05-tim-kiem-va-sap-xep/
-│   ├── part-06-cau-truc-du-lieu-tuyen-tinh/
-│   ├── part-07-cau-truc-du-lieu-phi-tuyen-tinh/
-│   └── part-08-bang-bam-va-giai-thuat-nang-cao/
+│   ├── part-04-tim-kiem-va-sap-xep/
+│   ├── part-05-cau-truc-du-lieu-tuyen-tinh/
+│   ├── part-06-cau-truc-du-lieu-phi-tuyen-tinh/
+│   ├── part-07-bang-bam-va-cau-truc-du-lieu-nang-cao/
+│   └── part-08-thuat-toan-do-thi/
 ├── scripts/
 │   ├── create_lecture.py           # Script khởi tạo khung bài giảng mới
 │   └── publish_lecture.py          # Script tự động cập nhật README & push GitHub

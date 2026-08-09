@@ -32,11 +32,11 @@ Bảng dưới đây tổng hợp chi tiết tài liệu học tập, bài giả
 | **Part 1** | **Giới thiệu Môn học** | • [Bài giảng: Giới thiệu Học phần & Phân tích Tổng quan](lectures/part-01-gioi-thieu-mon-hoc/introduction-1-vn.md) | • [Slide: Giới thiệu Môn học](lectures/part-01-gioi-thieu-mon-hoc/part-01-slide-course-introduction.pdf) | • [Bài tập: Practice Set 1](lectures/part-01-gioi-thieu-mon-hoc/part-01-practice-set-1.pdf)<br>• [Bài tập: Assignment 1](lectures/part-01-gioi-thieu-mon-hoc/part-01-assignment-1.pdf) | ✅ *Đã sẵn sàng* |
 | **Part 2** | **ADT & Lập trình Hướng đối tượng (OOP)** | • [Bài giảng: Lập trình Hướng đối tượng (OOP)](lectures/part-02-adt-va-oop/oop-vn.md) | • [Slide: OOP 1](lectures/part-02-adt-va-oop/part-02-slide-oop-1.pdf)<br>• [Slide: OOP 2](lectures/part-02-adt-va-oop/part-02-slide-oop-2.pdf) | • [Bài tập: OOP & ADT Exercise](lectures/part-02-adt-va-oop/part_02_oop_adt_exercise.pdf) | ✅ *Đã sẵn sàng* |
 | **Part 3** | **Thuật toán & Phân tích Độ phức tạp** | Tổng quan Thuật toán, Phân tích Độ phức tạp Big-O, Định lý Master & Đệ quy | - | - | ⏳ *Đang cập nhật* |
-| **Part 4** | **Nền tảng Thuật toán & Phương pháp Tiếp cận** | Khái niệm & Biểu diễn, Phương pháp Đệ quy, Kỹ thuật Chia để trị, Tham ăn & Quy hoạch động | - | - | ⏳ *Đang cập nhật* |
-| **Part 5** | **Thuật toán Tìm kiếm & Sắp xếp** | Thuật toán Tìm kiếm tuyến tính/nhị phân, Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, Quick Sort | - | - | ⏳ *Đang cập nhật* |
-| **Part 6** | **Cấu trúc Dữ liệu Tuyến tính** | Cấu trúc dữ liệu Mảng, Danh sách liên kết đơn/đôi, Ngăn xếp (Stack), Hàng đợi (Queue), Hàng đợi hai đầu (Deque) | - | - | ⏳ *Đang cập nhật* |
-| **Part 7** | **Cấu trúc Dữ liệu Phi tuyến tính** | Khái niệm Cây, Duyệt cây, Cây tìm kiếm nhị phân (BST), Cây cân bằng AVL, Hàng đợi ưu tiên & Min/Max Heap | - | - | ⏳ *Đang cập nhật* |
-| **Part 8** | **Bảng băm & Giải thuật Nâng cao** | Hàm băm (Hash Function), Bảng băm (Hash Table), Các chiến lược xử lý đụng độ (Chaining, Open Addressing) | - | - | ⏳ *Đang cập nhật* |
+| **Part 4** | **Thuật toán Tìm kiếm & Sắp xếp** | Thuật toán Tìm kiếm tuyến tính/nhị phân, Bubble Sort, Selection Sort, Insertion Sort, Merge Sort, Quick Sort | - | - | ⏳ *Đang cập nhật* |
+| **Part 5** | **Cấu trúc Dữ liệu Tuyến tính** | Cấu trúc dữ liệu Mảng, Danh sách liên kết đơn/đôi, Ngăn xếp (Stack), Hàng đợi (Queue), Hàng đợi hai đầu (Deque) | - | - | ⏳ *Đang cập nhật* |
+| **Part 6** | **Cấu trúc Dữ liệu Phi tuyến tính** | Khái niệm Cây, Duyệt cây, Cây tìm kiếm nhị phân (BST), Cây cân bằng AVL, Hàng đợi ưu tiên & Min/Max Heap | - | - | ⏳ *Đang cập nhật* |
+| **Part 7** | **Bảng băm & Cấu trúc Dữ liệu Nâng cao** | Hàm băm (Hash Function), Bảng băm (Hash Table), Các chiến lược xử lý đụng độ (Chaining, Open Addressing) | - | - | ⏳ *Đang cập nhật* |
+| **Part 8** | **Thuật toán Đồ thị** | Biểu diễn Đồ thị (Ma trận kề, Danh sách kề), Duyệt đồ thị (BFS, DFS), Thuật toán đường đi ngắn nhất (Dijkstra, Bellman-Ford) | - | - | ⏳ *Đang cập nhật* |
 
 ---
 
