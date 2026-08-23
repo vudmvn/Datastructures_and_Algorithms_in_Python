@@ -1,0 +1,317 @@
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1.7cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+
+\definecolor{ForestGreen}{RGB}{22,100,70}
+\definecolor{SoftGreen}{RGB}{235,246,239}
+\definecolor{CodeGray}{RGB}{248,249,248}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small Data Structures and Algorithms}
+\rhead{\small Week 3 Practice Exercises}
+\cfoot{\small \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlist[enumerate]{leftmargin=1.6em,itemsep=2pt,topsep=3pt}
+\setlist[itemize]{leftmargin=1.5em,itemsep=2pt,topsep=3pt}
+
+\lstdefinestyle{pseudo}{
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue!70!black}\bfseries,
+  morekeywords={FUNCTION,INPUT,OUTPUT,FOR,EACH,TO,DO,IF,THEN,ELSE,
+    WHILE,RETURN,DIV,AND,OR},
+  numbers=none,
+  showstringspaces=false,
+  keepspaces=true,
+  columns=fullflexible,
+  breaklines=true,
+  frame=single,
+  rulecolor=\color{ForestGreen!55},
+  backgroundcolor=\color{CodeGray},
+  tabsize=4
+}
+
+\newcommand{\exercise}[1]{%
+  \vspace{0.7em}
+  {\large\bfseries\color{ForestGreen}#1}
+  \vspace{0.2em}
+  \hrule
+  \vspace{0.5em}
+}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{ForestGreen} WEEK 3 PRACTICE EXERCISES}\\[0.3em]
+    {\large Algorithms, Pseudocode, and Counting Basic Operations}\\[0.4em]
+    \textbf{Sections 1--3: Definition of Algorithms, Algorithm Representation, and Complexity of Algorithms}
+\end{center}
+
+\vspace{0.4em}
+
+\begin{center}
+\begin{tabularx}{0.96\textwidth}{>{\bfseries}l X >{\bfseries}l X}
+Name: & \hrulefill & Student ID: & \hrulefill
+\end{tabularx}
+\end{center}
+
+\vspace{0.5em}
+
+\colorbox{SoftGreen}{
+\parbox{0.94\textwidth}{
+\textbf{Counting convention.}
+Unless stated otherwise, count each comparison, assignment, or execution of a statement as one basic operation.
+For \texttt{FOR} loops, do not count loop-control operations separately.
+The main goal is to determine how many times important statements are executed and then build the running-time function $T(n)$.
+}}
+
+\exercise{Exercise 1. Single loop with a condition}
+
+\begin{lstlisting}[style=pseudo]
+FUNCTION COUNT_POSITIVE
+INPUT: array A of length n
+OUTPUT: number of positive values
+
+    count = 0
+
+    FOR i = 0 TO n - 1 DO
+        IF A[i] > 0 THEN
+            count = count + 1
+
+    RETURN count
+\end{lstlisting}
+
+\begin{enumerate}
+    \item How many times is the condition $A[i] > 0$ evaluated?
+
+    \item Suppose exactly $p$ elements of $A$ are positive.
+    How many times is \texttt{count = count + 1} executed?
+
+    \item Count the following basic operations:
+    \begin{itemize}
+        \item \texttt{count = 0};
+        \item comparison \texttt{A[i] > 0};
+        \item \texttt{count = count + 1};
+        \item \texttt{RETURN count}.
+    \end{itemize}
+    Write the running-time function $T(n,p)$.
+
+    \item Find $T_{\mathrm{best}}(n)$ and $T_{\mathrm{worst}}(n)$.
+    Clearly state what kind of input gives each case.
+\end{enumerate}
+
+\exercise{Exercise 2. Find the maximum: same input size, different inputs}
+
+\begin{lstlisting}[style=pseudo]
+FUNCTION FIND_MAX
+INPUT: non-empty array A of length n
+OUTPUT: largest value
+
+    maximum = A[0]
+
+    FOR i = 1 TO n - 1 DO
+        IF A[i] > maximum THEN
+            maximum = A[i]
+
+    RETURN maximum
+\end{lstlisting}
+
+\begin{enumerate}
+    \item How many times is the comparison $A[i] > maximum$ evaluated?
+
+    \item Let $u$ be the number of times the assignment
+    \texttt{maximum = A[i]} is executed. Write $T(n,u)$.
+
+    \item Calculate the number of basic operations for
+    \[
+        A=[10,8,7,3,1].
+    \]
+
+    \item Calculate the number of basic operations for
+    \[
+        A=[1,3,5,8,10].
+    \]
+
+    \item Which type of input gives the worst case?
+    Write $T_{\mathrm{worst}}(n)$.
+\end{enumerate}
+
+\exercise{Exercise 3. Two nested loops}
+
+\begin{lstlisting}[style=pseudo]
+FUNCTION COUNT_PAIRS
+INPUT: array A of length n
+
+    count = 0
+
+    FOR i = 0 TO n - 1 DO
+        FOR j = 0 TO n - 1 DO
+            count = count + 1
+
+    RETURN count
+\end{lstlisting}
+
+\begin{enumerate}
+    \item For a fixed value of \texttt{i}, how many times does the inner loop execute?
+
+    \item How many different values does \texttt{i} take?
+
+    \item Complete the following table.
+
+    \begin{center}
+    \renewcommand{\arraystretch}{1.35}
+    \begin{tabular}{c|c|c|c}
+        \toprule
+        $n$ & Inner loop per $i$ & Number of values of $i$ & Total executions \\
+        \midrule
+        $2$ & & & \\
+        $3$ & & & \\
+        $5$ & & & \\
+        $n$ & & & \\
+        \bottomrule
+    \end{tabular}
+    \end{center}
+
+    \item How many times is \texttt{count = count + 1} executed?
+
+    \item Counting initialization and return as one operation each, find $T(n)$.
+\end{enumerate}
+
+\exercise{Exercise 4. Nested loops with changing bounds}
+
+\begin{lstlisting}[style=pseudo]
+FUNCTION COUNT_UNORDERED_PAIRS
+INPUT: array A of length n
+
+    count = 0
+
+    FOR i = 0 TO n - 2 DO
+        FOR j = i + 1 TO n - 1 DO
+            count = count + 1
+
+    RETURN count
+\end{lstlisting}
+
+\begin{enumerate}
+    \item Complete the table below.
+
+    \begin{center}
+    \renewcommand{\arraystretch}{1.35}
+    \begin{tabular}{c|c}
+        \toprule
+        Value of $i$ & Number of values of $j$ \\
+        \midrule
+        $0$ & \\
+        $1$ & \\
+        $2$ & \\
+        $\vdots$ & $\vdots$ \\
+        $n-2$ & \\
+        \bottomrule
+    \end{tabular}
+    \end{center}
+
+    \item Show that the total number of executions of
+    \texttt{count = count + 1} is
+    \[
+        (n-1)+(n-2)+\cdots+2+1.
+    \]
+
+    \item Use
+    \[
+        1+2+\cdots+(n-1)=\frac{n(n-1)}{2}
+    \]
+    to obtain the total number of executions.
+
+    \item Counting initialization and return as one operation each, find $T(n)$.
+
+    \item Verify your result manually for $n=4$ by listing all pairs $(i,j)$ processed by the algorithm.
+\end{enumerate}
+
+\exercise{Exercise 5. Repeated halving}
+
+\begin{lstlisting}[style=pseudo]
+FUNCTION HALVING
+INPUT: positive integer n
+
+    remaining = n
+    count = 0
+
+    WHILE remaining > 1 DO
+        remaining = remaining DIV 2
+        count = count + 1
+
+    RETURN count
+\end{lstlisting}
+
+Assume first that
+\[
+    n=2^k.
+\]
+
+\begin{enumerate}
+    \item Trace the algorithm for $n=16$.
+
+    \begin{center}
+    \renewcommand{\arraystretch}{1.35}
+    \begin{tabular}{c|c|c}
+        \toprule
+        Iteration & \texttt{remaining} before & \texttt{remaining} after \\
+        \midrule
+        $1$ & & \\
+        $2$ & & \\
+        $3$ & & \\
+        $4$ & & \\
+        \bottomrule
+    \end{tabular}
+    \end{center}
+
+    \item How many loop iterations are performed for:
+    \[
+        n=8,\qquad16,\qquad32,\qquad64?
+    \]
+
+    \item Complete:
+    \[
+        n=2^k
+        \qquad\Longrightarrow\qquad
+        k=\underline{\hspace{2.5cm}}.
+    \]
+
+    \item Hence, how many times does the loop body execute as a function of $n$?
+
+    \item Now count:
+    \begin{itemize}
+        \item \texttt{remaining = n}: 1 operation;
+        \item \texttt{count = 0}: 1 operation;
+        \item each test of \texttt{remaining > 1}: 1 operation;
+        \item each statement inside the loop body: 1 operation;
+        \item \texttt{RETURN count}: 1 operation.
+    \end{itemize}
+
+    Find the exact running-time function $T(n)$ for $n=2^k$.
+\end{enumerate}
+
+\vfill
+
+\begin{center}
+\color{ForestGreen}\bfseries
+Focus on the counting process:
+Algorithm $\rightarrow$ number of executions $\rightarrow$ $T(n)$.
+\end{center}
+
+\end{document}
