@@ -1,0 +1,372 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{parskip}
+\usepackage{tcolorbox}
+\makeatletter
+\newcommand{\Needspace}[1]{\par\penalty-100\begingroup\setlength{\dimen@}{#1}\dimen@ii\pagegoal\advance\dimen@ii-\pagetotal\ifdim\dimen@>\dimen@ii\break\fi\endgroup}
+\makeatother
+
+\geometry{
+    top=1.8cm,
+    bottom=1.8cm,
+    left=1.9cm,
+    right=1.9cm
+}
+
+\definecolor{ForestGreen}{RGB}{22,100,70}
+\definecolor{SoftGreen}{RGB}{229,244,235}
+\definecolor{CodeBg}{RGB}{248,250,249}
+\definecolor{DarkGray}{RGB}{55,55,55}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\small Data Structures and Algorithms}
+\fancyfoot[C]{\small Homework -- Lecture 3}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\titleformat{\section}
+  {\large\bfseries\color{ForestGreen}}
+  {}
+  {0pt}
+  {}
+
+\setlist[itemize]{leftmargin=1.6em,itemsep=2pt,topsep=3pt}
+\setlist[enumerate]{leftmargin=1.8em,itemsep=3pt,topsep=3pt}
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue!70!black}\bfseries,
+    stringstyle=\color{red!65!black},
+    commentstyle=\color{ForestGreen},
+    showstringspaces=false,
+    columns=fullflexible,
+    keepspaces=true,
+    breaklines=true,
+    frame=single,
+    rulecolor=\color{ForestGreen!45},
+    backgroundcolor=\color{CodeBg},
+    xleftmargin=0.4em,
+    xrightmargin=0.4em,
+    aboveskip=0.5em,
+    belowskip=0.5em
+}
+
+\lstdefinestyle{pseudo}{
+    language={},
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue!70!black}\bfseries,
+    morekeywords={FUNCTION,INPUT,OUTPUT,IF,THEN,ELSE,RETURN,FOR,EACH,IN,TO,
+      DO,WHILE,DOWN,APPEND,TRUE,FALSE,LENGTH,MOD,DIV},
+    numbers=none
+}
+
+\newtcolorbox{problembox}{
+    colback=SoftGreen,
+    colframe=ForestGreen,
+    boxrule=0.7pt,
+    arc=2mm,
+    left=2mm,
+    right=2mm,
+    top=1.5mm,
+    bottom=1.5mm
+}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE\bfseries\color{ForestGreen} HOMEWORK -- LECTURE 3}\\[0.4em]
+    {\large Algorithms and Complexity Analysis}
+\end{center}
+
+\vspace{0.5em}
+
+\begin{problembox}
+\textbf{Submission.}
+For each of Exercises 1--3, complete \textbf{two of the three} difficulty
+levels: E, M, and H. Complete all parts of Exercise 4 as the final integrated
+problem. Show the reasoning leading to every asymptotic conclusion; an answer
+containing only a complexity class receives limited credit. Write all answers
+by hand on paper. Include your full name and student ID on each page, then
+upload clear photos in the correct order or combine them into one PDF.
+\end{problembox}
+
+\begin{problembox}
+\textbf{Notation.}
+Use membership notation: for example, write $f(n)\in O(g(n))$ and
+$f(n)\in\Theta(g(n))$. Unless a problem states otherwise, assume that each
+comparison, assignment, arithmetic operation on fixed-size values, and array
+access takes constant time.
+\end{problembox}
+
+% =========================================================
+\section{Exercise 1. Calculate running time from pseudocode}
+
+\begin{problembox}
+\textbf{Common requirements for 1E, 1M, and 1H.}
+For each chosen algorithm, let $n$ denote the input length or the given numeric
+parameter. Derive a running-time function or summation and give a tight
+$\Theta$ bound. Show sufficient work to justify the conclusion.
+\end{problembox}
+
+\Needspace{0.30\textheight}
+\subsection*{Exercise 1E (Easy). Count positive values}
+
+\begin{problembox}
+\begin{lstlisting}[style=pseudo]
+FUNCTION COUNT_POSITIVE
+INPUT: array values of length n
+OUTPUT: the number of positive values
+    count = 0
+    FOR i = 0 TO n - 1 DO
+        IF values[i] > 0 THEN
+            count = count + 1
+    RETURN count
+\end{lstlisting}
+
+Determine the best-case and worst-case running-time functions and their tight
+asymptotic classes.
+\end{problembox}
+
+\Needspace{0.39\textheight}
+\subsection*{Exercise 1M (Medium). Sieve of Eratosthenes}
+
+\begin{problembox}
+\begin{lstlisting}[style=pseudo]
+FUNCTION SIEVE_OF_ERATOSTHENES
+INPUT: an integer n >= 2
+OUTPUT: all prime numbers from 2 through n
+    CREATE array isPrime[0..n] and set every entry to TRUE
+    isPrime[0] = FALSE
+    isPrime[1] = FALSE
+
+    p = 2
+    WHILE p * p <= n DO
+        IF isPrime[p] == TRUE THEN
+            multiple = p * p
+            WHILE multiple <= n DO
+                isPrime[multiple] = FALSE
+                multiple = multiple + p
+        p = p + 1
+
+    RETURN every i such that isPrime[i] == TRUE
+\end{lstlisting}
+
+Derive the worst-case running-time function and give a tight $\Theta$ bound.
+Your analysis must account for all loop iterations and conditional tests.
+\end{problembox}
+
+\Needspace{0.43\textheight}
+\subsection*{Exercise 1H (Hard). Diagnose a slow simulation}
+
+\begin{problembox}
+A beginner team reports that the following function becomes slow when the
+simulation level $n$ increases.
+
+\begin{lstlisting}[language=Python]
+def simulation_score(n):
+    score = 0
+    for i in range(1, n + 1):
+        for k in range(1, i * i + 1):
+            if k % i == 0:
+                remaining = i * i
+                while remaining > 1:
+                    score += 1
+                    remaining //= 2
+    return score
+\end{lstlisting}
+
+Derive the worst-case running-time function and give a tight $\Theta$ bound.
+Your analysis must account for all loop iterations and conditional tests.
+\end{problembox}
+
+% =========================================================
+\section{Exercise 2. Simplify growth functions}
+
+\begin{problembox}
+\textbf{Common requirements for 2E, 2M, and 2H.}
+For each chosen function:
+\begin{itemize}
+    \item find the simplest one-term function $g(n)$ such that
+    $f(n)\in\Theta(g(n))$;
+    \item prove the result by establishing appropriate Big-$O$ and
+    Big-$\Omega$ bounds.
+\end{itemize}
+Assume $n\ge2$ and use any fixed logarithm base greater than $1$.
+\end{problembox}
+
+\Needspace{0.19\textheight}
+\subsection*{Exercise 2E (Easy). Polynomial terms}
+
+\begin{problembox}
+Analyze
+\[
+    f(n)=6n^2+4n+20.
+\]
+Give constants $c_1,c_2>0$ and a threshold $n_0$ that establish a two-sided
+$\Theta$ bound.
+\end{problembox}
+
+\Needspace{0.19\textheight}
+\subsection*{Exercise 2M (Medium). Logarithmic factors}
+
+\begin{problembox}
+Analyze
+\[
+    f(n)=4n(\log n)^2+7n\log n+3\log(n^3)+50.
+\]
+\end{problembox}
+
+\Needspace{0.20\textheight}
+\subsection*{Exercise 2H (Hard). Competing exponentials}
+
+\begin{problembox}
+Analyze
+\[
+    f(n)=n\cdot5^n+n\cdot3^{2n}+n^{10}\cdot2^{n/2}.
+\]
+\end{problembox}
+
+% =========================================================
+\section{Exercise 3. Compare functions and prove bounds}
+
+\begin{problembox}
+\textbf{Common requirements for 3E and 3M.}
+Sort the functions from slowest to fastest asymptotic growth. Use $<$ when the
+left function is asymptotically smaller and $=$ when two functions belong to
+the same $\Theta$ class. Briefly justify each non-obvious comparison.
+\end{problembox}
+
+\Needspace{0.18\textheight}
+\subsection*{Exercise 3E (Easy). Common growth classes}
+
+\begin{problembox}
+Order the following functions:
+\[
+    n^2,\qquad \log n,\qquad 2^n,\qquad \sqrt n,\qquad
+    1,\qquad n\log n,\qquad n.
+\]
+\end{problembox}
+
+\Needspace{0.26\textheight}
+\subsection*{Exercise 3M (Medium). Less familiar comparisons}
+
+\begin{problembox}
+Order the functions in each group independently.
+
+\medskip
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{L{0.12\textwidth}L{0.78\textwidth}}
+\toprule
+\textbf{Group} & \textbf{Functions} \\
+\midrule
+A & $n^{0.9}\log n$, $100{,}000{,}000n$, $n^{3/2}$,
+    $1.01^n$ \\
+B & $2^{2^{20}}$, $n^2/\sqrt n$, $2^{\sqrt n}$,
+    $n^{\sqrt n}$, $2^n$ \\
+\addlinespace
+C & $n^{\sqrt n}$, $2^n$, $n^{10}\cdot 2^{n/2}$,
+    $\displaystyle\sum_{i=1}^{n}(i+1)$ \\
+\addlinespace
+D & $n!$, $2^n$, $n^{n/2}$, $e^{\sqrt n}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\end{problembox}
+
+\Needspace{0.31\textheight}
+\subsection*{Exercise 3H (Hard). Proof and counterexample}
+
+\begin{problembox}
+Let $f_1,f_2:\mathbb{N}\rightarrow\mathbb{R}_{\ge0}$ be non-negative
+functions.
+
+\begin{enumerate}[label=(\alph*)]
+    \item Prove that
+    \[
+        f_1(n)+f_2(n)
+        \in\Theta\!\left(\max\{f_1(n),f_2(n)\}\right).
+    \]
+    \item Now additionally suppose that $f_1(n)\ge f_2(n)$ for all sufficiently
+    large $n$, so $f_1(n)-f_2(n)$ is eventually non-negative. Prove or disprove
+    the statement
+    \[
+        \max\{f_1(n),f_2(n)\}
+        \in\Theta\!\left(f_1(n)-f_2(n)\right).
+    \]
+    If it is false, give explicit functions and explain why they form a
+    counterexample.
+\end{enumerate}
+\end{problembox}
+
+% =========================================================
+\Needspace{0.60\textheight}
+\section{Exercise 4. Integrated analysis and redesign}
+
+\begin{problembox}
+The following algorithm multiplies two $n\times n$ matrices.
+
+\begin{lstlisting}[style=pseudo]
+FUNCTION MATRIX_MULTIPLY
+INPUT: two n by n matrices A and B
+OUTPUT: the n by n matrix C = A times B
+    CREATE matrix C with n rows and n columns
+
+    FOR i = 0 TO n - 1 DO
+        FOR j = 0 TO n - 1 DO
+            total = 0
+            FOR k = 0 TO n - 1 DO
+                total = total + A[i][k] * B[k][j]
+            C[i][j] = total
+    RETURN C
+\end{lstlisting}
+\end{problembox}
+
+Complete all four parts.
+
+\begin{enumerate}[label=\textbf{Part \arabic*.},leftmargin=4.6em]
+    \item \textbf{Understand and validate the algorithm.}
+    State the input and output precisely. For
+    \[
+      A=\begin{bmatrix}1&2\\3&4\end{bmatrix}
+      \quad\text{and}\quad
+      B=\begin{bmatrix}2&0\\1&2\end{bmatrix},
+    \]
+    give the returned matrix. Explain why the algorithm is definite, finite,
+    and correct.
+
+    \item \textbf{Analyze its running time.}
+    Derive $T(n)$ and give a tight $\Theta$ bound.
+
+    \item \textbf{Analyze its space usage.}
+    Count one unit per matrix entry and one unit per scalar variable. Total
+    space includes both inputs and the output; auxiliary space excludes inputs
+    and output. Derive $S_{\mathrm{total}}(n)$ and
+    $S_{\mathrm{aux}}(n)$, then give tight $\Theta$ bounds.
+
+    \item \textbf{Redesign and compare.}
+    Suppose only the largest entry of $C$ is required. Write language-independent
+    pseudocode for \texttt{MAX\_PRODUCT\_ENTRY(A, B)} without storing the full
+    matrix $C$. Analyze its time and space complexity, then compare it with
+    \texttt{MATRIX\_MULTIPLY}.
+\end{enumerate}
+
+\end{document}

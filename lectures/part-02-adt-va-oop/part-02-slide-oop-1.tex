@@ -1,0 +1,851 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{booktabs}
+\usepackage{framed}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+
+\usepackage{empheq}
+\usepackage[most]{tcolorbox}
+
+\newtcbox{\mymath}[1][]{%
+    nobeforeafter, math upper, tcbox raise base,
+    enhanced, colframe=blue!30!black,
+    colback=blue!30, boxrule=1pt,
+    #1}
+
+\graphicspath{{logo/}{../logo/}}
+
+\definecolor{ForestGreen}{RGB}{22,100,70}
+\definecolor{SoftGreen}{RGB}{229,244,235}
+\definecolor{SoftBlue}{RGB}{226,239,255}
+\definecolor{SoftOrange}{RGB}{255,241,220}
+\definecolor{SoftPurple}{RGB}{239,231,255}
+
+\mode<presentation>{
+  \usetheme{Ilmenau}
+  \usecolortheme{spruce}
+  \usefonttheme{professionalfonts}
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{headline}{}
+  \setbeamertemplate{caption}[numbered]
+  \setbeamercolor{institute in head/foot}{fg=ForestGreen}
+  \setbeamercolor{metric box}{bg=ForestGreen,fg=white}
+}
+
+\tikzset{
+  concept/.style={draw=ForestGreen, rounded corners, fill=SoftGreen,
+    very thick, minimum height=1.15cm, text width=3.6cm, align=center},
+  application/.style={draw=blue!60!black, rounded corners, fill=SoftBlue,
+    thick, minimum height=0.95cm, text width=3.8cm, align=center},
+  stage/.style={draw=ForestGreen, rounded corners, fill=SoftGreen,
+    thick, minimum height=1.15cm, text width=2.05cm, align=center,
+    font=\small},
+  arrow/.style={-Latex, very thick, ForestGreen}
+}
+
+\title[TOKT11105 - Lecture 1]{Data Structures and Algorithms in Python\\Lecture 1: Introduction}
+\author{Faculty of Data Science and Artificial Intelligence}
+\institute{College of Technology - National Economics University}
+\date{}
+
+\AtBeginSection[]{
+  \begin{frame}[plain]
+    \begin{center}
+      \vfill
+      {\color{ForestGreen}\large\bfseries SECTION \insertsectionnumber}
+
+      \vspace{0.8em}
+      {\color{ForestGreen}\rule{0.68\textwidth}{1.2pt}}
+
+      \vspace{1.1em}
+      {\usebeamerfont{section title}\color{ForestGreen}\Huge\bfseries
+        \insertsectionhead}
+
+      \vspace{1.1em}
+      {\color{ForestGreen}\rule{0.68\textwidth}{1.2pt}}
+      \vfill
+    \end{center}
+  \end{frame}
+}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \setbeamercolor{block body example}{bg=ForestGreen,fg=white}
+  \begin{center}
+    \begin{beamercolorbox}[wd=\textwidth,sep=1pt,center,rounded=true,shadow=true]{block body example}
+      \includegraphics[width=0.27\textwidth]{logo_slide.png}
+    \end{beamercolorbox}
+  \end{center}
+  \vspace{-0.25em}
+  \titlepage
+\end{frame}
+
+\logo{\includegraphics[width=0.8cm]{logo_fda.png}}
+\setbeamertemplate{footline}[miniframes theme]
+
+\begin{frame}{}
+  \begin{columns}[T]
+    \begin{column}{0.49\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.8\linewidth]{figures/AI_code_1.jpg}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.78\linewidth]{figures/AI_code_2.jpg}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Some Facts}
+  AI can help write code, but ...
+  \begin{enumerate}
+    \item understanding why and how fast it runs is still on us.
+    \item it cannot replace clear reasoning, pattern recognition, and decision-making.
+  \end{enumerate}
+
+  \vspace{0.5cm}
+
+  \fcolorbox{black}{yellow!20}{%
+    \begin{minipage}{\dimexpr\linewidth-2\fboxsep-2\fboxrule}
+      {\bf Your value lies not in writing code, but in thinking critically---analyzing problems, designing solutions, and guiding AI to produce the right code.}
+    \end{minipage}%
+  }
+
+  \vspace{0.5cm}
+
+  \noindent ... {\em and that's why you should learn}
+
+  \vspace{0.3cm}
+
+  \begin{empheq}[box=\tcbhighmath]{equation*}
+    {\Large\text{\bf Data Structures and Algorithms}}
+  \end{empheq}
+\end{frame}
+
+\begin{frame}{Today: the big picture first}
+  \begin{enumerate}
+    \item What is a data structure?
+    \item What is an algorithm?
+    \item Why are they closely related? Why are they important?
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{A short definition}
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \begin{block}{Data structure}
+        A way to \textbf{organize and store data} so it can be accessed and modified effectively.
+      \end{block}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{alertblock}{Algorithm}
+        A finite, unambiguous sequence of \textbf{steps for solving a problem}.
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+
+  \vspace{1cm}
+
+  \begin{empheq}[box=\tcbhighmath]{equation*}
+    {\LARGE\text{{\color{red}Data Structures} + {\color{blue}Algorithms} = Program}}
+  \end{empheq}
+\end{frame}
+
+\begin{frame}{Quick check: data structures and algorithms}
+  \small
+
+  \begin{block}{Question 1}
+    Which statement best describes a \textbf{data structure}?
+    \begin{enumerate}
+      \item A sequence of steps for solving a problem.
+      \item A way to organize and store data for efficient operations.
+      \item A programming language used to write code.
+      \item A formula for estimating running time.
+    \end{enumerate}
+  \end{block}
+
+  \begin{exampleblock}{Question 2}
+    Which statement best describes an \textbf{algorithm}?
+    \begin{enumerate}
+      \item A finite and precise procedure for solving a problem.
+      \item A container used to store values.
+      \item A Python library.
+      \item A database table.
+    \end{enumerate}
+  \end{exampleblock}
+
+  % Answers: Q1-B, Q2-A
+\end{frame}
+
+\begin{frame}{Algorithms use data structures to speed up operations}
+  \small
+
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{A common scenario}
+        Given a collection of records, determine whether an element $x$ is present. If it is present, retrieve the information associated with it.
+      \end{block}
+
+      \begin{exampleblock}{Real-world examples}
+        \begin{itemize}
+          \item Find a student using a student ID.
+          \item Find a customer using a phone number.
+          \item Check whether a username is already registered.
+          \item Find a product and retrieve its price.
+        \end{itemize}
+      \end{exampleblock}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \begin{block}{A basic approach}
+        Examine the records one by one:
+        \begin{enumerate}
+          \item Compare the current record with $x$.
+          \item If they match, return the associated information. Otherwise, continue with the next record.
+          \item Report that $x$ is not found after reaching the end.
+        \end{enumerate}
+      \end{block}
+
+      \begin{alertblock}{What if the query is repeated?}
+        But what happens when the collection is large and the same type of search must be performed thousands or millions of times?
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Algorithms use data structures to speed up operations}
+  \small
+
+  \begin{beamercolorbox}[
+      wd=\textwidth,
+      sep=0.7em,
+      center,
+      rounded=true
+    ]{block body example}
+    A suitable data structure organizes the records in advance so that repeated search and retrieval operations can be performed more efficiently.
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Algorithms use data structures to speed up operations}
+  \small
+
+  \begin{block}{Example: searching among one million records}
+    Suppose the collection contains $n = 1{,}000{,}000$ records and the requested key is not present.
+  \end{block}
+
+  \begin{center}
+    \begin{tabular}{p{0.27\textwidth}p{0.20\textwidth}p{0.40\textwidth}}
+      \toprule
+      \textbf{Organization} & \textbf{Approximate work} & \textbf{Explanation} \\
+      \midrule
+      Unsorted sequence & Up to $1{,}000{,}000$ comparisons & The algorithm may need to examine every record before concluding that the key is absent. \\
+      Balanced binary search tree & About $20$ comparisons & Each comparison eliminates approximately half of the remaining search space: $\log_2(1{,}000{,}000) \approx 20$. \\
+      \addlinespace
+      Hash table & Often only a few probes on average & In a well-designed table, a search may require only about $2$--$3$ probes on average. \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Quick check: choosing a data structure}
+  \small
+
+  \begin{block}{Scenario}
+    We need to store one million student records and repeatedly search by student ID.
+  \end{block}
+
+  \begin{alertblock}{Question}
+    Which structure is usually more suitable?
+    \begin{enumerate}
+      \item Unsorted list
+      \item Stack
+      \item Hash table / dictionary
+      \item Queue
+    \end{enumerate}
+  \end{alertblock}
+
+  \begin{exampleblock}{Explain}
+    Why can a suitable data structure reduce the number of comparisons?
+  \end{exampleblock}
+
+  % Answer: C
+\end{frame}
+
+\begin{frame}{Example of Data Structure 1}
+  \begin{columns}[T]
+    \begin{column}{0.49\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=1\linewidth]{figures/pixels_matrix.png}
+        \caption{Image representation as a matrix}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.96\linewidth]{figures/user-rating.png}
+        \caption{User-rating preferences matrix}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Example of Data Structure 2}
+  \begin{columns}[T]
+    \begin{column}{0.49\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=1\linewidth]{figures/trie.png}
+        \caption{Words stored in a tree-based data structure}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.96\linewidth]{figures/dsu.png}
+        \caption{Objects stored in an array-based but tree-like data structure}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Common operations and suitable data structures}
+  \scriptsize
+
+  \begin{center}
+    \renewcommand{\arraystretch}{1.35}
+    \begin{tabular}{p{0.25\textwidth}p{0.32\textwidth}p{0.31\textwidth}}
+      \toprule
+      \textbf{Common operation} & \textbf{Typical question} & \textbf{Suitable data structures} \\
+      \midrule
+      Store and access by position & What is the value at position $i$? & Array, list, matrix \\
+      Search and membership & Does $x$ exist? What information is associated with key $x$? & Hash table, set, binary search tree \\
+      Insert and remove elements & Which element should be added or removed next? & Linked list, stack, queue \\
+      Select or prioritize elements & Which element is largest, smallest, or most urgent? & Heap, priority queue, binary search tree \\
+      Represent hierarchical relationships & What is the parent, child, or descendant of an object? & Tree, binary tree \\
+      Represent general relationships & Are two objects connected? Is there a path between them? & Graph \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Quick check: match operations to data structures}
+  \scriptsize
+
+  \begin{center}
+    \renewcommand{\arraystretch}{1.35}
+    \begin{tabular}{p{0.45\textwidth}p{0.38\textwidth}}
+      \toprule
+      \textbf{Operation} & \textbf{Suitable structure} \\
+      \midrule
+      Check whether a username already exists & \underline{\hspace{3.2cm}} \\
+      Process customers in order of arrival & \underline{\hspace{3.2cm}} \\
+      Select the most urgent task & \underline{\hspace{3.2cm}} \\
+      Find words starting with a prefix & \underline{\hspace{3.2cm}} \\
+      Represent roads between cities & \underline{\hspace{3.2cm}} \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+
+  % Suggested answers: set/hash table; queue; heap/priority queue; trie; graph
+\end{frame}
+
+\begin{frame}{Advanced operations and suitable data structures}
+  \scriptsize
+
+  \begin{center}
+    \renewcommand{\arraystretch}{1.35}
+    \begin{tabular}{p{0.25\textwidth}p{0.32\textwidth}p{0.31\textwidth}}
+      \toprule
+      \textbf{Common operation} & \textbf{Typical question} & \textbf{Suitable data structures / techniques} \\
+      \midrule
+      Merge and compare groups & Are $x$ and $y$ in the same group? How can two groups be joined? & Disjoint Set Union (DSU) \\
+      Find common ancestors & What is the closest common ancestor of nodes $u$ and $v$? & LCA, binary lifting, Euler tour \\
+      Query and update a range & What is the sum, minimum, or maximum from position $l$ to $r$? & Segment tree, Fenwick tree \\
+      Calculate prefix information & What is the total from the beginning to position $i$? & Fenwick tree, prefix-sum array \\
+      Search by prefix & Which words start with a given group of letters? & Trie \\
+      Answer many queries on fixed data & What is the minimum or maximum value between positions $l$ and $r$? & Sparse table \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+
+  \vspace{0.3cm}
+
+  \begin{alertblock}{Key idea}
+    Advanced data structures are designed for special operations that appear many times in large or complex problems.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Do we need to implement every data structure ourselves?}
+  \small
+
+  \begin{exampleblock}{Good news}
+    Most programming languages already provide efficient implementations of many fundamental data structures.
+
+    \vspace{0.35cm}
+
+    In Python, for example:
+    \begin{itemize}
+      \item \texttt{list}: dynamic array and basic stack
+      \item \texttt{dict}: hash table for key--value data
+      \item \texttt{set}: hash-based collection of unique values
+      \item \texttt{collections.deque}: queue and double-ended queue
+      \item \texttt{heapq}: priority queue implemented using a heap
+    \end{itemize}
+  \end{exampleblock}
+
+  \begin{beamercolorbox}[
+      wd=\textwidth,
+      sep=0.7em,
+      center,
+      rounded=true
+    ]{block body example}
+    We can use these data structures without implementing all their internal details from scratch.
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Using a data structure still requires understanding}
+  \small
+
+  \begin{alertblock}{Bad news}
+    Having data structures available does not automatically tell us:
+    \begin{itemize}
+      \item which data structure is suitable for a problem;
+      \item which operations are efficient or inefficient;
+      \item how much time and memory each operation requires;
+      \item how the structure behaves in special cases.
+    \end{itemize}
+  \end{alertblock}
+
+  \begin{block}{Example}
+    Both a Python \texttt{list} and a \texttt{set} can store a collection of values. However:
+    \begin{itemize}
+      \item searching a list may require examining many elements;
+      \item searching a set is usually much faster on average;
+      \item a list preserves order, while a set does not.
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Using a data structure still requires understanding}
+  \small
+
+  \centering
+  \textbf{\color{red}Choosing the wrong data structure can make an otherwise correct program inefficient.}
+\end{frame}
+
+\begin{frame}{Why do we study data structures?}
+  \small
+
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Use existing structures}
+        We need to understand how to:
+        \begin{itemize}
+          \item select a suitable structure;
+          \item use its operations correctly;
+          \item analyze its time and memory costs;
+          \item combine multiple structures.
+        \end{itemize}
+      \end{block}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \begin{exampleblock}{Develop new solutions}
+        In some applications, existing structures may not directly support the required operations.
+
+        \vspace{0.2cm}
+
+        We may need to:
+        \begin{itemize}
+          \item adapt an existing structure;
+          \item extend it with new operations;
+          \item combine several structures;
+          \item design a specialized data structure.
+        \end{itemize}
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.4cm}
+
+  \begin{beamercolorbox}[
+      wd=\textwidth,
+      sep=0.7em,
+      center,
+      rounded=true
+    ]{block body example}
+    \textbf{We study data structures not only to implement them, but also to select, use, analyze, adapt, and extend them appropriately.}
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Quick check: Python built-in structures}
+  \small
+
+  \begin{block}{Choose a Python structure}
+    \begin{enumerate}
+      \item Store unique course codes and check membership quickly.
+      \item Map student IDs to student names.
+      \item Process tasks in first-in-first-out order.
+      \item Repeatedly get the smallest priority value.
+    \end{enumerate}
+  \end{block}
+
+  \begin{exampleblock}{Possible answers}
+    \begin{enumerate}
+      \item \texttt{set}
+      \item \texttt{dict}
+      \item \texttt{collections.deque}
+      \item \texttt{heapq}
+    \end{enumerate}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}{One problem, many possible algorithms}
+  \small
+
+  \begin{block}{Example problem in data science}
+    Given a new data point $x$, find the $k$ most similar observations in a dataset.
+  \end{block}
+
+  \begin{exampleblock}{Possible algorithms}
+    \begin{itemize}
+      \item Linear scan: compare $x$ with every data point.
+      \item KD-tree: organize low-dimensional data into searchable regions.
+      \item Ball tree: organize points using distance-based regions.
+      \item Approximate nearest-neighbor search: trade exactness for speed.
+    \end{itemize}
+  \end{exampleblock}
+
+  \begin{alertblock}{Question}
+    If several algorithms can solve the same problem, how do we choose the most suitable one?
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Choosing a suitable algorithm}
+  \small
+
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Input characteristics}
+        \begin{itemize}
+          \item Is the dataset small or large?
+          \item Is the data low-dimensional or high-dimensional?
+          \item Is exact search required?
+          \item Are many queries repeated?
+          \item Does the data change over time?
+        \end{itemize}
+      \end{block}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \begin{exampleblock}{Resource constraints}
+        \begin{itemize}
+          \item How much memory is available?
+          \item How fast must each query be answered?
+          \item Is preprocessing allowed?
+          \item Is approximate output acceptable?
+          \item Is implementation simplicity important?
+        \end{itemize}
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.35cm}
+
+  \begin{alertblock}{Key idea}
+    Algorithm choice depends on the data, the constraints, and the required balance between accuracy, time, and memory.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}{Why do we study algorithms and complexity?}
+  \small
+
+  \begin{block}{Algorithmic knowledge helps us answer}
+    \begin{itemize}
+      \item Which algorithm is correct for this problem?
+      \item Which algorithm is fast enough for this input size?
+      \item Which algorithm uses acceptable memory?
+      \item Which algorithm behaves well in difficult cases?
+      \item Which algorithm is suitable for the available data structure?
+    \end{itemize}
+  \end{block}
+
+  \vspace{0.35cm}
+
+  \begin{beamercolorbox}[
+      wd=\textwidth,
+      sep=0.75em,
+      center,
+      rounded=true
+    ]{block body example}
+    \textbf{A good algorithm is not only correct; it must also match the data, the constraints, and the performance requirements.}
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Quick check: selecting an algorithm}
+  \small
+
+  \begin{block}{Scenario}
+    In a recommendation system, given a new product, find the $k$ most similar products in a large dataset.
+  \end{block}
+
+  \begin{alertblock}{Questions}
+    \begin{enumerate}
+      \item Is this a search, sorting, graph, or nearest-neighbor problem?
+      \item If the dataset is small, what simple approach can we use?
+      \item If the dataset is very large, what constraints should we consider?
+    \end{enumerate}
+  \end{alertblock}
+
+  \begin{exampleblock}{Key point}
+    Algorithm choice depends on data size, dimensionality, memory, accuracy, and response-time requirements.
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Data Structures, Algorithms and Maths help}
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.87\linewidth]{figures/DeepSeek-AI-vs-ChatGPT.jpg}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=0.9\linewidth]{figures/MIT-Optimal-Decisions.jpg}
+      \end{figure}
+      \centering{\url{https://arxiv.org/pdf/2505.21692}}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.2cm}
+
+  \begin{beamercolorbox}[
+      wd=\textwidth,
+      sep=0.65em,
+      center,
+      rounded=true
+    ]{block body example}
+    \textbf{DSA and mathematics help us understand, verify, and improve AI-generated solutions instead of using them blindly.}
+  \end{beamercolorbox}
+\end{frame}
+
+\begin{frame}{Course at a glance}
+  \begin{columns}[T]
+    \begin{column}{0.7\textwidth}
+      \begin{block}{General information}
+        \begin{itemize}
+          \item \textbf{Title:} Data Structures and Algorithms in Python
+          \item \textbf{Type:} Compulsory
+          \item \textbf{Credits:} 3
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \begin{exampleblock}{Study hours}
+        \begin{itemize}
+          \item Lectures: 45 hours
+          \item Tutorials: 22.5 hours
+          \item Self-study: 90 hours
+        \end{itemize}
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+
+  \vspace{0.5cm}
+  {\color{red} \bf Note:}
+  \begin{itemize}
+    \item Slides will be uploaded to the LMS before the class.
+    \item There will be a tutorial every two lectures, scheduled by instructors.
+    \item Office hours will be scheduled by instructors.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Instructors and learning resources}
+  \begin{columns}[T]
+    \begin{column}{0.45\textwidth}
+      \begin{block}{Instructors}
+        \small
+        \textbf{Assoc. Prof. Dr. Nguyen Trung Thanh}\\
+        \texttt{nguyenthanh@neu.edu.vn}
+
+        \medskip
+        \textbf{Dr. Vu Duc Minh}\\
+        \texttt{minhvd@neu.edu.vn}
+
+        \medskip
+        \textbf{M.Sc. Nguyen Thanh Hoang}\\
+        \texttt{hoangnt@neu.edu.vn}
+
+        \medskip
+        \textbf{M.Sc. Dam Tien Thanh}\\
+        \texttt{thanhdt@neu.edu.vn}
+
+        \medskip
+        \textbf{M.Sc. Ta Dinh Quy}\\
+        \texttt{quytd@neu.edu.vn}
+      \end{block}
+    \end{column}
+    \begin{column}{0.55\textwidth}
+      \begin{exampleblock}{Main textbook}
+        \small
+        Goodrich et al. (2013), \emph{Data Structures and Algorithms in Python}.
+      \end{exampleblock}
+      \begin{alertblock}{Additional resources}
+        \small
+        Cormen et al. (2022), \emph{Introduction to Algorithms}.
+
+        \medskip
+        Kleinberg and Tardos (2005), \emph{Algorithm Design}.
+
+        \medskip
+        Karumanchi (2015), \emph{Data Structure and Algorithmic Thinking with Python}.
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{What you learn}
+  \small
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{exampleblock}{Data structures}
+        \begin{enumerate}
+          \item Arrays and linked lists
+          \item Stacks and queues
+          \item Hash tables and heaps
+          \item Trees and graphs
+        \end{enumerate}
+      \end{exampleblock}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Algorithms}
+        \begin{enumerate}
+          \item Sorting and searching algorithms
+          \item Traversal algorithms: DFS, BFS
+          \item Shortest path and dynamic programming
+          \item Other algorithms, time permitting
+        \end{enumerate}
+      \end{block}
+    \end{column}
+  \end{columns}
+
+  \vspace{1cm}
+
+  \centering{\color{red} Applications will be discussed primarily in the context of machine learning and data science.}
+\end{frame}
+
+\begin{frame}{Data structures --- An illustration}
+  \begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{figures/type_DS_fig.png}
+    \caption{Examples of data structures studied in the course}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Grading methods}
+  \begin{center}
+    \begin{tabular}{p{0.3\textwidth}p{0.4\textwidth}c}
+      \toprule
+      \textbf{Assessment} & \textbf{Format/Evaluation} & \textbf{Weight} \\
+      \midrule
+      Attendance & Based on class participation & \textbf{10\%} \\
+      \addlinespace
+      Homework assignment & Written paper & \textbf{20\%} \\
+      \addlinespace
+      Midterm exam & 01 written exam & \textbf{20\%} \\
+      \addlinespace
+      Final exam & 01 written exam & \textbf{50\%} \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+
+  {\color{red} \bf Note:}
+  \begin{enumerate}
+    \item This is not a programming course.
+    \item There will likely be only a limited number of computer lab sessions.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Attendance and exam formats}
+  \begin{columns}[T]
+    \begin{column}{0.55\textwidth}
+      \begin{block}{Attendance}
+        \begin{itemize}
+          \item At least 80\% class attendance.
+          \item Active participation in class.
+        \end{itemize}
+      \end{block}
+
+      \begin{exampleblock}{Homework assignment}
+        \begin{itemize}
+          \item Every week.
+          \item Handwritten on paper.
+          \item Scan and upload to the LMS by the deadline.
+        \end{itemize}
+      \end{exampleblock}
+    \end{column}
+
+    \begin{column}{0.45\textwidth}
+      \begin{exampleblock}{Midterm exam}
+        \begin{itemize}
+          \item Written exam: 90 minutes.
+          \item Week 8, subject to change.
+        \end{itemize}
+      \end{exampleblock}
+      \begin{alertblock}{Final exam}
+        \begin{itemize}
+          \item Written exam: 90 minutes.
+          \item Week 17, subject to change.
+          \item Condition: \textbf{Attendance\_score $\ge 5$}.
+        \end{itemize}
+      \end{alertblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{How is DSA related to other courses?}
+  \begin{tabular}{lp{8cm}}
+    \toprule
+    \textbf{Course} & \textbf{Main DSA Concepts} \\
+    \midrule
+    Algorithm Design & Dynamic programming, graphs, complexity \\
+    Introduction to Database & B-trees, hashing, indexing \\
+    Advanced Database & Query optimization, graph processing \\
+    Introduction to AI & Trees, graphs, A*, BFS, DFS \\
+    Information Security & Hashing, string matching \\
+    Statistical Learning & KD-trees, heaps, optimization \\
+    Data Mining & Trees, graphs, hash tables \\
+    Big Data Technology & Distributed data structures, MapReduce \\
+    Software Engineering & ADTs, complexity analysis \\
+    Cloud Computing & Consistent hashing, distributed indexing \\
+    \bottomrule
+  \end{tabular}
+\end{frame}
+
+\begin{frame}{Key takeaway}
+  \fcolorbox{black}{yellow!20}{%
+    \begin{minipage}{\dimexpr\linewidth-2\fboxsep-2\fboxrule}
+      {\bf If you skip DSA and go straight to AI frameworks, you may build applications faster---but without the fundamentals, you will struggle to reason about performance, debug failures, and design scalable solutions. DSA gives you the foundation to understand, evaluate, and improve AI-generated code.}
+    \end{minipage}%
+  }
+\end{frame}
+
+\begin{frame}{}
+  {\Huge
+  \centering{\bf Any Question?}
+  }
+\end{frame}
+
+\end{document}
