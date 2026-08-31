@@ -1,6 +1,6 @@
 # Lecture: Algorithm Complexity and Asymptotic Notation
 
-**Last updated:** August 03, 2026
+**Last updated:** August 31, 2026
 
 ## 1. Learning Objectives
 

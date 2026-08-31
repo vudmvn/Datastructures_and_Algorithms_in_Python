@@ -1,6 +1,6 @@
 # Bài giảng: Thuật toán là gì? Nhập môn Phân tích Thuật toán
 
-**Cập nhật lần cuối:** 3 tháng 8 năm 2026
+**Cập nhật lần cuối:** 31 tháng 8 năm 2026
 
 ## 1. Mục tiêu học tập
 
