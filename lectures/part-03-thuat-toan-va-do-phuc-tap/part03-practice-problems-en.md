@@ -43,7 +43,7 @@ for i in range(n):
 2. Each iteration performs 1 addition and 1 assignment, resulting in $2n$ operations in the loop body.
 3. Ignoring constant factors:
 
-$$T(n) = \Theta(n).$$
+$$T(n) = \Theta(n)$$
 
 </details>
 
@@ -79,11 +79,11 @@ times.
 
 Therefore:
 
-$$T(n) = n + n^2.$$
+$$T(n) = n + n^2$$
 
 The highest-order term is $n^2$, hence:
 
-$$T(n) = \Theta(n^2).$$
+$$T(n) = \Theta(n^2)$$
 
 </details>
 
@@ -114,11 +114,11 @@ times respectively.
 
 Therefore:
 
-$$T(n) = 1 + 2 + \dots + n = \frac{n(n+1)}{2}.$$
+$$T(n) = 1 + 2 + \dots + n = \frac{n(n+1)}{2}$$
 
 Thus:
 
-$$T(n) = \Theta(n^2).$$
+$$T(n) = \Theta(n^2)$$
 
 </details>
 
@@ -141,15 +141,15 @@ Calculate the exact number of times `count += 1` is executed and determine the t
 
 The number of executions of the inner loop is:
 
-$$n, (n-1), (n-2), \dots, 1.$$
+$$n, (n-1), (n-2), \dots, 1$$
 
 Therefore:
 
-$$T(n) = n + (n-1) + \dots + 1 = \frac{n(n+1)}{2}.$$
+$$T(n) = n + (n-1) + \dots + 1 = \frac{n(n+1)}{2}$$
 
 Hence:
 
-$$T(n) = \Theta(n^2).$$
+$$T(n) = \Theta(n^2)$$
 
 </details>
 
@@ -178,17 +178,15 @@ $$0, 2, 4, \dots$$
 
 that are strictly less than $n$, which is roughly $n/2$ times, precisely:
 
-$$\lceil n/2 
-ceil.$$
+$$\lceil n/2 \rceil$$
 
 Total number of increments to `count`:
 
-$$n \lceil n/2 
-ceil.$$
+$$n \lceil n/2 \rceil$$
 
 Therefore:
 
-$$T(n) = \Theta(n^2).$$
+$$T(n) = \Theta(n^2)$$
 
 </details>
 
@@ -213,15 +211,15 @@ for i in range(1, n + 1):
 
 We have:
 
-$$T(n) = \sum_{i=1}^n i^2.$$
+$$T(n) = \sum_{i=1}^n i^2$$
 
 Using the formula:
 
-$$\sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6}.$$
+$$\sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6}$$
 
 The highest-order term is $\frac{1}{3}n^3$, hence:
 
-$$T(n) = \Theta(n^3).$$
+$$T(n) = \Theta(n^3)$$
 
 </details>
 
@@ -246,20 +244,19 @@ while i < n:
 
 After $k$ iterations:
 
-$$i = 2^k.$$
+$$i = 2^k$$
 
 The loop stops as soon as $i \ge n$, so we seek the smallest integer $k$ such that:
 
-$$2^k \ge n.$$
+$$2^k \ge n$$
 
 Therefore:
 
-$$k = \lceil \log_2 n 
-ceil.$$
+$$k = \lceil \log_2 n \rceil$$
 
 Hence:
 
-$$T(n) = \Theta(\log n).$$
+$$T(n) = \Theta(\log n)$$
 
 The base of the logarithm does not affect the asymptotic complexity class.
 
@@ -282,11 +279,11 @@ Determine the number of iterations in terms of $n$ and the time complexity.
 
 After $k$ iterations:
 
-$$i \approx \frac{n}{2^k}.$$
+$$i \approx \frac{n}{2^k}$$
 
 The loop terminates when:
 
-$$\frac{n}{2^k} \le 1 \implies 2^k \ge n.$$
+$$\frac{n}{2^k} \le 1 \implies 2^k \ge n$$
 
 Thus, the number of iterations is approximately:
 
@@ -294,7 +291,7 @@ $$\log_2 n$$
 
 and:
 
-$$T(n) = \Theta(\log n).$$
+$$T(n) = \Theta(\log n)$$
 
 </details>
 
@@ -333,7 +330,7 @@ times.
 
 Therefore:
 
-$$T(n) = \Theta(\log n \cdot \log n) = \Theta(\log^2 n).$$
+$$T(n) = \Theta(\log n \cdot \log n) = \Theta(\log^2 n)$$
 
 </details>
 
@@ -359,17 +356,15 @@ for i in range(n):
 
 The `while` loop generates the sequence of values:
 
-$$1, 2, 4, 8, \dots, 2^k \le n.$$
+$$1, 2, 4, 8, \dots, 2^k \le n$$
 
 The number of iterations is:
 
-$$\lfloor \log_2 n 
-floor + 1.$$
+$$\lfloor \log_2 n \rfloor + 1$$
 
 The outer loop executes $n$ times, so:
 
-$$T(n) = n \cdot (\lfloor \log_2 n 
-floor + 1) = \Theta(n \log n).$$
+$$T(n) = n \cdot (\lfloor \log_2 n \rfloor + 1) = \Theta(n \log n)$$
 
 </details>
 
@@ -398,11 +393,11 @@ $$n + \frac{n}{2} + \frac{n}{4} + \frac{n}{8} + \dots$$
 
 This is a geometric series whose infinite sum is bounded by:
 
-$$2n.$$
+$$2n$$
 
 Therefore:
 
-$$T(n) = \Theta(n).$$
+$$T(n) = \Theta(n)$$
 
 This is an important example demonstrating that an outer logarithmic loop does **not necessarily** lead to $O(n \log n)$.
 
@@ -437,19 +432,17 @@ $$i, 2i, 3i, \dots$$
 
 up to $n$. Thus, the inner loop executes approximately:
 
-$$\lfloor n/i 
-floor$$
+$$\lfloor n/i \rfloor$$
 
 times.
 
 Total cost:
 
-$$T(n) = \sum_{i=1}^n \lfloor n/i 
-floor.$$
+$$T(n) = \sum_{i=1}^n \lfloor n/i \rfloor$$
 
 Approximating by removing the floor function:
 
-$$T(n) \approx n \cdot \sum_{i=1}^n \frac{1}{i}.$$
+$$T(n) \approx n \cdot \sum_{i=1}^n \frac{1}{i}$$
 
 Since:
 
@@ -457,7 +450,7 @@ $$\sum_{i=1}^n \frac{1}{i} = \Theta(\log n),$$
 
 we have:
 
-$$T(n) = \Theta(n \log n).$$
+$$T(n) = \Theta(n \log n)$$
 
 </details>
 
@@ -481,19 +474,19 @@ Determine the time complexity of the loop.
 
 After $k$ iterations, $s$ is equal to the sum of the first $k$ integers:
 
-$$s = \Theta(k^2).$$
+$$s = \Theta(k^2)$$
 
 The loop terminates when:
 
-$$k^2 \approx n.$$
+$$k^2 \approx n$$
 
 Therefore:
 
-$$k = \Theta(\sqrt{n}).$$
+$$k = \Theta(\sqrt{n})$$
 
 Hence:
 
-$$T(n) = \Theta(\sqrt{n}).$$
+$$T(n) = \Theta(\sqrt{n})$$
 
 </details>
 
@@ -517,15 +510,15 @@ Determine the time complexity.
 
 The loop terminates when:
 
-$$i^2 \ge n.$$
+$$i^2 \ge n$$
 
 Thus:
 
-$$i \approx \sqrt{n}.$$
+$$i \approx \sqrt{n}$$
 
 Therefore:
 
-$$T(n) = \Theta(\sqrt{n}).$$
+$$T(n) = \Theta(\sqrt{n})$$
 
 </details>
 
@@ -554,19 +547,19 @@ Assume `len(A) = n`.
 
 1. Best case: $x$ is found at index `A[0]`.
 
-$$T_{\text{best}}(n) = \Theta(1).$$
+$$T_{\text{best}}(n) = \Theta(1)$$
 
 2. Worst case: $x$ is not in the array or is located at the very last index.
 
-$$T_{\text{worst}}(n) = \Theta(n).$$
+$$T_{\text{worst}}(n) = \Theta(n)$$
 
 3. If $x$ is guaranteed to be present and equally likely at any position:
 
-$$\frac{1 + 2 + \dots + n}{n} = \frac{n+1}{2}.$$
+$$\frac{1 + 2 + \dots + n}{n} = \frac{n+1}{2}$$
 
 Hence, the average case remains:
 
-$$\Theta(n).$$
+$$\Theta(n)$$
 
 </details>
 
@@ -597,13 +590,13 @@ Determine:
 
 If `A[i] == 0` for all $i$, each outer iteration performs only constant work.
 
-$$T_{\text{best}}(n) = \Theta(n).$$
+$$T_{\text{best}}(n) = \Theta(n)$$
 
 ### Worst Case
 
 If `A[i] != 0` for all $i$, each iteration runs an inner loop of $n$ steps.
 
-$$T_{\text{worst}}(n) = n \cdot n = \Theta(n^2).$$
+$$T_{\text{worst}}(n) = n \cdot n = \Theta(n^2)$$
 
 </details>
 
@@ -628,7 +621,7 @@ In every outer iteration, the `while` loop executes exactly once because the `br
 
 Therefore:
 
-$$T(n) = n \cdot O(1) = \Theta(n).$$
+$$T(n) = n \cdot O(1) = \Theta(n)$$
 
 One cannot determine complexity solely from the loop condition `j < n`; one must examine the **actual control flow**.
 
@@ -667,7 +660,7 @@ Principle: For sufficiently large $n$, retain the term with the highest growth r
 
 Prove:
 
-$$5n + 12 = O(n).$$
+$$5n + 12 = O(n)$$
 
 Provide a valid pair of positive constants $c > 0$ and $n_0 > 0$.
 
@@ -682,19 +675,19 @@ for all $n \ge n_0$.
 
 For example, when $n \ge 12$:
 
-$$12 \le n.$$
+$$12 \le n$$
 
 Therefore:
 
-$$5n + 12 \le 5n + n = 6n.$$
+$$5n + 12 \le 5n + n = 6n$$
 
 We can choose:
 
-$$c = 6, \quad n_0 = 12.$$
+$$c = 6, \quad n_0 = 12$$
 
 Hence:
 
-$$5n + 12 = O(n).$$
+$$5n + 12 = O(n)$$
 
 Note: The choice of $c$ and $n_0$ is **not unique**.
 
@@ -706,34 +699,34 @@ Note: The choice of $c$ and $n_0$ is **not unique**.
 
 Prove:
 
-$$4n^2 + 3n + 2 = \Theta(n^2).$$
+$$4n^2 + 3n + 2 = \Theta(n^2)$$
 
 <details>
 <summary><strong>Click to show hints / solution</strong></summary>
 
 We need to find positive constants $c_1, c_2, n_0 > 0$ such that:
 
-$$c_1 n^2 \le 4n^2 + 3n + 2 \le c_2 n^2 \quad \text{for all } n \ge n_0.$$
+$$c_1 n^2 \le 4n^2 + 3n + 2 \le c_2 n^2 \quad \text{for all } n \ge n_0$$
 
 For $n \ge 1$:
 
-$$4n^2 \le 4n^2 + 3n + 2.$$
+$$4n^2 \le 4n^2 + 3n + 2$$
 
 Furthermore:
 
-$$3n \le 3n^2, \quad 2 \le 2n^2.$$
+$$3n \le 3n^2, \quad 2 \le 2n^2$$
 
 Thus:
 
-$$4n^2 + 3n + 2 \le 4n^2 + 3n^2 + 2n^2 = 9n^2.$$
+$$4n^2 + 3n + 2 \le 4n^2 + 3n^2 + 2n^2 = 9n^2$$
 
 We can choose:
 
-$$c_1 = 4, \quad c_2 = 9, \quad n_0 = 1.$$
+$$c_1 = 4, \quad c_2 = 9, \quad n_0 = 1$$
 
 Consequently:
 
-$$4n^2 + 3n + 2 = \Theta(n^2).$$
+$$4n^2 + 3n + 2 = \Theta(n^2)$$
 
 </details>
 
@@ -768,18 +761,18 @@ Determine whether each of the following statements is True or False.
 
 Sort the following functions from slowest-growing to fastest-growing:
 
-$$1, \quad \log n, \quad \sqrt{n}, \quad n, \quad n \log n, \quad 4^{\log_2 n}, \quad n^3, \quad 2^n, \quad n!.$$
+$$1, \quad \log n, \quad \sqrt{n}, \quad n, \quad n \log n, \quad 4^{\log_2 n}, \quad n^3, \quad 2^n, \quad n!$$
 
 <details>
 <summary><strong>Click to show hints / solution</strong></summary>
 
 Notice that:
 
-$$4^{\log_2 n} = (2^2)^{\log_2 n} = (2^{\log_2 n})^2 = n^2.$$
+$$4^{\log_2 n} = (2^2)^{\log_2 n} = (2^{\log_2 n})^2 = n^2$$
 
 The correct ordering is:
 
-$$1 < \log n < \sqrt{n} < n < n \log n < n^2 < n^3 < 2^n < n!.$$
+$$1 < \log n < \sqrt{n} < n < n \log n < n^2 < n^3 < 2^n < n!$$
 
 </details>
 
@@ -805,15 +798,15 @@ def f(n):
 
 Recurrence:
 
-$$T(n) = T(n-1) + \Theta(1).$$
+$$T(n) = T(n-1) + \Theta(1)$$
 
 Unrolling (telescoping):
 
-$$T(n) = T(n-2) + 2\Theta(1) = \dots = T(0) + n\Theta(1).$$
+$$T(n) = T(n-2) + 2\Theta(1) = \dots = T(0) + n\Theta(1)$$
 
 Therefore:
 
-$$T(n) = \Theta(n).$$
+$$T(n) = \Theta(n)$$
 
 </details>
 
@@ -839,15 +832,15 @@ Formulate the recurrence relation and determine the time complexity.
 
 Each call performs $\Theta(n)$ work before calling `f(n-1)`:
 
-$$T(n) = T(n-1) + \Theta(n).$$
+$$T(n) = T(n-1) + \Theta(n)$$
 
 Unrolling:
 
-$$T(n) = n + (n-1) + \dots + 1.$$
+$$T(n) = n + (n-1) + \dots + 1$$
 
 Therefore:
 
-$$T(n) = \Theta(n^2).$$
+$$T(n) = \Theta(n^2)$$
 
 </details>
 
@@ -876,11 +869,11 @@ def f(n):
 
 Each call performs work of order:
 
-$$\Theta(n^2).$$
+$$\Theta(n^2)$$
 
 Recurrence relation:
 
-$$T(n) = T(n-3) + \Theta(n^2).$$
+$$T(n) = T(n-3) + \Theta(n^2)$$
 
 The recursion depth is approximately $n/3 = \Theta(n)$.
 
@@ -892,7 +885,7 @@ This is a summation of $\Theta(n)$ decreasing quadratic terms, which is asymptot
 
 Therefore:
 
-$$T(n) = \Theta(n^3).$$
+$$T(n) = \Theta(n^3)$$
 
 </details>
 
@@ -917,17 +910,17 @@ Formulate the recurrence relation and determine the time complexity.
 
 Recurrence relation:
 
-$$T(n) = 3T(n-1) + \Theta(1).$$
+$$T(n) = 3T(n-1) + \Theta(1)$$
 
 The recursion tree has a branching factor of 3 and a depth of approximately $n$.
 
 The number of nodes across levels is:
 
-$$1 + 3 + 3^2 + \dots + 3^n.$$
+$$1 + 3 + 3^2 + \dots + 3^n$$
 
 Therefore:
 
-$$T(n) = \Theta(3^n).$$
+$$T(n) = \Theta(3^n)$$
 
 </details>
 
@@ -952,17 +945,17 @@ Formulate the recurrence relation and determine the time complexity.
 
 Recurrence relation:
 
-$$T(n) = 2T(n/2) + \Theta(1).$$
+$$T(n) = 2T(n/2) + \Theta(1)$$
 
 By the Master Theorem:
 
-$$a = 2, \quad b = 2, \quad n^{\log_b a} = n^{\log_2 2} = n.$$
+$$a = 2, \quad b = 2, \quad n^{\log_b a} = n^{\log_2 2} = n$$
 
 The work done outside recursion is $\Theta(1)$, which is polynomially smaller than $n$ (Case 1: subproblems dominate).
 
 Therefore:
 
-$$T(n) = \Theta(n).$$
+$$T(n) = \Theta(n)$$
 
 </details>
 
@@ -974,26 +967,26 @@ $$T(n) = \Theta(n).$$
 
 Solve the recurrence relation:
 
-$$T(n) = 2T(n/2) + n.$$
+$$T(n) = 2T(n/2) + n$$
 
 <details>
 <summary><strong>Click to show hints / solution</strong></summary>
 
 Here:
 
-$$a = 2, \quad b = 2.$$
+$$a = 2, \quad b = 2$$
 
 Hence:
 
-$$n^{\log_b a} = n^{\log_2 2} = n.$$
+$$n^{\log_b a} = n^{\log_2 2} = n$$
 
 The non-recursive cost is:
 
-$$f(n) = n.$$
+$$f(n) = n$$
 
 Since $f(n) = \Theta(n^{\log_b a})$, this corresponds to Master Theorem Case 2:
 
-$$T(n) = \Theta(n \log n).$$
+$$T(n) = \Theta(n \log n)$$
 
 </details>
 
@@ -1003,7 +996,7 @@ $$T(n) = \Theta(n \log n).$$
 
 Solve:
 
-$$T(n) = 4T(n/2) + n.$$
+$$T(n) = 4T(n/2) + n$$
 
 <details>
 <summary><strong>Click to show hints / solution</strong></summary>
@@ -1012,7 +1005,7 @@ $$a = 4, \quad b = 2,$$
 
 so:
 
-$$n^{\log_b a} = n^{\log_2 4} = n^2.$$
+$$n^{\log_b a} = n^{\log_2 4} = n^2$$
 
 Since:
 
@@ -1022,7 +1015,7 @@ the subproblems dominate (Master Theorem Case 1).
 
 Therefore:
 
-$$T(n) = \Theta(n^2).$$
+$$T(n) = \Theta(n^2)$$
 
 </details>
 
@@ -1032,26 +1025,26 @@ $$T(n) = \Theta(n^2).$$
 
 Solve:
 
-$$T(n) = 2T(n/4) + n.$$
+$$T(n) = 2T(n/4) + n$$
 
 <details>
 <summary><strong>Click to show hints / solution</strong></summary>
 
-$$a = 2, \quad b = 4.$$
+$$a = 2, \quad b = 4$$
 
 We have:
 
-$$n^{\log_b a} = n^{\log_4 2} = n^{1/2} = \sqrt{n}.$$
+$$n^{\log_b a} = n^{\log_4 2} = n^{1/2} = \sqrt{n}$$
 
 Meanwhile:
 
-$$f(n) = n = \Omega(n^{1/2 + \epsilon}) \quad (\text{with } \epsilon = 0.5).$$
+$$f(n) = n = \Omega(n^{1/2 + \epsilon}) \quad (\text{with } \epsilon = 0.5)$$
 
 Since $n$ grows strictly faster than $\sqrt{n}$ and satisfies the regularity condition $2(n/4) \le c n$ for $c = 1/2 < 1$, the root work dominates (Master Theorem Case 3).
 
 Therefore:
 
-$$T(n) = \Theta(n).$$
+$$T(n) = \Theta(n)$$
 
 </details>
 
@@ -1061,7 +1054,7 @@ $$T(n) = \Theta(n).$$
 
 Solve:
 
-$$T(n) = 3T(n/2) + n^2.$$
+$$T(n) = 3T(n/2) + n^2$$
 
 <details>
 <summary><strong>Click to show hints / solution</strong></summary>
@@ -1070,17 +1063,17 @@ $$a = 3, \quad b = 2,$$
 
 so:
 
-$$n^{\log_2 3} \approx n^{1.585}.$$
+$$n^{\log_2 3} \approx n^{1.585}$$
 
 Meanwhile:
 
-$$f(n) = n^2.$$
+$$f(n) = n^2$$
 
 Since $n^2 = \Omega(n^{1.585 + \epsilon})$ and the regularity condition holds ($3(n/2)^2 = \frac{3}{4}n^2 \le c n^2$ with $c = 3/4 < 1$), the root work dominates (Master Theorem Case 3).
 
 Therefore:
 
-$$T(n) = \Theta(n^2).$$
+$$T(n) = \Theta(n^2)$$
 
 </details>
 
@@ -1090,7 +1083,7 @@ $$T(n) = \Theta(n^2).$$
 
 Solve:
 
-$$T(n) = 8T(n/2) + n^3.$$
+$$T(n) = 8T(n/2) + n^3$$
 
 <details>
 <summary><strong>Click to show hints / solution</strong></summary>
@@ -1099,15 +1092,15 @@ $$a = 8, \quad b = 2,$$
 
 so:
 
-$$n^{\log_b a} = n^{\log_2 8} = n^3.$$
+$$n^{\log_b a} = n^{\log_2 8} = n^3$$
 
 The non-recursive cost is also:
 
-$$f(n) = n^3.$$
+$$f(n) = n^3$$
 
 Since both terms have identical growth rates ($f(n) = \Theta(n^{\log_b a})$), an extra logarithmic factor is introduced (Master Theorem Case 2):
 
-$$T(n) = \Theta(n^3 \log n).$$
+$$T(n) = \Theta(n^3 \log n)$$
 
 </details>
 
@@ -1119,7 +1112,7 @@ $$T(n) = \Theta(n^3 \log n).$$
 
 Solve the recurrence relation:
 
-$$T(n) = T(\sqrt{n}) + 1.$$
+$$T(n) = T(\sqrt{n}) + 1$$
 
 Hint: substitute $n = 2^m$.
 
@@ -1128,27 +1121,27 @@ Hint: substitute $n = 2^m$.
 
 Let:
 
-$$n = 2^m \implies m = \log_2 n.$$
+$$n = 2^m \implies m = \log_2 n$$
 
 Define:
 
-$$S(m) = T(2^m).$$
+$$S(m) = T(2^m)$$
 
 Then:
 
-$$\sqrt{n} = \sqrt{2^m} = 2^{m/2}.$$
+$$\sqrt{n} = \sqrt{2^m} = 2^{m/2}$$
 
 Substituting gives:
 
-$$S(m) = S(m/2) + 1.$$
+$$S(m) = S(m/2) + 1$$
 
 This standard recurrence yields:
 
-$$S(m) = \Theta(\log m).$$
+$$S(m) = \Theta(\log m)$$
 
 Substituting back $m = \log_2 n$:
 
-$$T(n) = \Theta(\log \log n).$$
+$$T(n) = \Theta(\log \log n)$$
 
 </details>
 
@@ -1158,26 +1151,26 @@ $$T(n) = \Theta(\log \log n).$$
 
 Solve:
 
-$$T(n) = 2T(\sqrt{n}) + 1.$$
+$$T(n) = 2T(\sqrt{n}) + 1$$
 
 <details>
 <summary><strong>Click to show hints / solution</strong></summary>
 
 Again substitute:
 
-$$n = 2^m, \quad S(m) = T(2^m).$$
+$$n = 2^m, \quad S(m) = T(2^m)$$
 
 We obtain:
 
-$$S(m) = 2S(m/2) + 1.$$
+$$S(m) = 2S(m/2) + 1$$
 
 By the Master Theorem:
 
-$$S(m) = \Theta(m).$$
+$$S(m) = \Theta(m)$$
 
 Substituting back $m = \log_2 n$:
 
-$$T(n) = \Theta(\log n).$$
+$$T(n) = \Theta(\log n)$$
 
 </details>
 
@@ -1211,7 +1204,7 @@ Assume $n$ is even. Determine the overall time complexity.
 
 Multiplying the costs of the independent loops:
 
-$$T(n) = \Theta(n) \cdot \Theta(n) \cdot \Theta(\log n) = \Theta(n^2 \log n).$$
+$$T(n) = \Theta(n) \cdot \Theta(n) \cdot \Theta(\log n) = \Theta(n^2 \log n)$$
 
 </details>
 
@@ -1247,17 +1240,15 @@ $$\log_2 j + 1$$
 
 times.
 
-Setting $j = 2^r$, the cost as $r$ ranges from $0$ to $\lfloor \log_2 n 
-floor$ is:
+Setting $j = 2^r$, the cost as $r$ ranges from $0$ to $\lfloor \log_2 n  \rfloor$ is:
 
-$$1 + 2 + \dots + (\lfloor \log_2 n 
-floor + 1) = \Theta((\log n)^2).$$
+$$1 + 2 + \dots + (\lfloor \log_2 n \rfloor + 1) = \Theta((\log n)^2)$$
 
 Therefore, for each iteration of $i$, the nested loops take $\Theta(\log^2 n)$ steps.
 
 Since the outer loop executes $n$ times:
 
-$$T(n) = \Theta(n \log^2 n).$$
+$$T(n) = \Theta(n \log^2 n)$$
 
 </details>
 
@@ -1280,7 +1271,7 @@ Suppose we perform $n$ consecutive `append` operations.
 
 A single `append` that triggers a resize must copy all existing elements, requiring $\Theta(n)$ steps. Hence, the worst case of a **single operation** is:
 
-$$O(n).$$
+$$O(n)$$
 
 However, resizes only occur at array capacities:
 
@@ -1288,15 +1279,15 @@ $$1, 2, 4, 8, \dots$$
 
 The total number of element copies across all $n$ appends is:
 
-$$1 + 2 + 4 + \dots < 2n.$$
+$$1 + 2 + 4 + \dots < 2n$$
 
 Therefore, the total cost for $n$ operations is:
 
-$$\Theta(n).$$
+$$\Theta(n)$$
 
 The amortized cost per `append` operation is:
 
-$$\frac{\Theta(n)}{n} = \Theta(1).$$
+$$\frac{\Theta(n)}{n} = \Theta(1)$$
 
 </details>
 
@@ -1329,19 +1320,19 @@ times.
 
 Therefore:
 
-$$T(n) = \sum_{i=1}^n \Theta(\log i).$$
+$$T(n) = \sum_{i=1}^n \Theta(\log i)$$
 
 Note that:
 
-$$\sum_{i=1}^n \log i = \log(n!).$$
+$$\sum_{i=1}^n \log i = \log(n!)$$
 
 By Stirling's approximation:
 
-$$\log(n!) = \Theta(n \log n).$$
+$$\log(n!) = \Theta(n \log n)$$
 
 Hence:
 
-$$T(n) = \Theta(n \log n).$$
+$$T(n) = \Theta(n \log n)$$
 
 </details>
 
@@ -1366,15 +1357,15 @@ while i <= n:
 
 The costs for each outer iteration are:
 
-$$1 + 2 + 4 + 8 + \dots + 2^k \quad (\text{where } 2^k \le n).$$
+$$1 + 2 + 4 + 8 + \dots + 2^k \quad (\text{where } 2^k \le n)$$
 
 This is a geometric series:
 
-$$T(n) < 2n.$$
+$$T(n) < 2n$$
 
 Therefore:
 
-$$T(n) = \Theta(n).$$
+$$T(n) = \Theta(n)$$
 
 </details>
 
@@ -1384,7 +1375,7 @@ $$T(n) = \Theta(n).$$
 
 Given:
 
-$$T(n) = T(n/2) + T(n/4) + T(n/8) + n.$$
+$$T(n) = T(n/2) + T(n/4) + T(n/8) + n$$
 
 Without finding exact constants, predict and explain the asymptotic growth rate of $T(n)$.
 
@@ -1393,23 +1384,21 @@ Without finding exact constants, predict and explain the asymptotic growth rate 
 
 The combined size of all subproblems at the first recursive level is:
 
-$$\frac{n}{2} + \frac{n}{4} + \frac{n}{8} = \frac{7}{8}n < n.$$
+$$\frac{n}{2} + \frac{n}{4} + \frac{n}{8} = \frac{7}{8}n < n$$
 
 The non-recursive work at the root is $\Theta(n)$, and the total work at each subsequent depth decreases geometrically by a factor of $\frac{7}{8} < 1$.
 
 We obtain a decaying geometric series:
 
-$$n + \frac{7}{8}n + \left(\frac{7}{8}
-ight)^2 n + \dots$$
+$$n + \frac{7}{8}n + \left(\frac{7}{8}\right)^2 n + \dots$$
 
 Sum of the geometric series:
 
-$$\sum_{k=0}^{\infty} \left(\frac{7}{8}
-ight)^k n = \frac{1}{1 - 7/8} n = 8n = \Theta(n).$$
+$$\sum_{k=0}^{\infty} \left(\frac{7}{8}\right)^k n = \frac{1}{1 - 7/8} n = 8n = \Theta(n)$$
 
 Therefore:
 
-$$T(n) = \Theta(n).$$
+$$T(n) = \Theta(n)$$
 
 </details>
 
@@ -1425,7 +1414,7 @@ $$T_A(n) = 1000n$$
 
 and algorithm B has running time:
 
-$$T_B(n) = n^2.$$
+$$T_B(n) = n^2$$
 
 1. Which algorithm has a better asymptotic growth rate?
 2. Does algorithm A necessarily run faster than B for all values of $n$?
@@ -1440,7 +1429,7 @@ $$1000n = \Theta(n)$$
 
 whereas:
 
-$$n^2 = \Theta(n^2).$$
+$$n^2 = \Theta(n^2)$$
 
 2. No. For small inputs ($n < 1000$), the constant factor $1000$ causes algorithm A to require more operations than B ($T_A(10) = 10000 > T_B(10) = 100$).
 3. Asymptotic analysis focuses on the behavior of algorithms as $n \to \infty$. It allows comparing the fundamental scalability of algorithms independently of hardware platforms, execution environments, and compiler optimizations.

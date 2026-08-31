@@ -43,7 +43,7 @@ for i in range(n):
 2. Mỗi lần có 1 phép cộng và 1 phép gán, nên có $2n$ thao tác trong phần thân.
 3. Bỏ qua hằng số:
 
-$$T(n) = \Theta(n).$$
+$$T(n) = \Theta(n)$$
 
 </details>
 
@@ -79,11 +79,11 @@ lần.
 
 Do đó:
 
-$$T(n) = n + n^2.$$
+$$T(n) = n + n^2$$
 
 Số hạng bậc cao nhất là $n^2$, nên:
 
-$$T(n) = \Theta(n^2).$$
+$$T(n) = \Theta(n^2)$$
 
 </details>
 
@@ -108,15 +108,15 @@ for i in range(n):
 
 Với $i = 0, 1, \dots, n-1$, số lần chạy của vòng trong lần lượt là:
 
-$$1, 2, 3, \dots, n.$$
+$$1, 2, 3, \dots, n$$
 
 Do đó:
 
-$$T(n) = 1 + 2 + \dots + n = \frac{n(n+1)}{2}.$$
+$$T(n) = 1 + 2 + \dots + n = \frac{n(n+1)}{2}$$
 
 Vì vậy:
 
-$$T(n) = \Theta(n^2).$$
+$$T(n) = \Theta(n^2)$$
 
 </details>
 
@@ -139,15 +139,15 @@ Tính chính xác số lần `count += 1` được thực hiện và xác địn
 
 Số lần chạy của vòng trong là:
 
-$$n, (n-1), (n-2), \dots, 1.$$
+$$n, (n-1), (n-2), \dots, 1$$
 
 Do đó:
 
-$$T(n) = n + (n-1) + \dots + 1 = \frac{n(n+1)}{2}.$$
+$$T(n) = n + (n-1) + \dots + 1 = \frac{n(n+1)}{2}$$
 
 Suy ra:
 
-$$T(n) = \Theta(n^2).$$
+$$T(n) = \Theta(n^2)$$
 
 </details>
 
@@ -176,17 +176,15 @@ $$0, 2, 4, \dots$$
 
 nhỏ hơn $n$, nên chạy khoảng $n/2$ lần, chính xác là:
 
-$$\lceil n/2 
-ceil.$$
+$$\lceil n/2 \rceil$$
 
 Tổng số lần tăng `count`:
 
-$$n \lceil n/2 
-ceil.$$
+$$n \lceil n/2 \rceil$$
 
 Do đó:
 
-$$T(n) = \Theta(n^2).$$
+$$T(n) = \Theta(n^2)$$
 
 </details>
 
@@ -211,15 +209,15 @@ for i in range(1, n + 1):
 
 Ta có:
 
-$$T(n) = \sum_{i=1}^n i^2.$$
+$$T(n) = \sum_{i=1}^n i^2$$
 
 Sử dụng:
 
-$$\sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6}.$$
+$$\sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6}$$
 
 Số hạng bậc cao nhất là $\frac{1}{3}n^3$, nên:
 
-$$T(n) = \Theta(n^3).$$
+$$T(n) = \Theta(n^3)$$
 
 </details>
 
@@ -244,20 +242,19 @@ while i < n:
 
 Sau $k$ lần:
 
-$$i = 2^k.$$
+$$i = 2^k$$
 
 Ta cần giá trị nhỏ nhất của $k$ sao cho:
 
-$$2^k \ge n.$$
+$$2^k \ge n$$
 
 Do đó:
 
-$$k = \lceil \log_2 n 
-ceil.$$
+$$k = \lceil \log_2 n \rceil$$
 
 Vì vậy:
 
-$$T(n) = \Theta(\log n).$$
+$$T(n) = \Theta(\log n)$$
 
 Cơ số logarithm không ảnh hưởng đến lớp độ phức tạp.
 
@@ -280,11 +277,11 @@ Xác định số vòng lặp theo $n$ và độ phức tạp.
 
 Sau $k$ lần:
 
-$$i \approx \frac{n}{2^k}.$$
+$$i \approx \frac{n}{2^k}$$
 
 Vòng lặp dừng khi:
 
-$$\frac{n}{2^k} \le 1 \implies 2^k \ge n.$$
+$$\frac{n}{2^k} \le 1 \implies 2^k \ge n$$
 
 Vì vậy số vòng lặp là xấp xỉ:
 
@@ -292,7 +289,7 @@ $$\log_2 n$$
 
 và:
 
-$$T(n) = \Theta(\log n).$$
+$$T(n) = \Theta(\log n)$$
 
 </details>
 
@@ -331,7 +328,7 @@ lần.
 
 Do đó:
 
-$$T(n) = \Theta(\log n \cdot \log n) = \Theta(\log^2 n).$$
+$$T(n) = \Theta(\log n \cdot \log n) = \Theta(\log^2 n)$$
 
 </details>
 
@@ -357,17 +354,15 @@ for i in range(n):
 
 Vòng `while` tạo dãy:
 
-$$1, 2, 4, 8, \dots, 2^k \le n.$$
+$$1, 2, 4, 8, \dots, 2^k \le n$$
 
 Số vòng là:
 
-$$\lfloor \log_2 n 
-floor + 1.$$
+$$\lfloor \log_2 n \rfloor + 1$$
 
 Vòng ngoài chạy $n$ lần, nên:
 
-$$T(n) = n \cdot (\lfloor \log_2 n 
-floor + 1) = \Theta(n \log n).$$
+$$T(n) = n \cdot (\lfloor \log_2 n \rfloor + 1) = \Theta(n \log n)$$
 
 </details>
 
@@ -396,11 +391,11 @@ $$n + \frac{n}{2} + \frac{n}{4} + \frac{n}{8} + \dots$$
 
 Đây là cấp số nhân có tổng nhỏ hơn:
 
-$$2n.$$
+$$2n$$
 
 Do đó:
 
-$$T(n) = \Theta(n).$$
+$$T(n) = \Theta(n)$$
 
 Đây là ví dụ quan trọng cho thấy một vòng logarithmic ở bên ngoài **không nhất thiết** tạo ra $O(n \log n)$.
 
@@ -435,27 +430,25 @@ $$i, 2i, 3i, \dots$$
 
 đến $n$, nên vòng trong chạy khoảng:
 
-$$\lfloor n/i 
-floor$$
+$$\lfloor n/i \rfloor$$
 
 lần.
 
 Tổng:
 
-$$T(n) = \sum_{i=1}^n \lfloor n/i 
-floor.$$
+$$T(n) = \sum_{i=1}^n \lfloor n/i \rfloor$$
 
 Bỏ phần làm tròn:
 
-$$T(n) \approx n \cdot \sum_{i=1}^n \frac{1}{i}.$$
+$$T(n) \approx n \cdot \sum_{i=1}^n \frac{1}{i}$$
 
 Mà:
 
-$$\sum_{i=1}^n \frac{1}{i} = \Theta(\log n).$$
+$$\sum_{i=1}^n \frac{1}{i} = \Theta(\log n)$$
 
 Do đó:
 
-$$T(n) = \Theta(n \log n).$$
+$$T(n) = \Theta(n \log n)$$
 
 </details>
 
@@ -479,19 +472,19 @@ Hãy xác định độ phức tạp của vòng lặp.
 
 Sau $k$ vòng, $s$ có độ lớn bằng tổng của các số nguyên đầu tiên:
 
-$$s = \Theta(k^2).$$
+$$s = \Theta(k^2)$$
 
 Vòng lặp kết thúc khi:
 
-$$k^2 \approx n.$$
+$$k^2 \approx n$$
 
 Do đó:
 
-$$k = \Theta(\sqrt{n}).$$
+$$k = \Theta(\sqrt{n})$$
 
 Suy ra:
 
-$$T(n) = \Theta(\sqrt{n}).$$
+$$T(n) = \Theta(\sqrt{n})$$
 
 </details>
 
@@ -515,15 +508,15 @@ Xác định độ phức tạp.
 
 Vòng lặp dừng khi:
 
-$$i^2 \ge n.$$
+$$i^2 \ge n$$
 
 Suy ra:
 
-$$i \approx \sqrt{n}.$$
+$$i \approx \sqrt{n}$$
 
 Do đó:
 
-$$T(n) = \Theta(\sqrt{n}).$$
+$$T(n) = \Theta(\sqrt{n})$$
 
 </details>
 
@@ -552,19 +545,19 @@ Giả sử `len(A) = n`.
 
 1. Best case: `x` nằm ngay ở `A[0]`.
 
-$$T_{\text{best}}(n) = \Theta(1).$$
+$$T_{\text{best}}(n) = \Theta(1)$$
 
 2. Worst case: `x` không có trong mảng hoặc nằm ở cuối mảng.
 
-$$T_{\text{worst}}(n) = \Theta(n).$$
+$$T_{\text{worst}}(n) = \Theta(n)$$
 
 3. Nếu `x` chắc chắn tồn tại và các vị trí có xác suất như nhau:
 
-$$\frac{1 + 2 + \dots + n}{n} = \frac{n+1}{2}.$$
+$$\frac{1 + 2 + \dots + n}{n} = \frac{n+1}{2}$$
 
 Do đó average case vẫn là:
 
-$$\Theta(n).$$
+$$\Theta(n)$$
 
 </details>
 
@@ -595,13 +588,13 @@ Xác định:
 
 Nếu mọi `A[i] == 0`, mỗi lần vòng ngoài chỉ thực hiện công việc hằng số.
 
-$$T_{\text{best}}(n) = \Theta(n).$$
+$$T_{\text{best}}(n) = \Theta(n)$$
 
 ### Worst case
 
 Nếu mọi `A[i] != 0`, với mỗi $i$ ta thực hiện thêm vòng lặp $n$ lần.
 
-$$T_{\text{worst}}(n) = n \cdot n = \Theta(n^2).$$
+$$T_{\text{worst}}(n) = n \cdot n = \Theta(n^2)$$
 
 </details>
 
@@ -626,7 +619,7 @@ Mỗi lần vòng ngoài chạy, vòng `while` chỉ thực hiện đúng một 
 
 Do đó:
 
-$$T(n) = n \cdot O(1) = \Theta(n).$$
+$$T(n) = n \cdot O(1) = \Theta(n)$$
 
 Không thể chỉ nhìn vào điều kiện `j < n` để kết luận vòng trong chạy $n$ lần; cần xem **luồng điều khiển thực tế**.
 
@@ -665,7 +658,7 @@ Nguyên tắc: khi $n$ lớn, giữ lại số hạng có tốc độ tăng trư
 
 Chứng minh:
 
-$$5n + 12 = O(n).$$
+$$5n + 12 = O(n)$$
 
 Hãy đưa ra một cặp hằng số $c > 0$ và $n_0 > 0$ phù hợp.
 
@@ -680,19 +673,19 @@ với mọi $n \ge n_0$.
 
 Ví dụ, nếu $n \ge 12$:
 
-$$12 \le n.$$
+$$12 \le n$$
 
 Do đó:
 
-$$5n + 12 \le 6n.$$
+$$5n + 12 \le 6n$$
 
 Có thể chọn:
 
-$$c = 6, \quad n_0 = 12.$$
+$$c = 6, \quad n_0 = 12$$
 
 Vậy:
 
-$$5n + 12 = O(n).$$
+$$5n + 12 = O(n)$$
 
 Lưu ý: $c$ và $n_0$ **không duy nhất**.
 
@@ -704,34 +697,34 @@ Lưu ý: $c$ và $n_0$ **không duy nhất**.
 
 Chứng minh:
 
-$$4n^2 + 3n + 2 = \Theta(n^2).$$
+$$4n^2 + 3n + 2 = \Theta(n^2)$$
 
 <details>
 <summary><strong>Nhấn để hiển thị hướng dẫn / lời giải</strong></summary>
 
 Ta cần tìm $c_1, c_2, n_0 > 0$ sao cho:
 
-$$c_1 n^2 \le 4n^2 + 3n + 2 \le c_2 n^2.$$
+$$c_1 n^2 \le 4n^2 + 3n + 2 \le c_2 n^2$$
 
 Với $n \ge 1$:
 
-$$4n^2 \le 4n^2 + 3n + 2.$$
+$$4n^2 \le 4n^2 + 3n + 2$$
 
 Mặt khác:
 
-$$3n \le 3n^2, \quad 2 \le 2n^2.$$
+$$3n \le 3n^2, \quad 2 \le 2n^2$$
 
 Nên:
 
-$$4n^2 + 3n + 2 \le 9n^2.$$
+$$4n^2 + 3n + 2 \le 9n^2$$
 
 Có thể chọn:
 
-$$c_1 = 4, \quad c_2 = 9, \quad n_0 = 1.$$
+$$c_1 = 4, \quad c_2 = 9, \quad n_0 = 1$$
 
 Suy ra:
 
-$$4n^2 + 3n + 2 = \Theta(n^2).$$
+$$4n^2 + 3n + 2 = \Theta(n^2)$$
 
 </details>
 
@@ -766,18 +759,18 @@ Xác định mỗi phát biểu sau là đúng hay sai.
 
 Sắp xếp các hàm sau từ tăng chậm nhất đến tăng nhanh nhất:
 
-$$1, \quad \log n, \quad \sqrt{n}, \quad n, \quad n \log n, \quad 4^{\log_2 n}, \quad n^3, \quad 2^n, \quad n!.$$
+$$1, \quad \log n, \quad \sqrt{n}, \quad n, \quad n \log n, \quad 4^{\log_2 n}, \quad n^3, \quad 2^n, \quad n!$$
 
 <details>
 <summary><strong>Nhấn để hiển thị hướng dẫn / lời giải</strong></summary>
 
 Ta có:
 
-$$4^{\log_2 n} = (2^2)^{\log_2 n} = n^2.$$
+$$4^{\log_2 n} = (2^2)^{\log_2 n} = n^2$$
 
 Thứ tự:
 
-$$1 < \log n < \sqrt{n} < n < n \log n < n^2 < n^3 < 2^n < n!.$$
+$$1 < \log n < \sqrt{n} < n < n \log n < n^2 < n^3 < 2^n < n!$$
 
 </details>
 
@@ -803,15 +796,15 @@ def f(n):
 
 Recurrence:
 
-$$T(n) = T(n-1) + \Theta(1).$$
+$$T(n) = T(n-1) + \Theta(1)$$
 
 Khai triển:
 
-$$T(n) = T(n-2) + 2\Theta(1) = \dots = T(0) + n\Theta(1).$$
+$$T(n) = T(n-2) + 2\Theta(1) = \dots = T(0) + n\Theta(1)$$
 
 Do đó:
 
-$$T(n) = \Theta(n).$$
+$$T(n) = \Theta(n)$$
 
 </details>
 
@@ -837,15 +830,15 @@ Viết recurrence và xác định độ phức tạp.
 
 Mỗi lời gọi làm $\Theta(n)$ công việc trước khi gọi `f(n-1)`:
 
-$$T(n) = T(n-1) + \Theta(n).$$
+$$T(n) = T(n-1) + \Theta(n)$$
 
 Khai triển:
 
-$$T(n) = n + (n-1) + \dots + 1.$$
+$$T(n) = n + (n-1) + \dots + 1$$
 
 Do đó:
 
-$$T(n) = \Theta(n^2).$$
+$$T(n) = \Theta(n^2)$$
 
 </details>
 
@@ -874,11 +867,11 @@ def f(n):
 
 Mỗi lời gọi có chi phí:
 
-$$\Theta(n^2).$$
+$$\Theta(n^2)$$
 
 Recurrence:
 
-$$T(n) = T(n-3) + \Theta(n^2).$$
+$$T(n) = T(n-3) + \Theta(n^2)$$
 
 Số mức đệ quy là khoảng $n/3 = \Theta(n)$.
 
@@ -890,7 +883,7 @@ $$n^2 + (n-3)^2 + (n-6)^2 + \dots$$
 
 Do đó:
 
-$$T(n) = \Theta(n^3).$$
+$$T(n) = \Theta(n^3)$$
 
 </details>
 
@@ -915,17 +908,17 @@ Viết recurrence và xác định độ phức tạp.
 
 Recurrence:
 
-$$T(n) = 3T(n-1) + \Theta(1).$$
+$$T(n) = 3T(n-1) + \Theta(1)$$
 
 Cây đệ quy có hệ số phân nhánh 3 và độ sâu xấp xỉ $n$.
 
 Số nút tăng theo:
 
-$$1 + 3 + 3^2 + \dots + 3^n.$$
+$$1 + 3 + 3^2 + \dots + 3^n$$
 
 Do đó:
 
-$$T(n) = \Theta(3^n).$$
+$$T(n) = \Theta(3^n)$$
 
 </details>
 
@@ -950,17 +943,17 @@ Viết recurrence và xác định độ phức tạp.
 
 Recurrence:
 
-$$T(n) = 2T(n/2) + \Theta(1).$$
+$$T(n) = 2T(n/2) + \Theta(1)$$
 
 Theo Master Theorem:
 
-$$a = 2, \quad b = 2, \quad n^{\log_b a} = n.$$
+$$a = 2, \quad b = 2, \quad n^{\log_b a} = n$$
 
 Phần công việc ngoài đệ quy chỉ là $\Theta(1)$, nhỏ hơn $n$.
 
 Do đó:
 
-$$T(n) = \Theta(n).$$
+$$T(n) = \Theta(n)$$
 
 </details>
 
@@ -972,26 +965,26 @@ $$T(n) = \Theta(n).$$
 
 Giải recurrence:
 
-$$T(n) = 2T(n/2) + n.$$
+$$T(n) = 2T(n/2) + n$$
 
 <details>
 <summary><strong>Nhấn để hiển thị hướng dẫn / lời giải</strong></summary>
 
 Có:
 
-$$a = 2, \quad b = 2.$$
+$$a = 2, \quad b = 2$$
 
 Do đó:
 
-$$n^{\log_b a} = n^{\log_2 2} = n.$$
+$$n^{\log_b a} = n^{\log_2 2} = n$$
 
 Phần ngoài đệ quy là:
 
-$$f(n) = n.$$
+$$f(n) = n$$
 
 Hai phần cùng bậc, nên:
 
-$$T(n) = \Theta(n \log n).$$
+$$T(n) = \Theta(n \log n)$$
 
 </details>
 
@@ -1001,7 +994,7 @@ $$T(n) = \Theta(n \log n).$$
 
 Giải:
 
-$$T(n) = 4T(n/2) + n.$$
+$$T(n) = 4T(n/2) + n$$
 
 <details>
 <summary><strong>Nhấn để hiển thị hướng dẫn / lời giải</strong></summary>
@@ -1010,7 +1003,7 @@ $$a = 4, \quad b = 2,$$
 
 nên:
 
-$$n^{\log_2 4} = n^2.$$
+$$n^{\log_2 4} = n^2$$
 
 Vì:
 
@@ -1020,7 +1013,7 @@ nhỏ hơn $n^2$, phần các bài toán con chi phối.
 
 Do đó:
 
-$$T(n) = \Theta(n^2).$$
+$$T(n) = \Theta(n^2)$$
 
 </details>
 
@@ -1030,26 +1023,26 @@ $$T(n) = \Theta(n^2).$$
 
 Giải:
 
-$$T(n) = 2T(n/4) + n.$$
+$$T(n) = 2T(n/4) + n$$
 
 <details>
 <summary><strong>Nhấn để hiển thị hướng dẫn / lời giải</strong></summary>
 
-$$a = 2, \quad b = 4.$$
+$$a = 2, \quad b = 4$$
 
 Ta có:
 
-$$n^{\log_4 2} = n^{1/2}.$$
+$$n^{\log_4 2} = n^{1/2}$$
 
 Trong khi:
 
-$$f(n) = n.$$
+$$f(n) = n$$
 
 $n$ tăng nhanh hơn $n^{1/2}$, nên phần combine chi phối.
 
 Do đó:
 
-$$T(n) = \Theta(n).$$
+$$T(n) = \Theta(n)$$
 
 </details>
 
@@ -1059,7 +1052,7 @@ $$T(n) = \Theta(n).$$
 
 Giải:
 
-$$T(n) = 3T(n/2) + n^2.$$
+$$T(n) = 3T(n/2) + n^2$$
 
 <details>
 <summary><strong>Nhấn để hiển thị hướng dẫn / lời giải</strong></summary>
@@ -1068,15 +1061,15 @@ $$a = 3, \quad b = 2,$$
 
 nên:
 
-$$n^{\log_2 3} \approx n^{1.585}.$$
+$$n^{\log_2 3} \approx n^{1.585}$$
 
 Trong khi:
 
-$$f(n) = n^2.$$
+$$f(n) = n^2$$
 
 $n^2$ tăng nhanh hơn, nên:
 
-$$T(n) = \Theta(n^2).$$
+$$T(n) = \Theta(n^2)$$
 
 </details>
 
@@ -1086,7 +1079,7 @@ $$T(n) = \Theta(n^2).$$
 
 Giải:
 
-$$T(n) = 8T(n/2) + n^3.$$
+$$T(n) = 8T(n/2) + n^3$$
 
 <details>
 <summary><strong>Nhấn để hiển thị hướng dẫn / lời giải</strong></summary>
@@ -1095,15 +1088,15 @@ $$a = 8, \quad b = 2,$$
 
 nên:
 
-$$n^{\log_2 8} = n^3.$$
+$$n^{\log_2 8} = n^3$$
 
 Phần ngoài đệ quy cũng là:
 
-$$f(n) = n^3.$$
+$$f(n) = n^3$$
 
 Hai phần cùng bậc nên xuất hiện thêm một nhân tử logarithm:
 
-$$T(n) = \Theta(n^3 \log n).$$
+$$T(n) = \Theta(n^3 \log n)$$
 
 </details>
 
@@ -1115,7 +1108,7 @@ $$T(n) = \Theta(n^3 \log n).$$
 
 Giải recurrence:
 
-$$T(n) = T(\sqrt{n}) + 1.$$
+$$T(n) = T(\sqrt{n}) + 1$$
 
 Gợi ý: đặt $n = 2^m$.
 
@@ -1124,27 +1117,27 @@ Gợi ý: đặt $n = 2^m$.
 
 Đặt:
 
-$$n = 2^m \implies m = \log_2 n.$$
+$$n = 2^m \implies m = \log_2 n$$
 
 Định nghĩa:
 
-$$S(m) = T(2^m).$$
+$$S(m) = T(2^m)$$
 
 Khi đó:
 
-$$\sqrt{n} = 2^{m/2}.$$
+$$\sqrt{n} = 2^{m/2}$$
 
 Suy ra:
 
-$$S(m) = S(m/2) + 1.$$
+$$S(m) = S(m/2) + 1$$
 
 Recurrence này có độ phức tạp:
 
-$$S(m) = \Theta(\log m).$$
+$$S(m) = \Theta(\log m)$$
 
 Thay $m = \log n$:
 
-$$T(n) = \Theta(\log \log n).$$
+$$T(n) = \Theta(\log \log n)$$
 
 </details>
 
@@ -1154,26 +1147,26 @@ $$T(n) = \Theta(\log \log n).$$
 
 Giải:
 
-$$T(n) = 2T(\sqrt{n}) + 1.$$
+$$T(n) = 2T(\sqrt{n}) + 1$$
 
 <details>
 <summary><strong>Nhấn để hiển thị hướng dẫn / lời giải</strong></summary>
 
 Tiếp tục đặt:
 
-$$n = 2^m, \quad S(m) = T(2^m).$$
+$$n = 2^m, \quad S(m) = T(2^m)$$
 
 Ta được:
 
-$$S(m) = 2S(m/2) + 1.$$
+$$S(m) = 2S(m/2) + 1$$
 
 Theo Master Theorem:
 
-$$S(m) = \Theta(m).$$
+$$S(m) = \Theta(m)$$
 
 Do $m = \log n$:
 
-$$T(n) = \Theta(\log n).$$
+$$T(n) = \Theta(\log n)$$
 
 </details>
 
@@ -1207,7 +1200,7 @@ Giả sử $n$ chẵn. Xác định độ phức tạp.
 
 Nhân các chi phí:
 
-$$T(n) = \Theta(n) \cdot \Theta(n) \cdot \Theta(\log n) = \Theta(n^2 \log n).$$
+$$T(n) = \Theta(n) \cdot \Theta(n) \cdot \Theta(\log n) = \Theta(n^2 \log n)$$
 
 </details>
 
@@ -1245,15 +1238,15 @@ lần.
 
 Nếu đặt $j = 2^r$, chi phí theo $r$ là:
 
-$$1 + 2 + \dots + (\log_2 n + 1).$$
+$$1 + 2 + \dots + (\log_2 n + 1)$$
 
 Do đó, với mỗi $i$:
 
-$$\Theta((\log n)^2).$$
+$$\Theta((\log n)^2)$$
 
 Vòng ngoài chạy $n$ lần:
 
-$$T(n) = \Theta(n \log^2 n).$$
+$$T(n) = \Theta(n \log^2 n)$$
 
 </details>
 
@@ -1276,7 +1269,7 @@ Giả sử thực hiện $n$ phép `append`.
 
 Một lần `append` gây resize có thể phải sao chép $\Theta(n)$ phần tử, nên worst case của **một phép** có thể là:
 
-$$O(n).$$
+$$O(n)$$
 
 Tuy nhiên các lần resize chỉ xảy ra tại các kích thước:
 
@@ -1284,15 +1277,15 @@ $$1, 2, 4, 8, \dots$$
 
 Tổng số phần tử được sao chép:
 
-$$1 + 2 + 4 + \dots < 2n.$$
+$$1 + 2 + 4 + \dots < 2n$$
 
 Vì vậy tổng chi phí của $n$ lần `append` là:
 
-$$\Theta(n).$$
+$$\Theta(n)$$
 
 Amortized cost của mỗi `append`:
 
-$$\Theta(1).$$
+$$\Theta(1)$$
 
 </details>
 
@@ -1319,23 +1312,23 @@ for i in range(1, n + 1):
 
 Với mỗi $i$, vòng trong chạy:
 
-$$\Theta(\log i).$$
+$$\Theta(\log i)$$
 
 Do đó:
 
-$$T(n) = \sum_{i=1}^n \Theta(\log i).$$
+$$T(n) = \sum_{i=1}^n \Theta(\log i)$$
 
 Mà:
 
-$$\sum_{i=1}^n \log i = \log(n!).$$
+$$\sum_{i=1}^n \log i = \log(n!)$$
 
 Ta có:
 
-$$\log(n!) = \Theta(n \log n).$$
+$$\log(n!) = \Theta(n \log n)$$
 
 Suy ra:
 
-$$T(n) = \Theta(n \log n).$$
+$$T(n) = \Theta(n \log n)$$
 
 </details>
 
@@ -1360,15 +1353,15 @@ while i <= n:
 
 Chi phí lần lượt là:
 
-$$1 + 2 + 4 + 8 + \dots + n.$$
+$$1 + 2 + 4 + 8 + \dots + n$$
 
 Đây là tổng cấp số nhân:
 
-$$T(n) < 2n.$$
+$$T(n) < 2n$$
 
 Do đó:
 
-$$T(n) = \Theta(n).$$
+$$T(n) = \Theta(n)$$
 
 </details>
 
@@ -1378,7 +1371,7 @@ $$T(n) = \Theta(n).$$
 
 Cho:
 
-$$T(n) = T(n/2) + T(n/4) + T(n/8) + n.$$
+$$T(n) = T(n/2) + T(n/4) + T(n/8) + n$$
 
 Không cần tìm hằng số chính xác. Hãy dự đoán và giải thích bậc tăng trưởng của $T(n)$.
 
@@ -1387,18 +1380,17 @@ Không cần tìm hằng số chính xác. Hãy dự đoán và giải thích b�
 
 Tổng kích thước các bài toán con ở một mức là:
 
-$$\frac{n}{2} + \frac{n}{4} + \frac{n}{8} = \frac{7}{8}n < n.$$
+$$\frac{n}{2} + \frac{n}{4} + \frac{n}{8} = \frac{7}{8}n < n$$
 
 Công việc ngoài đệ quy ở gốc là $\Theta(n)$, và tổng công việc ở mỗi mức tiếp theo giảm theo một hệ số nhỏ hơn 1.
 
 Ta nhận được một tổng dạng cấp số nhân:
 
-$$n + \frac{7}{8}n + \left(\frac{7}{8}
-ight)^2 n + \dots$$
+$$n + \frac{7}{8}n + \left(\frac{7}{8}\right)^2 n + \dots$$
 
 Do đó:
 
-$$T(n) = \Theta(n).$$
+$$T(n) = \Theta(n)$$
 
 </details>
 
@@ -1414,7 +1406,7 @@ $$T_A(n) = 1000n$$
 
 và thuật toán B mất:
 
-$$T_B(n) = n^2.$$
+$$T_B(n) = n^2$$
 
 1. Thuật toán nào có tốc độ tăng trưởng tốt hơn?
 2. Có nhất thiết A luôn chạy nhanh hơn B với mọi $n$ không?
@@ -1429,7 +1421,7 @@ $$1000n = \Theta(n)$$
 
 trong khi:
 
-$$n^2 = \Theta(n^2).$$
+$$n^2 = \Theta(n^2)$$
 
 2. Không. Với $n$ nhỏ, hệ số 1000 có thể khiến A chậm hơn B.
 3. Phân tích tiệm cận tập trung vào hành vi khi $n$ lớn và giúp so sánh thuật toán độc lập hơn với phần cứng, ngôn ngữ và hằng số triển khai.
