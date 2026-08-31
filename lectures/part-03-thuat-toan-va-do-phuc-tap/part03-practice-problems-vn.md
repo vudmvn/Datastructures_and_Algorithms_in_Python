@@ -744,12 +744,12 @@ Xác định mỗi phát biểu sau là đúng hay sai.
 <details>
 <summary><strong>Nhấn để hiển thị hướng dẫn / lời giải</strong></summary>
 
-1. **Đúng**, vì $2^{n+1} = 2 \cdot 2^n$.
-2. **Sai**, vì $2^{2n} = 4^n$ tăng nhanh hơn $2^n$.
-3. **Đúng**.
-4. **Đúng**.
-5. **Đúng**.
-6. **Sai**.
+1. **Đúng**, vì $2^{n+1} = 2 \cdot 2^n \le c \cdot 2^n$ (chọn $c = 2$).
+2. **Sai**, vì $2^{2n} = (2^2)^n = 4^n$ tăng nhanh hơn $2^n$ (tỉ số $4^n / 2^n = 2^n \to \infty$).
+3. **Đúng**, vì $n \log n \le n^2$ với mọi $n \ge 1$ ($\lim_{n \to \infty} \frac{n \log n}{n^2} = 0$).
+4. **Đúng**, vì $n^2$ tăng nhanh hơn $n \log n$.
+5. **Đúng**, vì số hạng bậc cao nhất là $100n$, bỏ hằng số ta được $\Theta(n)$.
+6. **Sai**, vì $n$ tăng chậm hơn $n^2$; chỉ có $n = O(n^2)$ chứ $n \ne \Theta(n^2)$.
 
 </details>
 

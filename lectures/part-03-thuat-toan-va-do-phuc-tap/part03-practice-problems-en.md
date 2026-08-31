@@ -746,12 +746,12 @@ Determine whether each of the following statements is True or False.
 <details>
 <summary><strong>Click to show hints / solution</strong></summary>
 
-1. **True**, because $2^{n+1} = 2 \cdot 2^n$.
-2. **False**, because $2^{2n} = 4^n$ grows strictly faster than $2^n$.
-3. **True**.
-4. **True**.
-5. **True**.
-6. **False**.
+1. **True**, because $2^{n+1} = 2 \cdot 2^n \le c \cdot 2^n$ (choose $c = 2$).
+2. **False**, because $2^{2n} = (2^2)^n = 4^n$ grows strictly faster than $2^n$ (ratio $4^n / 2^n = 2^n \to \infty$).
+3. **True**, because $n \log n \le n^2$ for all $n \ge 1$ ($\lim_{n \to \infty} \frac{n \log n}{n^2} = 0$).
+4. **True**, because $n^2$ grows strictly faster than $n \log n$.
+5. **True**, because the highest-order term is $100n$; omitting the constant yields $\Theta(n)$.
+6. **False**, because $n$ grows strictly slower than $n^2$; $n = O(n^2)$ holds, but $n \ne \Theta(n^2)$.
 
 </details>
 
