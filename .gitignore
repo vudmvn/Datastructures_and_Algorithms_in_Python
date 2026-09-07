@@ -80,3 +80,6 @@ venv.bak/
 
 # Antigravity CLI system files
 .gemini/
+
+# Exams
+lectures/exams/
