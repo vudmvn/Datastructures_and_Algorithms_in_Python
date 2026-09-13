@@ -8,7 +8,7 @@
 
 ## 📚 Danh mục Tài liệu & Học liệu (Learning Resources)
 
-### 1. Ghi chú Bài giảng Toàn diện (Comprehensive Lecture Notes)
+### 1. Bài giảng (Lecture Notes)
 - 📄 **[part03-lecture-notes-en.pdf](part03-lecture-notes-en.pdf)** *(21 trang, English Version)*:
   - Lý thuyết chuyên sâu về thuật toán, ký hiệu tiệm cận ($O, \Omega, \Theta, o, \omega$), phân tích vòng lặp, đệ quy & Định lý Master.
   - Mã nguồn LaTeX: `part03-lecture-notes-en.tex`

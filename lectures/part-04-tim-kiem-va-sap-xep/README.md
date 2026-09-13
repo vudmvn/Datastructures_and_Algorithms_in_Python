@@ -10,7 +10,7 @@
 
 Thư mục này cung cấp toàn bộ tài liệu học tập, ghi chú bài giảng lý thuyết, slide trình chiếu và hệ thống bài tập thực hành cho **Part 04**:
 
-### 1. Ghi chú Bài giảng Toàn diện (Comprehensive Lecture Notes)
+### 1. Bài giảng (Lecture Notes)
 - 📄 **[part04-lecture-notes-en.pdf](part04-lecture-notes-en.pdf)** *(24 trang, ấn bản PDF chuẩn xuất bản)*:
   - Tổng hợp lý thuyết chuyên sâu, chứng minh toán học, cây đệ quy, bảng so sánh và bài toán phỏng vấn / tổng hợp.
   - Tích hợp code Python chuẩn mực và hướng dẫn từng bước (step-by-step traces) cho tất cả các thuật toán.
