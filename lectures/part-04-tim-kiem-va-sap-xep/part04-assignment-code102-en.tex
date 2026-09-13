@@ -1,0 +1,257 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{parskip}
+\usepackage{lastpage}
+\usepackage{tcolorbox}
+
+\geometry{
+    top=1.5cm,
+    bottom=1.5cm,
+    left=1.7cm,
+    right=1.7cm,
+    headheight=15pt
+}
+
+\definecolor{ForestGreen}{RGB}{22,100,70}
+\definecolor{SoftGreen}{RGB}{229,244,235}
+\definecolor{CodeBg}{RGB}{248,250,249}
+\definecolor{DarkGray}{RGB}{55,55,55}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\textbf{DSAI1002 -- Data Structures \& Algorithms}}
+\fancyhead[R]{\footnotesize\textbf{Assignment Paper (Paper Code: 102)}}
+\fancyfoot[L]{\scriptsize National Economics University -- Faculty of Data Science and AI}
+\fancyfoot[R]{\footnotesize Page \thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+\titleformat{\section}
+  {\large\bfseries\color{ForestGreen}}
+  {}
+  {0pt}
+  {}
+\titlespacing*{\section}{0pt}{4pt}{2pt}
+
+\setlist[itemize]{leftmargin=1.3em,itemsep=1pt,topsep=1pt}
+\setlist[enumerate]{leftmargin=1.5em,itemsep=1.5pt,topsep=1pt}
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\scriptsize,
+    keywordstyle=\color{blue!70!black}\bfseries,
+    stringstyle=\color{red!65!black},
+    commentstyle=\color{ForestGreen},
+    showstringspaces=false,
+    columns=fullflexible,
+    keepspaces=true,
+    breaklines=true,
+    frame=single,
+    rulecolor=\color{ForestGreen!45},
+    backgroundcolor=\color{CodeBg},
+    xleftmargin=0.2em,
+    xrightmargin=0.2em,
+    aboveskip=0.2em,
+    belowskip=0.2em
+}
+
+\newtcolorbox{headerbox}{
+    colback=white,
+    colframe=ForestGreen,
+    boxrule=0.7pt,
+    arc=1.5mm,
+    left=2.5mm,
+    right=2.5mm,
+    top=1.5mm,
+    bottom=1.5mm
+}
+
+\newtcolorbox{answerbox}[2][]{
+    colback=white,
+    colframe=DarkGray!45,
+    boxrule=0.5pt,
+    arc=1mm,
+    left=2mm,
+    right=2mm,
+    top=1.2mm,
+    bottom=1.2mm,
+    height=#2,
+    title=\footnotesize\color{DarkGray}\textbf{#1}
+}
+
+\begin{document}
+
+% =========================================================================
+% PAGE 1: HEADER, CANDIDATE DETAILS, SCORE TABLE, QUESTIONS 1 & 2
+% =========================================================================
+
+\noindent
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l r@{}}
+    \textbf{NATIONAL ECONOMICS UNIVERSITY} & \textbf{OFFICIAL ASSIGNMENT PAPER} \\
+    \textbf{FACULTY OF DATA SCIENCE \& AI} & Academic Year: 2026--2027 \quad Semester: Fall 2026 \\
+    \textbf{COLLEGE OF TECHNOLOGY} & Course Code: \textbf{DSAI1002} \\
+\end{tabular*}
+
+\vspace{0.2em}
+\begin{center}
+    {\Large\bfseries\color{ForestGreen} DATA STRUCTURES AND ALGORITHMS WITH PYTHON}\\[0.15em]
+    {\normalsize\textbf{Topic: Sorting, Selection, and Searching} \quad | \quad \textbf{Paper Code: 102} \quad | \quad \textbf{Total Marks: 10.0 Points}}
+\end{center}
+
+\vspace{0.1em}
+
+\begin{headerbox}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll@{}}
+    \textbf{Student Full Name:} \dotfill & \textbf{Student ID (MSSV):} \dotfill \\[0.25em]
+    \textbf{Class / Cohort:} \dotfill & \textbf{Submission Date:} \dotfill
+\end{tabular*}
+
+\vspace{0.25em}
+\renewcommand{\arraystretch}{1.1}
+\setlength{\tabcolsep}{4.2pt}
+\centering
+\begin{tabular}{|l|c|c|c|c|c|c|c|c||c|c|}
+\hline
+\textbf{Question} & \textbf{Q1} & \textbf{Q2} & \textbf{Q3} & \textbf{Q4} & \textbf{Q5} & \textbf{Q6} & \textbf{Q7} & \textbf{Q8} & \textbf{Total (10.0)} & \textbf{Examiner Signature} \\
+\hline
+\textbf{Max Score} & 1.0 & 1.0 & 1.0 & 1.5 & 1.5 & 1.0 & 1.5 & 1.5 & \textbf{10.0} & \\[0.35em]
+\cline{1-10}
+\textbf{Score} & & & & & & & & & & \\[0.45em]
+\hline
+\end{tabular}
+
+\vspace{0.2em}
+\raggedright
+\scriptsize
+\textbf{Instructions:} Write responses clearly and concisely within the designated answer boxes. Show intermediate steps and traces where requested. Do not detach pages.
+\end{headerbox}
+
+\vspace{0.2em}
+
+\section*{Part I: Conceptual Foundations \& Theoretical Principles (3.0 Points)}
+
+\textbf{Question 1 (1.0 Point) -- Sorting Classification, Stability \& Memory Overhead}
+\begin{enumerate}[label=(\alph*)]
+    \item \textbf{(0.5 pts)} Define what it means for a sorting algorithm to be \textbf{stable}. State one practical scenario where stability is required. Give a 3-element counterexample showing why \textbf{Selection Sort} is inherently unstable.
+    \item \textbf{(0.5 pts)} Define what an \textbf{in-place} sorting algorithm is. Classify the auxiliary memory requirements (Auxiliary Space) of \textbf{Merge Sort}, standard \textbf{Quicksort}, and \textbf{Insertion Sort}.
+\end{enumerate}
+
+\begin{answerbox}[Candidate Response -- Question 1]{4.3cm}
+\end{answerbox}
+
+\vspace{0.2em}
+
+\textbf{Question 2 (1.0 Point) -- Information-Theoretic Lower Bound for Comparison Sorts}
+\begin{enumerate}[label=(\alph*)]
+    \item \textbf{(0.5 pts)} Explain the \textbf{decision tree model} for comparison sort on $n$ distinct elements. Why must any valid comparison sort tree contain at least $n!$ leaves? Deduce the minimum tree height $h$.
+    \item \textbf{(0.5 pts)} Formally derive the $\Omega(n \log n)$ lower bound using $\sum_{i=1}^n \log_2 i$. How do non-comparison algorithms (e.g., Counting Sort) bypass this theoretical lower bound?
+\end{enumerate}
+
+\begin{answerbox}[Candidate Response -- Question 2]{4.3cm}
+\end{answerbox}
+
+\newpage
+
+% =========================================================================
+% PAGE 2: QUESTIONS 3 & 4
+% =========================================================================
+
+\textbf{Question 3 (1.0 Point) -- Binary Search Invariants \& Integer Overflow}
+\begin{enumerate}[label=(\alph*)]
+    \item \textbf{(0.5 pts)} Explain why the textbook midpoint formula \lstinline{mid = (low + high) // 2} can cause a critical runtime failure (integer overflow) in fixed-width arithmetic languages (e.g., Java/C++) when searching large arrays ($n \approx 1.5 \times 10^9$). Write the overflow-safe expression and explain why it guarantees correctness.
+    \item \textbf{(0.5 pts)} Describe how standard Binary Search must be modified to locate the \textbf{first occurrence} (lower bound) of a target key in an array with duplicate elements, while strictly maintaining $O(\log n)$ runtime.
+\end{enumerate}
+
+\begin{answerbox}[Candidate Response -- Question 3]{5.0cm}
+\end{answerbox}
+
+\vspace{0.4em}
+
+\section*{Part II: Algorithmic Traces \& Execution Analysis (4.0 Points)}
+
+\textbf{Question 4 (1.5 Points) -- Counting Sort Mechanics \& Stability Preservation}
+Given the input array $A = [4, 2_a, 2_b, 8, 3_a, 3_b, 1]$ of length $n = 7$ with values in range $k \in [1..8]$.
+\begin{enumerate}[label=(\alph*)]
+    \item \textbf{(0.5 pts)} Construct the frequency histogram array $C$ (size 9 for indices $0..8$) and the cumulative prefix sum array $P$ ($P[v] = \sum_{j=0}^v C[j]$).
+    \item \textbf{(0.5 pts)} Trace step-by-step the population of the output array $B$ as $A$ is processed \textbf{from right to left} ($j = 6$ down to $0$). Show the decrements to $P$ and the final content of $B$.
+    \item \textbf{(0.5 pts)} Mathematically prove why scanning from \textit{right to left} guarantees stability, and state what would happen to duplicate elements if $A$ were scanned from \textit{left to right} with decrement.
+\end{enumerate}
+
+\begin{answerbox}[Candidate Response -- Question 4]{8.8cm}
+\end{answerbox}
+
+\newpage
+
+% =========================================================================
+% PAGE 3: QUESTIONS 5 & 6
+% =========================================================================
+
+\textbf{Question 5 (1.5 Points) -- Lomuto Partitioning \& Quicksort Recurrence Trees}
+Given the array $A = [5, 2, 9, 3, 7, 6, 4]$ ($low = 0, high = 6$), with pivot $p = A[6] = 4$.
+\begin{enumerate}[label=(\alph*)]
+    \item \textbf{(0.75 pts)} Trace the exact step-by-step execution of \textbf{Lomuto's Partitioning Algorithm}. For each step of loop index $j \in \{0, 1, \dots, 5\}$, specify pointer $i$, whether a swap occurs, the resulting array state, and the final pivot placement swap.
+    \item \textbf{(0.75 pts)} State the recurrence relation and recursion tree depth for Quicksort in: (1) the \textbf{best case} (balanced splits), and (2) the \textbf{worst case} (already sorted with extreme pivot). Derive the asymptotic complexity for each case.
+\end{enumerate}
+
+\begin{answerbox}[Candidate Response -- Question 5]{8.5cm}
+\end{answerbox}
+
+\vspace{0.3em}
+
+\textbf{Question 6 (1.0 Point) -- Quickselect vs. Heap for Top-$k$ Extraction}
+Consider finding the top $k = 50$ largest values from a dataset of size $n = 10,000,000$.
+\begin{enumerate}[label=(\alph*)]
+    \item \textbf{(0.5 pts)} Explain the pruning mechanism of \textbf{Quickselect} and why its expected runtime is $\Theta(n)$, whereas Quicksort requires $\Theta(n \log n)$.
+    \item \textbf{(0.5 pts)} Compare the \textbf{Min-Heap of size $k$} approach against \textbf{Quickselect} in terms of Time Complexity, Auxiliary Space, and operational fitness when processing an incoming live data stream.
+\end{enumerate}
+
+\begin{answerbox}[Candidate Response -- Question 6]{6.5cm}
+\end{answerbox}
+
+\newpage
+
+% =========================================================================
+% PAGE 4: QUESTIONS 7 & 8
+% =========================================================================
+
+\section*{Part III: Algorithmic Design \& Problem Solving (3.0 Points)}
+
+\textbf{Question 7 (1.5 Points) -- Two-Sum on a Sorted Array}
+Given a 1-indexed array of integers $A$ that is already sorted in non-decreasing order ($A[1] \le A[2] \le \dots \le A[n]$) and a target sum $S$, design an algorithm to find two distinct indices $i < j$ such that $A[i] + A[j] = S$.
+\begin{enumerate}[label=(\alph*)]
+    \item \textbf{(0.6 pts)} Write the algorithm in Python using the \textbf{Two-Pointer Technique}.
+    \item \textbf{(0.5 pts)} State the loop invariant and prove why advancing the left pointer or retreating the right pointer is guaranteed never to discard a valid solution pair.
+    \item \textbf{(0.4 pts)} Analyze the worst-case time complexity and auxiliary space complexity. Why is this superior to using a Hash Map on sorted inputs?
+\end{enumerate}
+
+\begin{answerbox}[Candidate Response -- Question 7]{7.2cm}
+\end{answerbox}
+
+\vspace{0.3em}
+
+\textbf{Question 8 (1.5 Points) -- Searching in a Rotated Sorted Array}
+An array of distinct integers sorted in ascending order is rotated at an unknown pivot index (e.g., $[4, 5, 6, 7, 0, 1, 2]$). Given a target value, find its index in $O(\log n)$ time.
+\begin{enumerate}[label=(\alph*)]
+    \item \textbf{(0.7 pts)} Implement the modified binary search algorithm in Python. Clearly explain how you identify which half is sorted.
+    \item \textbf{(0.5 pts)} Trace your algorithm on $A = [6, 7, 1, 2, 3, 4, 5]$ with target $= 1$. Show values of $low, mid, high$ at each iteration.
+    \item \textbf{(0.3 pts)} Formally justify why at least one half is always monotonically sorted, and state the recurrence relation that proves $O(\log n)$ time.
+\end{enumerate}
+
+\begin{answerbox}[Candidate Response -- Question 8]{7.2cm}
+\end{answerbox}
+
+\end{document}

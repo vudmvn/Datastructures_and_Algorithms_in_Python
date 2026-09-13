@@ -1,0 +1,360 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{parskip}
+\usepackage{tcolorbox}
+
+\geometry{
+    top=1.8cm,
+    bottom=1.8cm,
+    left=1.9cm,
+    right=1.9cm,
+    headheight=15pt
+}
+
+\definecolor{ForestGreen}{RGB}{22,100,70}
+\definecolor{SoftGreen}{RGB}{229,244,235}
+\definecolor{CodeBg}{RGB}{248,250,249}
+\definecolor{DarkGray}{RGB}{55,55,55}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\textbf{DSAI1002 -- Data Structures \& Algorithms}}
+\fancyhead[R]{\footnotesize\textbf{Official Marking Scheme -- Assignment (Search, Selection \& Sorting)}}
+\fancyfoot[L]{\scriptsize National Economics University -- Faculty of Data Science and AI}
+\fancyfoot[R]{\footnotesize Page \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+\titleformat{\section}
+  {\large\bfseries\color{ForestGreen}}
+  {}
+  {0pt}
+  {}
+
+\setlist[itemize]{leftmargin=1.4em,itemsep=2pt,topsep=2pt}
+\setlist[enumerate]{leftmargin=1.6em,itemsep=2pt,topsep=2pt}
+
+\newtcolorbox{headerbox}{
+    colback=SoftGreen!35,
+    colframe=ForestGreen,
+    boxrule=0.8pt,
+    arc=2mm,
+    left=3mm,
+    right=3mm,
+    top=2mm,
+    bottom=2mm
+}
+
+\newtcolorbox{solutionbox}[1][]{
+    colback=white,
+    colframe=ForestGreen!80!black,
+    boxrule=0.7pt,
+    arc=1.5mm,
+    left=3mm,
+    right=3mm,
+    top=2mm,
+    bottom=2mm,
+    title=\textbf{\color{white}#1}
+}
+
+\begin{document}
+
+\noindent
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l r@{}}
+    \textbf{NATIONAL ECONOMICS UNIVERSITY} & \textbf{INSTRUCTOR MARKING SCHEME} \\
+    \textbf{FACULTY OF DATA SCIENCE \& AI} & Academic Year: 2026--2027 \quad Semester: Fall 2026 \\
+\end{tabular*}
+
+\vspace{0.3em}
+\begin{center}
+    {\LARGE\bfseries\color{ForestGreen} ASSIGNMENT -- OFFICIAL MARKING SCHEME}\\[0.2em]
+    {\large\bfseries Course: Data Structures and Algorithms with Python (DSAI1002)}\\[0.2em]
+    {\normalsize\textbf{Topic: Sorting, Selection, and Searching} \quad | \quad \textbf{Paper Code: 102} \quad | \quad \textbf{Total: 10.0 Points}}
+\end{center}
+
+\vspace{0.2em}
+\begin{headerbox}
+\textbf{Examiner Instructions \& General Grading Guidelines:}
+\begin{itemize}
+    \item Mark on a strict scale of \textbf{10.0 points}. Fractional grading in increments of \textbf{0.25 points} is permissible.
+    \item In algorithmic execution traces, award partial credit for correct initial passes even if an arithmetic or copying slip occurs later.
+    \item For asymptotic derivations and formal proofs, penalize unsupported assertions where explicit steps or invariants are required.
+\end{itemize}
+\end{headerbox}
+
+\vspace{0.5em}
+
+\section*{Part I: Conceptual Foundations \& Theoretical Principles (3.0 Points)}
+
+\begin{solutionbox}[Question 1: Sorting Classification, Stability \& Memory Overhead (1.0 Point)]
+\begin{itemize}
+    \item \textbf{(a) Stability Definition, Multi-Column Sorting \& Selection Sort [0.5 pts]:}
+    \begin{itemize}
+        \item \textbf{Formal Definition [0.15 pts]:} A sorting algorithm is \textit{stable} if equal elements retain their original relative order in the output. Formally, if $A[i] = A[j]$ with original indices $i < j$, then their sorted indices satisfy $\pi(i) < \pi(j)$.
+        \item \textbf{Multi-Column Benefit [0.15 pts]:} Enables multi-criteria sorting by performing successive stable sorts from least-significant to most-significant key (e.g., sort by `Name` first, then stably sort by `Department` to preserve alphabetical name ordering within each department).
+        \item \textbf{Selection Sort Instability [0.2 pts]:} Selection sort is inherently \textit{unstable} because finding the minimum in the unsorted suffix and swapping it into place can jump an element over identical keys.
+        \textit{Counterexample:} Consider $[2_a, 2_b, 1]$. Step 1 finds minimum $1$ and swaps with index $0$, yielding $[1, 2_b, 2_a]$. The relative order of $2_a$ and $2_b$ is inverted.
+    \end{itemize}
+    \item \textbf{(b) Memory Overhead of Standard Sorts [0.5 pts]:}
+    \begin{itemize}
+        \item \textbf{In-Place Definition [0.1 pts]:} An algorithm is in-place if its auxiliary memory requirement is $O(1)$ (or $O(\log n)$ call-stack frames), requiring no extra auxiliary buffer proportional to $n$.
+        \item \textbf{Merge Sort [0.15 pts]:} Requires \textbf{$\Theta(n)$ auxiliary memory} to maintain temporary merge buffers during merging; it is not in-place on array structures.
+        \item \textbf{Quicksort [0.15 pts]:} In-place on array elements, but requires \textbf{$\Theta(\log n)$ average / $\Theta(n)$ worst-case} auxiliary stack memory for recursive activation frames.
+        \item \textbf{Insertion Sort / Heapsort [0.1 pts]:} Strictly \textbf{$O(1)$ auxiliary space}.
+    \end{itemize}
+\end{itemize}
+\end{solutionbox}
+
+\vspace{0.3em}
+
+\begin{solutionbox}[Question 2: Information-Theoretic Lower Bound for Comparison Sorts (1.0 Point)]
+\begin{itemize}
+    \item \textbf{(a) Decision Tree Model \& Leaf Node Bound [0.5 pts]:}
+    \begin{itemize}
+        \item \textbf{Decision Tree Formulation [0.2 pts]:} Every comparison-based sort can be modeled as a binary decision tree where each internal node represents a comparison $A[i] < A[j]$ with two outgoing branches (`true` or `false`), and each leaf corresponds to a distinct sorted permutation.
+        \item \textbf{Number of Leaves [0.15 pts]:} For $n$ distinct elements, there are $n!$ possible permutations. To correctly sort every input permutation, the tree must possess at least $L \ge n!$ reachable leaf nodes.
+        \item \textbf{Tree Height Lower Bound [0.15 pts]:} A binary tree of height $h$ contains at most $2^h$ leaves. Therefore:
+        \[
+        2^h \ge L \ge n! \implies h \ge \lceil \log_2(n!) \rceil.
+        \]
+        The height $h$ represents the worst-case number of comparisons.
+    \end{itemize}
+    \item \textbf{(b) Stirling's Derivation \& Non-Comparison Bypass [0.5 pts]:}
+    \begin{itemize}
+        \item \textbf{Logarithmic Sum Derivation [0.3 pts]:}
+        \begin{align*}
+        \log_2(n!) &= \sum_{i=1}^n \log_2 i \ge \int_1^n \log_2 x \, dx \\
+        &= \left[ x \log_2 x - x \log_2 e \right]_1^n = n \log_2\left(\frac{n}{e}\right) + \log_2 e = \mathbf{\Omega(n \log n)}.
+        \end{align*}
+        Hence, any comparison-based sort must execute at least $\Omega(n \log n)$ comparisons in the worst case.
+        \item \textbf{Non-Comparison Bypass [0.2 pts]:} Algorithms such as Counting Sort and Radix Sort achieve $O(n)$ time by \textit{not} relying on pair-wise comparisons. Instead, they treat keys as numerical values or bit-patterns to perform direct memory addressing (array indexing), bypassing the binary decision tree restriction.
+    \end{itemize}
+\end{itemize}
+\end{solutionbox}
+
+\vspace{0.3em}
+
+\begin{solutionbox}[Question 3: Binary Search Invariants \& Integer Overflow (1.0 Point)]
+\begin{itemize}
+    \item \textbf{(a) Midpoint Integer Overflow [0.5 pts]:}
+    \begin{itemize}
+        \item \textbf{The Bug [0.25 pts]:} The standard midpoint calculation \texttt{mid = (low + high) // 2} sums two large indices. In fixed-width integer systems (e.g., 32-bit signed integers in C/C++/Java), if $low + high > 2^{31} - 1 \approx 2.14 \times 10^9$, the sum overflows to a negative value, causing index-out-of-bounds exceptions or memory segmentation faults (the famous 2006 Java standard library bug).
+        \item \textbf{Safe Formula [0.25 pts]:} Use subtraction: \texttt{mid = low + (high - low) // 2} (or unsigned shift \texttt{(low + high) >>> 1}). In this form, $high - low \ge 0$, eliminating overflow risk.
+    \end{itemize}
+    \item \textbf{(b) Modifying Binary Search for First Occurrence [0.5 pts]:}
+    \begin{itemize}
+        \item \textbf{Behavior of Standard Binary Search [0.15 pts]:} Immediately halts upon finding any match $A[mid] == target$. With duplicate values, it returns an arbitrary matching index.
+        \item \textbf{Modification [0.2 pts]:} When $A[mid] == target$, record $mid$ as a candidate and continue searching left: \texttt{ans = mid; high = mid - 1}.
+        \item \textbf{Loop Invariant \& Complexity [0.15 pts]:} If target exists, its first occurrence lies within $[low, high]$ or is recorded in \texttt{ans}. Search range halves every step, preserving $O(\log n)$ time and $O(1)$ space.
+    \end{itemize}
+\end{itemize}
+\end{solutionbox}
+
+\newpage
+
+\section*{Part II: Algorithmic Traces \& Execution Analysis (4.0 Points)}
+
+\begin{solutionbox}[Question 4: Counting Sort Mechanics \& Stability (1.5 Points)]
+Given array $A = [4, 2, 2, 8, 3, 3, 1]$ of size $n = 7$ with keys in range $[1..8]$.
+\begin{itemize}
+    \item \textbf{(a) Frequency Array $C$ and Prefix Sum Array $P$ [0.5 pts]:}
+    \begin{itemize}
+        \item \textbf{Frequency Array $C$ [0.25 pts]:} Size $9$ (indices $0..8$):
+        \begin{center}
+        \begin{tabular}{c|ccccccccc}
+        \toprule
+        $\text{Index } v$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+        \midrule
+        $C[v]$ & 0 & 1 & 2 & 2 & 1 & 0 & 0 & 0 & 1 \\
+        \bottomrule
+        \end{tabular}
+        \end{center}
+        \item \textbf{Cumulative Prefix Sum Array $P$ [0.25 pts]:} $P[v] = \sum_{k=0}^v C[k]$:
+        \begin{center}
+        \begin{tabular}{c|ccccccccc}
+        \toprule
+        $\text{Index } v$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+        \midrule
+        $P[v]$ & 0 & 1 & 3 & 5 & 6 & 6 & 6 & 6 & 7 \\
+        \bottomrule
+        \end{tabular}
+        \end{center}
+        $P[v]$ indicates that elements of value $v$ occupy output positions up to 1-based rank $P[v]$ (0-based index $P[v]-1$).
+    \end{itemize}
+    \item \textbf{(b) Right-to-Left Placement Trace in Output Array $B$ [0.5 pts]:}
+    Scanning $A$ backwards from index $6$ to $0$ (distinguishing duplicates $2_a, 2_b$ and $3_a, 3_b$):
+    \begin{itemize}
+        \item $j = 6, A[6] = 1$: Target index $= P[1] - 1 = 1 - 1 = 0$. Set $B[0] = 1$; decrement $P[1] = 0$.
+        \item $j = 5, A[5] = 3_b$: Target index $= P[3] - 1 = 5 - 1 = 4$. Set $B[4] = 3_b$; decrement $P[3] = 4$.
+        \item $j = 4, A[4] = 3_a$: Target index $= P[3] - 1 = 4 - 1 = 3$. Set $B[3] = 3_a$; decrement $P[3] = 3$.
+        \item $j = 3, A[3] = 8$: Target index $= P[8] - 1 = 7 - 1 = 6$. Set $B[6] = 8$; decrement $P[8] = 6$.
+        \item $j = 2, A[2] = 2_b$: Target index $= P[2] - 1 = 3 - 1 = 2$. Set $B[2] = 2_b$; decrement $P[2] = 2$.
+        \item $j = 1, A[1] = 2_a$: Target index $= P[2] - 1 = 2 - 1 = 1$. Set $B[1] = 2_a$; decrement $P[2] = 1$.
+        \item $j = 0, A[0] = 4$: Target index $= P[4] - 1 = 6 - 1 = 5$. Set $B[5] = 4$; decrement $P[4] = 5$.
+    \end{itemize}
+    \textbf{Final Array:} $B = [1, 2_a, 2_b, 3_a, 3_b, 4, 8]$.
+    \item \textbf{(c) Proof of Stability [0.5 pts]:}
+    The prefix sum $P[v]$ gives the \textit{highest} available slot for key $v$. By traversing $A$ from right to left, the rightmost duplicate encounters $P[v]$ first and is placed at the larger index. Subsequent duplicates of the same key are placed at sequentially decremented (lower) indices, ensuring earlier arrivals occupy earlier slots. Thus, relative order is strictly preserved.
+\end{itemize}
+\end{solutionbox}
+
+\vspace{0.4em}
+
+\begin{solutionbox}[Question 5: Lomuto Partitioning \& Quicksort Recurrence Trees (1.5 Points)]
+Given array $A = [5, 2, 9, 3, 7, 6, 4]$, $low = 0, high = 6$, pivot $p = A[6] = 4$.
+\begin{itemize}
+    \item \textbf{(a) Step-by-Step Lomuto Partition Trace [0.75 pts]:}
+    Initialize $i = low - 1 = -1$. Loop variable $j$ runs from $low = 0$ to $high - 1 = 5$:
+    \begin{itemize}
+        \item $j = 0: A[0] = 5 > 4 \implies$ No swap, $i = -1$. Array: $[5, 2, 9, 3, 7, 6, 4]$.
+        \item $j = 1: A[1] = 2 \le 4 \implies i = 0$, swap $A[i] \leftrightarrow A[j]$ ($A[0] \leftrightarrow A[1]$). Array: $[\mathbf{2}, \mathbf{5}, 9, 3, 7, 6, 4]$.
+        \item $j = 2: A[2] = 9 > 4 \implies$ No swap, $i = 0$. Array: $[2, 5, 9, 3, 7, 6, 4]$.
+        \item $j = 3: A[3] = 3 \le 4 \implies i = 1$, swap $A[i] \leftrightarrow A[j]$ ($A[1] \leftrightarrow A[3]$). Array: $[2, \mathbf{3}, 9, \mathbf{5}, 7, 6, 4]$.
+        \item $j = 4: A[4] = 7 > 4 \implies$ No swap, $i = 1$. Array: $[2, 3, 9, 5, 7, 6, 4]$.
+        \item $j = 5: A[5] = 6 > 4 \implies$ No swap, $i = 1$. Array: $[2, 3, 9, 5, 7, 6, 4]$.
+        \item \textbf{Pivot Swap:} Swap $A[i+1] \leftrightarrow A[high]$ ($A[2] \leftrightarrow A[6]$):
+        Final partitioned array: $[2, 3, \mathbf{4}, 5, 7, 6, 9]$ with pivot index $p = 2$.
+    \end{itemize}
+    Left partition: $A[0..1] = [2, 3]$. Right partition: $A[3..6] = [5, 7, 6, 9]$.
+    \item \textbf{(b) Best-Case vs. Worst-Case Recurrence Relations [0.75 pts]:}
+    \begin{itemize}
+        \item \textbf{Best Case [0.35 pts]:} Pivot splits array into two equal halves of size $\lfloor n/2 \rfloor$:
+        \[
+        T(n) = 2T(n/2) + \Theta(n).
+        \]
+        By Case 2 of the Master Theorem ($a = 2, b = 2, f(n) = \Theta(n)$), tree height is $\log_2 n$ and work per level is $\Theta(n)$, giving $T(n) = \mathbf{\Theta(n \log n)}$.
+        \item \textbf{Worst Case [0.4 pts]:} Array already sorted/reverse-sorted with extreme pivot, yielding partitions of sizes $0$ and $n-1$:
+        \[
+        T(n) = T(n-1) + T(0) + \Theta(n) = T(n-1) + cn.
+        \]
+        Expanding the telescoping recurrence: $T(n) = c \sum_{k=1}^n k = c \frac{n(n+1)}{2} = \mathbf{\Theta(n^2)}$. Recursion tree is completely skewed with height $n$.
+    \end{itemize}
+\end{itemize}
+\end{solutionbox}
+
+\vspace{0.4em}
+
+\begin{solutionbox}[Question 6: Quickselect vs. Heap for Top-$k$ Selection (1.0 Point)]
+Scenario: Finding the top $k = 50$ largest elements from an unsorted collection of size $n = 10,000,000$.
+\begin{itemize}
+    \item \textbf{(a) Quickselect Mechanics \& Pruning [0.5 pts]:}
+    \begin{itemize}
+        \item \textbf{Pruning Principle [0.25 pts]:} Unlike Quicksort which recurses into both sides, Quickselect checks the partition pivot index $p$. If $p == target$, it terminates. If $target < p$, it recurses \textit{only} into the left subarray; otherwise into the right subarray.
+        \item \textbf{Average Runtime [0.25 pts]:} Because each step discards approximately half the active elements:
+        \[
+        T(n) = n + \frac{n}{2} + \frac{n}{4} + \dots \le 2n = \mathbf{\Theta(n)}.
+        \]
+    \end{itemize}
+    \item \textbf{(b) Min-Heap of Size $k$ vs. Quickselect Comparison [0.5 pts]:}
+    \begin{itemize}
+        \item \textbf{Min-Heap of Size $k$ [0.2 pts]:} Maintain a min-heap of size $k$. For each incoming element, compare with heap root ($O(1)$). If larger, replace root in $O(\log k)$ time. Total time: $\mathbf{\Theta(n \log k)}$; Auxiliary Space: $\mathbf{\Theta(k)}$.
+        \item \textbf{Architectural Decision [0.3 pts]:}
+        \begin{itemize}
+            \item If data is an \textbf{unbounded data stream} or RAM is limited: \textbf{Min-Heap of size $k$} is strictly required because it processes data on-the-fly using only $O(k) = O(50)$ auxiliary RAM without storing all $10^7$ records.
+            \item If all $n$ elements reside in memory and in-place mutation is allowed: \textbf{Quickselect} is faster ($O(n)$ linear time vs $O(n \log k)$).
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+\end{solutionbox}
+
+\newpage
+
+\section*{Part III: Algorithmic Design \& Problem Solving (3.0 Points)}
+
+\begin{solutionbox}[Question 7: Two-Sum on a Sorted Array (1.5 Points)]
+\begin{itemize}
+    \item \textbf{(a) Two-Pointer Algorithm Implementation [0.6 pts]:}
+    \begin{itemize}
+        \item Initialize \texttt{left = 0} and \texttt{right = len(A) - 1}.
+        \item While \texttt{left < right}:
+        \begin{itemize}
+            \item \texttt{curr\_sum = A[left] + A[right]}
+            \item If \texttt{curr\_sum == target}: return \texttt{(left + 1, right + 1)} (1-indexed).
+            \item Else if \texttt{curr\_sum < target}: \texttt{left += 1} (need larger sum).
+            \item Else: \texttt{right -= 1} (need smaller sum).
+        \end{itemize}
+        \item Return \texttt{None} if pointers cross without finding a match.
+    \end{itemize}
+    \item \textbf{(b) Correctness Proof \& Search Space Elimination [0.5 pts]:}
+    \begin{itemize}
+        \item \textbf{Loop Invariant [0.25 pts]:} If a valid pair $(i^*, j^*)$ exists, it lies within current index interval $[left, right]$.
+        \item \textbf{Pruning Justification [0.25 pts]:}
+        \begin{itemize}
+            \item When $A[left] + A[right] < target$: For any candidate index $k \le right$, because $A$ is sorted, $A[left] + A[k] \le A[left] + A[right] < target$. Thus, $A[left]$ cannot form a valid pair with \textit{any} remaining element in the active range. Discarding index $left$ by advancing \texttt{left += 1} is provably safe.
+            \item When $A[left] + A[right] > target$: Symmetrically, for any $k \ge left$, $A[k] + A[right] \ge A[left] + A[right] > target$. Discarding index $right$ by retreating \texttt{right -= 1} is provably safe.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{(c) Complexity Derivation [0.4 pts]:}
+    \begin{itemize}
+        \item \textbf{Time Complexity [0.2 pts]:} Each iteration performs $O(1)$ operations and decreases the distance $right - left$ by at least $1$. The loop runs at most $n - 1$ iterations, establishing $\mathbf{\Theta(n)}$ time.
+        \item \textbf{Auxiliary Space [0.2 pts]:} Strictly $\mathbf{\Theta(1)}$ space (only two integer pointer variables), outperforming hash table approaches which consume $\Theta(n)$ auxiliary memory.
+    \end{itemize}
+\end{itemize}
+\end{solutionbox}
+
+\vspace{0.4em}
+
+\begin{solutionbox}[Question 8: Searching in a Rotated Sorted Array (1.5 Points)]
+\begin{itemize}
+    \item \textbf{(a) Binary Search Algorithm for Rotated Array [0.7 pts]:}
+    \begin{itemize}
+        \item Set \texttt{low = 0, high = len(A) - 1}.
+        \item While \texttt{low <= high}:
+        \begin{itemize}
+            \item Compute \texttt{mid = low + (high - low) // 2}.
+            \item If \texttt{A[mid] == target}: return \texttt{mid}.
+            \item \textbf{Check if left half is sorted (\texttt{A[low] <= A[mid]}):}
+            \begin{itemize}
+                \item If \texttt{A[low] <= target < A[mid]}: \texttt{high = mid - 1} (target in sorted left half).
+                \item Else: \texttt{low = mid + 1} (search right).
+            \end{itemize}
+            \item \textbf{Otherwise right half must be sorted (\texttt{A[mid] < A[high]}):}
+            \begin{itemize}
+                \item If \texttt{A[mid] < target <= A[high]}: \texttt{low = mid + 1} (target in sorted right half).
+                \item Else: \texttt{high = mid - 1} (search left).
+            \end{itemize}
+        \end{itemize}
+        \item Return \texttt{-1} if not found.
+    \end{itemize}
+    \item \textbf{(b) Execution Trace on $A = [6, 7, 1, 2, 3, 4, 5]$ with Target $1$ [0.5 pts]:}
+    \begin{itemize}
+        \item \textbf{Iteration 1 [0.2 pts]:} $low = 0, high = 6 \implies mid = 3$ ($A[3] = 2$).
+        $A[0] = 6 > A[3] = 2 \implies$ Left half is unsorted; right half $A[3..6] = [2, 3, 4, 5]$ is sorted.
+        Test target: is $1 \in (2, 5]$? False ($1 < 2$). Discard right half: \texttt{high = mid - 1 = 2}.
+        \item \textbf{Iteration 2 [0.2 pts]:} $low = 0, high = 2 \implies mid = 1$ ($A[1] = 7$).
+        $A[0] = 6 \le A[1] = 7 \implies$ Left half $A[0..1] = [6, 7]$ is sorted.
+        Test target: is $1 \in [6, 7)$? False ($1 < 6$). Discard left half: \texttt{low = mid + 1 = 2}.
+        \item \textbf{Iteration 3 [0.1 pts]:} $low = 2, high = 2 \implies mid = 2$ ($A[2] = 1$).
+        $A[2] == 1 == target \implies$ \textbf{Match found! Return index 2}.
+    \end{itemize}
+    \item \textbf{(c) Sorted-Half Invariant \& Logarithmic Time Proof [0.3 pts]:}
+    A rotated array sorted originally has at most one inflection point where $A[k] > A[k+1]$. This inflection point can lie in at most one of the two halves $[low..mid]$ or $[mid..high]$. Therefore, at least one half is always monotonically ordered.
+    By testing whether the target falls within the sorted range, we discard half the elements every iteration:
+    \[
+    T(n) = T(n/2) + O(1) = \mathbf{\Theta(\log n)}, \quad \text{Auxiliary Space } = \mathbf{O(1)}.
+    \]
+\end{itemize}
+\end{solutionbox}
+
+\vspace{0.8em}
+\begin{center}
+\rule{0.6\textwidth}{0.6pt}\\[0.3em]
+{\small\color{ForestGreen}\textbf{End of Official Marking Scheme -- Paper Code 102}}\\[0.15em]
+{\footnotesize\color{DarkGray}Department of Data Science \& AI $\cdot$ National Economics University}
+\end{center}
+
+\end{document}

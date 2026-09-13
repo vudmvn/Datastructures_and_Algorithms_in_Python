@@ -1,0 +1,737 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- XeLaTeX & Core Packages ---
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage[vietnamese,english]{babel}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{booktabs,tabularx,array,multirow}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,trees,backgrounds}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,theorems}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{lastpage}
+\usepackage{hyperref}
+
+% --- Page Geometry ---
+\geometry{
+    top=2.2cm,
+    bottom=2.2cm,
+    left=2.2cm,
+    right=2.2cm,
+    headheight=14.5pt
+}
+
+% --- Color Palette (Matching Course Theme) ---
+\definecolor{ForestGreen}{RGB}{22,100,70}
+\definecolor{DeepGreen}{RGB}{14,70,48}
+\definecolor{SoftGreen}{RGB}{238,247,242}
+\definecolor{DarkBlue}{RGB}{20,50,110}
+\definecolor{SoftBlue}{RGB}{236,243,253}
+\definecolor{DarkOrange}{RGB}{180,85,15}
+\definecolor{SoftOrange}{RGB}{254,246,236}
+\definecolor{SoftPurple}{RGB}{245,240,254}
+\definecolor{DarkPurple}{RGB}{90,40,140}
+\definecolor{CodeBg}{RGB}{248,250,249}
+\definecolor{BorderGray}{RGB}{210,218,214}
+\definecolor{DarkGray}{RGB}{50,50,50}
+
+% --- Hyperref Setup ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=DeepGreen,
+    citecolor=DarkBlue,
+    urlcolor=ForestGreen,
+    pdftitle={DSAI1002 Bài giảng - Phần 03: Thuật toán và Phân tích Độ phức tạp},
+    pdfauthor={TS. Vũ Đức Minh - NEU}
+}
+
+% --- Fancyhdr Header/Footer ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{\color{ForestGreen}DSAI1002 -- Cấu trúc dữ liệu và Giải thuật với Python}}
+\fancyhead[R]{\small\color{DarkGray}Tài liệu bài giảng -- Phần 03}
+\fancyfoot[L]{\small\color{DarkGray}Giảng viên: TS. Vũ Đức Minh}
+\fancyfoot[R]{\small\color{DarkGray}Trang \thepage\ / \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{ForestGreen}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrulewidth}{0.3pt}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{BorderGray}\leaders\hrule height \footrulewidth\hfill}}
+
+% --- Section Styling ---
+\titleformat{\section}
+  {\Large\bfseries\color{DeepGreen}}
+  {\thesection.}{0.6em}{}
+  [{\color{ForestGreen}\titlerule[1pt]}]
+
+\titleformat{\subsection}
+  {\large\bfseries\color{ForestGreen}}
+  {\thesubsection}{0.5em}{}
+
+\titleformat{\subsubsection}
+  {\normalsize\bfseries\color{DarkBlue}}
+  {\thesubsubsection}{0.4em}{}
+
+% --- Custom Tcolorboxes ---
+\newtcolorbox{definitionbox}[1][]{
+    enhanced,
+    colback=SoftBlue,
+    colframe=DarkBlue,
+    boxrule=0.8pt,
+    arc=2mm,
+    left=3mm, right=3mm, top=2.5mm, bottom=2.5mm,
+    title=\textbf{\color{DarkBlue}#1},
+    coltitle=DarkBlue,
+    attach boxed title to top left={yshift=-2mm, xshift=3mm},
+    boxed title style={colback=white, boxrule=0.6pt, colframe=DarkBlue, arc=1mm}
+}
+
+\newtcolorbox{theorembox}[1][]{
+    enhanced,
+    colback=SoftGreen,
+    colframe=ForestGreen,
+    boxrule=0.8pt,
+    arc=2mm,
+    left=3mm, right=3mm, top=2.5mm, bottom=2.5mm,
+    title=\textbf{\color{ForestGreen}#1},
+    coltitle=ForestGreen,
+    attach boxed title to top left={yshift=-2mm, xshift=3mm},
+    boxed title style={colback=white, boxrule=0.6pt, colframe=ForestGreen, arc=1mm}
+}
+
+\newtcolorbox{examplebox}[1][]{
+    enhanced,
+    colback=SoftOrange,
+    colframe=DarkOrange,
+    boxrule=0.8pt,
+    arc=2mm,
+    left=3mm, right=3mm, top=2.5mm, bottom=2.5mm,
+    title=\textbf{\color{DarkOrange}#1},
+    coltitle=DarkOrange,
+    attach boxed title to top left={yshift=-2mm, xshift=3mm},
+    boxed title style={colback=white, boxrule=0.6pt, colframe=DarkOrange, arc=1mm}
+}
+
+\newtcolorbox{notebox}[1][]{
+    enhanced,
+    colback=SoftPurple,
+    colframe=DarkPurple,
+    boxrule=0.8pt,
+    arc=2mm,
+    left=3mm, right=3mm, top=2.5mm, bottom=2.5mm,
+    title=\textbf{\color{DarkPurple}#1},
+    coltitle=DarkPurple,
+    attach boxed title to top left={yshift=-2mm, xshift=3mm},
+    boxed title style={colback=white, boxrule=0.6pt, colframe=DarkPurple, arc=1mm}
+}
+
+% --- Code Listings Setup ---
+\lstdefinestyle{pythonstyle}{
+    language=Python,
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{DarkBlue}\bfseries,
+    stringstyle=\color{red!70!black},
+    commentstyle=\color{ForestGreen}\itshape,
+    numberstyle=\tiny\color{gray},
+    numbers=left,
+    numbersep=7pt,
+    frame=single,
+    rulecolor=\color{BorderGray},
+    backgroundcolor=\color{CodeBg},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=4,
+    showstringspaces=false,
+    columns=fullflexible,
+    keepspaces=true,
+    xleftmargin=1.5em,
+    aboveskip=0.6em,
+    belowskip=0.6em
+}
+
+\lstset{style=pythonstyle}
+
+% =========================================================================
+% DOCUMENT BEGINS
+% =========================================================================
+\begin{document}
+\selectlanguage{vietnamese}
+
+% --- TITLE BANNER ---
+\begin{tcolorbox}[
+    enhanced,
+    colback=SoftGreen,
+    colframe=ForestGreen,
+    boxrule=1.5pt,
+    arc=3mm,
+    left=5mm, right=5mm, top=6mm, bottom=6mm
+]
+\begin{center}
+    {\Large\scshape Trường Đại học Kinh tế Quốc dân -- Khoa Khoa học Dữ liệu \& Trí tuệ Nhân tạo}\\[0.3em]
+    {\large\textbf{\color{DarkBlue}DSAI1002: Cấu trúc Dữ liệu và Giải thuật với Python}}\\[0.8em]
+    {\Huge\bfseries\color{ForestGreen} BÀI GIẢNG CHUYÊN ĐỀ: PHẦN 03}\\[0.4em]
+    {\LARGE\bfseries\color{DarkGray} Thuật toán và Phân tích Độ phức tạp}\\[0.8em]
+    \rule{0.7\textwidth}{0.8pt}\\[0.6em]
+    {\normalsize\textbf{Giảng viên:} TS. Vũ Đức Minh \quad$|$\quad \textbf{Học kỳ:} Mùa Thu 2026}\\[0.2em]
+    {\small\textit{Tài liệu học tập toàn diện về Thiết kế Thuật toán, Ký hiệu Tiệm cận, Phân tích Vòng lặp, Hệ thức Truy hồi và Khấu hao}}
+\end{center}
+\end{tcolorbox}
+
+\vspace{0.5em}
+
+% --- TỔNG QUAN TÀI LIỆU ---
+\begin{notebox}[Khung Kiến thức Cốt lõi của Phần 03]
+Tài liệu này hệ thống hóa toàn bộ nội dung lý thuyết, phân tích toán học và bài tập của \textbf{Phần 03: Thuật toán và Phân tích Độ phức tạp}:
+\begin{enumerate}[itemsep=1pt,topsep=2pt]
+    \item \textbf{Khái niệm Thuật toán \& Quy trình Thiết kế:} Định nghĩa chuẩn mực, phân biệt thuật toán và chương trình, các đặc tính cốt lõi (tính dừng, xác định, khả thi), lưu đồ, mã giả, quy trình 8 bước thiết kế giải thuật và so sánh phân tích tiên nghiệm (a priori) với hậu nghiệm (a posteriori).
+    \item \textbf{Ký hiệu Tiệm cận ($O, \Omega, \Theta, o, \omega$):} Bản chất toán học của phân tích tiệm cận khi $n \to \infty$, định nghĩa hình thức, giới hạn L'Hôpital, phân cấp các hàm tăng trưởng và phân biệt độ phức tạp bộ nhớ với bộ nhớ phụ trợ (auxiliary space).
+    \item \textbf{Phân tích Mã nguồn \& Vòng lặp Không Đệ quy:} Phương pháp tính toán chi tiết cho vòng lặp tuyến tính, lôgarit, vòng lặp tam giác phụ thuộc chỉ số, chuỗi hình học và chuỗi điều hòa (harmonic sum).
+    \item \textbf{Hệ thức Truy hồi \& Định lý Thợ (Master Theorem):} Xây dựng phương trình đệ quy chia để trị $T(n) = aT(n/b) + f(n)$, phân tích cây đệ quy, định lý Master chuẩn (3 trường hợp), định lý Master mở rộng ($\Theta(n^k \log^p n)$), các trường hợp vi phạm và phương pháp đoán nghiệm quy nạp.
+    \item \textbf{Phân tích Khấu hao (Amortized Analysis):} Bản chất chi phí chuỗi tồi nhất, phương pháp cộng dồn (aggregate), phương pháp kế toán (accounting) và phương pháp hàm thế (potential) qua mô hình mảng động mở rộng gấp đôi (dynamic array doubling).
+\end{enumerate}
+\end{notebox}
+
+\tableofcontents
+\newpage
+
+% =========================================================================
+\section{Thuật toán là gì? Nhập môn Tư duy Giải thuật}
+% =========================================================================
+
+\subsection{Ý niệm Trực giác và Định nghĩa Hình thức}
+Trong đời sống thường ngày, chúng ta liên tục áp dụng tư duy giải thuật: nấu một món ăn theo công thức, tra cứu một số điện thoại, lựa chọn lộ trình ngắn nhất trên bản đồ hay phân phối đơn hàng cho xe giao vận. Khi các chỉ dẫn này được chuẩn hóa với tính chính xác tuyệt đối, hữu hạn bước và có thể thi hành bởi máy tính, chúng trở thành \textbf{thuật toán}.
+
+\begin{definitionbox}[Định nghĩa 1.1 (Thuật toán -- Algorithm)]
+Một \textbf{thuật toán} là một dãy hữu hạn các chỉ dẫn rõ ràng, không mâu thuẫn, được xác định chuẩn xác nhằm giải quyết một lớp bài toán tính toán cụ thể, hoàn thành một tác vụ tự động hoặc tính giá trị của một hàm số. Thuật toán nhận dữ liệu đầu vào (Input), trải qua các bước biến đổi trạng thái xác định hoặc ngẫu nhiên, và tạo ra kết quả đầu ra (Output) sau một số hữu hạn bước tính toán.
+\end{definitionbox}
+
+Mô hình trừu tượng của quá trình xử lý thuật toán gồm 3 khối kinh điển:
+\begin{center}
+\begin{tikzpicture}[node distance=1.8cm, auto, >=Latex]
+    \node [draw, rounded corners, fill=SoftBlue, text=DarkBlue, minimum width=2.6cm, minimum height=1cm, font=\bfseries] (input) {Đầu vào ($\mathcal{I}$)};
+    \node [draw, rectangle, fill=SoftGreen, text=ForestGreen, minimum width=5.5cm, minimum height=1.2cm, font=\bfseries, right=1.5cm of input, align=center] (algo) {Quy trình Thuật toán ($\mathcal{A}$)\\ \small Biến đổi trạng thái, logic, vòng lặp};
+    \node [draw, rounded corners, fill=SoftOrange, text=DarkOrange, minimum width=2.6cm, minimum height=1cm, font=\bfseries, right=1.5cm of algo] (output) {Đầu ra ($\mathcal{O}$)};
+    
+    \draw [->, ultra thick, ForestGreen] (input) -- (algo);
+    \draw [->, ultra thick, ForestGreen] (algo) -- (output);
+\end{tikzpicture}
+\end{center}
+
+\subsection{Phân biệt Thuật toán và Chương trình Máy tính}
+Một sai lầm phổ biến ở người học là đồng nhất \emph{thuật toán} với \emph{chương trình}. Thuật toán đại diện cho ý tưởng logic và giải pháp toán học trừu tượng, trong khi chương trình là hiện thực cụ thể của thuật toán bằng một ngôn ngữ lập trình xác định.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{p{3.2cm} X X}
+\toprule
+\textbf{Tiêu chí} & \textbf{Thuật toán (Algorithm)} & \textbf{Chương trình (Program)} \\
+\midrule
+\textbf{Bản chất} & Ý tưởng giải quyết vấn đề, quy trình logic & Bản hiện thực cụ thể có thể biên dịch/thực thi \\
+\textbf{Ngôn ngữ} & Độc lập với ngôn ngữ (mã giả, ngôn ngữ tự nhiên) & Python, C++, Rust, Java, Go, Assembly \\
+\textbf{Mức độ chi tiết} & Tập trung vào luồng logic và tính bất biến & Đầy đủ cú pháp, kiểu dữ liệu, thư viện, quản lý lỗi \\
+\textbf{Đối tượng tiếp nhận} & Con người (nhà nghiên cứu, kỹ sư lập trình) & Trình biên dịch/thông dịch và phần cứng CPU \\
+\textbf{Tuổi thọ} & Bền vững hàng thế kỷ (ví dụ thuật toán Euclid: 300 TCN) & Phụ thuộc vào vòng đời ngôn ngữ và phiên bản thư viện \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Sáu Đặc tính Thiết yếu của một Thuật toán Chuẩn mực}
+Theo Donald Knuth (\emph{The Art of Computer Programming}), mọi thuật toán hợp lệ đều phải đáp ứng đầy đủ 6 đặc tính sau:
+
+\begin{enumerate}[leftmargin=2em, itemsep=3pt]
+    \item \textbf{Tính Xác định (Definiteness / Unambiguity):} Mỗi bước chỉ dẫn phải có một và chỉ một cách hiểu duy nhất. Các mô tả mập mờ như ``chọn một số đủ lớn'' hoặc ``sắp xếp nhanh danh sách'' đều không hợp lệ.
+    \item \textbf{Đầu vào Rõ ràng (Defined Input):} Thuật toán nhận không hoặc nhiều đầu vào; các đầu vào phải được chỉ định rõ kiểu dữ liệu, miền giá trị và điều kiện biên.
+    \item \textbf{Đầu ra Xác định (Defined Output):} Thuật toán phải tạo ra ít nhất một kết quả đầu ra có quan hệ toán học được xác định với đầu vào.
+    \item \textbf{Tính Dừng (Finiteness):} Thuật toán bắt buộc phải kết thúc sau một số bước hữu hạn đối với mọi trường hợp đầu vào hợp lệ. Vòng lặp vô tận không bao giờ dừng không thể gọi là thuật toán.
+    \item \textbf{Tính Khả thi (Effectiveness / Feasibility):} Mỗi thao tác phải đủ sơ cấp để có thể thực thi chính xác bởi máy tính hoặc con người trên giấy bút với lượng tài nguyên hữu hạn.
+    \item \textbf{Tính Đúng đắn (Correctness):} Thuật toán phải sinh ra đầu ra chính xác như đặc tả bài toán cho tất cả các trường hợp đầu vào hợp lệ.
+\end{enumerate}
+
+\subsection{Ba Phương pháp Biểu diễn Thuật toán Phổ biến}
+\begin{enumerate}[leftmargin=2em, itemsep=2pt]
+    \item \textbf{Ngôn ngữ Tự nhiên:} Thân thiện, dễ hiểu cho người mới bắt đầu nhưng dễ mơ hồ và thiếu cấu trúc khi mô tả logic phức tạp.
+    \item \textbf{Lưu đồ (Flowchart):} Biểu diễn trực quan bằng sơ đồ hình học chuẩn ANSI (Hình oval cho Bắt đầu/Kết thúc; Hình bình hành cho Vào/Ra; Hình chữ nhật cho Xử lý; Hình thoi cho Phân nhánh điều kiện).
+    \item \textbf{Mã giả (Pseudocode):} Ngôn ngữ bán hình thức mô tả các cấu trúc điều khiển (IF, ELSE, WHILE, FOR) mà không bị phụ thuộc vào cú pháp rườm rà của bất kỳ ngôn ngữ cụ thể nào.
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[node distance=1.2cm, >=Latex, font=\small]
+    \node [draw, ellipse, fill=SoftBlue, text=DarkBlue, minimum width=2.2cm] (start) {Bắt đầu};
+    \node [draw, trapezium, trapezium left angle=70, trapezium right angle=110, fill=SoftGreen, text=ForestGreen, below=0.8cm of start] (in) {Nhập $a, b, c$};
+    \node [draw, diamond, aspect=2, fill=SoftOrange, text=DarkOrange, below=0.8cm of in] (cond1) {$a \ge b \land a \ge c$};
+    \node [draw, rectangle, fill=CodeBg, right=1.2cm of cond1] (setA) {$\text{max} \leftarrow a$};
+    \node [draw, diamond, aspect=2, fill=SoftOrange, text=DarkOrange, below=0.8cm of cond1] (cond2) {$b \ge c$};
+    \node [draw, rectangle, fill=CodeBg, right=1.2cm of cond2] (setB) {$\text{max} \leftarrow b$};
+    \node [draw, rectangle, fill=CodeBg, below=0.8cm of cond2] (setC) {$\text{max} \leftarrow c$};
+    \node [draw, trapezium, trapezium left angle=70, trapezium right angle=110, fill=SoftGreen, text=ForestGreen, below=1.2cm of setC] (out) {Xuất max};
+    \node [draw, ellipse, fill=SoftBlue, text=DarkBlue, minimum width=2.2cm, below=0.8cm of out] (end) {Kết thúc};
+
+    \draw [->] (start) -- (in);
+    \draw [->] (in) -- (cond1);
+    \draw [->] (cond1) -- node[above]{Đúng} (setA);
+    \draw [->] (cond1) -- node[left]{Sai} (cond2);
+    \draw [->] (cond2) -- node[above]{Đúng} (setB);
+    \draw [->] (cond2) -- node[left]{Sai} (setC);
+    \draw [->] (setA) |- (out);
+    \draw [->] (setB) |- (out);
+    \draw [->] (setC) -- (out);
+    \draw [->] (out) -- (end);
+\end{tikzpicture}
+\end{center}
+
+\subsection{Quy trình Kỹ thuật 8 Bước Thiết kế Thuật toán}
+\begin{enumerate}[leftmargin=2.2em, itemsep=2pt]
+    \item \textbf{Bước 1: Xác định Bài toán.} Nắm rõ mục tiêu cần giải quyết.
+    \item \textbf{Bước 2: Xác định Đầu vào.} Kiểu dữ liệu, kích thước dữ liệu $n$, các giả thiết tiên quyết.
+    \item \textbf{Bước 3: Xác định Đầu ra.} Giá trị trả về, cấu trúc dữ liệu kết quả, trạng thái thay đổi.
+    \item \textbf{Bước 4: Nhận diện Ràng buộc.} Giới hạn thời gian (ví dụ 1 giây $\implies \approx 10^8$ thao tác), giới hạn bộ nhớ phụ trợ ($O(1)$ hay $O(n)$).
+    \item \textbf{Bước 5: Đề xuất Ý tưởng.} Lựa chọn chiến lược (Chia để trị, Quy hoạch động, Tham lam, Duyệt toàn bộ).
+    \item \textbf{Bước 6: Viết Mã giả / Lưu đồ.} Làm rõ cấu trúc lặp, điều kiện dừng và bất biến lặp.
+    \item \textbf{Bước 7: Kiểm thử Ca đặc biệt.} Kiểm tra danh sách rỗng, mảng 1 phần tử, phần tử trùng lặp, số âm.
+    \item \textbf{Bước 8: Phân tích Độ phức tạp.} Ước lượng chi phí thời gian và bộ nhớ phụ trợ bằng ký hiệu tiệm cận.
+\end{enumerate}
+
+\subsection{Phân tích Tiên nghiệm (A Priori) và Hậu nghiệm (A Posteriori)}
+\begin{center}
+\begin{tabularx}{\textwidth}{p{3.5cm} X X}
+\toprule
+\textbf{Tiêu chuẩn} & \textbf{Phân tích Tiên nghiệm (A Priori)} & \textbf{Phân tích Hậu nghiệm (A Posteriori)} \\
+\midrule
+\textbf{Thời điểm} & Trước khi viết mã trên máy tính & Sau khi cài đặt và chạy trên máy tính \\
+\textbf{Phương pháp} & Mô hình toán học đếm phép toán cơ bản & Đo thời gian chạy thực tế (`time`), bộ nhớ tiêu thụ (`tracemalloc`) \\
+\textbf{Phụ thuộc phần cứng} & \textbf{Không phụ thuộc} (Khách quan với mọi máy) & \textbf{Phụ thuộc rất lớn} (CPU, RAM, Cache, Hệ điều hành) \\
+\textbf{Mục tiêu} & Xác định quy luật tăng trưởng khi $n \to \infty$ & Đánh giá hiệu năng thực tế trên một tập dữ liệu cụ thể \\
+\textbf{Biểu diễn} & Ký hiệu toán học Big-$O$, Big-$\Omega$, Big-$\Theta$ & Bảng số liệu giây/mili-giây, đồ thị thực nghiệm \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\newpage
+% =========================================================================
+\section{Độ phức tạp Thuật toán và Ký hiệu Tiệm cận}
+% =========================================================================
+
+\subsection{Bản chất của Phân tích Tiệm cận ($n \to \infty$)}
+Phân tích tiệm cận tập trung vào cách lượng tài nguyên (thời gian $T(n)$ hoặc bộ nhớ $S(n)$) tăng lên khi quy mô dữ liệu $n$ trở nên vô cùng lớn ($n \to \infty$). Hai nguyên lý tối giản căn bản:
+\begin{enumerate}[itemsep=1pt]
+    \item \textbf{Bỏ qua hằng số nhân:} Thuật toán chạy $2n$ hay $100n$ bước đều có cùng tốc độ tăng trưởng tuyến tính.
+    \item \textbf{Bỏ qua số hạng bậc thấp:} Với $f(n) = 3n^2 + 500n + 10000$, khi $n = 10^6$, số hạng $3n^2 = 3 \times 10^{12}$ lấn át hoàn toàn $500n = 5 \times 10^8$.
+\end{enumerate}
+
+\subsection{Ba Ký hiệu Tiệm cận Căn bản}
+
+\begin{definitionbox}[Định nghĩa 2.1 (Ký hiệu Big $O$ -- Chặn trên Tiệm cận)]
+Cho $f(n)$ và $g(n)$ là các hàm số không âm. Ta nói $f(n) = O(g(n))$ nếu tồn tại các hằng số dương $c > 0$ và $n_0 \ge 1$ sao cho:
+\[
+0 \le f(n) \le c \cdot g(n) \quad \text{với mọi } n \ge n_0.
+\]
+\textbf{Ý nghĩa:} $g(n)$ là mức chặn trên về tốc độ tăng trưởng của thuật toán. Trong \textbf{trường hợp xấu nhất}, thời gian chạy sẽ không bao giờ vượt quá tốc độ của $g(n)$.
+\end{definitionbox}
+
+\begin{definitionbox}[Định nghĩa 2.2 (Ký hiệu Big $\Omega$ -- Chặn dưới Tiệm cận)]
+Ta nói $f(n) = \Omega(g(n))$ nếu tồn tại các hằng số dương $c > 0$ và $n_0 \ge 1$ sao cho:
+\[
+0 \le c \cdot g(n) \le f(n) \quad \text{với mọi } n \ge n_0.
+\]
+\textbf{Ý nghĩa:} $g(n)$ là mức chặn dưới. Trong mọi trường hợp, thuật toán phải tốn \textbf{ít nhất} chừng đó phép tính khi $n$ đủ lớn.
+\end{definitionbox}
+
+\begin{definitionbox}[Định nghĩa 2.3 (Ký hiệu Big $\Theta$ -- Chặn chặt Tiệm cận)]
+Ta nói $f(n) = \Theta(g(n))$ nếu tồn tại các hằng số $c_1, c_2 > 0$ và $n_0 \ge 1$ sao cho:
+\[
+0 \le c_1 \cdot g(n) \le f(n) \le c_2 \cdot g(n) \quad \text{với mọi } n \ge n_0.
+\]
+\textbf{Định lý tương đương:} $f(n) = \Theta(g(n)) \iff f(n) = O(g(n)) \text{ và } f(n) = \Omega(g(n))$.
+\end{definitionbox}
+
+\subsection{Phương pháp Giới hạn Phân loại Cấp tăng trưởng}
+Thay vì tìm trực tiếp các hằng số $c$ và $n_0$, ta khảo sát giới hạn tỉ số khi $n \to \infty$:
+\[
+L = \lim_{n \to \infty} \frac{f(n)}{g(n)}
+\]
+\begin{itemize}[itemsep=2pt]
+    \item Nếu $L = 0$: $f(n) = o(g(n))$ (và do đó $f(n) = O(g(n))$, nhưng $f(n) \neq \Theta(g(n))$). Hàm $f$ tăng chậm hơn ngặt so với $g$.
+    \item Nếu $0 < L < \infty$: $f(n) = \Theta(g(n))$. Hai hàm có cùng bậc tăng trưởng tiệm cận.
+    \item Nếu $L = \infty$: $f(n) = \omega(g(n))$ (và $f(n) = \Omega(g(n))$). Hàm $f$ tăng nhanh hơn ngặt so với $g$.
+\end{itemize}
+
+\subsection{Bảng Phân cấp Tăng trưởng Chuẩn mực}
+Thứ tự phân cấp từ chậm nhất đến nhanh nhất:
+\[
+O(1) \prec O(\log \log n) \prec O(\log n) \prec O(\sqrt{n}) \prec O(n) \prec O(n \log n) \prec O(n^2) \prec O(n^3) \prec O(2^n) \prec O(n!) \prec O(n^n)
+\]
+
+\begin{center}
+\begin{tabularx}{\textwidth}{l l X}
+\toprule
+\textbf{Ký hiệu} & \textbf{Tên gọi} & \textbf{Ví dụ Giải thuật Điển hình} \\
+\midrule
+$O(1)$ & Hằng số (Constant) & Truy cập phần tử mảng `arr[i]`, tra cứu Hash Table (trung bình) \\
+$O(\log n)$ & Lôgarit (Logarithmic) & Tìm kiếm nhị phân (Binary Search), thao tác trên cây BST cân bằng \\
+$O(\sqrt{n})$ & Căn bậc hai (Sub-linear) & Kiểm tra số nguyên tố bằng thử ước, thuật toán Mo \\
+$O(n)$ & Tuyến tính (Linear) & Tìm kiếm tuyến tính, duyệt mảng 1 lần, tìm Max/Min \\
+$O(n \log n)$ & Tuyến tính-lôgarit & Sắp xếp tối ưu (Merge Sort, Heap Sort, Quick Sort trung bình) \\
+$O(n^2)$ & Bậc hai (Quadratic) & Sắp xếp nổi bọt (Bubble Sort), chọn (Selection), chèn (Insertion) \\
+$O(n^3)$ & Bậc ba (Cubic) & Nhân hai ma trận vuông kích thước $n \times n$ theo định nghĩa, Floyd-Warshall \\
+$O(2^n)$ & Hàm mũ (Exponential) & Liệt kê tất cả tập con (Power Set), Fibonacci đệ quy ngây thơ \\
+$O(n!)$ & Giai thừa (Factorial) & Sinh mọi hoán vị của $n$ phần tử, Người du lịch duyệt vét cạn \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Quy tắc Tính toán Độ phức tạp Thời gian}
+\begin{enumerate}[leftmargin=2em]
+    \item \textbf{Quy tắc Cộng (Khối lệnh Tuần tự):} Nếu hai đoạn mã thực thi nối tiếp có chi phí $O(f(n))$ và $O(g(n))$, tổng chi phí là:
+    \[
+    T(n) = O(f(n) + g(n)) = O(\max(f(n), g(n)))
+    \]
+    \item \textbf{Quy tắc Nhân (Vòng lặp Lồng nhau):} Nếu vòng lặp ngoài chạy $f(n)$ lần và tại mỗi bước vòng lặp trong thực hiện $g(n)$ phép tính:
+    \[
+    T(n) = O(f(n) \cdot g(n))
+    \]
+\end{enumerate}
+
+\subsection{Độ phức tạp Bộ nhớ và Bộ nhớ Phụ trợ}
+\begin{itemize}[itemsep=2pt]
+    \item \textbf{Tổng Độ phức tạp Bộ nhớ (Space Complexity):} Toàn bộ lượng RAM thuật toán chiếm dụng, bao gồm cả không gian lưu trữ dữ liệu đầu vào.
+    \item \textbf{Bộ nhớ Phụ trợ (Auxiliary Space):} Bộ nhớ \emph{bổ sung tạm thời} do chính thuật toán cấp phát thêm trong quá trình tính toán (biến phụ, mảng tạm, và các khung ngăn xếp gọi hàm đệ quy).
+\end{itemize}
+
+\newpage
+% =========================================================================
+\section{Phân tích Mã nguồn \& Vòng lặp Không Đệ quy}
+% =========================================================================
+
+\subsection{Vòng lặp Tuyến tính: $\Theta(n)$}
+\begin{lstlisting}[style=pythonstyle]
+i = 0
+while i < n:
+    # Cac thao tac O(1)
+    i += c  # c la hang so duong
+\end{lstlisting}
+Số bước lặp là $\lceil n/c \rceil$. Khi bỏ hằng số $1/c$, ta có độ phức tạp $\Theta(n)$.
+
+\subsection{Vòng lặp Lôgarit (Nhân / Chia): $\Theta(\log n)$}
+\begin{lstlisting}[style=pythonstyle]
+i = 1
+while i < n:
+    # Thao tac O(1)
+    i *= 2
+\end{lstlisting}
+Sau $k$ bước lặp, giá trị $i = 2^k$. Vòng lặp dừng khi $2^k \ge n \iff k = \lceil \log_2 n \rceil$. Độ phức tạp là $\Theta(\log n)$.
+
+\subsection{Vòng lặp Lồng nhau Dạng Tam giác: $\Theta(n^2)$}
+\begin{lstlisting}[style=pythonstyle]
+for i in range(n):
+    for j in range(i, n):
+        # Thao tac O(1)
+        process(i, j)
+\end{lstlisting}
+Tổng số phép tính:
+\[
+S = \sum_{i=0}^{n-1} (n - i) = n + (n-1) + \dots + 1 = \frac{n(n+1)}{2} = \frac{1}{2}n^2 + \frac{1}{2}n \implies \Theta(n^2)
+\]
+
+\subsection{Vòng lặp Thu hẹp Cấp số nhân: $\Theta(n)$}
+\begin{lstlisting}[style=pythonstyle]
+def geometric_loop(n):
+    i = n
+    while i > 0:
+        for j in range(i):
+            print(j)
+        i //= 2
+\end{lstlisting}
+Biến $i$ nhận các giá trị $n, n/2, n/4, \dots, 1$. Tổng số bước lặp được chặn bởi chuỗi hình học vô hạn:
+\[
+S(n) = n + \frac{n}{2} + \frac{n}{4} + \dots \le n \sum_{k=0}^{\infty} \left(\frac{1}{2}\right)^k = 2n = \Theta(n)
+\]
+Lưu ý: Mặc dù vòng lặp ngoài chạy $O(\log n)$ lần và vòng trong chạy tối đa $n$ lần, kết quả chính xác là $\Theta(n)$, \textbf{không phải} $O(n \log n)$.
+
+\subsection{Vòng lặp Chuỗi Điều hòa (Harmonic Sum): $\Theta(n \log n)$}
+\begin{lstlisting}[style=pythonstyle]
+for i in range(1, n + 1):
+    j = i
+    while j <= n:
+        j += i
+\end{lstlisting}
+Tổng số phép toán là:
+\[
+T(n) = \sum_{i=1}^n \left\lfloor \frac{n}{i} \right\rfloor \approx n \left(1 + \frac{1}{2} + \frac{1}{3} + \dots + \frac{1}{n}\right) = n \cdot H_n = \Theta(n \log n)
+\]
+
+\subsection{Điều kiện Lặp Phi Tuyến: $\Theta(\sqrt{n})$}
+\begin{lstlisting}[style=pythonstyle]
+i = 1
+while i * i <= n:
+    i += 1
+\end{lstlisting}
+Điều kiện $i^2 \le n \iff i \le \sqrt{n}$. Số bước lặp là $\lfloor \sqrt{n} \rfloor \implies \Theta(\sqrt{n})$.
+
+\newpage
+% =========================================================================
+\section{Hệ thức Truy hồi \& Định lý Thợ (Master Theorem)}
+% =========================================================================
+
+\subsection{Phương trình Truy hồi Chia để trị}
+Một bài toán kích thước $n$ được chia thành $a$ bài toán con kích thước $n/b$, giải đệ quy và tổng hợp nghiệm với chi phí $f(n)$:
+\[
+T(n) = a T\left(\frac{n}{b}\right) + f(n)
+\]
+với $a \ge 1$, $b > 1$ và $f(n)$ là hàm không âm khi $n$ đủ lớn.
+
+\subsection{Mô hình Cây Đệ quy (Recursion Tree)}
+\begin{itemize}[itemsep=2pt]
+    \item \textbf{Chiều cao cây:} Kích thước giảm dần $n/b^j = 1 \implies \text{Độ sâu } D = \log_b n$.
+    \item \textbf{Số nút tại tầng $j$:} $a^j$ nút, mỗi nút tốn công sức $f(n/b^j)$.
+    \item \textbf{Số nút lá tại đáy cây:} $a^{\log_b n} = n^{\log_b a}$ lá.
+    \item \textbf{Tổng chi phí tầng lá:} $\Theta(n^{\log_b a})$.
+\end{itemize}
+
+\subsection{Định lý Master Chuẩn mực (CLRS)}
+
+\begin{theorembox}[Định lý 4.1 (Master Theorem cho Đệ quy Chia để trị)]
+Xét phương trình $T(n) = a T(n/b) + f(n)$. Hành vi tiệm cận được xác định bằng việc so sánh $f(n)$ với đại lượng chuẩn $n^{\log_b a}$:
+
+\begin{itemize}[leftmargin=1.5em, itemsep=4pt]
+    \item \textbf{Trường hợp 1 (Phần đệ quy chi phối):}
+    Nếu tồn tại $\epsilon > 0$ sao cho $f(n) = O\left(n^{\log_b a - \epsilon}\right)$, thì:
+    \[
+    T(n) = \Theta\left(n^{\log_b a}\right)
+    \]
+
+    \item \textbf{Trường hợp 2 (Cân bằng giữa đệ quy và chia/gộp):}
+    Nếu $f(n) = \Theta\left(n^{\log_b a}\right)$, thì:
+    \[
+    T(n) = \Theta\left(n^{\log_b a} \log n\right)
+    \]
+
+    \item \textbf{Trường hợp 3 (Phần ngoài đệ quy chi phối):}
+    Nếu tồn tại $\epsilon > 0$ sao cho $f(n) = \Omega\left(n^{\log_b a + \epsilon}\right)$, đồng thời thỏa mãn \textbf{điều kiện chính quy}:
+    \[
+    a \cdot f(n/b) \le c \cdot f(n) \quad \text{với hằng số } c < 1 \text{ và mọi } n \text{ đủ lớn},
+    \]
+    thì:
+    \[
+    T(n) = \Theta(f(n))
+    \]
+\end{itemize}
+\end{theorembox}
+
+\subsection{Định lý Master Mở rộng (Extended Master Theorem)}
+Áp dụng cho dạng tổng quát $T(n) = a T(n/b) + \Theta(n^k \log^p n)$:
+\begin{center}
+\begin{tabularx}{\textwidth}{l l X}
+\toprule
+\textbf{Điều kiện} & \textbf{Số mũ Lôgarit $p$} & \textbf{Nghiệm $T(n)$} \\
+\midrule
+$a > b^k$ & Mọi $p \in \mathbb{R}$ & $\Theta\left(n^{\log_b a}\right)$ \hfill (Đệ quy chiếm ưu thế tuyệt đối) \\
+\midrule
+\multirow{3}{*}{$a = b^k$} & $p > -1$ & $\Theta\left(n^k \log^{p+1} n\right)$ \hfill (Dạng mở rộng cơ bản) \\
+& $p = -1$ & $\Theta\left(n^k \log \log n\right)$ \hfill (Trường hợp biên cực hạn) \\
+& $p < -1$ & $\Theta\left(n^k\right)$ \hfill (Tổng chuỗi hội tụ) \\
+\midrule
+$a < b^k$ & $p \ge 0$ & $\Theta\left(n^k \log^p n\right)$ \hfill (Chi phí tại gốc chiếm ưu thế) \\
+& $p < 0$ & $O\left(n^k\right)$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Truy hồi Dạng Subtract-and-Conquer}
+Khi kích thước bài toán giảm đi một lượng trừ cố định $b > 0$:
+\[
+T(n) = a T(n - b) + f(n), \quad \text{với } f(n) = O(n^k)
+\]
+\begin{center}
+\begin{tabularx}{\textwidth}{l X l}
+\toprule
+\textbf{Điều kiện của $a$} & \textbf{Độ phức tạp $T(n)$} & \textbf{Ví dụ Minh họa} \\
+\midrule
+$a < 1$ & $O(f(n)) = O(n^k)$ & $T(n) = 0.5 T(n-1) + n^2 \implies O(n^2)$ \\
+$a = 1$ & $O(n \cdot f(n)) = O(n^{k+1})$ & $T(n) = T(n-1) + n \implies O(n^2)$ (Selection Sort) \\
+$a > 1$ & $O(f(n) \cdot a^{n/b}) = O(n^k a^{n/b})$ & $T(n) = 2 T(n-1) + 1 \implies O(2^n)$ (Tháp Hà Nội) \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\newpage
+% =========================================================================
+\section{Phân tích Khấu hao (Amortized Analysis)}
+% =========================================================================
+
+\subsection{Ý nghĩa và Bản chất}
+Trong thực tế lập trình, có những cấu trúc dữ liệu mà đa số các thao tác diễn ra vô cùng nhanh ($O(1)$), nhưng thi thoảng xuất hiện một thao tác rất tốn kém ($O(n)$) nhằm tái cấu trúc bộ nhớ. Phân tích trường hợp xấu nhất cho từng thao tác riêng lẻ sẽ dẫn đến kết luận bi quan quá mức.
+
+\begin{definitionbox}[Định nghĩa 5.1 (Chi phí Khấu hao)]
+Trong một chuỗi gồm $m$ thao tác liên tiếp, nếu tổng thời gian chạy thực tế trong trường hợp xấu nhất là $T(m)$, thì \textbf{chi phí khấu hao} trung bình cho mỗi thao tác là:
+\[
+\hat{c} = \frac{T(m)}{m}
+\]
+\textbf{Lưu ý cốt lõi:} Phân tích khấu hao vẫn là một sự bảo đảm trong \textbf{trường hợp tồi nhất} (worst-case guarantee) cho toàn bộ chuỗi thao tác. Nó hoàn toàn \textbf{không dựa trên giả định xác suất} của dữ liệu đầu vào.
+\end{definitionbox}
+
+\subsection{Ba Phương pháp Phân tích Khấu hao}
+\begin{enumerate}[leftmargin=2.2em, itemsep=3pt]
+    \item \textbf{Phương pháp Cộng dồn (Aggregate Method):} Tính tổng chi phí trường hợp xấu nhất $T(m)$ của toàn bộ chuỗi $m$ thao tác rồi chia đều cho $m$: $\hat{c} = T(m) / m$.
+    \item \textbf{Phương pháp Kế toán (Accounting Method / Banker's Method):} Gán một mức phí giả định $\hat{c}_i$ cho mỗi thao tác. Thao tác rẻ trả dư tiền để tích lũy thành ``tín dụng'' (credit). Thao tác đắt tiền sẽ rút tín dụng đã tích lũy để bù đắp chi phí thực tế. \textbf{Bất biến bắt buộc:} Tổng số dư tín dụng không bao giờ được âm tại bất kỳ thời điểm nào.
+    \item \textbf{Phương pháp Thế năng (Potential Method / Physicist's Method):} Gán một hàm thế năng $\Phi(D)$ cho trạng thái dữ liệu $D$ thỏa mãn $\Phi(D_0) = 0$ và $\Phi(D_i) \ge 0$. Chi phí khấu hao của thao tác thứ $i$ được định nghĩa:
+    \[
+    \hat{c}_i = c_i + \Phi(D_i) - \Phi(D_{i-1})
+    \]
+    Khi cộng dồn qua $m$ thao tác, các đại lượng thế năng bị triệt tiêu theo chuỗi lồng nhau (telescoping):
+    \[
+    \sum_{i=1}^m \hat{c}_i = \sum_{i=1}^m c_i + \Phi(D_m) - \Phi(D_0) \ge \sum_{i=1}^m c_i
+    \]
+\end{enumerate}
+
+\subsection{Nghiên cứu Điển hình: Cơ chế Gấp đôi Dung lượng của Mảng Động}
+Xét lớp `DynamicArray` (tương tự như `list` trong Python hay `std::vector` trong C++):
+\begin{itemize}[itemsep=2pt]
+    \item Khi chèn vào mảng chưa đầy, chi phí là $1$ thao tác ghi nhớ.
+    \item Khi mảng đầy, ta cấp phát mảng mới có kích thước gấp đôi và sao chép toàn bộ phần tử cũ sang mảng mới.
+    \item Với $n$ phần tử, việc sao chép diễn ra tại $n = 1, 2, 4, 8, 16, \dots, 2^k$.
+    \item Tổng số lần sao chép phần tử qua mọi lần mở rộng:
+    \[
+    1 + 2 + 4 + 8 + \dots + 2^k = 2^{k+1} - 1 < 2n
+    \]
+    \item Tổng chi phí cho chuỗi $n$ thao tác append: $T(n) = n \text{ (thao tác ghi)} + 2n \text{ (sao chép)} \le 3n$.
+    \item \textbf{Chi phí khấu hao mỗi thao tác:} $\hat{c} = \frac{3n}{n} = 3 = \Theta(1)$.
+\end{itemize}
+
+\begin{notebox}[So sánh Chiến lược Gấp đôi và Mở rộng Cố định]
+Nếu mỗi lần đầy mảng, ta chỉ tăng thêm một hằng số $k$ phần tử (ví dụ $+1000$ ô nhớ), thì qua $n$ thao tác mảng sẽ phải sao chép lại $\approx n/k$ lần. Tổng số phép sao chép là $\sum_{i=1}^{n/k} i \cdot k \approx \Theta(n^2)$. Khi đó chi phí khấu hao cho mỗi thao tác chèn tăng vọt lên $\Theta(n)$! Chiến lược mở rộng theo cấp số nhân (gấp đôi) là điều kiện bắt buộc để đạt được chi phí khấu hao $O(1)$.
+\end{notebox}
+
+\newpage
+% =========================================================================
+\section{Bài tập Thực hành \& Lời giải Chi tiết}
+% =========================================================================
+
+\subsection{Bài toán 1: Phân cấp Tốc độ Tăng trưởng Tiệm cận}
+\textbf{Đề bài:} Sắp xếp các hàm sau theo thứ tự tốc độ tăng trưởng từ chậm nhất đến nhanh nhất:
+\[
+f_1(n) = n^{1.5}, \quad f_2(n) = 1000n, \quad f_3(n) = n \log_2 n, \quad f_4(n) = 2^{\sqrt{n}}, \quad f_5(n) = n!, \quad f_6(n) = 2^n, \quad f_7(n) = n^2
+\]
+
+\begin{definitionbox}[Lời giải Bài toán 1]
+Khảo sát số mũ và lôgarit:
+\begin{enumerate}[itemsep=1pt]
+    \item $f_2(n) = 1000n = \Theta(n)$ (tuyến tính)
+    \item $f_3(n) = n \log_2 n$ (tuyến tính lôgarit, tăng nhanh hơn $n$ nhưng chậm hơn $n^{1.5}$)
+    \item $f_1(n) = n^{1.5}$
+    \item $f_7(n) = n^2$
+    \item $f_4(n) = 2^{\sqrt{n}}$: Lấy lôgarit cơ số 2: $\log_2(2^{\sqrt{n}}) = \sqrt{n}$, trong khi $\log_2(n^2) = 2 \log_2 n$. Do $\sqrt{n} \succ \log n$, hàm $2^{\sqrt{n}}$ tăng nhanh hơn mọi đa thức nhưng chậm hơn $2^n$ (vì $\sqrt{n} < n$).
+    \item $f_6(n) = 2^n$ (hàm mũ)
+    \item $f_5(n) = n! \approx \sqrt{2\pi n}(n/e)^n$ (giai thừa, lấn át hàm mũ $2^n$).
+\end{enumerate}
+\textbf{Thứ tự chuẩn xác:}
+\[
+1000n \prec n \log n \prec n^{1.5} \prec n^2 \prec 2^{\sqrt{n}} \prec 2^n \prec n!
+\]
+\end{definitionbox}
+
+\subsection{Bài toán 2: Phân tích Vòng lặp Lồng nhau}
+\textbf{Đề bài:} Xác định độ phức tạp thời gian tiệm cận chặt $\Theta$ của đoạn code sau:
+\begin{lstlisting}[style=pythonstyle]
+def compute(n):
+    total = 0
+    i = 1
+    while i <= n:
+        j = 1
+        while j <= n:
+            total += 1
+            j *= 2
+        i += 1
+    return total
+\end{lstlisting}
+
+\begin{definitionbox}[Lời giải Bài toán 2]
+\begin{itemize}[itemsep=2pt]
+    \item Vòng lặp ngoài khởi tạo $i = 1$ và tăng $i \leftarrow i + 1$ cho đến khi $i > n$. Vòng lặp này chạy đúng $n$ lần.
+    \item Với mỗi giá trị của $i$, vòng lặp trong khởi tạo $j = 1$ và nhân đôi $j \leftarrow j \times 2$. Chuỗi giá trị của $j$ là $1, 2, 4, 8, \dots, 2^k$. Vòng lặp dừng khi $2^k > n \implies k = \lfloor \log_2 n \rfloor + 1$. Vòng trong thực hiện $\Theta(\log n)$ thao tác hoàn toàn độc lập với $i$.
+    \item Theo Quy tắc Nhân: $T(n) = \sum_{i=1}^n \Theta(\log n) = n \cdot \Theta(\log n) = \Theta(n \log n)$.
+\end{itemize}
+\end{definitionbox}
+
+\subsection{Bài toán 3: Ứng dụng Định lý Master}
+\textbf{Đề bài:} Giải các hệ thức truy hồi sau:
+\begin{enumerate}[itemsep=2pt]
+    \item $T_a(n) = 8 T_a(n/2) + n^2$
+    \item $T_b(n) = 2 T_b(n/2) + n \log^2 n$
+    \item $T_c(n) = 3 T_c(n/4) + n \log n$
+\end{enumerate}
+
+\begin{definitionbox}[Lời giải Bài toán 3]
+\textbf{Câu 1:} Với $T_a(n) = 8 T_a(n/2) + n^2$:
+\begin{itemize}[itemsep=1pt]
+    \item Các hệ số: $a = 8, b = 2, f(n) = n^2$.
+    \item Tính $n^{\log_b a} = n^{\log_2 8} = n^3$.
+    \item So sánh $f(n) = n^2$ với $n^3$: Ta có $n^2 = O(n^{3-1})$ với $\epsilon = 1 > 0$. Đây là \textbf{Trường hợp 1}.
+    \item \textbf{Kết luận:} $T_a(n) = \Theta(n^3)$.
+\end{itemize}
+
+\textbf{Câu 2:} Với $T_b(n) = 2 T_b(n/2) + n \log^2 n$:
+\begin{itemize}[itemsep=1pt]
+    \item $a = 2, b = 2, f(n) = n \log^2 n \implies k = 1, p = 2$.
+    \item Do $a = b^k$ ($2 = 2^1$) và $p = 2 > -1$, đây là \textbf{Trường hợp 2 Mở rộng}.
+    \item \textbf{Kết luận:} $T_b(n) = \Theta(n^k \log^{p+1} n) = \Theta(n \log^3 n)$.
+\end{itemize}
+
+\textbf{Câu 3:} Với $T_c(n) = 3 T_c(n/4) + n \log n$:
+\begin{itemize}[itemsep=1pt]
+    \item $a = 3, b = 4, f(n) = n \log n$.
+    \item $n^{\log_b a} = n^{\log_4 3} \approx n^{0.7925}$.
+    \item $f(n) = n \log n = \Omega(n^{0.7925 + \epsilon})$ với $\epsilon \approx 0.2 > 0$.
+    \item Kiểm tra điều kiện chính quy: $a \cdot f(n/b) = 3(n/4 \log(n/4)) \le \frac{3}{4} n \log n$. Chọn $c = 0.8 < 1$, điều kiện thỏa mãn.
+    \item Đây là \textbf{Trường hợp 3}.
+    \item \textbf{Kết luận:} $T_c(n) = \Theta(n \log n)$.
+\end{itemize}
+\end{definitionbox}
+
+\newpage
+% =========================================================================
+\section{Bảng Tra cứu Công thức \& Tóm tắt Nhanh}
+% =========================================================================
+
+\subsection{Các Công thức Tổng Cốt lõi}
+\begin{itemize}[itemsep=3pt]
+    \item \textbf{Tổng cấp số cộng:} $\sum_{i=1}^n i = \frac{n(n+1)}{2} = \Theta(n^2)$
+    \item \textbf{Tổng bình phương:} $\sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6} = \Theta(n^3)$
+    \item \textbf{Cấp số nhân hữu hạn ($r \neq 1$):} $\sum_{i=0}^k r^i = \frac{r^{k+1} - 1}{r - 1}$
+    \item \textbf{Cấp số nhân lùi vô hạn ($|r| < 1$):} $\sum_{i=0}^{\infty} r^i = \frac{1}{1 - r}$
+    \item \textbf{Chuỗi điều hòa:} $\sum_{i=1}^n \frac{1}{i} = \ln n + \gamma + O(1/n) = \Theta(\log n)$
+    \item \textbf{Xấp xỉ Stirling cho giai thừa:} $n! \approx \sqrt{2\pi n} \left(\frac{n}{e}\right)^n \implies \log(n!) = \Theta(n \log n)$
+\end{itemize}
+
+\subsection{Bảng Quyết định Định lý Master}
+Cho hệ thức $T(n) = a T(n/b) + \Theta(n^k \log^p n)$:
+\begin{center}
+\begin{tabularx}{\textwidth}{c c c X}
+\toprule
+\textbf{So sánh $a$ và $b^k$} & \textbf{Số mũ $p$} & \textbf{Thành phần Chi phối} & \textbf{Nghiệm $T(n)$} \\
+\midrule
+$a > b^k$ & Mọi $p$ & Tầng lá (Chiều sâu $\log_b n$) & $\Theta(n^{\log_b a})$ \\
+\midrule
+$a = b^k$ & $p > -1$ & Mọi tầng đều nhau & $\Theta(n^k \log^{p+1} n)$ \\
+$a = b^k$ & $p = -1$ & Trường hợp biên & $\Theta(n^k \log \log n)$ \\
+$a = b^k$ & $p < -1$ & Hội tụ & $\Theta(n^k)$ \\
+\midrule
+$a < b^k$ & $p \ge 0$ & Chi phí tại gốc & $\Theta(n^k \log^p n)$ \\
+$a < b^k$ & $p < 0$ & Chi phí tại gốc & $O(n^k)$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\vspace{1.5em}
+\begin{center}
+\rule{0.6\textwidth}{0.6pt}\\[0.4em]
+{\small\color{ForestGreen}\textbf{Hết Bài giảng Chuyên đề -- Phần 03: Thuật toán và Phân tích Độ phức tạp}}\\[0.2em]
+{\footnotesize\color{DarkGray}Khoa Khoa học Dữ liệu \& Trí tuệ Nhân tạo $\cdot$ Trường Đại học Kinh tế Quốc dân (NEU)}
+\end{center}
+
+\end{document}
