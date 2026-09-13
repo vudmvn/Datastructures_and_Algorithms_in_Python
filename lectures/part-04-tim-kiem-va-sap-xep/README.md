@@ -8,11 +8,11 @@
 
 ## 📚 Danh mục Tài liệu & Học liệu (Learning Resources)
 
-Thư mục này cung cấp toàn bộ tài liệu giảng dạy, bài giảng lý thuyết, slide trình chiếu, bài tập thực hành, đề bài tập và đáp án chính thức cho **Part 04**:
+Thư mục này cung cấp toàn bộ tài liệu học tập, ghi chú bài giảng lý thuyết, slide trình chiếu và hệ thống bài tập thực hành cho **Part 04**:
 
 ### 1. Ghi chú Bài giảng Toàn diện (Comprehensive Lecture Notes)
 - 📄 **[part04-lecture-notes-en.pdf](part04-lecture-notes-en.pdf)** *(24 trang, ấn bản PDF chuẩn xuất bản)*:
-  - Tổng hợp lý thuyết chuyên sâu, chứng minh toán học, cây đệ quy, bảng so sánh và bài toán tổng hợp.
+  - Tổng hợp lý thuyết chuyên sâu, chứng minh toán học, cây đệ quy, bảng so sánh và bài toán phỏng vấn / tổng hợp.
   - Tích hợp code Python chuẩn mực và hướng dẫn từng bước (step-by-step traces) cho tất cả các thuật toán.
   - Bản sao liên kết: **[part04-lecture-notes.pdf](part04-lecture-notes.pdf)**
   - Mã nguồn LaTeX: **[part04-lecture-notes-en.tex](part04-lecture-notes-en.tex)**
@@ -21,14 +21,7 @@ Thư mục này cung cấp toàn bộ tài liệu giảng dạy, bài giảng l�
 - 📊 **[part04-sorting-en.pdf](part04-sorting-en.pdf)**: Slide bài giảng về các thuật toán sắp xếp cơ bản và nâng cao (Bubble, Selection, Insertion, Merge Sort, Quicksort, Counting Sort, Radix Sort, Timsort).
 - 📊 **[part04-selection-searching.pdf](part04-selection-searching.pdf)**: Slide bài giảng về bài toán Chọn lọc (Quickselect, Median of Medians, Streaming Top-$k$) và Tìm kiếm (Linear, Binary, Ternary Search).
 
-### 3. Đề Bài tập & Đáp án Chính thức (Assignments & Marking Schemes)
-- 📝 **[part04-assignment-code102-en.pdf](part04-assignment-code102-en.pdf)**: Đề bài tập / kiểm tra chính thức (Mã đề: 102, thang điểm 10.0, thiết kế chuẩn 4 trang kèm khung trả lời cho sinh viên).
-- 🔑 **[part04-assignment-solution-code102-en.pdf](part04-assignment-solution-code102-en.pdf)**: Hướng dẫn chấm thi và Lời giải chi tiết (Official Marking Scheme, biểu điểm chi tiết đến 0.25 điểm, lời giải bài bản, code Python và chứng minh toán học).
-- Mã nguồn LaTeX tương ứng:
-  - `part04-assignment-code102-en.tex`
-  - `part04-assignment-solution-code102-en.tex`
-
-### 4. Bài tập Thực hành & Ôn tập (Practice Problems)
+### 3. Bài tập Thực hành & Ôn tập (Practice Problems)
 - 📖 **[part04-practice-vn.md](part04-practice-vn.md)**: Hệ thống bài tập thực hành, câu hỏi tự luận và bài tập trắc nghiệm giải thích bằng Tiếng Việt.
 - 📖 **[part04-practice-en.md](part04-practice-en.md)**: English version of practice problems and conceptual self-check exercises.
 
@@ -69,20 +62,12 @@ Part 04: Searching, Selection & Sorting
 
 ## 💻 Hướng dẫn Biên dịch Mã nguồn LaTeX (LaTeX Compilation Guide)
 
-Các tệp tài liệu được định dạng chuẩn với MiKTeX / TeX Live. Để biên dịch:
+Tài liệu ghi chú bài giảng được định dạng chuẩn với MiKTeX / TeX Live. Để biên dịch:
 
 ```bash
-# Biên dịch Ghi chú Bài giảng (2 lượt để cập nhật mục lục và nhãn)
+# Biên dịch Ghi chú Bài giảng (2 lượt để cập nhật mục lục và liên kết)
 pdflatex -interaction=nonstopmode part04-lecture-notes-en.tex
 pdflatex -interaction=batchmode part04-lecture-notes-en.tex
-
-# Biên dịch Đề bài tập sinh viên
-pdflatex -interaction=nonstopmode part04-assignment-code102-en.tex
-pdflatex -interaction=batchmode part04-assignment-code102-en.tex
-
-# Biên dịch Hướng dẫn Chấm & Lời giải
-pdflatex -interaction=nonstopmode part04-assignment-solution-code102-en.tex
-pdflatex -interaction=batchmode part04-assignment-solution-code102-en.tex
 ```
 
 ---

@@ -26,9 +26,8 @@
 - 📖 **[complexity-analysis-2-vn.md](complexity-analysis-2-vn.md)** | **[EN](complexity-analysis-2-en.md)**: Độ phức tạp thuật toán và Ký hiệu tiệm cận.
 - 📖 **[master-theorem-vn.md](master-theorem-vn.md)** | **[EN](master-theorem-en.md)**: Định lý Master, Phương trình truy hồi và Phân tích khấu hao.
 
-### 4. Bài tập Thực hành (Assignments & Exercises)
+### 4. Bài tập Thực hành (Practice & Exercises)
 - 📝 **[part03-pseudocode-basic-counting-en.pdf](part03-pseudocode-basic-counting-en.pdf)**: Bài tập đếm thao tác và viết mã giả.
-- 📝 **[part03-assignment-en.pdf](part03-assignment-en.pdf)**: Đề bài tập thực hành số 3.
 - 📖 **[part03-practice-problems-vn.md](part03-practice-problems-vn.md)** | **[EN](part03-practice-problems-en.md)**: Ngân hàng câu hỏi tự luận và bài tập có lời giải.
 
 ---
