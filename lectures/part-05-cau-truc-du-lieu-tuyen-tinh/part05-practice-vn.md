@@ -4,8 +4,8 @@
 > **Chủ đề:** Cấu trúc Dữ liệu Tuyến tính – Danh sách Liên kết (Linear Data Structures – Linked Lists)  
 > **Tài liệu tham khảo:** Narasimha Karumanchi (2020), *Data Structures and Algorithmic Thinking with Python*, Chapter 3.  
 > **Cấu trúc bộ tài liệu:**
-> - **Phần 1:** Câu hỏi Trắc nghiệm & Lý thuyết Cốt lõi (12 câu Quiz trắc nghiệm có giải thích chi tiết)
-> - **Phần 2:** Bài tập Tự luận, Phân tích & Chứng minh Toán học (5 bài toán chuyên sâu)
+> - **Phần 1:** Câu hỏi Trắc nghiệm & Lý thuyết Cốt lõi (12 câu Quiz trắc nghiệm có đáp án và giải thích chi tiết)
+> - **Phần 2:** Bài tập Tự luận, Phân tích Kiến trúc & Bộ nhớ (5 bài toán chuyên sâu)
 > - **Phần 3:** Bài tập Lập trình Cơ bản – Easy Level (8 bài toán chuẩn LeetCode & GeeksforGeeks)
 > - **Phần 4:** Bài tập Lập trình Trung bình – Medium Level (8 bài toán chuẩn LeetCode & GeeksforGeeks)
 
@@ -16,21 +16,21 @@
 | STT | Tên bài toán | Cấp độ | Kỹ thuật trọng tâm | LeetCode | GeeksforGeeks |
 |:---:|:---|:---:|:---|:---:|:---:|
 | 01 | **Reverse Linked List** (Đảo ngược DSLK) | 🟢 Easy | 3 con trỏ (`prev`, `curr`, `next`) | [#206](https://leetcode.com/problems/reverse-linked-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/reverse-a-linked-list/1) |
-| 02 | **Middle of the Linked List** (Tìm node giữa) | 🟢 Easy | Fast & Slow Pointers | [#876](https://leetcode.com/problems/middle-of-the-linked-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/finding-middle-element-in-a-linked-list/1) |
-| 03 | **Linked List Cycle** (Phát hiện chu trình) | 🟢 Easy | Floyd's Tortoise and Hare | [#141](https://leetcode.com/problems/linked-list-cycle/) | [GfG Practice](https://www.geeksforgeeks.org/problems/detect-loop-in-linked-list/1) |
-| 04 | **Merge Two Sorted Lists** (Hợp nhất 2 DSLK đã sắp xếp) | 🟢 Easy | Dummy Sentinel Node | [#21](https://leetcode.com/problems/merge-two-sorted-lists/) | [GfG Practice](https://www.geeksforgeeks.org/problems/merge-two-sorted-linked-lists/1) |
-| 05 | **Delete Node Without Head** (Xóa node không cần head) | 🟢 Easy | Kỹ thuật sao chép giá trị node kế cận | [#237](https://leetcode.com/problems/delete-node-in-a-linked-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/delete-without-head-pointer/1) |
-| 06 | **Remove Duplicates from Sorted List** (Xóa trùng lặp) | 🟢 Easy | Quét và nhảy liên kết bỏ qua node trùng | [#83](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/remove-duplicate-element-from-sorted-linked-list/1) |
-| 07 | **Palindrome Linked List** (DSLK đối xứng) | 🟢 Easy | Slow/Fast + Reversal + Comparison | [#234](https://leetcode.com/problems/palindrome-linked-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/check-if-linked-list-is-pallindrome/1) |
-| 08 | **Intersection of Two Linked Lists** (Giao điểm 2 DSLK) | 🟢 Easy | Two-Pointer Traversal Switch | [#160](https://leetcode.com/problems/intersection-of-two-linked-lists/) | [GfG Practice](https://www.geeksforgeeks.org/problems/intersection-point-in-y-shapped-linked-lists/1) |
-| 09 | **Remove Nth Node From End** (Xóa node thứ N từ cuối) | 🟡 Medium | Two Pointers with Fixed Gap ($N$) | [#19](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/nth-node-from-end-of-linked-list/1) |
-| 10 | **Linked List Cycle II** (Tìm điểm bắt đầu chu trình) | 🟡 Medium | Floyd's Phase 2 Mathematical Reset | [#142](https://leetcode.com/problems/linked-list-cycle-ii/) | [GfG Practice](https://www.geeksforgeeks.org/problems/find-the-first-node-of-loop-in-linked-list--170645/1) |
-| 11 | **Reorder List** (Đan xen danh sách) | 🟡 Medium | Split + Reverse + Interleave | [#143](https://leetcode.com/problems/reorder-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/reorder-list/1) |
-| 12 | **Odd Even Linked List** (Gom nhóm node vị trí chẵn/lẻ) | 🟡 Medium | Multi-pointer Relinking in-place | [#328](https://leetcode.com/problems/odd-even-linked-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/rearrange-a-linked-list/1) |
-| 13 | **Add Two Numbers** (Cộng 2 số dạng DSLK ngược) | 🟡 Medium | Elementary Math with Carry Simulation | [#2](https://leetcode.com/problems/add-two-numbers/) | [GfG Practice](https://www.geeksforgeeks.org/problems/add-two-numbers-represented-by-linked-lists/1) |
-| 14 | **Swap Nodes in Pairs** (Đổi chỗ từng cặp node liền kề) | 🟡 Medium | Dummy Node + Pointer Swap | [#24](https://leetcode.com/problems/swap-nodes-in-pairs/) | [GfG Practice](https://www.geeksforgeeks.org/problems/pairwise-swap-elements-of-a-linked-list-by-swapping-data/1) |
-| 15 | **Copy List with Random Pointer** (Clone DSLK ngẫu nhiên) | 🟡 Medium | Interweaving Nodes in-place / Hash Map | [#138](https://leetcode.com/problems/copy-list-with-random-pointer/) | [GfG Practice](https://www.geeksforgeeks.org/problems/clone-a-linked-list-with-next-and-random-pointer/1) |
-| 16 | **Sort List** (Sắp xếp DSLK tối ưu) | 🟡 Medium | Merge Sort on Linked List ($O(n \log n)$) | [#148](https://leetcode.com/problems/sort-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/sort-a-linked-list/1) |
+| 02 | **Remove Linked List Elements** (Xóa node theo giá trị) | 🟢 Easy | Dummy Sentinel Node | [#203](https://leetcode.com/problems/remove-linked-list-elements/) | [GfG Practice](https://www.geeksforgeeks.org/problems/delete-a-node-in-single-linked-list/1) |
+| 03 | **Merge Two Sorted Lists** (Hợp nhất 2 DSLK đã sắp xếp) | 🟢 Easy | Dummy Sentinel + So sánh 2 con trỏ | [#21](https://leetcode.com/problems/merge-two-sorted-lists/) | [GfG Practice](https://www.geeksforgeeks.org/problems/merge-two-sorted-linked-lists/1) |
+| 04 | **Delete Node Without Head** (Xóa node không cần head) | 🟢 Easy | Sao chép giá trị node kế cận | [#237](https://leetcode.com/problems/delete-node-in-a-linked-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/delete-without-head-pointer/1) |
+| 05 | **Remove Duplicates from Sorted List** (Xóa trùng lặp) | 🟢 Easy | Quét và nhảy liên kết bỏ qua node trùng | [#83](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/remove-duplicate-element-from-sorted-linked-list/1) |
+| 06 | **Binary to Integer in Linked List** (Chuyển nhị phân sang số) | 🟢 Easy | Duyệt tuần tự và dịch bit ($2 \times \text{ans} + \text{val}$) | [#1290](https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/) | [GfG Practice](https://www.geeksforgeeks.org/problems/decimal-equivalent-of-binary-linked-list/1) |
+| 07 | **Reverse a Doubly Linked List** (Đảo ngược DSLK đôi) | 🟢 Easy | Hoán đổi cặp con trỏ `prev` và `next` | — | [GfG Practice](https://www.geeksforgeeks.org/problems/reverse-a-doubly-linked-list/1) |
+| 08 | **Intersection of Two Linked Lists** (Giao điểm 2 DSLK) | 🟢 Easy | Cân bằng hiệu độ dài $\|L_A - L_B\|$ | [#160](https://leetcode.com/problems/intersection-of-two-linked-lists/) | [GfG Practice](https://www.geeksforgeeks.org/problems/intersection-point-in-y-shapped-linked-lists/1) |
+| 09 | **Remove Nth Node From End** (Xóa node thứ N từ cuối) | 🟡 Medium | Two-Pass đếm độ dài ($L - n$) + Dummy | [#19](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/nth-node-from-end-of-linked-list/1) |
+| 10 | **Rotate List** (Xoay danh sách k vị trí) | 🟡 Medium | Nối vòng tròn tạm thời + Cắt tại $(L - k)$ | [#61](https://leetcode.com/problems/rotate-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/rotate-a-linked-list/1) |
+| 11 | **Partition List** (Phân hoạch DSLK quanh giá trị x) | 🟡 Medium | 2 con trỏ Dummy (`less` và `greater`) | [#86](https://leetcode.com/problems/partition-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/partition-a-linked-list/1) |
+| 12 | **Odd Even Linked List** (Gom nhóm node vị trí chẵn/lẻ) | 🟡 Medium | Tách 2 luồng liên kết in-place | [#328](https://leetcode.com/problems/odd-even-linked-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/rearrange-a-linked-list/1) |
+| 13 | **Add Two Numbers** (Cộng 2 số dạng DSLK ngược) | 🟡 Medium | Mô phỏng phép cộng số học có nhớ | [#2](https://leetcode.com/problems/add-two-numbers/) | [GfG Practice](https://www.geeksforgeeks.org/problems/add-two-numbers-represented-by-linked-lists/1) |
+| 14 | **Swap Nodes in Pairs** (Đổi chỗ từng cặp node liền kề) | 🟡 Medium | Dummy Node + Hoán đổi 3 liên kết | [#24](https://leetcode.com/problems/swap-nodes-in-pairs/) | [GfG Practice](https://www.geeksforgeeks.org/problems/pairwise-swap-elements-of-a-linked-list-by-swapping-data/1) |
+| 15 | **Remove Duplicates II** (Xóa sạch các node bị trùng) | 🟡 Medium | Sentinel Node + Bỏ qua toàn bộ cụm trùng | [#82](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/) | [GfG Practice](https://www.geeksforgeeks.org/problems/remove-all-occurences-of-duplicates-in-a-linked-list/1) |
+| 16 | **Copy List with Random Pointer** (Clone DSLK ngẫu nhiên) | 🟡 Medium | Chèn node copy xen kẽ tối ưu $O(1)$ bộ nhớ | [#138](https://leetcode.com/problems/copy-list-with-random-pointer/) | [GfG Practice](https://www.geeksforgeeks.org/problems/clone-a-linked-list-with-next-and-random-pointer/1) |
 
 ---
 
@@ -50,8 +50,8 @@ Trong kiến trúc máy tính 64-bit, nhận định nào sau đây là **chính
 **Đáp án đúng: B**
 
 **Giải thích:**
-- Trong mảng (hoặc `array` kiểu C thuần), các phần tử nằm liên tiếp nhau và chỉ tốn đúng kích thước của dữ liệu nguyên thủy (ví dụ $4$ hoặc $8$ bytes mỗi số).
-- Trong singly linked list, mỗi phần tử được gói trong một `Node`. Trên hệ thống 64-bit, ngoài dữ liệu, mỗi node bắt buộc phải chứa ít nhất 1 con trỏ `next` (chiếm 8 bytes). Ngoài ra, trong Python, mỗi đối tượng `Node` là một PyObject có phần header (PyObject_HEAD) chiếm thêm 16 bytes. Do đó, danh sách liên kết luôn có **memory overhead** lớn hơn đáng kể so với mảng liền khối.
+- Trong mảng (hoặc mảng tĩnh kiểu C), các phần tử nằm liên tiếp nhau và chỉ tốn đúng kích thước của dữ liệu nguyên thủy (ví dụ $4$ hoặc $8$ bytes mỗi số).
+- Trong singly linked list, mỗi phần tử được gói trong một `Node`. Trên hệ thống 64-bit, mỗi node bắt buộc phải chứa ít nhất 1 con trỏ `next` (8 bytes). Trong Python, mỗi đối tượng `Node` là một PyObject có phần header (`PyObject_HEAD`) chiếm thêm 16 bytes. Do đó, danh sách liên kết luôn có **memory overhead** lớn hơn đáng kể so với mảng liền khối.
 
 </details>
 
@@ -62,7 +62,7 @@ Tại sao phép truy cập phần tử thứ $i$ (`A[i]`) trên mảng có độ
 
 - [ ] A. Vì CPU không hỗ trợ đọc bộ nhớ của danh sách liên kết.
 - [ ] B. Vì mảng lưu trữ các phần tử tại các ô nhớ vật lý liên tiếp nhau, cho phép tính địa chỉ trực tiếp qua công thức `Address(i) = Base + i * Size`, còn linked list phân tán rải rác trong bộ nhớ và buộc phải duyệt tuần tự từ `head`.
-- [ ] C. Vì con trỏ `head` của linked list không biết kích thước của các node.
+- [ ] C. Vì con trỏ `head` của linked list không biết kiểu dữ liệu của các node.
 - [ ] D. Vì Python list được biên dịch thành mã máy tối ưu hơn class tự tạo.
 
 <details>
@@ -71,30 +71,30 @@ Tại sao phép truy cập phần tử thứ $i$ (`A[i]`) trên mảng có độ
 **Đáp án đúng: B**
 
 **Giải thích:**
-- Mảng sử dụng mô hình bộ nhớ liên tục (*contiguous memory allocation*). Nhờ đó, địa chỉ của ô nhớ thứ $i$ được suy ra trực tiếp chỉ bằng một phép nhân và một phép cộng số học: $\text{Base} + i \times \text{SizeOfElement}$, đạt thời gian $O(1)$.
-- Linked list lưu trữ các node ở các vị trí bất kỳ trên bộ nhớ Heap. Địa chỉ của node thứ $i$ chỉ được biết khi ta đã đọc được con trỏ `next` của node thứ $i - 1$. Do đó, để đến được node thứ $i$, bắt buộc phải duyệt tuần tự qua $i$ bước liên kết từ `head`, dẫn tới chi phí trường hợp xấu nhất là $O(n)$.
+Mảng sử dụng mô hình bộ nhớ liên tục (*contiguous memory allocation*). Địa chỉ của ô nhớ thứ $i$ được suy ra trực tiếp chỉ bằng một phép nhân và một phép cộng số học: $\text{Base} + i \times \text{SizeOfElement}$, đạt thời gian $O(1)$.
+Linked list lưu trữ các node ở các vị trí bất kỳ trên bộ nhớ Heap. Địa chỉ của node thứ $i$ chỉ được biết khi ta đã đọc được con trỏ `next` của node thứ $i - 1$. Do đó, để đến được node thứ $i$, bắt buộc phải duyệt tuần tự qua $i$ bước liên kết từ `head`, dẫn tới chi phí trường hợp xấu nhất là $O(n)$.
 
 </details>
 
 ---
 
-### Quiz 03. Độ phức tạp của thao tác xóa node
-Cho một danh sách liên kết đơn có $n$ node. Thao tác xóa node có độ phức tạp thời gian là $O(1)$ trong trường hợp nào sau đây?
+### Quiz 03. Thứ tự gán con trỏ khi Chèn node sau một node đã biết
+Cho một Singly Linked List và một node `p` đã biết trong danh sách. Ta muốn chèn một node mới `new_node` vào ngay sau node `p`. Thứ tự gán con trỏ nào sau đây là **đúng** để không làm mất phần danh sách phía sau?
 
-- [ ] A. Xóa node ở cuối danh sách khi chỉ biết con trỏ `head`.
-- [ ] B. Xóa node có giá trị bằng `x` bất kỳ.
-- [ ] C. Xóa node đầu danh sách (`head`), hoặc xóa node kế tiếp ngay sau một node `prev_node` đã có sẵn tham chiếu.
-- [ ] D. Xóa node thứ $k$ bất kỳ tính từ đầu danh sách.
+- [ ] A. `p.next = new_node; new_node.next = p.next`
+- [ ] B. `new_node.next = p.next; p.next = new_node`
+- [ ] C. `p = new_node; new_node.next = p`
+- [ ] D. `new_node.next = p; p.next = new_node.next`
 
 <details>
 <summary><strong>Đáp án & Giải thích chi tiết</strong></summary>
 
-**Đáp án đúng: C**
+**Đáp án đúng: B**
 
 **Giải thích:**
-- Xóa node đầu danh sách chỉ cần: `self.head = self.head.next` $\to O(1)$.
-- Xóa node ngay sau `prev_node` chỉ cần: `prev_node.next = prev_node.next.next` $\to O(1)$.
-- Các trường hợp còn lại (xóa cuối khi chỉ có `head`, xóa theo giá trị `x`, xóa vị trí thứ $k$) đều đòi hỏi phải duyệt từ `head` để tìm node trước node cần xóa, do đó mất $O(n)$ thời gian.
+- Bước 1: `new_node.next = p.next` (node mới móc nối vào phần danh sách phía sau `p`).
+- Bước 2: `p.next = new_node` (node `p` đổi hướng liên kết trỏ tới node mới).
+- Nếu làm theo phương án A (`p.next = new_node` trước), liên kết cũ đến phần danh sách phía sau sẽ bị ghi đè và mất vĩnh viễn (*memory leak* / lạc mất dữ liệu).
 
 </details>
 
@@ -106,7 +106,7 @@ Cho một danh sách liên kết đơn có $n$ node. Thao tác xóa node có đ�
 - [ ] A. Tiết kiệm bộ nhớ hơn vì không cần `None` ở cuối.
 - [ ] B. Có thể duyệt theo cả hai chiều (tiến và lùi), đồng thời xóa một node đã biết trong $O(1)$ mà không cần duyệt tìm node đứng trước (*predecessor*).
 - [ ] C. Cho phép truy cập phần tử thứ $i$ trong thời gian $O(1)$.
-- [ ] D. Tự động phát hiện và ngăn ngừa chu trình lặp vô hạn.
+- [ ] D. Tự động sắp xếp các phần tử theo thứ tự tăng dần.
 
 <details>
 <summary><strong>Đáp án & Giải thích chi tiết</strong></summary>
@@ -157,19 +157,19 @@ Mục đích chính của việc sử dụng **Dummy Node** (hoặc **Sentinel N
 **Đáp án đúng: B**
 
 **Giải thích:**
-Dummy node là một node giả đứng trước `head` (`dummy = ListNode(0, head)`). Khi cần chèn hoặc xóa node ở đầu danh sách, thao tác này được đối xử giống hệt như chèn/xóa ở giữa danh sách (luôn có một node đứng trước là `dummy`), giúp loại bỏ hoàn toàn các trường hợp biên rắc rối và làm code ngắn gọn, không bị lỗi `NullPointerException` / `AttributeError: 'NoneType' object has no attribute 'next'`.
+Dummy node là một node giả đứng trước `head` (`dummy = ListNode(0, head)`). Khi cần chèn hoặc xóa node ở đầu danh sách, thao tác này được đối xử giống hệt như chèn/xóa ở giữa danh sách (luôn có một node đứng trước là `dummy`), giúp loại bỏ hoàn toàn các trường hợp biên rắc rối và làm code ngắn gọn, không bị lỗi `AttributeError: 'NoneType' object has no attribute 'next'`.
 
 </details>
 
 ---
 
-### Quiz 07. Thuật toán Floyd phát hiện chu trình
-Trong thuật toán rùa và thỏ của Floyd, nếu một linked list có $n$ node và có chu trình, điều gì đảm bảo con trỏ `fast` (đi 2 bước) nhất định sẽ gặp con trỏ `slow` (đi 1 bước)?
+### Quiz 07. Xóa node cuối trong Singly Linked List có con trỏ `tail`
+Cho một Singly Linked List duy trì cả hai con trỏ `head` và `tail`. Độ phức tạp thời gian của thao tác xóa node cuối cùng (`delete_end`) là bao nhiêu?
 
-- [ ] A. Vì `fast` sẽ quay đầu lại khi chạm điểm cuối.
-- [ ] B. Vì trong mỗi bước, khoảng cách tương đối giữa `fast` và `slow` theo chiều chu trình giảm đi đúng 1 đơn vị ($2 - 1 = 1$). Do khoảng cách là số nguyên hữu hạn, nó chắc chắn sẽ giảm dần về 0.
-- [ ] C. Vì `slow` sẽ đứng yên một chỗ chờ `fast` tới.
-- [ ] D. Do định lý Master Theorem quy định.
+- [ ] A. $O(1)$ vì ta đã có con trỏ `tail`.
+- [ ] B. $O(n)$ vì mặc dù có `tail`, ta vẫn phải duyệt từ `head` đến node áp chót ($n-1$) để cập nhật con trỏ `next` của nó thành `None`.
+- [ ] C. $O(\log n)$.
+- [ ] D. $O(1)$ amortized.
 
 <details>
 <summary><strong>Đáp án & Giải thích chi tiết</strong></summary>
@@ -177,10 +177,9 @@ Trong thuật toán rùa và thỏ của Floyd, nếu một linked list có $n$ 
 **Đáp án đúng: B**
 
 **Giải thích:**
-Khi cả hai con trỏ đã cùng nằm trong chu trình có độ dài $C$: giả sử `fast` đang đứng sau `slow` một khoảng cách là $d$ bước ($1 \le d < C$). Sau mỗi nhịp lặp:
-- `slow` tiến 1 bước.
-- `fast` tiến 2 bước.
-Khoảng cách mới giữa chúng theo chiều kim đồng hồ sẽ là: $(d + 2 - 1) \pmod C = (d + 1) \pmod C$, hay nói cách khác, khoảng cách mà `fast` đuổi theo `slow` giảm đi đúng 1 bước sau mỗi vòng. Vì khoảng cách giảm liên tục: $d, d-1, d-2, \dots, 0$, chắc chắn `fast` sẽ bắt kịp `slow` tại một node mà không thể "nhảy cóc" qua mặt `slow`.
+Đây là một cạm bẫy kinh điển:
+- Trong Singly Linked List, các liên kết chỉ đi một chiều. Để xóa node cuối (`tail`), ta phải cập nhật con trỏ `next` của node đứng trước nó thành `None`, đồng thời dời `tail` về node đó.
+- Nhưng con trỏ `tail` không thể lùi lại được! Ta bắt buộc phải duyệt từ `head` mất $n-1$ bước để tìm node áp chót. Do đó thao tác xóa cuối vẫn tốn $O(n)$ thời gian. (Trong Doubly Linked List, thao tác này mới đạt $O(1)$ nhờ `tail.prev`).
 
 </details>
 
@@ -203,7 +202,7 @@ Tại sao ta **không thể** áp dụng hiệu quả thuật toán Tìm kiếm 
 Hệ thức truy hồi của Binary Search trên mảng là: $T(n) = T(n/2) + O(1) \implies T(n) = O(\log n)$ (nhờ tìm phần tử ở giữa `mid = (low + high) // 2` trong $O(1)$).
 Trên Linked list, để tìm phần tử giữa một khoảng có độ dài $k$, ta phải mất $O(k)$ bước duyệt. Khi đó:
 $$T(n) = T(n/2) + O(n) \implies T(n) = O(n)$$
-Do đó, Binary Search trên DSLK không đem lại bất kỳ cải thiện nào về bậc độ phức tạp so với Tìm kiếm tuyến tính ($O(n)$). Muốn tìm kiếm nhị phân hiệu quả trên cấu trúc liên kết, ta phải chuyển sang dùng **Skip List** hoặc **Cây tìm kiếm nhị phân (Binary Search Tree)**.
+Do đó, Binary Search trên DSLK không đem lại bất kỳ cải thiện nào về bậc độ phức tạp so với Tìm kiếm tuyến tính ($O(n)$).
 
 </details>
 
@@ -225,28 +224,29 @@ Xét về góc độ kiến trúc máy tính và bộ nhớ đệm (CPU Cache), 
 **Giải thích:**
 Đây là bài học kinh điển về sự khác biệt giữa **Độ phức tạp lý thuyết** ($O(n)$) và **Hiệu năng thực tế trên phần cứng**:
 - Mảng liên tục trong RAM: CPU nạp sẵn 1 khối 64 bytes (Cache line) chứa nhiều phần tử tiếp theo vào L1/L2 Cache cực nhanh $\to$ Hầu như luôn gặp **Cache Hit**.
-- Linked List: mỗi lần `curr = curr.next`, CPU phải nhảy tới một địa chỉ ngẫu nhiên trên Heap. Dữ liệu không nằm trong Cache $\to$ **Cache Miss** $\to$ CPU phải tạm dừng chu kỳ lệnh chờ nạp dữ liệu từ thanh RAM chính với độ trễ lớn (hàng trăm chu kỳ CPU).
+- Linked List: mỗi lần `curr = curr.next`, CPU phải nhảy tới một địa chỉ ngẫu nhiên trên Heap. Dữ liệu không nằm trong Cache $\to$ **Cache Miss** $\to$ CPU phải tạm dừng chu kỳ lệnh chờ nạp dữ liệu từ thanh RAM chính với độ trễ lớn.
 
 </details>
 
 ---
 
-### Quiz 10. Tìm node thứ k từ cuối danh sách
-Cho một singly linked list có độ dài $n$ ($n > k$). Nếu sử dụng kỹ thuật hai con trỏ `fast` và `slow` để tìm node thứ $k$ từ cuối chỉ trong **một lượt duyệt**, ban đầu con trỏ `fast` phải xuất phát trước con trỏ `slow` bao nhiêu bước?
+### Quiz 10. Tìm node thứ k từ cuối bằng phương pháp Two-Pass
+Cho một singly linked list có $n$ node ($n \ge k$). Nếu duyệt qua danh sách lần thứ nhất để đếm tổng số node là $n$, thì trong lần duyệt thứ hai, ta cần bước từ `head` thêm bao nhiêu bước để đến đúng node thứ $k$ từ cuối?
 
-- [ ] A. $k - 1$ bước
-- [ ] B. $k$ bước
-- [ ] C. $k + 1$ bước
-- [ ] D. $2k$ bước
+- [ ] A. $n - k$ bước
+- [ ] B. $n - k + 1$ bước
+- [ ] C. $k$ bước
+- [ ] D. $k - 1$ bước
 
 <details>
 <summary><strong>Đáp án & Giải thích chi tiết</strong></summary>
 
-**Đáp án đúng: B**
+**Đáp án đúng: A**
 
 **Giải thích:**
-Nếu cho `fast` đi trước `slow` đúng $k$ bước, khoảng cách giữa `fast` và `slow` sẽ luôn được giữ cố định là $k$ node.
-Khi `fast` tiến đến vị trí sau node cuối cùng (`fast is None`), con trỏ `slow` sẽ dừng lại chính xác tại node cách phần kết thúc $k$ vị trí, tức là **node thứ $k$ từ cuối**.
+- Node đầu tiên (`head`) nằm ở vị trí chỉ số $0$ (cần 0 bước).
+- Node thứ $k$ từ cuối nằm ở vị trí chỉ số $n - k$ (nếu đánh số từ 0).
+- Do đó, bắt đầu từ `head`, ta chỉ cần bước tiếp đúng $n - k$ lần con trỏ `next` là sẽ chạm chính xác vào node thứ $k$ từ cuối.
 
 </details>
 
@@ -275,26 +275,22 @@ Bắt buộc cần 3 con trỏ:
 
 ---
 
-### Quiz 12. Phát hiện danh sách liên kết có độ dài Chẵn hay Lẻ
-Cho con trỏ `head` của một singly linked list. Để kiểm tra danh sách có tổng số node là chẵn hay lẻ chỉ trong một lượt duyệt với số bước lặp ít nhất, ta nên:
+### Quiz 12. So sánh Chèn đầu (Prepend) và Chèn cuối (Append)
+Trong các khẳng định sau về thao tác chèn trên Singly Linked List (chỉ có `head`), khẳng định nào là **đúng**?
 
-- [ ] A. Duyệt đếm toàn bộ số node rồi lấy `count % 2`.
-- [ ] B. Cho một con trỏ nhảy 2 bước mỗi lần (`current = current.next.next`). Nếu dừng lại ở `current is None` thì độ dài là chẵn; nếu dừng lại ở `current.next is None` thì độ dài là lẻ.
-- [ ] C. Đảo ngược danh sách rồi so sánh node đầu và node cuối.
-- [ ] D. Bắt buộc phải chuyển danh sách sang dạng mảng mới kiểm tra được.
+- [ ] A. Chèn đầu mất $O(1)$, chèn cuối mất $O(1)$.
+- [ ] B. Chèn đầu mất $O(n)$, chèn cuối mất $O(1)$.
+- [ ] C. Chèn đầu mất $O(1)$, chèn cuối mất $O(n)$ do phải duyệt từ `head` tới node cuối.
+- [ ] D. Cả chèn đầu và chèn cuối đều mất $O(n)$.
 
 <details>
 <summary><strong>Đáp án & Giải thích chi tiết</strong></summary>
 
-**Đáp án đúng: B**
+**Đáp án đúng: C**
 
 **Giải thích:**
-Cách B giúp giải quyết bài toán chỉ với $\lceil n/2 \rceil$ bước lặp:
-- Ban đầu `current = head`.
-- Tại mỗi vòng lặp, kiểm tra `while current is not None and current.next is not None: current = current.next.next`.
-- Khi vòng lặp kết thúc:
-  - Nếu `current is None`: số node là **chẵn** (bước nhảy cuối cùng từ node $n-1$ ra ngoài phạm vi).
-  - Nếu `current.next is None`: số node là **lẻ** (con trỏ dừng lại đúng tại node cuối cùng $n$).
+- Chèn đầu chỉ cần nối `new_node.next = self.head` và `self.head = new_node` $\to O(1)$ không phụ thuộc vào $n$.
+- Chèn cuối khi chỉ giữ `head` bắt buộc phải chạy vòng lặp `while current.next is not None` đi qua tất cả $n$ node để tới được node đuôi $\to O(n)$.
 
 </details>
 
@@ -348,45 +344,42 @@ Tại thời điểm bắt đầu mỗi vòng lặp `while`:
 
 ---
 
-## Bài T2. Chứng minh Toán học Thuật toán Floyd giai đoạn 2 (Tìm điểm bắt đầu chu trình)
+## Bài T2. Phân tích Thuật toán Chèn và Xóa trong Doubly Linked List
 
 ### Đề bài
-Trong bài toán LeetCode #142, sau khi con trỏ `slow` và `fast` gặp nhau lần đầu tiên trong chu trình, thuật toán đặt một con trỏ `ptr1 = head` và giữ nguyên `ptr2 = slow` tại điểm gặp nhau, sau đó cho cả hai cùng tiến từng bước một ($1$ node/lượt). Điểm gặp nhau lần thứ hai chính là **node bắt đầu chu trình**.
-
-Hãy thiết lập phương trình toán học chứng minh tính đúng đắn của khẳng định trên.
+Cho một Doubly Linked List với cấu trúc node gồm `data`, `prev`, `next`.
+1. Hãy viết 4 phép gán con trỏ chính xác để chèn `new_node` vào ngay sau node `p` (giả định `p` không phải là node cuối cùng).
+2. Hãy viết 2 phép gán con trỏ để xóa node `curr` (giả định `curr` nằm ở giữa danh sách, có cả `curr.prev` và `curr.next`).
+3. Vẽ sơ đồ trạng thái các liên kết trước và sau khi thực hiện thao tác xóa.
 
 <details>
 <summary><strong>Lời giải chi tiết</strong></summary>
 
-### Chứng minh toán học
-Ký hiệu các tham số hình học của danh sách liên kết có chu trình như sau:
-- $L_1$: khoảng cách (số bước đi) từ `head` đến node bắt đầu chu trình.
-- $L_2$: khoảng cách từ node bắt đầu chu trình đến điểm gặp nhau đầu tiên của `slow` và `fast`.
-- $C$: tổng số node (chu vi) của chu trình ($C \ge 1$).
+### 1. Thao tác chèn sau node `p`
+```python
+new_node.next = p.next
+new_node.prev = p
+p.next.prev = new_node
+p.next = new_node
+```
+*(Thứ tự này đảm bảo node đứng sau `p` nhận diện được `new_node` làm predecessor mới trước khi `p.next` bị đổi hướng).*
 
-```text
-head ---------( L1 )---------> [Start of Cycle] ---------( L2 )---------> [Meeting Point]
-                                     ^                                          |
-                                     |----------------( C - L2 )----------------+
+### 2. Thao tác xóa node `curr` ở giữa
+```python
+curr.prev.next = curr.next
+curr.next.prev = curr.prev
 ```
 
-1. **Quãng đường di chuyển tại lần gặp đầu tiên:**
-   - Con trỏ `slow` di chuyển quãng đường:
-     $$d_{\text{slow}} = L_1 + L_2$$
-   - Con trỏ `fast` di chuyển quãng đường bằng tổng quãng đường vào chu trình cộng thêm $k$ vòng quay trong chu trình ($k \ge 1$):
-     $$d_{\text{fast}} = L_1 + L_2 + k \cdot C$$
+### 3. Sơ đồ trạng thái khi xóa `curr`
+```text
+Ban đầu:
+    [prev_node] <===> [curr] <===> [next_node]
 
-2. **Mối quan hệ vận tốc:**
-   Vì mỗi bước `fast` đi gấp đôi `slow`:
-   $$d_{\text{fast}} = 2 \cdot d_{\text{slow}}$$
-   $$\implies L_1 + L_2 + k \cdot C = 2(L_1 + L_2)$$
-   $$\implies k \cdot C = L_1 + L_2$$
-   $$\implies L_1 = k \cdot C - L_2 = (k - 1) \cdot C + (C - L_2)$$
-
-3. **Ý nghĩa của đẳng thức:**
-   - Vế trái ($L_1$): là quãng đường một con trỏ xuất phát từ `head` cần đi để chạm đến `Start of Cycle`.
-   - Vế phải ($(k - 1)C + (C - L_2)$): là quãng đường một con trỏ xuất phát từ `Meeting Point` cần đi: nó sẽ quay $(k - 1)$ vòng chu trình đầy đủ, cộng thêm quãng đường $(C - L_2)$ để đi từ `Meeting Point` về lại `Start of Cycle`.
-   - Vì hai quãng đường này **bằng nhau từng bước một**, nếu ta cho `ptr1` đi từ `head` và `ptr2` đi từ `Meeting Point` với cùng tốc độ 1 bước/nhịp, chúng chắc chắn sẽ chạm nhau lần đầu tiên ngay tại **node bắt đầu chu trình**! $\blacksquare$
+Sau khi đổi liên kết:
+    [prev_node] --------------------> [next_node]
+    [prev_node] <-------------------- [next_node]
+```
+Node `curr` bị ngắt hoàn toàn khỏi mạch liên kết và sẽ được cơ chế Garbage Collection của Python thu hồi tự động.
 
 </details>
 
@@ -408,8 +401,7 @@ Hãy giải thích nguyên nhân dựa trên 3 tiêu chí:
 | Tiêu chí | Mảng (Array) | Danh sách liên kết (Linked List) |
 |---|---|---|
 | **Bộ nhớ phụ khi Merge** | Trên mảng, thao tác trộn đòi hỏi một mảng phụ kích thước $O(n)$ để sao chép dữ liệu. | Trên DSLK, thao tác trộn chỉ cần **đổi hướng các con trỏ liên kết** (`next`), hoàn toàn không cần cấp phát thêm bộ nhớ phụ $\implies S(n) = O(1)$ (nếu khử đệ quy hoặc $O(\log n)$ call stack). |
-| **Thao tác Partition của Quicksort** | Trên mảng, Quicksort duyệt ngẫu nhiên từ hai đầu mảng vào giữa ($O(1)$ random access), swap cực nhanh. | Trên DSLK đơn, không thể duyệt lùi (`prev`), việc chọn pivot và phân hoạch Lomuto/Hoare rất kém hiệu quả và làm mất tính liên tục. |
-| **Tính định vị bộ nhớ & Trộn** | Thao tác chia đôi mảng mất $O(1)$ qua chỉ số `mid = (low + high) // 2`. | Trên DSLK, tìm điểm giữa mất $O(n)$ bằng con trỏ rùa-thỏ, nhưng tổng thời gian chia đệ quy vẫn thỏa mãn $T(n) = 2T(n/2) + O(n) = O(n \log n)$. |
+| **Thao tác Partition của Quicksort** | Trên mảng, Quicksort duyệt từ hai đầu mảng vào giữa ($O(1)$ random access), swap cực nhanh. | Trên DSLK đơn, không thể duyệt lùi (`prev`), việc chọn pivot và phân hoạch Lomuto/Hoare rất kém hiệu quả và làm mất tính liên tục. |
 | **Tính ổn định (Stability)** | Merge Sort trên mảng giữ được tính ổn định. | Merge Sort trên DSLK bảo toàn tuyệt đối thứ tự tương đối ban đầu của các node có giá trị bằng nhau một cách tự nhiên. |
 
 **Kết luận:** Nhờ khả năng hợp nhất hai danh sách đã sắp xếp trong $O(1)$ bộ nhớ phụ và đảm bảo thời gian chạy $O(n \log n)$ trong mọi trường hợp, **Merge Sort** chính là thuật toán sắp xếp tốt nhất cho cấu trúc danh sách liên kết.
@@ -526,12 +518,6 @@ Sử dụng 3 con trỏ:
 - `curr`: con trỏ duyệt qua danh sách, bắt đầu từ `head`.
 - `next_temp`: biến tạm lưu lại `curr.next` trước khi bẻ hướng liên kết, tránh làm mất phần danh sách phía sau.
 
-Tại mỗi bước:
-1. `next_temp = curr.next` (lưu node kế tiếp)
-2. `curr.next = prev` (đổi hướng liên kết)
-3. `prev = curr` (tiến `prev` lên node hiện tại)
-4. `curr = next_temp` (tiến `curr` lên node tiếp theo)
-
 ```python
 class ListNode:
     def __init__(self, val=0, next=None):
@@ -550,47 +536,46 @@ def reverseList(head: ListNode) -> ListNode:
 ```
 
 - **Độ phức tạp thời gian:** $T(n) = O(n)$ do duyệt qua mỗi node đúng 1 lần.
-- **Bộ nhớ phụ:** $S(n) = O(1)$ vì chỉ dùng một số con trỏ phụ.
+- **Bộ nhớ phụ:** $S(n) = O(1)$.
 
 </details>
 
 ---
 
-## Bài 02. Tìm Node giữa Danh sách (Middle of the Linked List)
+## Bài 02. Xóa Node theo Giá trị (Remove Linked List Elements)
 
 - **Mức độ:** 🟢 Easy
-- **Mã bài:** LeetCode 876 | GfG: Finding middle element in a linked list
-- **Đường dẫn thực hành:** [LeetCode #876](https://leetcode.com/problems/middle-of-the-linked-list/) \| [GeeksforGeeks](https://www.geeksforgeeks.org/problems/finding-middle-element-in-a-linked-list/1)
+- **Mã bài:** LeetCode 203 | GfG: Delete a Node in Single Linked List
+- **Đường dẫn thực hành:** [LeetCode #203](https://leetcode.com/problems/remove-linked-list-elements/) \| [GeeksforGeeks](https://www.geeksforgeeks.org/problems/delete-a-node-in-single-linked-list/1)
 
 ### Mô tả bài toán
-Cho con trỏ `head` của một singly linked list, hãy tìm và trả về node nằm ở vị trí chính giữa danh sách. Nếu danh sách có số lượng node là chẵn (nghĩa là có 2 node ở giữa), hãy trả về node ở vị trí giữa thứ hai.
+Cho con trỏ `head` của một singly linked list và một số nguyên `val`. Hãy xóa tất cả các node có `node.val == val` trong danh sách và trả về `head` mới.
 
 **Ví dụ:**
 ```text
-Đầu vào: 1 -> 2 -> 3 -> 4 -> 5 -> None
-Đầu ra:  Node có giá trị 3
-
-Đầu vào: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> None
-Đầu ra:  Node có giá trị 4 (node giữa thứ hai)
+Đầu vào: head = 1 -> 2 -> 6 -> 3 -> 4 -> 5 -> 6 -> None, val = 6
+Đầu ra:  1 -> 2 -> 3 -> 4 -> 5 -> None
 ```
 
 <details>
 <summary><strong>Lời giải & Mã nguồn Python</strong></summary>
 
 ### Phân tích thuật toán
-Sử dụng kỹ thuật **Fast & Slow Pointers**:
-- Khởi tạo cả `slow` và `fast` đều trỏ vào `head`.
-- Trong mỗi vòng lặp, `slow` tiến 1 bước (`slow = slow.next`), còn `fast` tiến 2 bước (`fast = fast.next.next`).
-- Khi `fast` đi đến cuối danh sách (`fast is None` hoặc `fast.next is None`), `slow` sẽ đứng đúng vị trí giữa danh sách mà không cần phải đếm tổng số node trước.
+Sử dụng **Dummy Node** đứng trước `head`. Điều này đảm bảo ta có thể xóa các node có giá trị `val` nằm ngay ở đầu danh sách mà không cần viết điều kiện đặc biệt:
+- Duyệt bằng `curr = dummy`.
+- Nếu `curr.next.val == val`: nhảy cóc qua node đó `curr.next = curr.next.next`.
+- Ngược lại: tiến con trỏ `curr = curr.next`.
 
 ```python
-def middleNode(head: ListNode) -> ListNode:
-    slow = head
-    fast = head
-    while fast is not None and fast.next is not None:
-        slow = slow.next
-        fast = fast.next.next
-    return slow
+def removeElements(head: ListNode, val: int) -> ListNode:
+    dummy = ListNode(0, head)
+    curr = dummy
+    while curr.next is not None:
+        if curr.next.val == val:
+            curr.next = curr.next.next
+        else:
+            curr = curr.next
+    return dummy.next
 ```
 
 - **Độ phức tạp thời gian:** $T(n) = O(n)$.
@@ -600,63 +585,14 @@ def middleNode(head: ListNode) -> ListNode:
 
 ---
 
-## Bài 03. Phát hiện Chu trình trong Danh sách (Linked List Cycle)
-
-- **Mức độ:** 🟢 Easy
-- **Mã bài:** LeetCode 141 | GfG: Detect Loop in linked list
-- **Đường dẫn thực hành:** [LeetCode #141](https://leetcode.com/problems/linked-list-cycle/) \| [GeeksforGeeks](https://www.geeksforgeeks.org/problems/detect-loop-in-linked-list/1)
-
-### Mô tả bài toán
-Cho `head` của một linked list, xác định xem danh sách này có chứa chu trình (vòng lặp vô tận) hay không. Chu trình xuất hiện khi có một node trong danh sách mà con trỏ `next` của nó trỏ ngược lại một node đã xuất hiện trước đó.
-
-**Ví dụ:**
-```text
-3 -> 2 -> 0 -> -4
-     ^          |
-     +----------+
-Đầu ra: True (tồn tại chu trình từ -4 về 2)
-```
-
-<details>
-<summary><strong>Lời giải & Mã nguồn Python</strong></summary>
-
-### Phân tích thuật toán
-Áp dụng **Thuật toán rùa và thỏ của Floyd (Floyd's Cycle-Finding Algorithm)**:
-- Nếu danh sách không có chu trình, con trỏ `fast` sẽ nhanh chóng chạm tới `None`.
-- Nếu danh sách có chu trình, hai con trỏ sẽ lặp vô tận bên trong chu trình đó. Vì `fast` chạy nhanh hơn `slow` 1 node sau mỗi lượt, khoảng cách tương đối giữa chúng giảm đi 1 ở mỗi bước. Do đó, chắc chắn `fast` sẽ đuổi kịp `slow` (`slow is fast`).
-
-```python
-def hasCycle(head: ListNode) -> bool:
-    if head is None or head.next is None:
-        return False
-
-    slow = head
-    fast = head
-
-    while fast is not None and fast.next is not None:
-        slow = slow.next
-        fast = fast.next.next
-        if slow is fast:
-            return True
-
-    return False
-```
-
-- **Độ phức tạp thời gian:** $T(n) = O(n)$.
-- **Bộ nhớ phụ:** $S(n) = O(1)$ (tối ưu hơn cách dùng `set` để lưu các node đã duyệt mất $O(n)$ bộ nhớ).
-
-</details>
-
----
-
-## Bài 04. Hợp nhất Hai Danh sách đã Sắp xếp (Merge Two Sorted Lists)
+## Bài 03. Hợp nhất Hai Danh sách đã Sắp xếp (Merge Two Sorted Lists)
 
 - **Mức độ:** 🟢 Easy
 - **Mã bài:** LeetCode 21 | GfG: Merge two sorted linked lists
 - **Đường dẫn thực hành:** [LeetCode #21](https://leetcode.com/problems/merge-two-sorted-lists/) \| [GeeksforGeeks](https://www.geeksforgeeks.org/problems/merge-two-sorted-linked-lists/1)
 
 ### Mô tả bài toán
-Cho hai danh sách liên kết đơn đã được sắp xếp theo thứ tự tăng dần `list1` và `list2`. Hãy hợp nhất chúng thành một danh sách liên kết đơn duy nhất cũng được sắp xếp theo thứ tự tăng dần, bằng cách ghép nối trực tiếp các node của hai danh sách ban đầu.
+Cho hai danh sách liên kết đơn đã được sắp xếp tăng dần `list1` và `list2`. Hãy hợp nhất chúng thành một danh sách duy nhất cũng được sắp xếp tăng dần bằng cách nối lại các node có sẵn.
 
 **Ví dụ:**
 ```text
@@ -667,11 +603,6 @@ list2: 1 -> 3 -> 4 -> None
 
 <details>
 <summary><strong>Lời giải & Mã nguồn Python</strong></summary>
-
-### Phân tích thuật toán
-- Sử dụng một node giả (**Dummy / Sentinel node**) để đơn giản hóa thao tác chèn node vào đầu danh sách, tránh phải viết riêng logic kiểm tra `head` rỗng.
-- Dùng con trỏ `tail` trỏ vào node cuối cùng của danh sách kết quả. So sánh giá trị ở đầu hai danh sách, nối node nhỏ hơn vào `tail` rồi tịnh tiến con trỏ tương ứng.
-- Khi một trong hai danh sách đã hết phần tử, chỉ cần nối phần còn lại của danh sách kia vào sau `tail`.
 
 ```python
 def mergeTwoLists(list1: ListNode, list2: ListNode) -> ListNode:
@@ -687,38 +618,28 @@ def mergeTwoLists(list1: ListNode, list2: ListNode) -> ListNode:
             list2 = list2.next
         tail = tail.next
 
-    # Nối phần còn lại (nếu có)
     tail.next = list1 if list1 is not None else list2
-
     return dummy.next
 ```
 
-- **Độ phức tạp thời gian:** $T(m, n) = O(m + n)$ với $m, n$ là số node của `list1` và `list2`.
-- **Bộ nhớ phụ:** $S(m, n) = O(1)$ vì tái sử dụng toàn bộ các node cũ.
+- **Độ phức tạp thời gian:** $T(m, n) = O(m + n)$.
+- **Bộ nhớ phụ:** $S(m, n) = O(1)$.
 
 </details>
 
 ---
 
-## Bài 05. Xóa Node khi không có Con trỏ Head (Delete Node in a Linked List)
+## Bài 04. Xóa Node khi không có Con trỏ Head (Delete Node in a Linked List)
 
 - **Mức độ:** 🟢 Easy
 - **Mã bài:** LeetCode 237 | GfG: Delete without head pointer
 - **Đường dẫn thực hành:** [LeetCode #237](https://leetcode.com/problems/delete-node-in-a-linked-list/) \| [GeeksforGeeks](https://www.geeksforgeeks.org/problems/delete-without-head-pointer/1)
 
 ### Mô tả bài toán
-Cho tham chiếu đến một `node` cần xóa trong danh sách liên kết đơn. Bạn **không được cấp quyền truy cập** vào con trỏ `head` của danh sách. Đảm bảo rằng node cần xóa không phải là node cuối cùng (`tail`) của danh sách.
+Cho tham chiếu đến một `node` cần xóa trong danh sách liên kết đơn (đảm bảo không phải node cuối). Bạn **không được cấp quyền truy cập** vào con trỏ `head`.
 
 <details>
 <summary><strong>Lời giải & Mã nguồn Python</strong></summary>
-
-### Phân tích thuật toán
-Thông thường, để xóa một node trong singly linked list, ta cần biết node đứng trước (*predecessor*) để gán `prev.next = node.next`. Tuy nhiên ở đây ta không có `head`, cũng không thể duyệt lùi vì là DSLK đơn.
-
-**Ý tưởng thông minh:**
-Thay vì thực sự xóa cấu trúc node hiện tại, ta sao chép dữ liệu từ `node.next` đè lên `node` hiện tại, rồi xóa `node.next`:
-1. `node.val = node.next.val`
-2. `node.next = node.next.next`
 
 ```python
 def deleteNode(node: ListNode):
@@ -733,14 +654,14 @@ def deleteNode(node: ListNode):
 
 ---
 
-## Bài 06. Xóa Phần tử Trùng lặp trong Danh sách đã Sắp xếp (Remove Duplicates from Sorted List)
+## Bài 05. Xóa Phần tử Trùng lặp trong Danh sách đã Sắp xếp (Remove Duplicates from Sorted List)
 
 - **Mức độ:** 🟢 Easy
 - **Mã bài:** LeetCode 83 | GfG: Remove duplicate element from sorted Linked List
 - **Đường dẫn thực hành:** [LeetCode #83](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) \| [GeeksforGeeks](https://www.geeksforgeeks.org/problems/remove-duplicate-element-from-sorted-linked-list/1)
 
 ### Mô tả bài toán
-Cho con trỏ `head` của một danh sách liên kết đã được sắp xếp tăng dần. Hãy xóa tất cả các phần tử trùng lặp sao cho mỗi giá trị chỉ xuất hiện đúng một lần. Trả về danh sách sau khi lọc bỏ trùng lặp.
+Cho con trỏ `head` của một danh sách liên kết đã được sắp xếp tăng dần. Hãy xóa tất cả các phần tử trùng lặp sao cho mỗi giá trị chỉ xuất hiện đúng một lần.
 
 **Ví dụ:**
 ```text
@@ -750,13 +671,6 @@ Cho con trỏ `head` của một danh sách liên kết đã được sắp xế
 
 <details>
 <summary><strong>Lời giải & Mã nguồn Python</strong></summary>
-
-### Phân tích thuật toán
-Vì danh sách đã được sắp xếp, các phần tử có cùng giá trị chắc chắn nằm liền kề nhau:
-- Dùng một con trỏ `curr = head`.
-- So sánh `curr.val` với `curr.next.val`:
-  - Nếu bằng nhau: bỏ qua node kế tiếp bằng cách trỏ `curr.next = curr.next.next`.
-  - Nếu khác nhau: an tâm tiến con trỏ lên `curr = curr.next`.
 
 ```python
 def deleteDuplicates(head: ListNode) -> ListNode:
@@ -776,62 +690,100 @@ def deleteDuplicates(head: ListNode) -> ListNode:
 
 ---
 
-## Bài 07. Kiểm tra Danh sách Liên kết Đối xứng (Palindrome Linked List)
+## Bài 06. Chuyển đổi Số nhị phân dạng DSLK sang Số nguyên (Binary to Integer)
 
 - **Mức độ:** 🟢 Easy
-- **Mã bài:** LeetCode 234 | GfG: Check if Linked List is Palindrome
-- **Đường dẫn thực hành:** [LeetCode #234](https://leetcode.com/problems/palindrome-linked-list/) \| [GeeksforGeeks](https://www.geeksforgeeks.org/problems/check-if-linked-list-is-pallindrome/1)
+- **Mã bài:** LeetCode 1290 | GfG: Decimal Equivalent of Binary Linked List
+- **Đường dẫn thực hành:** [LeetCode #1290](https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/) \| [GeeksforGeeks](https://www.geeksforgeeks.org/problems/decimal-equivalent-of-binary-linked-list/1)
 
 ### Mô tả bài toán
-Cho `head` của một singly linked list, hãy kiểm tra xem chuỗi giá trị trong danh sách có phải là một đối xứng (palindrome) hay không. Yêu cầu đạt độ phức tạp $O(n)$ thời gian và $O(1)$ bộ nhớ phụ.
+Cho `head` của một linked list mà mỗi node chứa một giá trị là `0` hoặc `1`. Danh sách biểu diễn một số nhị phân (với `head` là bit có trọng số cao nhất). Hãy trả về giá trị thập phân tương ứng của số đó.
 
 **Ví dụ:**
 ```text
-Đầu vào: 1 -> 2 -> 2 -> 1 -> None  ==>  True
-Đầu vào: 1 -> 2 -> 3 -> None        ==>  False
+Đầu vào: 1 -> 0 -> 1 -> None
+Đầu ra:  5  (vì 1*2^2 + 0*2^1 + 1*2^0 = 5)
 ```
 
 <details>
 <summary><strong>Lời giải & Mã nguồn Python</strong></summary>
 
 ### Phân tích thuật toán
-Để đạt $O(1)$ bộ nhớ phụ mà không tạo mảng ngoài:
-1. **Tìm điểm giữa:** Dùng `slow` và `fast` để xác định nửa sau của danh sách.
-2. **Đảo ngược nửa sau:** Áp dụng thuật toán đảo ngược danh sách từ vị trí `slow`.
-3. **So sánh hai nửa:** Dùng hai con trỏ xuất phát từ `head` và đầu danh sách nửa sau đã đảo ngược.
+Duyệt qua danh sách và áp dụng thuật toán Horner (hoặc dịch bit):
+$$\text{ans} = (\text{ans} \ll 1) + \text{curr.val} = 2 \times \text{ans} + \text{curr.val}$$
 
 ```python
-def isPalindrome(head: ListNode) -> bool:
-    if head is None or head.next is None:
-        return True
-
-    # 1. Tìm node giữa
-    slow = fast = head
-    while fast is not None and fast.next is not None:
-        slow = slow.next
-        fast = fast.next.next
-
-    # 2. Đảo ngược nửa sau từ slow
-    prev = None
-    curr = slow
+def getDecimalValue(head: ListNode) -> int:
+    ans = 0
+    curr = head
     while curr is not None:
-        nxt = curr.next
-        curr.next = prev
-        prev = curr
-        curr = nxt
+        ans = (ans << 1) | curr.val
+        curr = curr.next
+    return ans
+```
 
-    # 3. So sánh nửa đầu và nửa sau
-    first_half = head
-    second_half = prev
-    is_pal = True
-    while second_half is not None:
-        if first_half.val != second_half.val:
-            is_pal = False
-            break
-        first_half = first_half.next
-        second_half = second_half.next
+- **Độ phức tạp thời gian:** $T(n) = O(n)$.
+- **Bộ nhớ phụ:** $S(n) = O(1)$.
 
-    return is_pal
+</details>
+
+---
+
+## Bài 07. Đảo ngược Danh sách Liên kết Đôi (Reverse a Doubly Linked List)
+
+- **Mức độ:** 🟢 Easy
+- **Nền tảng:** GeeksforGeeks: Reverse a Doubly Linked List
+- **Đường dẫn thực hành:** [GeeksforGeeks Practice](https://www.geeksforgeeks.org/problems/reverse-a-doubly-linked-list/1)
+
+### Mô tả bài toán
+Cho con trỏ `head` của một Doubly Linked List. Hãy đảo ngược danh sách này ngay tại chỗ và trả về `head` mới.
+
+**Ví dụ:**
+```text
+Đầu vào: None <- 1 <==> 2 <==> 3 <==> 4 -> None
+Đầu ra:  None <- 4 <==> 3 <==> 2 <==> 1 -> None
+```
+
+<details>
+<summary><strong>Lời giải & Mã nguồn Python</strong></summary>
+
+### Phân tích thuật toán
+Với mỗi node trong doubly linked list, ta chỉ cần hoán đổi hai con trỏ `prev` và `next` của chính node đó:
+```python
+temp = curr.prev
+curr.prev = curr.next
+curr.next = temp
+```
+Sau đó, tiến sang node tiếp theo (chính là `curr.prev` cũ!). Khi kết thúc vòng lặp, node cuối cùng có `temp` khác `None` sẽ là `head` mới.
+
+```python
+class DoublyNode:
+    def __init__(self, val=0, prev=None, next=None):
+        self.val = val
+        self.prev = prev
+        self.next = next
+
+def reverseDLL(head: DoublyNode) -> DoublyNode:
+    if head is None or head.next is None:
+        return head
+
+    curr = head
+    temp = None
+
+    while curr is not None:
+        # Hoán đổi prev và next
+        temp = curr.prev
+        curr.prev = curr.next
+        curr.next = temp
+
+        # Tiến sang node tiếp theo theo hướng ban đầu (nay là curr.prev)
+        curr = curr.prev
+
+    # Node đầu mới chính là node cuối cũ (đang trỏ bởi temp.prev)
+    if temp is not None:
+        head = temp.prev
+
+    return head
 ```
 
 - **Độ phức tạp thời gian:** $T(n) = O(n)$.
@@ -848,38 +800,52 @@ def isPalindrome(head: ListNode) -> bool:
 - **Đường dẫn thực hành:** [LeetCode #160](https://leetcode.com/problems/intersection-of-two-linked-lists/) \| [GeeksforGeeks](https://www.geeksforgeeks.org/problems/intersection-point-in-y-shapped-linked-lists/1)
 
 ### Mô tả bài toán
-Cho `headA` và `headB` của hai singly linked list, hãy tìm và trả về node mà tại đó hai danh sách bắt đầu giao nhau. Nếu hai danh sách hoàn toàn không giao nhau, trả về `None`.
-
-**Ví dụ minh họa:**
-```text
-A:          a1 -> a2 \
-                       c1 -> c2 -> c3 -> None
-B:    b1 -> b2 -> b3 /
-Giao điểm chính là node c1.
-```
+Cho `headA` và `headB` của hai singly linked list, hãy tìm và trả về node mà tại đó hai danh sách bắt đầu giao nhau. Nếu không giao nhau, trả về `None`.
 
 <details>
-<summary><strong>Lời giải & Mã nguồn Python</strong></summary>
+<summary><strong>Lời giải & Mã nguồn Python (Phương pháp đếm độ dài)</strong></summary>
 
-### Phân tích thuật toán
-Gọi độ dài phần riêng của A là $a$, phần riêng của B là $b$, và độ dài phần chung là $c$:
-- Con trỏ $p_A$ duyệt qua A rồi nhảy sang đầu B sẽ đi quãng đường $a + c + b$.
-- Con trỏ $p_B$ duyệt qua B rồi nhảy sang đầu A sẽ đi quãng đường $b + c + a$.
-- Vì $a + c + b = b + c + a$, hai con trỏ sẽ đi cùng tổng số bước và chạm nhau chính xác tại giao điểm `c1` (hoặc cùng bằng `None` nếu không giao nhau).
+### Phân tích thuật toán (Kỹ thuật so lệch độ dài)
+1. Đếm độ dài $L_A$ của danh sách A và $L_B$ của danh sách B.
+2. Tính độ lệch: $d = |L_A - L_B|$.
+3. Cho con trỏ của danh sách dài hơn tiến trước $d$ bước.
+4. Sau đó cho cả hai con trỏ cùng tiến từng bước một. Điểm chúng gặp nhau (`currA is currB`) chính là giao điểm!
 
 ```python
 def getIntersectionNode(headA: ListNode, headB: ListNode) -> ListNode:
     if headA is None or headB is None:
         return None
 
-    pA = headA
-    pB = headB
+    # Bước 1: Tính độ dài
+    lenA = 0
+    currA = headA
+    while currA is not None:
+        lenA += 1
+        currA = currA.next
 
-    while pA is not pB:
-        pA = pA.next if pA is not None else headB
-        pB = pB.next if pB is not None else headA
+    lenB = 0
+    currB = headB
+    while currB is not None:
+        lenB += 1
+        currB = currB.next
 
-    return pA
+    # Bước 2: Cân bằng điểm xuất phát
+    currA, currB = headA, headB
+    if lenA > lenB:
+        for _ in range(lenA - lenB):
+            currA = currA.next
+    else:
+        for _ in range(lenB - lenA):
+            currB = currB.next
+
+    # Bước 3: Cùng tiến tìm giao điểm
+    while currA is not None and currB is not None:
+        if currA is currB:
+            return currA
+        currA = currA.next
+        currB = currB.next
+
+    return None
 ```
 
 - **Độ phức tạp thời gian:** $T(m, n) = O(m + n)$.
@@ -898,7 +864,7 @@ def getIntersectionNode(headA: ListNode, headB: ListNode) -> ListNode:
 - **Đường dẫn thực hành:** [LeetCode #19](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) \| [GeeksforGeeks](https://www.geeksforgeeks.org/problems/nth-node-from-end-of-linked-list/1)
 
 ### Mô tả bài toán
-Cho con trỏ `head` của một danh sách liên kết, hãy xóa node thứ $n$ tính từ cuối danh sách lên và trả về `head` của danh sách sau khi xóa trong **đúng một lượt duyệt**.
+Cho con trỏ `head` của một danh sách liên kết, hãy xóa node thứ $n$ tính từ cuối danh sách lên và trả về `head` mới sau khi xóa.
 
 **Ví dụ:**
 ```text
@@ -907,85 +873,92 @@ Cho con trỏ `head` của một danh sách liên kết, hãy xóa node thứ $n
 ```
 
 <details>
-<summary><strong>Lời giải & Mã nguồn Python</strong></summary>
+<summary><strong>Lời giải & Mã nguồn Python (Thuật toán Two-Pass)</strong></summary>
 
-### Phân tích thuật toán
-- Sử dụng `dummy` node trỏ tới `head` để xử lý mượt mà trường hợp xóa chính node đầu tiên.
-- Khởi tạo hai con trỏ `fast` và `slow` bắt đầu tại `dummy`.
-- Cho `fast` tiến về phía trước $n + 1$ bước để duy trì khoảng cách cố định giữa `fast` và `slow`.
-- Sau đó, cho cả `fast` và `slow` cùng tịnh tiến 1 bước mỗi lần cho đến khi `fast` chạm `None`. Lúc này, `slow` sẽ đứng ngay trước node cần xóa.
-- Thực hiện xóa: `slow.next = slow.next.next`.
+### Phân tích thuật toán (Kỹ thuật duyệt Two-Pass)
+- **Lượt 1:** Duyệt qua danh sách để đếm tổng số node là $L$.
+- Node cần xóa đứng ở vị trí chỉ số $L - n$ (tính từ 0). Node ngay trước nó đứng ở vị trí $L - n - 1$.
+- **Lượt 2:** Dùng `dummy = ListNode(0, head)`, duyệt $L - n$ bước từ `dummy` để đến node ngay trước node cần xóa, rồi thực hiện: `curr.next = curr.next.next`.
 
 ```python
 def removeNthFromEnd(head: ListNode, n: int) -> ListNode:
+    # Lượt 1: Đếm tổng số node
+    length = 0
+    curr = head
+    while curr is not None:
+        length += 1
+        curr = curr.next
+
+    # Lượt 2: Tìm và xóa
     dummy = ListNode(0, head)
-    fast = dummy
-    slow = dummy
+    curr = dummy
+    for _ in range(length - n):
+        curr = curr.next
 
-    # Cho fast đi trước n + 1 bước
-    for _ in range(n + 1):
-        fast = fast.next
-
-    # Cùng tiến cho đến khi fast chạm None
-    while fast is not None:
-        slow = slow.next
-        fast = fast.next
-
-    # Xóa node thứ n từ cuối
-    slow.next = slow.next.next
-
+    curr.next = curr.next.next
     return dummy.next
 ```
 
-- **Độ phức tạp thời gian:** $T(L) = O(L)$ với $L$ là tổng số node của danh sách (duyệt đúng 1 lần).
+- **Độ phức tạp thời gian:** $T(L) = O(L)$ (2 lượt duyệt tuyến tính).
 - **Bộ nhớ phụ:** $S(L) = O(1)$.
 
 </details>
 
 ---
 
-## Bài 10. Tìm Điểm Bắt đầu của Chu trình (Linked List Cycle II)
+## Bài 10. Xoay Danh sách Liên kết (Rotate List)
 
 - **Mức độ:** 🟡 Medium
-- **Mã bài:** LeetCode 142 | GfG: Find the first node of loop in linked list
-- **Đường dẫn thực hành:** [LeetCode #142](https://leetcode.com/problems/linked-list-cycle-ii/) \| [GeeksforGeeks](https://www.geeksforgeeks.org/problems/find-the-first-node-of-loop-in-linked-list--170645/1)
+- **Mã bài:** LeetCode 61 | GfG: Rotate a Linked List
+- **Đường dẫn thực hành:** [LeetCode #61](https://leetcode.com/problems/rotate-list/) \| [GeeksforGeeks](https://www.geeksforgeeks.org/problems/rotate-a-linked-list/1)
 
 ### Mô tả bài toán
-Cho một linked list, hãy tìm và trả về **node nơi chu trình bắt đầu**. Nếu danh sách không có chu trình, trả về `None`. Yêu cầu không được sửa đổi cấu trúc danh sách liên kết.
+Cho con trỏ `head` của một danh sách liên kết, hãy xoay danh sách sang phải $k$ vị trí.
+
+**Ví dụ:**
+```text
+Đầu vào: 1 -> 2 -> 3 -> 4 -> 5 -> None, k = 2
+Đầu ra:  4 -> 5 -> 1 -> 2 -> 3 -> None
+```
 
 <details>
 <summary><strong>Lời giải & Mã nguồn Python</strong></summary>
 
-### Thuật toán Floyd giai đoạn 2
-Sau khi hai con trỏ gặp nhau tại lần 1:
-1. Đưa một con trỏ về lại `head`, giữ con trỏ kia tại điểm gặp nhau.
-2. Cho cả hai cùng tiến từng bước một. Điểm chúng gặp nhau lần thứ hai chính là **node bắt đầu chu trình**.
+### Phân tích thuật toán
+1. Duyệt đến cuối danh sách để xác định độ dài $L$ và lưu lại con trỏ `tail`.
+2. Tối ưu $k$: nếu $k \ge L$, ta lấy số vòng quay thực tế là $k = k \pmod L$. Nếu $k = 0$, trả về `head`.
+3. Nối `tail.next = head` để biến danh sách thành một vòng tròn tạm thời.
+4. Node đuôi mới sau khi xoay sẽ nằm ở vị trí thứ $L - k$ tính từ `head`. Ta duyệt $L - k$ bước, đặt `new_head = new_tail.next`, sau đó ngắt liên kết `new_tail.next = None`.
 
 ```python
-def detectCycle(head: ListNode) -> ListNode:
-    if head is None or head.next is None:
-        return None
+def rotateRight(head: ListNode, k: int) -> ListNode:
+    if head is None or head.next is None or k == 0:
+        return head
 
-    slow = head
-    fast = head
+    # Bước 1: Tính độ dài và tìm node cuối
+    length = 1
+    tail = head
+    while tail.next is not None:
+        length += 1
+        tail = tail.next
 
-    # Giai đoạn 1: Tìm điểm gặp nhau
-    while fast is not None and fast.next is not None:
-        slow = slow.next
-        fast = fast.next.next
-        if slow is fast:
-            break
-    else:
-        return None
+    # Bước 2: Rút gọn k
+    k = k % length
+    if k == 0:
+        return head
 
-    # Giai đoạn 2: Tìm điểm bắt đầu chu trình
-    ptr1 = head
-    ptr2 = slow
-    while ptr1 is not ptr2:
-        ptr1 = ptr1.next
-        ptr2 = ptr2.next
+    # Bước 3: Nối vòng tạm thời
+    tail.next = head
 
-    return ptr1
+    # Bước 4: Tìm điểm cắt mới tại (length - k)
+    new_tail = head
+    for _ in range(length - k - 1):
+        new_tail = new_tail.next
+
+    new_head = new_tail.next
+    new_tail.next = None
+
+    return new_head
 ```
 
 - **Độ phức tạp thời gian:** $T(n) = O(n)$.
@@ -995,70 +968,54 @@ def detectCycle(head: ListNode) -> ListNode:
 
 ---
 
-## Bài 11. Đan xen Danh sách Liên kết (Reorder List)
+## Bài 11. Phân hoạch Danh sách Liên kết (Partition List)
 
 - **Mức độ:** 🟡 Medium
-- **Mã bài:** LeetCode 143 | GfG: Reorder List
-- **Đường dẫn thực hành:** [LeetCode #143](https://leetcode.com/problems/reorder-list/) \| [GeeksforGeeks](https://www.geeksforgeeks.org/problems/reorder-list/1)
+- **Mã bài:** LeetCode 86 | GfG: Partition a Linked List
+- **Đường dẫn thực hành:** [LeetCode #86](https://leetcode.com/problems/partition-list/) \| [GeeksforGeeks](https://www.geeksforgeeks.org/problems/partition-a-linked-list/1)
 
 ### Mô tả bài toán
-Cho một singly linked list có dạng:
-$$L_0 \to L_1 \to \dots \to L_{n-1} \to L_n$$
-
-Hãy sắp xếp lại danh sách theo thứ tự đan xen:
-$$L_0 \to L_n \to L_1 \to L_{n-1} \to L_2 \to L_{n-2} \to \dots$$
-Thao tác phải được thực hiện trực tiếp trên các liên kết (*in-place*), không được thay đổi giá trị node.
+Cho `head` của một danh sách liên kết và một giá trị $x$. Hãy sắp xếp lại danh sách sao cho tất cả các node có giá trị nhỏ hơn $x$ đứng trước các node có giá trị lớn hơn hoặc bằng $x$, trong khi vẫn bảo toàn thứ tự ban đầu của các phần tử trong từng nhóm.
 
 **Ví dụ:**
 ```text
-Đầu vào: 1 -> 2 -> 3 -> 4 -> 5 -> None
-Đầu ra:  1 -> 5 -> 2 -> 4 -> 3 -> None
+Đầu vào: head = 1 -> 4 -> 3 -> 2 -> 5 -> 2, x = 3
+Đầu ra:  1 -> 2 -> 2 -> 4 -> 3 -> 5
 ```
 
 <details>
 <summary><strong>Lời giải & Mã nguồn Python</strong></summary>
 
 ### Phân tích thuật toán
-1. **Tìm node giữa** danh sách bằng Fast & Slow pointers để tách danh sách thành hai nửa $L_{\text{first}}$ và $L_{\text{second}}$.
-2. **Đảo ngược nửa sau** của danh sách ($L_{\text{second}}$).
-3. **Trộn xen kẽ** (Interleave) từng cặp node của nửa đầu và nửa sau đã đảo.
+Sử dụng hai danh sách con độc lập với hai dummy node:
+- `less_dummy`: gom các node có giá trị $< x$.
+- `greater_dummy`: gom các node có giá trị $\ge x$.
+Sau khi duyệt hết danh sách gốc, nối đuôi của danh sách `less` vào đầu của danh sách `greater`, và ngắt đuôi của danh sách `greater` bằng `None`.
 
 ```python
-def reorderList(head: ListNode) -> None:
-    if head is None or head.next is None:
-        return
+def partition(head: ListNode, x: int) -> ListNode:
+    less_dummy = ListNode(0)
+    greater_dummy = ListNode(0)
 
-    # 1. Tìm node giữa
-    slow = fast = head
-    while fast.next is not None and fast.next.next is not None:
-        slow = slow.next
-        fast = fast.next.next
+    less = less_dummy
+    greater = greater_dummy
 
-    # Tách hai nửa
-    second = slow.next
-    slow.next = None
-
-    # 2. Đảo ngược nửa sau
-    prev = None
-    curr = second
+    curr = head
     while curr is not None:
-        nxt = curr.next
-        curr.next = prev
-        prev = curr
-        curr = nxt
-    second = prev
+        if curr.val < x:
+            less.next = curr
+            less = less.next
+        else:
+            greater.next = curr
+            greater = greater.next
+        curr = curr.next
 
-    # 3. Trộn xen kẽ hai nửa
-    first = head
-    while second is not None:
-        tmp1 = first.next
-        tmp2 = second.next
+    # Ngắt đuôi greater để tránh tạo chu trình
+    greater.next = None
+    # Nối hai danh sách
+    less.next = greater_dummy.next
 
-        first.next = second
-        second.next = tmp1
-
-        first = tmp1
-        second = tmp2
+    return less_dummy.next
 ```
 
 - **Độ phức tạp thời gian:** $T(n) = O(n)$.
@@ -1075,23 +1032,15 @@ def reorderList(head: ListNode) -> None:
 - **Đường dẫn thực hành:** [LeetCode #328](https://leetcode.com/problems/odd-even-linked-list/) \| [GeeksforGeeks](https://www.geeksforgeeks.org/problems/rearrange-a-linked-list/1)
 
 ### Mô tả bài toán
-Cho con trỏ `head` của một singly linked list. Hãy nhóm tất cả các node ở **vị trí chỉ số lẻ** lại với nhau trước, theo sau là các node ở **vị trí chỉ số chẵn** (chỉ số tính từ 1: node 1, node 3, node 5... rồi đến node 2, node 4...). Thứ tự tương đối của các node trong từng nhóm phải được giữ nguyên.
-
-**Ví dụ:**
-```text
-Đầu vào: 1 -> 2 -> 3 -> 4 -> 5 -> None
-Đầu ra:  1 -> 3 -> 5 -> 2 -> 4 -> None
-```
+Cho `head` của một singly linked list. Hãy nhóm tất cả các node ở vị trí lẻ (node 1, 3, 5...) lại với nhau trước, theo sau là các node ở vị trí chẵn (node 2, 4, 6...).
 
 <details>
 <summary><strong>Lời giải & Mã nguồn Python</strong></summary>
 
 ### Phân tích thuật toán
-- Dùng `odd` trỏ vào node 1, `even` trỏ vào node 2. Lưu lại `even_head = even` để sau này nối đuôi nhóm lẻ vào đầu nhóm chẵn.
-- Trong vòng lặp:
-  - `odd.next = even.next`; `odd = odd.next`
-  - `even.next = odd.next`; `even = even.next`
-- Khi kết thúc: `odd.next = even_head`.
+Tách hai luồng con trỏ `odd` và `even`:
+- `odd` liên kết các node ở vị trí lẻ, `even` liên kết các node ở vị trí chẵn.
+- Sau khi duyệt hết danh sách, nối `odd.next = even_head`.
 
 ```python
 def oddEvenList(head: ListNode) -> ListNode:
@@ -1126,26 +1075,15 @@ def oddEvenList(head: ListNode) -> ListNode:
 - **Đường dẫn thực hành:** [LeetCode #2](https://leetcode.com/problems/add-two-numbers/) \| [GeeksforGeeks](https://www.geeksforgeeks.org/problems/add-two-numbers-represented-by-linked-lists/1)
 
 ### Mô tả bài toán
-Cho hai danh sách liên kết khác rỗng đại diện cho hai số nguyên không âm. Các chữ số được lưu trữ theo **thứ tự đảo ngược** (chữ số hàng đơn vị nằm ở `head`). Hãy cộng hai số đó và trả về kết quả dưới dạng một danh sách liên kết tương tự.
-
-**Ví dụ:**
-```text
-l1: 2 -> 4 -> 3 (đại diện cho số 342)
-l2: 5 -> 6 -> 4 (đại diện cho số 465)
-Tổng: 342 + 465 = 807
-Đầu ra: 7 -> 0 -> 8 -> None
-```
+Cho hai danh sách liên kết đại diện cho hai số nguyên không âm (các chữ số lưu theo thứ tự đảo ngược, hàng đơn vị ở `head`). Hãy cộng hai số đó và trả về kết quả dưới dạng danh sách liên kết.
 
 <details>
 <summary><strong>Lời giải & Mã nguồn Python</strong></summary>
 
 ### Phân tích thuật toán
-- Duyệt đồng thời cả hai danh sách và duy trì biến nhớ `carry`.
-- Tại mỗi cột:
-  $$\text{sum} = \text{val}_1 + \text{val}_2 + \text{carry}$$
-  $$\text{chữ số mới} = \text{sum} \pmod{10}, \quad \text{carry mới} = \lfloor \text{sum} / 10 \rfloor$$
-- Tạo node mới chứa chữ số này và gắn vào sau `tail`.
-- Sau khi duyệt hết, nếu `carry > 0` thì tạo thêm node cuối chứa `carry`.
+Mô phỏng phép cộng số học tiểu học từ hàng đơn vị sang hàng cao hơn:
+- Duyệt đồng thời qua hai danh sách, duy trì biến nhớ `carry`.
+- Tại mỗi vị trí: $\text{total} = \text{val1} + \text{val2} + \text{carry}$, chữ số mới là $\text{total} \pmod{10}$, nhớ $\text{carry} = \lfloor \text{total} / 10 \rfloor$.
 
 ```python
 def addTwoNumbers(l1: ListNode, l2: ListNode) -> ListNode:
@@ -1171,7 +1109,7 @@ def addTwoNumbers(l1: ListNode, l2: ListNode) -> ListNode:
 ```
 
 - **Độ phức tạp thời gian:** $T(m, n) = O(\max(m, n))$.
-- **Bộ nhớ phụ:** $S(m, n) = O(\max(m, n))$ cho danh sách kết quả trả về.
+- **Bộ nhớ phụ:** $S(m, n) = O(\max(m, n))$.
 
 </details>
 
@@ -1184,25 +1122,16 @@ def addTwoNumbers(l1: ListNode, l2: ListNode) -> ListNode:
 - **Đường dẫn thực hành:** [LeetCode #24](https://leetcode.com/problems/swap-nodes-in-pairs/) \| [GeeksforGeeks](https://www.geeksforgeeks.org/problems/pairwise-swap-elements-of-a-linked-list-by-swapping-data/1)
 
 ### Mô tả bài toán
-Cho một singly linked list, hãy hoán đổi vị trí của từng cặp node liền kề nhau và trả về `head` mới. Bạn không được phép thay đổi giá trị bên trong node mà phải thay đổi chính các con trỏ liên kết.
-
-**Ví dụ:**
-```text
-Đầu vào: 1 -> 2 -> 3 -> 4 -> None
-Đầu ra:  2 -> 1 -> 4 -> 3 -> None
-```
+Cho một singly linked list, hãy hoán đổi vị trí của từng cặp node liền kề nhau bằng cách thay đổi con trỏ liên kết (không thay đổi giá trị).
 
 <details>
 <summary><strong>Lời giải & Mã nguồn Python</strong></summary>
 
 ### Phân tích thuật toán
-Sử dụng `dummy` node đứng trước cặp cần đổi:
-- Đặt `prev = dummy`, với cặp cần đổi là `first = prev.next` và `second = first.next`.
-- Đổi liên kết:
-  1. `first.next = second.next`
-  2. `second.next = first`
-  3. `prev.next = second`
-- Nhảy `prev` lên `first` để chuẩn bị cho cặp tiếp theo.
+Sử dụng dummy node và 3 bước hoán đổi con trỏ:
+- `first = prev.next`, `second = prev.next.next`
+- `first.next = second.next`, `second.next = first`, `prev.next = second`
+- `prev = first`
 
 ```python
 def swapPairs(head: ListNode) -> ListNode:
@@ -1229,24 +1158,66 @@ def swapPairs(head: ListNode) -> ListNode:
 
 ---
 
-## Bài 15. Sao chép Danh sách có Con trỏ Ngẫu nhiên (Copy List with Random Pointer)
+## Bài 15. Xóa Sạch Phần tử Trùng lặp (Remove Duplicates from Sorted List II)
+
+- **Mức độ:** 🟡 Medium
+- **Mã bài:** LeetCode 82 | GfG: Remove all occurrences of duplicates
+- **Đường dẫn thực hành:** [LeetCode #82](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/) \| [GeeksforGeeks](https://www.geeksforgeeks.org/problems/remove-all-occurences-of-duplicates-in-a-linked-list/1)
+
+### Mô tả bài toán
+Cho con trỏ `head` của một danh sách liên kết đã sắp xếp. Hãy xóa tất cả các node có giá trị bị trùng lặp, **chỉ giữ lại những node có giá trị xuất hiện duy nhất một lần**.
+
+**Ví dụ:**
+```text
+Đầu vào: 1 -> 2 -> 3 -> 3 -> 4 -> 4 -> 5 -> None
+Đầu ra:  1 -> 2 -> 5 -> None (các số 3 và 4 bị xóa hoàn toàn)
+```
+
+<details>
+<summary><strong>Lời giải & Mã nguồn Python</strong></summary>
+
+### Phân tích thuật toán
+Dùng `dummy = ListNode(0, head)` và `prev = dummy`:
+- Kiểm tra xem `head` hiện tại có bị trùng với node liền sau (`head.val == head.next.val`) hay không.
+- Nếu có trùng: chạy vòng lặp bỏ qua tất cả các node có giá trị này, sau đó nối `prev.next = head.next`.
+- Nếu không trùng: tiến con trỏ `prev = prev.next`.
+
+```python
+def deleteDuplicates(head: ListNode) -> ListNode:
+    dummy = ListNode(0, head)
+    prev = dummy
+
+    while head is not None:
+        if head.next is not None and head.val == head.next.val:
+            # Nhảy cóc qua tất cả node có giá trị trùng lặp
+            while head.next is not None and head.val == head.next.val:
+                head = head.next
+            prev.next = head.next
+        else:
+            prev = prev.next
+        head = head.next
+
+    return dummy.next
+```
+
+- **Độ phức tạp thời gian:** $T(n) = O(n)$.
+- **Bộ nhớ phụ:** $S(n) = O(1)$.
+
+</details>
+
+---
+
+## Bài 16. Sao chép Danh sách có Con trỏ Ngẫu nhiên (Copy List with Random Pointer)
 
 - **Mức độ:** 🟡 Medium
 - **Mã bài:** LeetCode 138 | GfG: Clone a linked list with next and random pointer
 - **Đường dẫn thực hành:** [LeetCode #138](https://leetcode.com/problems/copy-list-with-random-pointer/) \| [GeeksforGeeks](https://www.geeksforgeeks.org/problems/clone-a-linked-list-with-next-and-random-pointer/1)
 
 ### Mô tả bài toán
-Một danh sách liên kết có độ dài $n$ mà trong đó mỗi node ngoài con trỏ `next` còn chứa thêm con trỏ `random` có thể trỏ tới bất kỳ node nào trong danh sách hoặc `None`. Hãy tạo một bản sao sâu (**Deep Copy**) hoàn chỉnh của danh sách này.
+Một danh sách liên kết mà mỗi node ngoài con trỏ `next` còn chứa thêm con trỏ `random` có thể trỏ tới bất kỳ node nào trong danh sách hoặc `None`. Hãy tạo một bản sao sâu (**Deep Copy**) hoàn chỉnh trong $O(1)$ không gian bộ nhớ phụ.
 
 <details>
 <summary><strong>Lời giải & Mã nguồn Python</strong></summary>
-
-### Phân tích thuật toán tối ưu $O(1)$ không gian phụ
-1. **Nhân bản xen kẽ:** Tạo node copy và chèn ngay sau mỗi node gốc:  
-   `A -> A' -> B -> B' -> C -> C'`.
-2. **Gán con trỏ random:**  
-   `curr.next.random = curr.random.next` (nếu `curr.random` tồn tại).
-3. **Tách rời hai danh sách:** Khôi phục danh sách gốc và bóc tách danh sách clone hoàn chỉnh.
 
 ```python
 class NodeWithRandom:
@@ -1259,7 +1230,7 @@ def copyRandomList(head: 'NodeWithRandom') -> 'NodeWithRandom':
     if head is None:
         return None
 
-    # Bước 1: Nhân bản node xen kẽ
+    # Bước 1: Nhân bản node xen kẽ A -> A' -> B -> B'
     curr = head
     while curr is not None:
         copy_node = NodeWithRandom(curr.val, curr.next)
@@ -1291,69 +1262,7 @@ def copyRandomList(head: 'NodeWithRandom') -> 'NodeWithRandom':
 ```
 
 - **Độ phức tạp thời gian:** $T(n) = O(n)$.
-- **Bộ nhớ phụ:** $S(n) = O(1)$ (không dùng bảng băm phụ trợ).
-
-</details>
-
----
-
-## Bài 16. Sắp xếp Danh sách Liên kết (Sort List)
-
-- **Mức độ:** 🟡 Medium
-- **Mã bài:** LeetCode 148 | GfG: Sort a linked list
-- **Đường dẫn thực hành:** [LeetCode #148](https://leetcode.com/problems/sort-list/) \| [GeeksforGeeks](https://www.geeksforgeeks.org/problems/sort-a-linked-list/1)
-
-### Mô tả bài toán
-Cho `head` của một danh sách liên kết, hãy sắp xếp danh sách theo thứ tự tăng dần với yêu cầu nghiêm ngặt: thời gian chạy $O(n \log n)$ và bộ nhớ phụ tối thiểu.
-
-<details>
-<summary><strong>Lời giải & Mã nguồn Python</strong></summary>
-
-### Phân tích thuật toán
-Thuật toán sắp xếp lý tưởng nhất trên danh sách liên kết là **Merge Sort**:
-1. **Chia:** Tìm node giữa bằng kỹ thuật Fast & Slow pointer, ngắt liên kết đôi để tách thành hai nửa độc lập.
-2. **Trị:** Đệ quy gọi sắp xếp cho nửa trái và nửa phải.
-3. **Kết hợp:** Trộn hai danh sách con đã sắp xếp bằng thuật toán đã làm ở Bài 04.
-
-```python
-def sortList(head: ListNode) -> ListNode:
-    if head is None or head.next is None:
-        return head
-
-    # 1. Tìm node giữa và tách đôi
-    prev = None
-    slow = fast = head
-    while fast is not None and fast.next is not None:
-        prev = slow
-        slow = slow.next
-        fast = fast.next.next
-
-    prev.next = None
-
-    # 2. Đệ quy sắp xếp từng nửa
-    left = sortList(head)
-    right = sortList(slow)
-
-    # 3. Hợp nhất hai nửa đã sắp xếp
-    return merge(left, right)
-
-def merge(l1: ListNode, l2: ListNode) -> ListNode:
-    dummy = ListNode(0)
-    tail = dummy
-    while l1 is not None and l2 is not None:
-        if l1.val <= l2.val:
-            tail.next = l1
-            l1 = l1.next
-        else:
-            tail.next = l2
-            l2 = l2.next
-        tail = tail.next
-    tail.next = l1 if l1 is not None else l2
-    return dummy.next
-```
-
-- **Độ phức tạp thời gian:** $T(n) = O(n \log n)$ trong mọi trường hợp (tốt nhất, trung bình, xấu nhất).
-- **Bộ nhớ phụ:** $S(n) = O(\log n)$ do stack đệ quy.
+- **Bộ nhớ phụ:** $S(n) = O(1)$.
 
 </details>
 

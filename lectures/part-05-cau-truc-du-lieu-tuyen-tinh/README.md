@@ -32,8 +32,8 @@ Thư mục này cung cấp toàn bộ tài liệu học tập, bài giảng lý 
   - Mã nguồn LaTeX: `part05-array-linked-lists-slide-en.tex`
 
 ### 3. Bài tập Thực hành & Luyện Code (Practice Problems & Coding Exercises)
-- 📖 **[part05-practice-vn.md](part05-practice-vn.md)**: Hệ thống bài tập thực hành toàn diện từ cơ bản (Easy) đến nâng cao (Medium), tích hợp link luyện code trực tiếp trên LeetCode & GeeksforGeeks, giải thích thuật toán và mã nguồn Python chi tiết.
-- 📖 **[part05-practice-en.md](part05-practice-en.md)**: English version of curated Easy & Medium practice problems with direct LeetCode and GeeksforGeeks coding links and optimal Python implementations.
+- 📖 **[part05-practice-vn.md](part05-practice-vn.md)**: Hệ thống bài tập thực hành toàn diện gồm 12 câu trắc nghiệm cốt lõi (Quizzes), 5 bài toán tự luận phân tích cấu trúc/bộ nhớ và 16 bài toán lập trình chuẩn LeetCode & GeeksforGeeks (8 Easy, 8 Medium) kèm lời giải và mã nguồn Python tối ưu.
+- 📖 **[part05-practice-en.md](part05-practice-en.md)**: English version containing 12 conceptual quizzes, 5 theoretical/analytical problems, and 16 curated LeetCode & GeeksforGeeks coding exercises (8 Easy, 8 Medium) with optimal Python solutions.
 - 📝 **[part05-linked-list-vn.md (Mục 32 & 33)](part05-linked-list-vn.md#32-bài-tập-phân-tích)**: Hệ thống câu hỏi tự luận phân tích độ phức tạp thời gian/bộ nhớ và thảo luận chuyên sâu.
 
 ---
