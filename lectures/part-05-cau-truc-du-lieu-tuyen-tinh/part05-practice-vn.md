@@ -6,12 +6,23 @@
 > **Cấu trúc bộ tài liệu:**
 > - **Phần 1:** Câu hỏi Trắc nghiệm & Lý thuyết Cốt lõi (12 câu Quiz trắc nghiệm có đáp án và giải thích chi tiết)
 > - **Phần 2:** Bài tập Tự luận, Phân tích Kiến trúc & Bộ nhớ (5 bài toán chuyên sâu)
-> - **Phần 3:** Bài tập Lập trình Cơ bản – Easy Level (8 bài toán chuẩn LeetCode & GeeksforGeeks)
-> - **Phần 4:** Bài tập Lập trình Trung bình – Medium Level (8 bài toán chuẩn LeetCode & GeeksforGeeks)
+> - **Phần 3:** Cài đặt Thao tác Cốt lõi – Singly, Doubly & Circular Linked Lists (3 bài toán lớn bao quát Chèn, Xóa, Duyệt)
+> - **Phần 4:** Bài tập Lập trình Cơ bản – Easy Level (8 bài toán chuẩn LeetCode & GeeksforGeeks)
+> - **Phần 5:** Bài tập Lập trình Trung bình – Medium Level (8 bài toán chuẩn LeetCode & GeeksforGeeks)
 
 ---
 
 ## 📌 Bảng Tổng hợp Bài tập Luyện Code (LeetCode & GeeksforGeeks)
+
+### Nhóm I: Cài đặt Cấu trúc Dữ liệu & Thao tác Cốt lõi (Core Operations: Insert / Delete / Traversal)
+
+| STT | Tên bài toán | Cấu trúc | Thao tác trọng tâm | LeetCode | GeeksforGeeks |
+|:---:|:---|:---:|:---|:---:|:---:|
+| C01 | **Design Singly Linked List** (Cài đặt DSLK Đơn) | Singly LL | `traverse`, `addAtHead`, `addAtTail`, `addAtIndex`, `deleteAtIndex` | [#707](https://leetcode.com/problems/design-linked-list/) | [GfG Insertion](https://www.geeksforgeeks.org/problems/linked-list-insertion/1) \| [GfG Deletion](https://www.geeksforgeeks.org/problems/delete-a-node-in-single-linked-list/1) \| [GfG Search](https://www.geeksforgeeks.org/problems/search-in-linked-list/1) |
+| C02 | **Doubly Linked List Operations** (Thao tác DSLK Đôi) | Doubly LL | Chèn sau node `p`, xóa tại vị trí `pos`, duyệt 2 chiều (tiến / lùi) | — | [GfG Insert DLL](https://www.geeksforgeeks.org/problems/insert-a-node-in-doubly-linked-list/1) \| [GfG Delete DLL](https://www.geeksforgeeks.org/problems/delete-node-in-doubly-linked-list/1) \| [GfG Display DLL](https://www.geeksforgeeks.org/problems/display-doubly-linked-list/1) |
+| C03 | **Circular Linked List Operations** (Thao tác DSLK Vòng) | Circular LL | Duyệt vòng tròn (`curr != head`), chèn đầu/cuối bằng `tail`, xóa node | — | [GfG Traversal](https://www.geeksforgeeks.org/problems/circular-linked-list-traversal/1) \| [GfG Insertion](https://www.geeksforgeeks.org/problems/insert-in-sorted-circular-linked-list/1) \| [GfG Deletion](https://www.geeksforgeeks.org/problems/deletion-in-circular-linked-list/1) |
+
+### Nhóm II: Bài tập Lập trình Thuật toán – Mức độ Cơ bản (Easy Level)
 
 | STT | Tên bài toán | Cấp độ | Kỹ thuật trọng tâm | LeetCode | GeeksforGeeks |
 |:---:|:---|:---:|:---|:---:|:---:|
@@ -20,9 +31,14 @@
 | 03 | **Merge Two Sorted Lists** (Hợp nhất 2 DSLK đã sắp xếp) | 🟢 Easy | Dummy Sentinel + So sánh 2 con trỏ | [#21](https://leetcode.com/problems/merge-two-sorted-lists/) | [GfG Practice](https://www.geeksforgeeks.org/problems/merge-two-sorted-linked-lists/1) |
 | 04 | **Delete Node Without Head** (Xóa node không cần head) | 🟢 Easy | Sao chép giá trị node kế cận | [#237](https://leetcode.com/problems/delete-node-in-a-linked-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/delete-without-head-pointer/1) |
 | 05 | **Remove Duplicates from Sorted List** (Xóa trùng lặp) | 🟢 Easy | Quét và nhảy liên kết bỏ qua node trùng | [#83](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/remove-duplicate-element-from-sorted-linked-list/1) |
-| 06 | **Binary to Integer in Linked List** (Chuyển nhị phân sang số) | 🟢 Easy | Duyệt tuần tự và dịch bit ($2 \times \text{ans} + \text{val}$) | [#1290](https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/) | [GfG Practice](https://www.geeksforgeeks.org/problems/decimal-equivalent-of-binary-linked-list/1) |
+| 06 | **Binary to Integer in Linked List** (Chuyển nhị phân sang số) | 🟢 Easy | Duyệt tuần tự và dịch bit ($2 	imes 	ext{ans} + 	ext{val}$) | [#1290](https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/) | [GfG Practice](https://www.geeksforgeeks.org/problems/decimal-equivalent-of-binary-linked-list/1) |
 | 07 | **Reverse a Doubly Linked List** (Đảo ngược DSLK đôi) | 🟢 Easy | Hoán đổi cặp con trỏ `prev` và `next` | — | [GfG Practice](https://www.geeksforgeeks.org/problems/reverse-a-doubly-linked-list/1) |
 | 08 | **Intersection of Two Linked Lists** (Giao điểm 2 DSLK) | 🟢 Easy | Cân bằng hiệu độ dài $\|L_A - L_B\|$ | [#160](https://leetcode.com/problems/intersection-of-two-linked-lists/) | [GfG Practice](https://www.geeksforgeeks.org/problems/intersection-point-in-y-shapped-linked-lists/1) |
+
+### Nhóm III: Bài tập Lập trình Thuật toán – Mức độ Trung bình (Medium Level)
+
+| STT | Tên bài toán | Cấp độ | Kỹ thuật trọng tâm | LeetCode | GeeksforGeeks |
+|:---:|:---|:---:|:---|:---:|:---:|
 | 09 | **Remove Nth Node From End** (Xóa node thứ N từ cuối) | 🟡 Medium | Two-Pass đếm độ dài ($L - n$) + Dummy | [#19](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/nth-node-from-end-of-linked-list/1) |
 | 10 | **Rotate List** (Xoay danh sách k vị trí) | 🟡 Medium | Nối vòng tròn tạm thời + Cắt tại $(L - k)$ | [#61](https://leetcode.com/problems/rotate-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/rotate-a-linked-list/1) |
 | 11 | **Partition List** (Phân hoạch DSLK quanh giá trị x) | 🟡 Medium | 2 con trỏ Dummy (`less` và `greater`) | [#86](https://leetcode.com/problems/partition-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/partition-a-linked-list/1) |
@@ -296,6 +312,8 @@ Trong các khẳng định sau về thao tác chèn trên Singly Linked List (ch
 
 ---
 
+---
+
 # Phần 2: Bài tập Tự luận & Phân tích Thuật toán (Theoretical Problems)
 
 ## Bài T1. Phân tích Bất biến vòng lặp (Loop Invariant) của thuật toán Đảo ngược DSLK
@@ -492,7 +510,348 @@ Với một hệ thống xử lý $10.000.000$ nodes:
 
 ---
 
-# Phần 3: Bài tập Lập trình Cơ bản (Easy Level)
+---
+
+# Phần 3: Cài đặt Cấu trúc Dữ liệu & Thao tác Cốt lõi (Fundamental Operations)
+
+Bộ bài tập này tập trung vào kỹ năng nền tảng quan trọng nhất: **tự tay cài đặt các kiểu danh sách liên kết từ đầu** (*from scratch*), bao gồm đầy đủ 3 nhóm thao tác cốt lõi: **Duyệt (Traversal)**, **Chèn (Insertion)** và **Xóa (Deletion)** trên cả 3 biến thể cấu trúc: **DSLK Đơn (Singly)**, **DSLK Đôi (Doubly)** và **DSLK Vòng (Circular)**.
+
+---
+
+## Bài C01. Thiết kế Danh sách Liên kết Đơn: Duyệt, Chèn & Xóa (Design Singly Linked List)
+
+- **Mức độ:** 🟢 Easy / 🟡 Medium (Toàn diện)
+- **Mã bài:** LeetCode 707 | GfG: Linked List Insertion & Delete a Node in Single Linked List
+- **Đường dẫn thực hành:**
+  - [LeetCode #707 – Design Linked List](https://leetcode.com/problems/design-linked-list/)
+  - [GeeksforGeeks – Linked List Insertion](https://www.geeksforgeeks.org/problems/linked-list-insertion/1)
+  - [GeeksforGeeks – Delete a Node in Single Linked List](https://www.geeksforgeeks.org/problems/delete-a-node-in-single-linked-list/1)
+  - [GeeksforGeeks – Search in Linked List](https://www.geeksforgeeks.org/problems/search-in-linked-list/1)
+
+### Mô tả bài toán
+Hãy thiết kế lớp `MyLinkedList` để cài đặt một Singly Linked List hoàn chỉnh hỗ trợ các thao tác cơ bản sau:
+1. `get(index)`: Trả về giá trị của node thứ `index` (chỉ số tính từ 0). Nếu `index` không hợp lệ (nhỏ hơn 0 hoặc $\ge 	ext{size}$), trả về `-1`.
+2. `addAtHead(val)`: Chèn một node mới mang giá trị `val` vào trước node đầu tiên của danh sách ($O(1)$).
+3. `addAtTail(val)`: Nối một node mới mang giá trị `val` vào cuối danh sách.
+4. `addAtIndex(index, val)`: Chèn node mới mang giá trị `val` vào trước node thứ `index`. Nếu `index == size`, chèn vào cuối; nếu `index > size`, không chèn.
+5. `deleteAtIndex(index)`: Xóa node tại chỉ số `index` nếu chỉ số hợp lệ.
+6. `traverse()`: Duyệt qua toàn bộ danh sách từ `head` đến cuối và trả về một Python list chứa các giá trị.
+
+<details>
+<summary><strong>Lời giải & Mã nguồn Python (Sử dụng Sentinel Dummy Node)</strong></summary>
+
+### Phân tích thiết kế
+- Sử dụng **Dummy Sentinel Node** (`head_dummy`) ở đầu danh sách giúp việc chèn và xóa ở vị trí 0 (đầu danh sách) không cần xử lý nhánh ngoại lệ `if index == 0`.
+- Duy trì biến `size` để kiểm tra tính hợp lệ của `index` trong $O(1)$.
+- Mọi thao tác duyệt đến vị trí `index` đều mất $O(	ext{index})$ thời gian, tối đa $O(n)$.
+
+```python
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+class MyLinkedList:
+    def __init__(self):
+        # Sentinel node giả đứng trước node thực đầu tiên
+        self.dummy = ListNode(0)
+        self.size = 0
+
+    def get(self, index: int) -> int:
+        if index < 0 or index >= self.size:
+            return -1
+        curr = self.dummy.next
+        for _ in range(index):
+            curr = curr.next
+        return curr.val
+
+    def addAtHead(self, val: int) -> None:
+        self.addAtIndex(0, val)
+
+    def addAtTail(self, val: int) -> None:
+        self.addAtIndex(self.size, val)
+
+    def addAtIndex(self, index: int, val: int) -> None:
+        if index > self.size:
+            return
+        if index < 0:
+            index = 0
+
+        # Tìm node tiền nhiệm (predecessor) tại vị trí index - 1
+        prev = self.dummy
+        for _ in range(index):
+            prev = prev.next
+
+        # Chèn node mới vào sau prev
+        new_node = ListNode(val, prev.next)
+        prev.next = new_node
+        self.size += 1
+
+    def deleteAtIndex(self, index: int) -> None:
+        if index < 0 or index >= self.size:
+            return
+
+        # Tìm node tiền nhiệm ngay trước node cần xóa
+        prev = self.dummy
+        for _ in range(index):
+            prev = prev.next
+
+        # Bỏ qua node bị xóa
+        prev.next = prev.next.next
+        self.size -= 1
+
+    def traverse(self) -> list:
+        """Duyệt tuần tự và xuất danh sách ra dạng list."""
+        result = []
+        curr = self.dummy.next
+        while curr is not None:
+            result.append(curr.val)
+            curr = curr.next
+        return result
+```
+
+- **Độ phức tạp thời gian:**
+  - `addAtHead`: $O(1)$.
+  - `get`, `addAtTail`, `addAtIndex`, `deleteAtIndex`, `traverse`: $O(n)$ trong trường hợp xấu nhất.
+- **Bộ nhớ phụ:** $O(1)$ cho mỗi thao tác chèn/xóa/duyệt.
+
+</details>
+
+---
+
+## Bài C02. Thao tác trên Danh sách Liên kết Đôi: Chèn, Xóa & Duyệt hai chiều (Doubly Linked List Operations)
+
+- **Mức độ:** 🟢 Easy
+- **Nền tảng:** GeeksforGeeks
+- **Đường dẫn thực hành:**
+  - [GeeksforGeeks – Insert a node in Doubly Linked List](https://www.geeksforgeeks.org/problems/insert-a-node-in-doubly-linked-list/1)
+  - [GeeksforGeeks – Delete node in Doubly Linked List](https://www.geeksforgeeks.org/problems/delete-node-in-doubly-linked-list/1)
+  - [GeeksforGeeks – Display Doubly Linked List](https://www.geeksforgeeks.org/problems/display-doubly-linked-list/1)
+
+### Mô tả bài toán
+Cho một Doubly Linked List mà mỗi node gồm `val`, `prev`, `next`. Hãy cài đặt các hàm sau:
+1. `insert_after(head, p, x)`: Chèn một node mới có giá trị `x` vào ngay sau node thứ `p` (chỉ số tính từ 0).
+2. `delete_at_position(head, pos)`: Xóa node tại vị trí thứ `pos` (chỉ số tính từ 1) trong danh sách đôi và trả về `head` mới.
+3. `traverse_forward(head)` & `traverse_backward(head)`: Duyệt danh sách theo chiều xuôi (từ `head` tới đuôi) và duyệt ngược lại (từ đuôi về `head`) để xác nhận tính toàn vẹn 2 chiều của con trỏ `prev` và `next`.
+
+<details>
+<summary><strong>Lời giải & Mã nguồn Python</strong></summary>
+
+### Phân tích kỹ thuật
+- **Chèn sau node `p`:** Bắt buộc cập nhật đủ 4 con trỏ liên kết:
+  1. `new_node.next = curr.next`
+  2. `new_node.prev = curr`
+  3. `if curr.next is not None: curr.next.prev = new_node`
+  4. `curr.next = new_node`
+- **Xóa node tại vị trí `pos`:**
+  - Nếu xóa `head` (`pos == 1`): `head = head.next`, nếu `head is not None: head.prev = None`.
+  - Nếu xóa node ở giữa hoặc cuối: `curr.prev.next = curr.next`, và nếu `curr.next is not None: curr.next.prev = curr.prev`.
+
+```python
+class DoublyNode:
+    def __init__(self, val=0, prev=None, next=None):
+        self.val = val
+        self.prev = prev
+        self.next = next
+
+def insertAfter(head: DoublyNode, p: int, x: int) -> DoublyNode:
+    """Chèn giá trị x vào ngay sau node thứ p (0-indexed)."""
+    curr = head
+    for _ in range(p):
+        if curr is None:
+            return head
+        curr = curr.next
+
+    if curr is None:
+        return head
+
+    new_node = DoublyNode(x)
+    new_node.next = curr.next
+    new_node.prev = curr
+
+    if curr.next is not None:
+        curr.next.prev = new_node
+    curr.next = new_node
+
+    return head
+
+def deleteNodeDLL(head: DoublyNode, pos: int) -> DoublyNode:
+    """Xóa node tại vị trí pos (1-indexed)."""
+    if head is None:
+        return None
+
+    if pos == 1:
+        new_head = head.next
+        if new_head is not None:
+            new_head.prev = None
+        return new_head
+
+    curr = head
+    for _ in range(pos - 1):
+        if curr is None:
+            return head
+        curr = curr.next
+
+    if curr is None:
+        return head
+
+    # Cập nhật liên kết bỏ qua curr
+    if curr.prev is not None:
+        curr.prev.next = curr.next
+    if curr.next is not None:
+        curr.next.prev = curr.prev
+
+    return head
+
+def traverseForward(head: DoublyNode) -> list:
+    """Duyệt xuôi từ head đến tail."""
+    result = []
+    curr = head
+    while curr is not None:
+        result.append(curr.val)
+        curr = curr.next
+    return result
+
+def traverseBackward(head: DoublyNode) -> list:
+    """Tìm tail rồi duyệt ngược về head."""
+    if head is None:
+        return []
+    curr = head
+    while curr.next is not None:
+        curr = curr.next
+    result = []
+    while curr is not None:
+        result.append(curr.val)
+        curr = curr.prev
+    return result
+```
+
+- **Độ phức tạp thời gian:**
+  - Chèn sau node đã có tham chiếu: $O(1)$; nếu cần duyệt tìm node thứ $p$: $O(p) \le O(n)$.
+  - Xóa node: $O(	ext{pos}) \le O(n)$ do duyệt tìm vị trí.
+  - Duyệt xuôi / ngược: $O(n)$.
+- **Bộ nhớ phụ:** $O(1)$.
+
+</details>
+
+---
+
+## Bài C03. Thao tác trên Danh sách Liên kết Vòng: Chèn, Xóa & Duyệt vòng (Circular Linked List Operations)
+
+- **Mức độ:** 🟢 Easy / 🟡 Medium
+- **Nền tảng:** GeeksforGeeks
+- **Đường dẫn thực hành:**
+  - [GeeksforGeeks – Circular Linked List Traversal](https://www.geeksforgeeks.org/problems/circular-linked-list-traversal/1)
+  - [GeeksforGeeks – Insert in Sorted Circular Linked List](https://www.geeksforgeeks.org/problems/insert-in-sorted-circular-linked-list/1)
+  - [GeeksforGeeks – Deletion in Circular Linked List](https://www.geeksforgeeks.org/problems/deletion-in-circular-linked-list/1)
+
+### Mô tả bài toán
+Trong Circular Linked List (DSLK Vòng đơn), node cuối cùng của danh sách trỏ ngược về node đầu tiên (`tail.next = head`). Hãy cài đặt các hàm cốt lõi sau:
+1. `traverse_circular(head)`: Duyệt qua tất cả các node trong danh sách vòng đúng một lần và trả về danh sách các giá trị.
+2. `insert_empty(val)`, `insert_begin(tail, val)`, `insert_end(tail, val)`: Cài đặt các phép chèn vào danh sách vòng rỗng, chèn ở đầu và chèn ở cuối danh sách bằng cách duy trì con trỏ duy nhất `tail` trong $O(1)$.
+3. `delete_node_circular(head, key)`: Xóa node đầu tiên có giá trị bằng `key` trong danh sách vòng tròn và trả về `head` mới.
+
+<details>
+<summary><strong>Lời giải & Mã nguồn Python</strong></summary>
+
+### Phân tích kỹ thuật
+- **Duyệt vòng (Traversal):** Bắt đầu tại `curr = head`. Dùng vòng lặp kiểm tra: thăm node hiện tại, chuyển sang `curr = curr.next`, dừng lại ngay khi `curr == head`.
+- **Duy trì con trỏ `tail`:**
+  - Node đầu tiên là `tail.next`.
+  - `insert_begin`: `new_node.next = tail.next; tail.next = new_node; return tail`.
+  - `insert_end`: `new_node.next = tail.next; tail.next = new_node; tail = new_node; return tail`.
+- **Xóa node trong DSLK vòng:**
+  - Nếu danh sách chỉ có 1 node: kiểm tra xem giá trị có khớp không; nếu khớp trả về `None`.
+  - Nếu xóa node `head`: phải tìm node cuối cùng (`tail`) để nối `tail.next = head.next`.
+  - Nếu xóa node ở giữa hoặc cuối: dùng con trỏ `prev` duyệt tìm node cần xóa, sau đó nối `prev.next = curr.next`.
+
+```python
+class Node:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+def traverseCircular(head: Node) -> list:
+    """Duyệt vòng tròn từ head đúng một lượt."""
+    if head is None:
+        return []
+    result = []
+    curr = head
+    while True:
+        result.append(curr.val)
+        curr = curr.next
+        if curr == head:
+            break
+    return result
+
+def insertBegin(tail: Node, val: int) -> Node:
+    """Chèn ở đầu danh sách vòng có tail trong O(1)."""
+    new_node = Node(val)
+    if tail is None:
+        new_node.next = new_node
+        return new_node
+
+    new_node.next = tail.next
+    tail.next = new_node
+    return tail
+
+def insertEnd(tail: Node, val: int) -> Node:
+    """Chèn ở cuối danh sách vòng có tail trong O(1)."""
+    new_node = Node(val)
+    if tail is None:
+        new_node.next = new_node
+        return new_node
+
+    new_node.next = tail.next
+    tail.next = new_node
+    return new_node  # tail mới là new_node
+
+def deleteNodeCircular(head: Node, key: int) -> Node:
+    """Xóa node đầu tiên mang giá trị key trong Circular Linked List."""
+    if head is None:
+        return None
+
+    # Trường hợp danh sách chỉ có đúng 1 node
+    if head.next == head:
+        return None if head.val == key else head
+
+    curr = head
+    prev = None
+
+    # Trường hợp xóa ngay tại head
+    if head.val == key:
+        # Tìm node cuối cùng để nối vòng lại
+        tail = head
+        while tail.next != head:
+            tail = tail.next
+        tail.next = head.next
+        head = head.next
+        return head
+
+    # Trường hợp xóa node ở giữa hoặc ở cuối
+    prev = head
+    curr = head.next
+    while curr != head:
+        if curr.val == key:
+            prev.next = curr.next
+            return head
+        prev = curr
+        curr = curr.next
+
+    return head
+```
+
+- **Độ phức tạp thời gian:**
+  - `insertBegin`, `insertEnd` (với con trỏ `tail`): $O(1)$.
+  - `traverseCircular`: $O(n)$.
+  - `deleteNodeCircular`: $O(n)$ do cần tìm node có giá trị `key` và tìm `tail` nếu xóa `head`.
+- **Bộ nhớ phụ:** $O(1)$.
+
+</details>
+
+---
+
+# Phần 4: Bài tập Lập trình Cơ bản (Easy Level)
 
 ## Bài 01. Đảo ngược Danh sách Liên kết (Reverse Linked List)
 
@@ -855,7 +1214,9 @@ def getIntersectionNode(headA: ListNode, headB: ListNode) -> ListNode:
 
 ---
 
-# Phần 4: Bài tập Lập trình Trung bình (Medium Level)
+---
+
+# Phần 5: Bài tập Lập trình Trung bình (Medium Level)
 
 ## Bài 09. Xóa Node thứ N từ Cuối Danh sách (Remove Nth Node From End of List)
 

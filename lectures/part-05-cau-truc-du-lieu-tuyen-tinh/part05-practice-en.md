@@ -6,12 +6,23 @@
 > **Structure of this Document:**
 > - **Part 1:** Conceptual Multiple-Choice Quizzes (12 questions with detailed answers and explanations)
 > - **Part 2:** Theoretical & Analytical Problems (5 in-depth architectural and complexity problems)
-> - **Part 3:** Coding Practice – Easy Level (8 curated LeetCode & GeeksforGeeks problems with complete Python solutions)
-> - **Part 4:** Coding Practice – Medium Level (8 curated LeetCode & GeeksforGeeks problems with complete Python solutions)
+> - **Part 3:** Core ADT Implementation & Operations – Singly, Doubly & Circular Linked Lists (3 comprehensive problems covering Insert, Delete, Traversal)
+> - **Part 4:** Coding Practice – Easy Level (8 curated LeetCode & GeeksforGeeks problems with complete Python solutions)
+> - **Part 5:** Coding Practice – Medium Level (8 curated LeetCode & GeeksforGeeks problems with complete Python solutions)
 
 ---
 
 ## 📌 Coding Problem Set Index (LeetCode & GeeksforGeeks)
+
+### Group I: Core Data Structures & Operations (Insert / Delete / Traversal)
+
+| No. | Problem Name | Structure | Core Operations | LeetCode | GeeksforGeeks |
+|:---:|:---|:---:|:---|:---:|:---:|
+| C01 | **Design Singly Linked List** | Singly LL | `traverse`, `addAtHead`, `addAtTail`, `addAtIndex`, `deleteAtIndex` | [#707](https://leetcode.com/problems/design-linked-list/) | [GfG Insertion](https://www.geeksforgeeks.org/problems/linked-list-insertion/1) \| [GfG Deletion](https://www.geeksforgeeks.org/problems/delete-a-node-in-single-linked-list/1) \| [GfG Search](https://www.geeksforgeeks.org/problems/search-in-linked-list/1) |
+| C02 | **Doubly Linked List Operations** | Doubly LL | Insert after node `p`, delete at position `pos`, bidirectional traversal | — | [GfG Insert DLL](https://www.geeksforgeeks.org/problems/insert-a-node-in-doubly-linked-list/1) \| [GfG Delete DLL](https://www.geeksforgeeks.org/problems/delete-node-in-doubly-linked-list/1) \| [GfG Display DLL](https://www.geeksforgeeks.org/problems/display-doubly-linked-list/1) |
+| C03 | **Circular Linked List Operations** | Circular LL | Circular traversal (`curr != head`), insert at head/tail with `tail`, delete node | — | [GfG Traversal](https://www.geeksforgeeks.org/problems/circular-linked-list-traversal/1) \| [GfG Insertion](https://www.geeksforgeeks.org/problems/insert-in-sorted-circular-linked-list/1) \| [GfG Deletion](https://www.geeksforgeeks.org/problems/deletion-in-circular-linked-list/1) |
+
+### Group II: Hands-on Coding Practice – Easy Level
 
 | No. | Problem Name | Difficulty | Core Technique | LeetCode | GeeksforGeeks |
 |:---:|:---|:---:|:---|:---:|:---:|
@@ -20,9 +31,14 @@
 | 03 | **Merge Two Sorted Lists** | 🟢 Easy | Dummy Sentinel + 2-Pointer Comparison | [#21](https://leetcode.com/problems/merge-two-sorted-lists/) | [GfG Practice](https://www.geeksforgeeks.org/problems/merge-two-sorted-linked-lists/1) |
 | 04 | **Delete Node Without Head** | 🟢 Easy | Adjacent Node Value Copy Trick | [#237](https://leetcode.com/problems/delete-node-in-a-linked-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/delete-without-head-pointer/1) |
 | 05 | **Remove Duplicates from Sorted List** | 🟢 Easy | Sequential Traversal & Duplicate Skip | [#83](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/remove-duplicate-element-from-sorted-linked-list/1) |
-| 06 | **Binary to Integer in Linked List** | 🟢 Easy | Bit Shift / Horner's Method ($2 \times \text{ans} + \text{val}$) | [#1290](https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/) | [GfG Practice](https://www.geeksforgeeks.org/problems/decimal-equivalent-of-binary-linked-list/1) |
+| 06 | **Binary to Integer in Linked List** | 🟢 Easy | Bit Shift / Horner's Method ($2 	imes 	ext{ans} + 	ext{val}$) | [#1290](https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/) | [GfG Practice](https://www.geeksforgeeks.org/problems/decimal-equivalent-of-binary-linked-list/1) |
 | 07 | **Reverse a Doubly Linked List** | 🟢 Easy | Pointer Swap (`prev` $\leftrightarrow$ `next`) | — | [GfG Practice](https://www.geeksforgeeks.org/problems/reverse-a-doubly-linked-list/1) |
 | 08 | **Intersection of Two Linked Lists** | 🟢 Easy | Length Difference Offset $\|L_A - L_B\|$ | [#160](https://leetcode.com/problems/intersection-of-two-linked-lists/) | [GfG Practice](https://www.geeksforgeeks.org/problems/intersection-point-in-y-shapped-linked-lists/1) |
+
+### Group III: Hands-on Coding Practice – Medium Level
+
+| No. | Problem Name | Difficulty | Core Technique | LeetCode | GeeksforGeeks |
+|:---:|:---|:---:|:---|:---:|:---:|
 | 09 | **Remove Nth Node From End** | 🟡 Medium | Two-Pass Length Counting ($L - n$) + Dummy | [#19](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/nth-node-from-end-of-linked-list/1) |
 | 10 | **Rotate List** | 🟡 Medium | Temporary Ring Connection + Split at $(L - k)$ | [#61](https://leetcode.com/problems/rotate-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/rotate-a-linked-list/1) |
 | 11 | **Partition List** | 🟡 Medium | Dual Dummy Pointers (`less` and `greater`) | [#86](https://leetcode.com/problems/partition-list/) | [GfG Practice](https://www.geeksforgeeks.org/problems/partition-a-linked-list/1) |
@@ -31,7 +47,6 @@
 | 14 | **Swap Nodes in Pairs** | 🟡 Medium | Dummy Node + 3-Pointer Relinking | [#24](https://leetcode.com/problems/swap-nodes-in-pairs/) | [GfG Practice](https://www.geeksforgeeks.org/problems/pairwise-swap-elements-of-a-linked-list-by-swapping-data/1) |
 | 15 | **Remove Duplicates II** | 🟡 Medium | Sentinel Node + Sublist Skipping | [#82](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/) | [GfG Practice](https://www.geeksforgeeks.org/problems/remove-all-occurences-of-duplicates-in-a-linked-list/1) |
 | 16 | **Copy List with Random Pointer** | 🟡 Medium | Interweaving Nodes In-place ($O(1)$ Space) | [#138](https://leetcode.com/problems/copy-list-with-random-pointer/) | [GfG Practice](https://www.geeksforgeeks.org/problems/clone-a-linked-list-with-next-and-random-pointer/1) |
-
 ---
 
 # Part 1: Conceptual Multiple-Choice Quizzes
@@ -299,6 +314,8 @@ Given a Singly Linked List maintaining only a `head` reference, which of the fol
 
 ---
 
+---
+
 # Part 2: Theoretical & Analytical Problems
 
 ## Problem T1. Loop Invariant Analysis for In-Place Linked List Reversal
@@ -494,7 +511,347 @@ This makes `__slots__` a mandatory design pattern for high-performance data engi
 
 ---
 
-# Part 3: Coding Practice – Easy Level
+---
+
+# Part 3: Core Data Structures & Operations (Fundamental Operations)
+
+This section focuses on the quintessential foundational skill: **implementing linked list variants from scratch**, covering the full spectrum of operations: **Traversal**, **Insertion**, and **Deletion** across three canonical variants: **Singly Linked List**, **Doubly Linked List**, and **Circular Linked List**.
+
+---
+
+## Problem C01. Design Singly Linked List: Traversal, Insertion & Deletion
+
+- **Difficulty:** 🟢 Easy / 🟡 Medium (Comprehensive)
+- **Problem ID:** LeetCode 707 | GfG: Linked List Insertion & Delete a Node in Single Linked List
+- **Practice Links:**
+  - [LeetCode #707 – Design Linked List](https://leetcode.com/problems/design-linked-list/)
+  - [GeeksforGeeks – Linked List Insertion](https://www.geeksforgeeks.org/problems/linked-list-insertion/1)
+  - [GeeksforGeeks – Delete a Node in Single Linked List](https://www.geeksforgeeks.org/problems/delete-a-node-in-single-linked-list/1)
+  - [GeeksforGeeks – Search in Linked List](https://www.geeksforgeeks.org/problems/search-in-linked-list/1)
+
+### Problem Description
+Design your implementation of the linked list class `MyLinkedList`. Support the following core operations:
+1. `get(index)`: Get the value of the `index`-th node in the linked list (0-indexed). If invalid, return `-1`.
+2. `addAtHead(val)`: Insert a node of value `val` before the first element of the linked list ($O(1)$).
+3. `addAtTail(val)`: Append a node of value `val` as the last element of the linked list.
+4. `addAtIndex(index, val)`: Add a node of value `val` before the `index`-th node in the linked list. If `index == size`, append to the end. If `index > size`, do not insert.
+5. `deleteAtIndex(index)`: Delete the `index`-th node in the linked list if valid.
+6. `traverse()`: Sequentially traverse all nodes and return a Python list of values.
+
+<details>
+<summary><strong>Solution & Python Implementation (Sentinel Dummy Node)</strong></summary>
+
+### Design Analysis
+- Using a **Sentinel Dummy Node** (`dummy`) before the actual head unifies head operations with interior operations, avoiding special cases for `index == 0`.
+- Maintaining a `size` attribute enables $O(1)$ bounds verification.
+- Traversing to `index` takes $O(	ext{index})$ steps, at most $O(n)$.
+
+```python
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+class MyLinkedList:
+    def __init__(self):
+        # Sentinel dummy node preceding the first real node
+        self.dummy = ListNode(0)
+        self.size = 0
+
+    def get(self, index: int) -> int:
+        if index < 0 or index >= self.size:
+            return -1
+        curr = self.dummy.next
+        for _ in range(index):
+            curr = curr.next
+        return curr.val
+
+    def addAtHead(self, val: int) -> None:
+        self.addAtIndex(0, val)
+
+    def addAtTail(self, val: int) -> None:
+        self.addAtIndex(self.size, val)
+
+    def addAtIndex(self, index: int, val: int) -> None:
+        if index > self.size:
+            return
+        if index < 0:
+            index = 0
+
+        # Locate predecessor at index - 1
+        prev = self.dummy
+        for _ in range(index):
+            prev = prev.next
+
+        # Insert new node after prev
+        new_node = ListNode(val, prev.next)
+        prev.next = new_node
+        self.size += 1
+
+    def deleteAtIndex(self, index: int) -> None:
+        if index < 0 or index >= self.size:
+            return
+
+        # Locate predecessor of the target node
+        prev = self.dummy
+        for _ in range(index):
+            prev = prev.next
+
+        # Relink to bypass target node
+        prev.next = prev.next.next
+        self.size -= 1
+
+    def traverse(self) -> list:
+        """Traverse sequentially and export values as a Python list."""
+        result = []
+        curr = self.dummy.next
+        while curr is not None:
+            result.append(curr.val)
+            curr = curr.next
+        return result
+```
+
+- **Time Complexity:**
+  - `addAtHead`: $O(1)$.
+  - `get`, `addAtTail`, `addAtIndex`, `deleteAtIndex`, `traverse`: $O(n)$ worst-case.
+- **Auxiliary Space:** $O(1)$ per operation.
+
+</details>
+
+---
+
+## Problem C02. Doubly Linked List Operations: Insertion, Deletion & Bidirectional Traversal
+
+- **Difficulty:** 🟢 Easy
+- **Platform:** GeeksforGeeks
+- **Practice Links:**
+  - [GeeksforGeeks – Insert a node in Doubly Linked List](https://www.geeksforgeeks.org/problems/insert-a-node-in-doubly-linked-list/1)
+  - [GeeksforGeeks – Delete node in Doubly Linked List](https://www.geeksforgeeks.org/problems/delete-node-in-doubly-linked-list/1)
+  - [GeeksforGeeks – Display Doubly Linked List](https://www.geeksforgeeks.org/problems/display-doubly-linked-list/1)
+
+### Problem Description
+Given a Doubly Linked List where each node contains `val`, `prev`, and `next`, implement the following fundamental routines:
+1. `insertAfter(head, p, x)`: Insert a new node with value `x` immediately after the `p`-th node (0-indexed).
+2. `deleteNodeDLL(head, pos)`: Delete the node at position `pos` (1-indexed) in the doubly linked list and return the updated `head`.
+3. `traverseForward(head)` & `traverseBackward(head)`: Sequentially traverse from `head` to tail, and from tail backward to `head`, verifying bidirectional pointer integrity.
+
+<details>
+<summary><strong>Solution & Python Implementation</strong></summary>
+
+### Technical Mechanics
+- **Insertion after node `p`:** Requires strictly 4 pointer updates:
+  1. `new_node.next = curr.next`
+  2. `new_node.prev = curr`
+  3. `if curr.next is not None: curr.next.prev = new_node`
+  4. `curr.next = new_node`
+- **Deletion at position `pos`:**
+  - If deleting `head` (`pos == 1`): `head = head.next`; if `head is not None: head.prev = None`.
+  - If deleting an interior/tail node: `curr.prev.next = curr.next`, and if `curr.next is not None: curr.next.prev = curr.prev`.
+
+```python
+class DoublyNode:
+    def __init__(self, val=0, prev=None, next=None):
+        self.val = val
+        self.prev = prev
+        self.next = next
+
+def insertAfter(head: DoublyNode, p: int, x: int) -> DoublyNode:
+    """Insert value x after the p-th node (0-indexed)."""
+    curr = head
+    for _ in range(p):
+        if curr is None:
+            return head
+        curr = curr.next
+
+    if curr is None:
+        return head
+
+    new_node = DoublyNode(x)
+    new_node.next = curr.next
+    new_node.prev = curr
+
+    if curr.next is not None:
+        curr.next.prev = new_node
+    curr.next = new_node
+
+    return head
+
+def deleteNodeDLL(head: DoublyNode, pos: int) -> DoublyNode:
+    """Delete node at position pos (1-indexed)."""
+    if head is None:
+        return None
+
+    if pos == 1:
+        new_head = head.next
+        if new_head is not None:
+            new_head.prev = None
+        return new_head
+
+    curr = head
+    for _ in range(pos - 1):
+        if curr is None:
+            return head
+        curr = curr.next
+
+    if curr is None:
+        return head
+
+    # Update links bypassing curr
+    if curr.prev is not None:
+        curr.prev.next = curr.next
+    if curr.next is not None:
+        curr.next.prev = curr.prev
+
+    return head
+
+def traverseForward(head: DoublyNode) -> list:
+    """Forward traversal from head to tail."""
+    result = []
+    curr = head
+    while curr is not None:
+        result.append(curr.val)
+        curr = curr.next
+    return result
+
+def traverseBackward(head: DoublyNode) -> list:
+    """Find tail, then backward traversal to head."""
+    if head is None:
+        return []
+    curr = head
+    while curr.next is not None:
+        curr = curr.next
+    result = []
+    while curr is not None:
+        result.append(curr.val)
+        curr = curr.prev
+    return result
+```
+
+- **Time Complexity:**
+  - Insertion after a known node: $O(1)$; locating node $p$: $O(p) \le O(n)$.
+  - Deletion at position: $O(	ext{pos}) \le O(n)$.
+  - Traversal: $O(n)$.
+- **Auxiliary Space:** $O(1)$.
+
+</details>
+
+---
+
+## Problem C03. Circular Linked List Operations: Insertion, Deletion & Circular Traversal
+
+- **Difficulty:** 🟢 Easy / 🟡 Medium
+- **Platform:** GeeksforGeeks
+- **Practice Links:**
+  - [GeeksforGeeks – Circular Linked List Traversal](https://www.geeksforgeeks.org/problems/circular-linked-list-traversal/1)
+  - [GeeksforGeeks – Insert in Sorted Circular Linked List](https://www.geeksforgeeks.org/problems/insert-in-sorted-circular-linked-list/1)
+  - [GeeksforGeeks – Deletion in Circular Linked List](https://www.geeksforgeeks.org/problems/deletion-in-circular-linked-list/1)
+
+### Problem Description
+In a Circular Singly Linked List, the tail node points back to the head (`tail.next = head`). Implement the following core operations:
+1. `traverseCircular(head)`: Traverse every node in the circular list exactly once and return the list of values.
+2. `insertBegin(tail, val)` & `insertEnd(tail, val)`: Insert a node at the beginning or end of the circular list maintaining a single `tail` pointer in strictly $O(1)$ time.
+3. `deleteNodeCircular(head, key)`: Delete the first node matching `key` in the circular list and return the updated `head`.
+
+<details>
+<summary><strong>Solution & Python Implementation</strong></summary>
+
+### Technical Mechanics
+- **Circular Traversal:** Begin at `curr = head`. Loop body visits `curr`, advances `curr = curr.next`, and terminates when `curr == head`.
+- **`tail` Pointer Efficiency:**
+  - Head is accessible in $O(1)$ as `tail.next`.
+  - `insertBegin`: `new_node.next = tail.next; tail.next = new_node; return tail`.
+  - `insertEnd`: `new_node.next = tail.next; tail.next = new_node; return new_node` (new tail is `new_node`).
+- **Circular Deletion:**
+  - Single-node list: If `head.val == key`, return `None`.
+  - Deleting head: Traverse to locate `tail`, relink `tail.next = head.next`, and set `head = head.next`.
+  - Deleting interior/tail: Advance `prev` and `curr` until `curr.val == key`, then `prev.next = curr.next`.
+
+```python
+class Node:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+def traverseCircular(head: Node) -> list:
+    """Traverse circular list from head for exactly one full cycle."""
+    if head is None:
+        return []
+    result = []
+    curr = head
+    while True:
+        result.append(curr.val)
+        curr = curr.next
+        if curr == head:
+            break
+    return result
+
+def insertBegin(tail: Node, val: int) -> Node:
+    """Insert at the beginning of a circular list with tail in O(1)."""
+    new_node = Node(val)
+    if tail is None:
+        new_node.next = new_node
+        return new_node
+
+    new_node.next = tail.next
+    tail.next = new_node
+    return tail
+
+def insertEnd(tail: Node, val: int) -> Node:
+    """Insert at the end of a circular list with tail in O(1)."""
+    new_node = Node(val)
+    if tail is None:
+        new_node.next = new_node
+        return new_node
+
+    new_node.next = tail.next
+    tail.next = new_node
+    return new_node  # new tail
+
+def deleteNodeCircular(head: Node, key: int) -> Node:
+    """Delete the first node with value matching key in circular list."""
+    if head is None:
+        return None
+
+    # Single-node list edge case
+    if head.next == head:
+        return None if head.val == key else head
+
+    curr = head
+    prev = None
+
+    # Deleting head node
+    if head.val == key:
+        tail = head
+        while tail.next != head:
+            tail = tail.next
+        tail.next = head.next
+        head = head.next
+        return head
+
+    # Deleting interior or tail node
+    prev = head
+    curr = head.next
+    while curr != head:
+        if curr.val == key:
+            prev.next = curr.next
+            return head
+        prev = curr
+        curr = curr.next
+
+    return head
+```
+
+- **Time Complexity:**
+  - `insertBegin`, `insertEnd` (with `tail` pointer): $O(1)$.
+  - `traverseCircular`: $O(n)$.
+  - `deleteNodeCircular`: $O(n)$ to locate target node and locate `tail` if deleting head.
+- **Auxiliary Space:** $O(1)$.
+
+</details>
+
+---
+
+# Part 4: Coding Practice – Easy Level
 
 ## Problem 01. Reverse Linked List
 
@@ -856,7 +1213,9 @@ def getIntersectionNode(headA: ListNode, headB: ListNode) -> ListNode:
 
 ---
 
-# Part 4: Coding Practice – Medium Level
+---
+
+# Part 5: Coding Practice – Medium Level
 
 ## Problem 09. Remove Nth Node From End of List
 
