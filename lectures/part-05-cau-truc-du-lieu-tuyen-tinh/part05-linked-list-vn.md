@@ -50,9 +50,7 @@ Nhờ các phần tử nằm liên tiếp trong bộ nhớ, địa chỉ của p
 
 Vì vậy:
 
-$$
-\text{access}(i) = O(1)
-$$
+$$\text{access}(i) = O(1)$$
 
 Đây là một ưu điểm rất lớn của mảng.
 
@@ -225,31 +223,19 @@ class LinkedList:
 
 ## 4.1. Khả năng truy cập
 
-Với mảng:
+Với mảng, việc truy cập trực tiếp phần tử thứ $i$ qua `A[i]` chỉ mất:
 
-```python
-A[i]
-```
+$$T(n) = O(1)$$
 
-có thể truy cập trực tiếp phần tử thứ `i`.
-
-$$
-T(n) = O(1)
-$$
-
-Với danh sách liên kết, muốn đến node thứ `i`, ta phải đi từ `head`:
+Với danh sách liên kết, muốn đến node thứ $i$, ta phải duyệt tuần tự từ `head`:
 
 ```text
 head -> node 0 -> node 1 -> node 2 -> ... -> node i
 ```
 
-Do đó:
+Do đó, trong trường hợp xấu nhất:
 
-$$
-T(n) = O(n)
-$$
-
-trong trường hợp xấu nhất.
+$$T(n) = O(n)$$
 
 ---
 
@@ -288,7 +274,7 @@ Nhưng nếu phải tìm node đó từ `head`, tổng thời gian có thể là
 
 | Thao tác | Mảng / Dynamic Array | Singly Linked List |
 |---|---:|---:|
-| Truy cập phần tử thứ `i` | $O(1)$ | $O(n)$ |
+| Truy cập phần tử thứ $i$ | $O(1)$ | $O(n)$ |
 | Tìm kiếm không có thứ tự | $O(n)$ | $O(n)$ |
 | Chèn ở đầu | $O(n)$ do dịch chuyển | $O(1)$ |
 | Xóa ở đầu | $O(n)$ do dịch chuyển | $O(1)$ |
@@ -383,17 +369,9 @@ def traverse(self):
         current = current.next
 ```
 
-Có $n$ node nên:
+Do phải duyệt qua $n$ node và chỉ dùng một biến con trỏ `current`:
 
-$$
-T(n) = O(n)
-$$
-
-và chỉ dùng một biến `current`:
-
-$$
-S(n) = O(1)
-$$
+$$T(n) = O(n), \quad S(n) = O(1)$$
 
 ---
 
@@ -413,9 +391,7 @@ def count_nodes(self):
 
 Độ phức tạp:
 
-$$
-T(n) = O(n)
-$$
+$$T(n) = O(n)$$
 
 Nếu cấu trúc dữ liệu duy trì sẵn biến `length`, việc lấy số node chỉ cần:
 
@@ -425,9 +401,7 @@ return self.length
 
 khi đó:
 
-$$
-T(n) = O(1)
-$$
+$$T(n) = O(1)$$
 
 ---
 
@@ -466,9 +440,7 @@ Ví dụ tìm `7`:
 
 Trường hợp xấu nhất phải duyệt toàn bộ danh sách:
 
-$$
-T(n) = O(n)
-$$
+$$T(n) = O(n)$$
 
 ---
 
@@ -548,9 +520,7 @@ def insert_front(self, data):
 
 Không phụ thuộc vào $n$:
 
-$$
-T(n) = O(1)
-$$
+$$T(n) = O(1)$$
 
 ---
 
@@ -595,9 +565,7 @@ def insert_end(self, data):
 
 Do phải tìm node cuối:
 
-$$
-T(n) = O(n)
-$$
+$$T(n) = O(n)$$
 
 ### Nếu duy trì thêm `tail`
 
@@ -626,9 +594,7 @@ def insert_end(self, data):
 
 Khi đó:
 
-$$
-T(n) = O(1)
-$$
+$$T(n) = O(1)$$
 
 ---
 
@@ -690,9 +656,7 @@ def insert_after(self, node, data):
 
 Nếu `node` đã được cho trước:
 
-$$
-T(n) = O(1)
-$$
+$$T(n) = O(1)$$
 
 ---
 
@@ -721,15 +685,9 @@ def insert_at(self, index, data):
     self.length += 1
 ```
 
-Phần nối node chỉ là $O(1)$, nhưng việc đi đến vị trí `index - 1` có thể mất $O(n)$.
+Phần nối node chỉ là $O(1)$, nhưng việc đi đến vị trí `index - 1` có thể mất $O(n)$. Vì vậy, trong trường hợp xấu nhất:
 
-Vì vậy:
-
-$$
-T(n) = O(n)
-$$
-
-trong trường hợp xấu nhất.
+$$T(n) = O(n)$$
 
 ---
 
@@ -787,9 +745,7 @@ def delete_front(self):
 
 Độ phức tạp:
 
-$$
-T(n) = O(1)
-$$
+$$T(n) = O(1)$$
 
 ---
 
@@ -839,9 +795,7 @@ def delete_end(self):
 
 Do phải duyệt danh sách:
 
-$$
-T(n) = O(n)
-$$
+$$T(n) = O(n)$$
 
 ---
 
@@ -886,9 +840,7 @@ def delete_after(self, node):
 
 Nếu `node` đã được biết:
 
-$$
-T(n) = O(1)
-$$
+$$T(n) = O(1)$$
 
 ---
 
@@ -921,9 +873,7 @@ def delete_value(self, value):
 
 Trường hợp xấu nhất:
 
-$$
-T(n) = O(n)
-$$
+$$T(n) = O(n)$$
 
 ---
 
@@ -1150,9 +1100,7 @@ while current is not None:
 
 Cả hai đều có:
 
-$$
-T(n) = O(n)
-$$
+$$T(n) = O(n)$$
 
 ---
 
@@ -1202,9 +1150,9 @@ def insert_front(self, data):
     self.length += 1
 ```
 
-$$
-T(n) = O(1)
-$$
+Độ phức tạp:
+
+$$T(n) = O(1)$$
 
 ---
 
@@ -1226,9 +1174,7 @@ def insert_end(self, data):
 
 Nếu có `tail`:
 
-$$
-T(n) = O(1)
-$$
+$$T(n) = O(1)$$
 
 ---
 
@@ -1322,9 +1268,7 @@ def delete_node(self, node):
 
 Nếu đã có trực tiếp `node`:
 
-$$
-T(n) = O(1)
-$$
+$$T(n) = O(1)$$
 
 Đây là khác biệt đáng chú ý so với singly linked list: nếu chỉ có con trỏ đến node cần xóa, singly linked list thường còn cần biết node trước đó.
 
@@ -1595,9 +1539,7 @@ def append(self, data):
 
 Nếu giữ `tail`:
 
-$$
-T(n) = O(1)
-$$
+$$T(n) = O(1)$$
 
 ---
 
@@ -1607,7 +1549,7 @@ Giả sử singly linked list cơ bản chỉ giữ `head`, trừ khi ghi chú k
 
 | Thao tác | Singly LL | Doubly LL với `head`, `tail` |
 |---|---:|---:|
-| Truy cập node thứ `i` | $O(n)$ | $O(n)$ |
+| Truy cập node thứ $i$ | $O(n)$ | $O(n)$ |
 | Tìm kiếm | $O(n)$ | $O(n)$ |
 | Duyệt toàn bộ | $O(n)$ | $O(n)$ |
 | Chèn đầu | $O(1)$ | $O(1)$ |
@@ -1672,9 +1614,7 @@ Sau mỗi vòng lặp:
 
 Khi `fast` tới cuối, `slow` ở giữa.
 
-$$
-T(n) = O(n), \qquad S(n) = O(1)
-$$
+$$T(n) = O(n), \quad S(n) = O(1)$$
 
 ---
 
@@ -1727,7 +1667,7 @@ Ta dùng hai con trỏ:
 - `fast`;
 - `slow`.
 
-Đầu tiên cho `fast` đi trước `k` bước.
+Đầu tiên cho `fast` đi trước $k$ bước.
 
 Sau đó cho cả hai đi cùng tốc độ.
 
@@ -1751,17 +1691,11 @@ def kth_from_end(head, k):
     return slow
 ```
 
-Khoảng cách giữa hai con trỏ luôn là `k`.
+Khoảng cách giữa hai con trỏ luôn là $k$.
 
-Khi `fast` chạm cuối, `slow` chính là node thứ `k` từ cuối.
+Khi `fast` chạm cuối, `slow` chính là node thứ $k$ từ cuối. Độ phức tạp:
 
-$$
-T(n) = O(n)
-$$
-
-$$
-S(n) = O(1)
-$$
+$$T(n) = O(n), \quad S(n) = O(1)$$
 
 ---
 
@@ -1823,13 +1757,7 @@ nếu không ta có thể làm mất phần còn lại của danh sách.
 
 Độ phức tạp:
 
-$$
-T(n) = O(n)
-$$
-
-$$
-S(n) = O(1)
-$$
+$$T(n) = O(n), \quad S(n) = O(1)$$
 
 ---
 
@@ -1873,13 +1801,7 @@ Nếu tồn tại chu trình, `fast` cuối cùng sẽ bắt kịp `slow`.
 
 Độ phức tạp:
 
-$$
-T(n) = O(n)
-$$
-
-$$
-S(n) = O(1)
-$$
+$$T(n) = O(n), \quad S(n) = O(1)$$
 
 ---
 
@@ -1925,17 +1847,9 @@ def merge_sorted_lists(a, b):
 
 Nếu hai danh sách có lần lượt $m$ và $n$ node:
 
-$$
-T(m,n) = O(m+n)
-$$
+$$T(m, n) = O(m + n), \quad S(m, n) = O(1)$$
 
-và có thể nối lại chính các node cũ nên:
-
-$$
-S(m,n) = O(1)
-$$
-
-nếu không tính đầu ra.
+(do có thể nối lại trực tiếp các node cũ mà không cần cấp phát thêm bộ nhớ).
 
 ---
 
@@ -1979,13 +1893,7 @@ sau đó so sánh:
 
 Độ phức tạp:
 
-$$
-T(n) = O(n)
-$$
-
-$$
-S(n) = O(1)
-$$
+$$T(n) = O(n), \quad S(n) = O(1)$$
 
 ---
 
@@ -2194,7 +2102,7 @@ Vì sao truy cập node thứ $i$ của singly linked list là $O(n)$ trong trư
 <details>
 <summary>Đáp án</summary>
 
-Vì linked list không lưu các node liên tiếp để có thể tính trực tiếp địa chỉ node thứ `i`. Ta phải bắt đầu từ `head` và đi qua các liên kết `next` cho tới node cần tìm.
+Vì linked list không lưu các node liên tiếp để có thể tính trực tiếp địa chỉ node thứ $i$. Ta phải bắt đầu từ `head` và đi qua các liên kết `next` cho tới node cần tìm.
 
 </details>
 
@@ -2265,13 +2173,8 @@ Một singly linked list chỉ giữ `head`. Độ phức tạp của `insert_en
 <details>
 <summary>Đáp án</summary>
 
-$$
-O(n)
-$$
-
-vì phải duyệt đến node cuối trước khi nối node mới.
-
-Nếu giữ thêm `tail`, thao tác này có thể giảm xuống $O(1)$.
+- **Độ phức tạp:** $O(n)$, vì phải duyệt đến node cuối trước khi nối node mới.
+- Nếu giữ thêm `tail`, thao tác này có thể giảm xuống $O(1)$.
 
 </details>
 
@@ -2284,11 +2187,7 @@ Một doubly linked list có `head` và `tail`. Nếu đã có trực tiếp tha
 <details>
 <summary>Đáp án</summary>
 
-$$
-O(1)
-$$
-
-vì có thể truy cập cả `node.prev` và `node.next` để nối hai node lân cận.
+- **Độ phức tạp:** $O(1)$, vì có thể truy cập cả `node.prev` và `node.next` để nối hai node lân cận mà không cần duyệt tìm kiếm.
 
 </details>
 
@@ -2447,19 +2346,7 @@ def middle_node(head):
 
 Không được đếm số node trước.
 
-Độ phức tạp mong đợi:
-
-$$
-O(n)
-$$
-
-thời gian và:
-
-$$
-O(1)
-$$
-
-bộ nhớ phụ.
+Độ phức tạp mong đợi: $T(n) = O(n)$ thời gian và $S(n) = O(1)$ bộ nhớ phụ.
 
 ---
 
@@ -2489,15 +2376,7 @@ Không tạo một linked list mới.
 
 Yêu cầu:
 
-$$
-T(n) = O(n)
-$$
-
-và:
-
-$$
-S(n) = O(1)
-$$
+$$T(n) = O(n), \quad S(n) = O(1)$$
 
 ---
 
@@ -2522,17 +2401,8 @@ def get_last(head):
 <details>
 <summary>Đáp án</summary>
 
-Trường hợp xấu nhất phải đi qua tất cả $n$ node.
-
-$$
-T(n) = O(n)
-$$
-
-Bộ nhớ phụ:
-
-$$
-S(n) = O(1)
-$$
+- Trường hợp xấu nhất phải đi qua tất cả $n$ node: $T(n) = O(n)$.
+- Bộ nhớ phụ: $S(n) = O(1)$.
 
 </details>
 
@@ -2552,11 +2422,7 @@ p.next = new_node
 <details>
 <summary>Đáp án</summary>
 
-$$
-O(1)
-$$
-
-vì chỉ có một số hữu hạn phép gán tham chiếu và không cần duyệt danh sách.
+- **Độ phức tạp:** $O(1)$, vì chỉ có một số hữu hạn phép gán tham chiếu và không cần duyệt danh sách.
 
 </details>
 
