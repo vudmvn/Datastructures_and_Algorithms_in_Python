@@ -31,10 +31,10 @@ Thư mục này cung cấp toàn bộ tài liệu học tập, bài giảng lý 
   - So sánh toàn diện giữa Cấu trúc dựa trên mảng (*Array-Based*) và Cấu trúc liên kết (*Linked Structures*).
   - Mã nguồn LaTeX: `part05-array-linked-lists-slide-en.tex`
 
-### 3. Bài tập Thực hành & Ôn tập (Practice Problems)
-- 📝 **[part05-linked-list-vn.md (Mục 32 & 33)](part05-linked-list-vn.md#32-bài-tập-phân-tích)**:
-  - Hệ thống bài tập phân tích độ phức tạp thời gian/bộ nhớ và so sánh hiệu năng.
-  - Câu hỏi thảo luận chuyên sâu về ứng dụng thực tế của Linked Lists vs Arrays trong kỹ thuật phần mềm và xử lý dữ liệu.
+### 3. Bài tập Thực hành & Luyện Code (Practice Problems & Coding Exercises)
+- 📖 **[part05-practice-vn.md](part05-practice-vn.md)**: Hệ thống bài tập thực hành toàn diện từ cơ bản (Easy) đến nâng cao (Medium), tích hợp link luyện code trực tiếp trên LeetCode & GeeksforGeeks, giải thích thuật toán và mã nguồn Python chi tiết.
+- 📖 **[part05-practice-en.md](part05-practice-en.md)**: English version of curated Easy & Medium practice problems with direct LeetCode and GeeksforGeeks coding links and optimal Python implementations.
+- 📝 **[part05-linked-list-vn.md (Mục 32 & 33)](part05-linked-list-vn.md#32-bài-tập-phân-tích)**: Hệ thống câu hỏi tự luận phân tích độ phức tạp thời gian/bộ nhớ và thảo luận chuyên sâu.
 
 ---
 
